@@ -1,0 +1,47 @@
+﻿@using SppApp.Helpers
+@model  SppApp.Models.Pokazatelji
+
+<tr class="tableData">
+    @using (Html.BeginCollectionItem("PokazateljiLista"))
+    {
+
+        <td>
+            @Html.LabelFor(model => model, "Pokazatelj")<br />
+            @Html.TextAreaFor(model => model.Naziv, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+
+        </td>
+        <td>
+            @Html.LabelFor(model => model.JedinicaMjere)<br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "m2") m2 <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "kg") kg <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "tona") tona <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "broj") broj <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "ha") ha <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "sat") sat <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "komplet") komplet <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "dan") dan <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "godišnje") godišnje <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "mjesečno") mjesečno <br />
+            @Html.ValidationMessageFor(model => model.JedinicaMjere, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(false); }
+            @Html.LabelFor(model => model.BrojJedinica, "Broj jedinica")
+            <br />
+            @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control" } })
+            <br />
+            @Html.ValidationMessageFor(model => model.BrojJedinica, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.NacinOstvarenja, "Način ostvarenja")<br />
+            @Html.TextAreaFor(model => model.NacinOstvarenja, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.NacinOstvarenja, "", new { @class = "text-danger" })
+        </td>
+
+
+    }
+</tr>
+<tr><td></td><td></td><td></td><td></td></tr>
+

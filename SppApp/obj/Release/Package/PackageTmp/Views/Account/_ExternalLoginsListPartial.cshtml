@@ -1,0 +1,28 @@
+﻿@model  SppApp.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<h4>Koristi drugi servis za prijavu.</h4>
+<hr />
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                Nema konfiguriranih vanjskih usluga provjere autentičnosti. Pogledajte <a href="https://go.microsoft.com/fwlink/?LinkId=403804">ovaj članak</a>
+                za detalje o postavljanju ove ASP.NET aplikacije za podršku prijava putem vanjskih usluga.
+            </p>
+        </div>
+    }
+    else {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @foreach (AuthenticationDescription p in loginProviders) {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                    }
+                </p>
+            </div>
+        }
+    }
+}

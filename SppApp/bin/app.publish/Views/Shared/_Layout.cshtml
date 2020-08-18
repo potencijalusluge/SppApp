@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .navbar {
+            border: 0px;
+            background-color: #78B744 !important;
+        }
+
+        .navbar-brand {
+            /*color: #F7B98A !important;*/
+            color: #FFF !important;
+            background-color: #EF7215 !important;
+            font-weight: bold;
+        }
+
+            .navbar-brand:hover {
+                color: #FFF !important;
+                /*color: #EF7215 !important;*/
+                background-color: #898989 !important;
+                font-weight: bold;
+            }
+
+        ul.nav a {
+            color: #FFF !important;
+            font-weight: bold;
+            /*color: #CEE0C1 !important;*/
+        }
+
+            ul.nav a:hover {
+                /*color: #78B744 !important;*/
+                color: #FFF !important;
+                background-color: #898989 !important;
+                font-weight: bold;
+            }
+    </style>
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink(" Unos projekta", "Create", "Projekti", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="navbar-about">@Html.ActionLink("O sustavu", "About", "Home")</li>
+                    <li class="navbar-contact">@Html.ActionLink("Kontakt", "Contact", "Home")</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="navbar-projekti">@Html.ActionLink("Projekti", "Index", "Projekti")</li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p style="text-align: center" class="col-md-12">&copy; @DateTime.Now.Year - Valpovački poduzetnički centar d.o.o., Matije Gupca 32, 31 550 Valpovo,  OIB: 94485284888</p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,546 @@
+﻿@model SppApp.Models.Projekti
+@{
+    ViewBag.Title = "Detalji";
+}
+<h2>Detalji projekta</h2>
+
+<div>
+    @if (ViewBag.Zaprimljena != null)
+    {
+        <h4 style="color: #EF7215 ">@ViewBag.Zaprimljena</h4>
+    }
+    <hr />
+    <dl class="dl-horizontal">
+        <dt></dt>
+        <dd></dd>
+        <dt></dt>
+        <dd style="font-weight:bold">OSNOVNI PODATCI PROJEKTA</dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lokacija)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lokacija)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Naziv nositelja projekta")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacija.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizacija.Adresa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacija.Adresa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizacija.Mjesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacija.Mjesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Organizacija.Drzava)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Organizacija.Drzava)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusProjekta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusProjekta)
+        </dd>
+
+        @if (Model.Pocetak != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Pocetak)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pocetak)
+            </dd>
+        }
+
+        @if (Model.VrstaProjekta != null && Model.VrstaProjekta != "")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.VrstaProjekta)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VrstaProjekta)
+            </dd>
+        }
+        <dt></dt>
+        <dd>&nbsp;</dd>
+        <dt></dt>
+        <dd style="font-weight:bold">STATUS DOKUMENTACIJE PROJEKTA</dd>
+
+        @if (Model.ProglasenStrateskim != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.ProglasenStrateskim)
+            </dt>
+
+            <dd>
+                @if (Model.ProglasenStrateskim == true)
+                {
+                    <span>Da</span>
+
+                }
+                else
+                {
+                    <span>Ne</span>
+
+                }
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.Faza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Faza)
+        </dd>
+        @if (Model.VlasnickaDokumentacija != null && Model.VlasnickaDokumentacija != "")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.VlasnickaDokumentacija)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VlasnickaDokumentacija)
+            </dd>
+        }
+        @if (Model.StudijaIzvodivosti != null && Model.StudijaIzvodivosti != "")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.StudijaIzvodivosti)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.StudijaIzvodivosti)
+            </dd>
+        }
+        @if (Model.InvesticijskaStudija != null && Model.InvesticijskaStudija != "")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.InvesticijskaStudija)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.InvesticijskaStudija)
+            </dd>
+        }
+        @if (Model.IdejnoRjesenje != null && Model.IdejnoRjesenje != "")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.IdejnoRjesenje)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.IdejnoRjesenje)
+            </dd>
+        }
+        @if (Model.LokacijskaDozvola != null && Model.LokacijskaDozvola != "")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.LokacijskaDozvola)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LokacijskaDozvola)
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.UpravnoPodrucje)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpravnoPodrucje)
+        </dd>
+        @if (Model.Sektor != null && Model.Sektor != "")
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Sektor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Sektor)
+            </dd>
+        }
+
+        @*To do*@
+        @if (Model.GradjevinskeDozvole.Count > 0 || Model.OstalaDokumentacija.Count > 0)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt></dt>
+            <dd style="font-weight:bold">DOKUMENTACIJA PROJEKTA</dd>
+        }
+
+        @if (Model.GradjevinskeDozvole.Count > 0)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt></dt>
+            <dd style="font-weight:bold">GRAĐEVINSKA DOZVOLA</dd>
+            for (int i = 0; i < Model.GradjevinskeDozvole.Count; i++)
+            {
+                <dt>
+                    @Html.DisplayName("Naziv dokumenta")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => Model.GradjevinskeDozvole[i].Putanja)
+                </dd>
+
+
+
+            }
+        }
+
+        @if (Model.OstalaDokumentacija.Count > 0)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt></dt>
+            <dd style="font-weight:bold">OSTALA DOKUMENTACIJA</dd>
+            for (int i = 0; i < Model.OstalaDokumentacija.Count; i++)
+            {
+                <dt>
+                    @Html.DisplayName("Naziv dokumenta")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => Model.GradjevinskeDozvole[i].Putanja)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => Model.OstalaDokumentacija[i].Opis)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => Model.OstalaDokumentacija[i].Opis)
+                </dd>
+            }
+        }
+
+        <dt></dt>
+        <dd>&nbsp;</dd>
+        <dt></dt>
+        <dd style="font-weight:bold">OPIS, CILJEVI I REZULTATI PROJEKTA</dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rezultati)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rezultati)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OpciSpecificniCiljevi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpciSpecificniCiljevi)
+        </dd>
+        @if (Model.Kraj != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Kraj)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Kraj)
+            </dd>
+        }
+        <dt></dt>
+        <dd>&nbsp;</dd>
+        <dt></dt>
+        <dd style="font-weight:bold">AKTIVNOSTI I PRORAČUN</dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IzvorFinanciranja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IzvorFinanciranja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcijenjenaVrijednost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcijenjenaVrijednost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcijenjeniTroskoviPripreme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcijenjeniTroskoviPripreme)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProcijenjeniTroskoviProvedbe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProcijenjeniTroskoviProvedbe)
+        </dd>
+
+        @if (Model.Aktivnosti.Count > 0)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt></dt>
+            <dd style="font-weight:bold">AKTIVNOSTI</dd>
+            <dt></dt>
+            <dd>
+
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].Opis)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].Vrsta)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].JedinicaMjere)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].BrojJedinica)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].JedinicnaCijena)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].DatumZavrsetka)</th>
+                    </tr>
+                    @for (int i = 0; i < Model.Aktivnosti.Count; i++)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].Opis)</td>
+                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].Vrsta)</td>
+                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].JedinicaMjere)</td>
+                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].BrojJedinica)</td>
+                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].JedinicnaCijena)</td>
+                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].DatumZavrsetka)</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+        }
+
+        @if (Model.Financiranja.Count > 0)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt></dt>
+            <dd style="font-weight:bold">FINANCIRANJE, USKLAĐENOST</dd>
+            <dt></dt>
+            <dd>
+
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].NazivIzvora)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IzvorFinanciranja)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IznosHRK)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IznosEUR)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IzvorSufinanciranja)</th>
+                    </tr>
+                    @for (int i = 0; i < Model.Financiranja.Count; i++)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => Model.Financiranja[i].NazivIzvora)</td>
+                            <td>@Html.DisplayFor(model => Model.Financiranja[i].IzvorFinanciranja)</td>
+                            <td>@Html.DisplayFor(model => Model.Financiranja[i].IznosHRK)</td>
+                            <td>@Html.DisplayFor(model => Model.Financiranja[i].IznosEUR) €</td>
+                            <td>@Html.DisplayFor(model => Model.Financiranja[i].IzvorSufinanciranja)</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+        }
+
+        @if (Model.Dionici.Count > 0)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt></dt>
+            <dd style="font-weight:bold">DIONICI</dd>
+            <dt></dt>
+            <dd>
+
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => Model.Dionici[0].Naziv)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dionici[0].Vrsta)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dionici[0].Uloga)</th>
+                    </tr>
+                    @for (int i = 0; i < Model.Dionici.Count; i++)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => Model.Dionici[i].Naziv)</td>
+                            <td>@Html.DisplayFor(model => Model.Dionici[i].Vrsta)</td>
+                            <td>@Html.DisplayFor(model => Model.Dionici[i].Uloga)</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+        }
+
+        @if (Model.Pokazatelji.Count > 0)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt></dt>
+            <dd style="font-weight:bold">POKAZATELJI</dd>
+            <dt></dt>
+            <dd>
+
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].Naziv)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].JedinicaMjere)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].BrojJedinica)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].NacinOstvarenja)</th>
+                    </tr>
+                    @for (int i = 0; i < Model.Pokazatelji.Count; i++)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => Model.Pokazatelji[i].Naziv)</td>
+                            <td>@Html.DisplayFor(model => Model.Pokazatelji[i].JedinicaMjere)</td>
+                            <td>@Html.DisplayFor(model => Model.Pokazatelji[i].BrojJedinica)</td>
+                            <td>@Html.DisplayFor(model => Model.Pokazatelji[i].NacinOstvarenja)</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
+        }
+
+        <dt></dt>
+        <dd>&nbsp;</dd>
+        <dt></dt>
+        <dd style="font-weight:bold">KONTAKT OSOBA</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.Organizacija.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.Organizacija.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.Organizacija.Mjesto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.Organizacija.Mjesto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.Organizacija.Drzava)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.Organizacija.Drzava)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kontakt.BrojTelefona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kontakt.BrojTelefona)
+        </dd>
+        @if (Model.Upisano != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Upisano)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Upisano)
+            </dd>
+        }
+        @if (Model.Ispravno != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Ispravno)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ispravno)
+            </dd>
+        }
+
+
+        <dt></dt>
+        <dd>&nbsp;</dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumPredaje)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DatumPredaje)
+        </dd>
+    </dl>
+</div>
+<p>
+    @*@if (User.IsInRole("Admin") || Model.Ispravno == false)
+    {
+        @Html.ActionLink("Uredi", "Edit", new { id = Model.Id })
+        <span>|</span>
+    }*@
+
+    @if (ViewBag.Zaprimljena == null)
+    {
+        @Html.ActionLink("Povratak na popis", "Index")
+    }
+</p>

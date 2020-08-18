@@ -1,0 +1,56 @@
+﻿@using SppApp.Helpers
+@model  SppApp.Models.Aktivnosti
+
+<tr class="tableData">
+    @using (Html.BeginCollectionItem("AktivnostiLista"))
+    {
+
+    <td>
+        @Html.LabelFor(model => model.Opis, "Opis aktivnosti")<br />
+        @Html.TextAreaFor(model => model.Opis, new { @class = "form-control" })<br />
+        @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
+    </td>
+    <td>
+        @Html.LabelFor(model => model.Vrsta)<br />
+        @Html.RadioButtonFor(model => model.Vrsta, "radovi") radovi <br />
+        @Html.RadioButtonFor(model => model.Vrsta, "usluge") usluge <br />
+        @Html.RadioButtonFor(model => model.Vrsta, "oprema") oprema <br />
+        @Html.ValidationMessageFor(model => model.Vrsta, "", new { @class = "text-danger" })
+    </td>
+    <td>
+        @Html.LabelFor(model => model.JedinicaMjere)<br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "broj") broj <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "m2") m2 <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "ha") ha <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "komplet") komplet <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "sat") sat <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "kg") kg <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "tona") tona <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "m") m <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "godišnje") godišnje <br />
+        @Html.RadioButtonFor(model => model.JedinicaMjere, "mjesečno") mjesečno <br />
+        @Html.ValidationMessageFor(model => model.JedinicaMjere, "", new { @class = "text-danger" })
+    </td>
+    <td>
+        @{ Html.EnableClientValidation(false); }
+        @Html.LabelFor(model => model.BrojJedinica, "Broj jedinica")<br />
+        @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control" } })<br />
+        @Html.ValidationMessageFor(model => model.BrojJedinica, "", new { @class = "text-danger" })
+    </td>
+        <td>
+            @Html.LabelFor(model => model.JedinicnaCijena, "Jedinična cijena")<br />
+            @Html.EditorFor(model => model.JedinicnaCijena, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.JedinicnaCijena, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.DatumZavrsetka, "Očekivani datum završetka")<br />
+            @Html.EditorFor(model => model.DatumZavrsetka, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.DatumZavrsetka, "", new { @class = "text-danger" })
+        </td>
+
+      
+    }
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+

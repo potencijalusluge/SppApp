@@ -1,0 +1,638 @@
+﻿@model SppApp.Models.Projekti
+
+@{
+    ViewBag.Title = "Sustav za prikupljanje podataka";
+}
+<h3 style="text-align:center">Sustav za prikupljanje podataka za strateško planiranje i upravljanje razvojem</h3>
+
+<img src="~/Images/logo-vpc.jpg" alt="VPC logo" width="30%" height="30%" class="center-block">
+
+<style>
+    hr.thick {
+        border: solid 1px;
+    }
+
+    .required:after {
+        content: "*";
+        font-weight: bold;
+        color: red;
+    }
+
+    input {
+        max-width: 100%;
+    }
+
+    textarea {
+        max-width: 100%;
+        height: 100px;
+    }
+
+        textarea.form-control {
+            height: 150px;
+            max-width: 100%;
+        }
+
+    .narrow {
+        max-width: 280px;
+    }
+
+    .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+        background-color: #78B744 !important;
+    }
+
+    .navbar-brand {
+        color: #898989 !important;
+        background-color: #FFF !important;
+    }
+
+        .navbar-brand:hover {
+            color: #FFF !important;
+            background-color: #898989 !important;
+        }
+
+    .tableData {
+        background-color: #E3FBE3;
+    }
+
+    .okvirPodnaslova {
+        color: #FDAD5C;
+        background-color: #FDAD5C;
+    }
+
+    .validation-summary-valid {
+        display: none;
+    }
+
+    .field-validation-valid {
+        display: none;
+    }
+</style>
+
+<script>
+    updateLicenceList = function () {
+        var input = document.getElementById('licenceFile');
+        var output = document.getElementById('licenceFileList');
+        var children = "";
+        for (var i = 0; i < input.files.length; ++i) {
+            children += '<li>' + input.files.item(i).name + '</li>';
+        }
+        if (input.files.length > 1) {
+            output.innerHTML = '<ul>' + children + '</ul>';
+        }
+        else {
+            output.innerHTML = '';
+        }
+    }
+
+    updateOtherList = function () {
+        var input = document.getElementById('otherFile');
+        var output = document.getElementById('otherFileList');
+        var children = "";
+        for (var i = 0; i < input.files.length; ++i) {
+            children += '<li>' + input.files.item(i).name + '</li>';
+        }
+        if (input.files.length > 1) {
+            output.innerHTML = '<ul>' + children + '</ul>';
+        }
+        else {
+            output.innerHTML = '';
+        }
+    }
+
+</script>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/OrderManagerScript.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        AddClickEvents();
+    });
+
+</script>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+
+    @Html.HiddenFor(model => model.Id)
+
+    @Html.ValidationSummary(false, "Morate ispravno popuniti sva obvezna polja!", new { @class = "text-danger" })
+    <div class=" col-md-12">
+        <div style="background-color: #EF7215 ">
+            <hr class="thick" style="color: #EF7215 " />
+            <h4 style="color: #FFFFFF"> &nbsp; OSNOVNI PODATCI PROJEKTA</h4>
+
+            <hr class="thick" style="color: #EF7215 " />
+        </div>
+    </div>
+
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Naziv, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Lokacija, "Lokacija", new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            <div class="col-md-2">
+                @Html.RadioButtonFor(model => model.Lokacija, "Grad") Grad
+            </div>
+            <div class="col-md-2">
+                @Html.RadioButtonFor(model => model.Lokacija, "Općina") Općina
+            </div>
+            <div class="col-md-8">
+                <div class="col-md-1">
+                    @Html.RadioButtonFor(model => model.Lokacija, "Ostalo", new { @id = "lokacija-rb" })
+                </div>
+                <div class="col-md-11">
+                    @Html.Editor("lokacija-input", new { htmlAttributes = new { @class = "form-control narrow", @id = "lokacija-input", @placeholder = "Drugo" } })
+                </div>
+            </div>
+            @Html.ValidationMessageFor(model => model.Lokacija, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Organizacija.Naziv, "Naziv nositelja projekta", htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Organizacija.Naziv, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Organizacija.Naziv, "Naziv nositelja projekta je obavezan.", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Organizacija.Adresa, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Organizacija.Adresa, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Organizacija.Adresa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Organizacija.Mjesto, new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Organizacija.Mjesto, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Organizacija.Mjesto, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Organizacija.Drzava, "Država", new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Organizacija.Drzava, new[] { new SelectListItem() { Text = "Hrvatska", Value = "Hrvatska" } }, new { @class = "form-control narrow" })
+            @Html.ValidationMessageFor(model => model.Organizacija.Drzava, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.StatusProjekta, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.StatusProjekta, "Projekt") Projekt <br />
+            @Html.RadioButtonFor(model => model.StatusProjekta, "Projektna ideja") Projektna ideja <br />
+            @Html.ValidationMessageFor(model => model.StatusProjekta, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Pocetak, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Pocetak, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Pocetak, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group  col-md-12">
+        @Html.LabelFor(model => model.VrstaProjekta, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.VrstaProjekta, "Županijskog značaja") Županijskog značaja <br />
+            @Html.RadioButtonFor(model => model.VrstaProjekta, "Lokalnog značaja") Lokalnog značaja <br />
+            @Html.RadioButtonFor(model => model.VrstaProjekta, "Nacionalnog značaja") Nacionalnog značaja <br />
+            @Html.RadioButtonFor(model => model.VrstaProjekta, "Regionalnog značaja") Regionalnog značaja <br />
+            @Html.RadioButtonFor(model => model.VrstaProjekta, "Europskog i međunarodnog značaja") Europskog i međunarodnog značaja <br />
+            @Html.ValidationMessageFor(model => model.VrstaProjekta, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class=" col-md-12">
+        <div style="background-color: #EF7215 ">
+            <hr class="thick" style="color: #EF7215 " />
+            <h4 style="color: #FFFFFF"> &nbsp; STATUS DOKUMENTACIJE PROJEKTA</h4>
+
+            <hr class="thick" style="color: #EF7215 " />
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.ProglasenStrateskim, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            <div class="checkbox">
+                @Html.RadioButtonFor(model => model.ProglasenStrateskim, true) Da <br />
+                @Html.RadioButtonFor(model => model.ProglasenStrateskim, false) Ne <br />
+                @Html.ValidationMessageFor(model => model.ProglasenStrateskim, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Faza, htmlAttributes: new { @class = "control-label col-md-3 required" })
+        <div class="col-md-9">
+            @Html.RadioButtonFor(model => model.Faza, "Faza planiranja") Faza planiranja <br />
+            @Html.RadioButtonFor(model => model.Faza, "Faza provedbe") Faza provedbe <br />
+            @Html.RadioButtonFor(model => model.Faza, "Završen") Završen <br />
+            @Html.ValidationMessageFor(model => model.Faza, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.VlasnickaDokumentacija, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.RadioButtonFor(model => model.VlasnickaDokumentacija, "Da") Da <br />
+            @Html.RadioButtonFor(model => model.VlasnickaDokumentacija, "Ne") Ne <br />
+            @Html.RadioButtonFor(model => model.VlasnickaDokumentacija, "Nije relevantno") Nije relevantno <br />
+            @Html.ValidationMessageFor(model => model.VlasnickaDokumentacija, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.StudijaIzvodivosti, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.RadioButtonFor(model => model.StudijaIzvodivosti, "Da") Da <br />
+            @Html.RadioButtonFor(model => model.StudijaIzvodivosti, "Ne") Ne <br />
+            @Html.RadioButtonFor(model => model.StudijaIzvodivosti, "Nije relevantno") Nije relevantno <br />
+            @Html.ValidationMessageFor(model => model.StudijaIzvodivosti, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.InvesticijskaStudija, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.RadioButtonFor(model => model.InvesticijskaStudija, "Da") Da <br />
+            @Html.RadioButtonFor(model => model.InvesticijskaStudija, "Ne") Ne <br />
+            @Html.RadioButtonFor(model => model.InvesticijskaStudija, "Nije relevantno") Nije relevantno <br />
+            @Html.ValidationMessageFor(model => model.InvesticijskaStudija, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.IdejnoRjesenje, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.RadioButtonFor(model => model.IdejnoRjesenje, "Da") Da <br />
+            @Html.RadioButtonFor(model => model.IdejnoRjesenje, "Ne") Ne <br />
+            @Html.RadioButtonFor(model => model.IdejnoRjesenje, "Nije relevantno") Nije relevantno <br />
+            @Html.ValidationMessageFor(model => model.IdejnoRjesenje, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.LokacijskaDozvola, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.RadioButtonFor(model => model.LokacijskaDozvola, "Da") Da <br />
+            @Html.RadioButtonFor(model => model.LokacijskaDozvola, "Ne") Ne <br />
+            @Html.RadioButtonFor(model => model.LokacijskaDozvola, "Nije relevantno") Nije relevantno <br />
+            @Html.ValidationMessageFor(model => model.LokacijskaDozvola, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.UpravnoPodrucje, htmlAttributes: new { @class = "control-label col-md-3 required" })
+        <div class="col-md-9">
+            @Html.DropDownListFor(model => model.UpravnoPodrucje, new[] { new SelectListItem() { Text = "", Value = "" }, new SelectListItem() { Text = "Financije", Value = "Financije" }, new SelectListItem() { Text = "Financije", Value = "Financije" }, new SelectListItem() { Text = "Rad i socijalna skrb", Value = "Rad i socijalna skrb" }, new SelectListItem() { Text = "Obrana", Value = "Obrana" }, new SelectListItem() { Text = "Vanjski poslovi", Value = "Vanjski poslovi" }, new SelectListItem() { Text = "Unutarnji poslovi", Value = "Unutarnji poslovi" }, new SelectListItem() { Text = "Pravosuđe", Value = "Pravosuđe" }, new SelectListItem() { Text = "Državno uređenje", Value = "Državno uređenje" }, new SelectListItem() { Text = "Politički i upravni stav", Value = "Politički i upravni stav" }, new SelectListItem() { Text = "Gospodarstvo", Value = "Gospodarstvo" }, new SelectListItem() { Text = "Zdravstvo", Value = "Zdravstvo" }, new SelectListItem() { Text = "Promet i insfrastruktura", Value = "Promet i insfrastruktura" }, new SelectListItem() { Text = "Poljoprivreda", Value = "Poljoprivreda" }, new SelectListItem() { Text = "Zaštita okoliša i prirode", Value = "Zaštita okoliša i prirode" }, new SelectListItem() { Text = "Graditeljstvo i prostorno uređenje", Value = "Graditeljstvo i prostorno uređenje" }, new SelectListItem() { Text = "Znanost, obrazovanje i sport", Value = "Znanost, obrazovanje i sport" }, new SelectListItem() { Text = "Kultura", Value = "Kultura" }, new SelectListItem() { Text = "Ostalo", Value = "Ostalo" } }, htmlAttributes: new { @class = "form-control narrow" })
+            @Html.ValidationMessageFor(model => model.UpravnoPodrucje, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Sektor, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.DropDownListFor(model => model.Sektor, new[] { new SelectListItem() { Text = "", Value = "" }, new SelectListItem() { Text = "Poljoprivreda", Value = "Poljoprivreda" }, new SelectListItem() { Text = "Ceste", Value = "Ceste" }, new SelectListItem() { Text = "Razminiranje", Value = "Razminiranje" }, new SelectListItem() { Text = "Sport", Value = "Sport" }, new SelectListItem() { Text = "Transport", Value = "Transport" }, new SelectListItem() { Text = "Turizam", Value = "Turizam" }, new SelectListItem() { Text = "Vodoopskrba i odvodnja", Value = "Vodoopskrba i odvodnja" }, new SelectListItem() { Text = "Zaštita okoliša", Value = "Zaštita okoliša" }, new SelectListItem() { Text = "Zdravstvo", Value = "Zdravstvo" }, new SelectListItem() { Text = "Zračne luke i helidromi", Value = "Zračne luke i helidromi" }, new SelectListItem() { Text = "Poslovna infrastruktura", Value = "Poslovna infrastruktura" }, new SelectListItem() { Text = "Društvena infrastruktura", Value = "Društvena infrastruktura" }, new SelectListItem() { Text = "Energetika", Value = "Energetika" }, new SelectListItem() { Text = "Gospodarenje otpadom", Value = "Gospodarenje otpadom" }, new SelectListItem() { Text = "Inovacije, istraživanje i razvoj", Value = "Inovacije, istraživanje i razvoj" }, new SelectListItem() { Text = "Ljudski resursi", Value = "Ljudski resursi" }, new SelectListItem() { Text = "Morske i riječne luke", Value = "Morske i riječne luke" }, new SelectListItem() { Text = "Navodnjavanje", Value = "Navodnjavanje" }, new SelectListItem() { Text = "Obnova urbanih centara", Value = "Obnova urbanih centara" }, new SelectListItem() { Text = "Obrazovanje", Value = "Obrazovanje" }, new SelectListItem() { Text = "Ostalo", Value = "Ostalo" } }, htmlAttributes: new { @class = "form-control narrow" })
+            @Html.ValidationMessageFor(model => model.Sektor, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class=" col-md-12">
+        <div style="background-color: #EF7215 ">
+            <hr class="thick" style="color: #EF7215 " />
+            <h4 style="color: #FFFFFF"> &nbsp; DOKUMENTACIJA PROJEKTA</h4>
+
+            <hr class="thick" style="color: #EF7215 " />
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.Label("Građevinska dozvola", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" id="licenceFile" name="dozvolaDatoteke" onchange="javascript:updateLicenceList()" multiple />
+        </div>
+        <div class="col-md-10" id="licenceFileList"></div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.Label("Ostala dokumentacija", "Ostala dokumentacija", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" id="otherFile" name="ostaleDatoteke" onchange="javascript:updateOtherList()" multiple />
+        </div>
+        <div class="col-md-10" id="otherFileList"></div>
+    </div>
+
+    <div class=" col-md-12">
+        <div style="background-color: #EF7215 ">
+            <hr class="thick" style="color: #EF7215 " />
+            <h4 style="color: #FFFFFF"> &nbsp; OPIS, CILJEVI I REZULTATI PROJEKTA</h4>
+
+            <hr class="thick" style="color: #EF7215 " />
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Opis, htmlAttributes: new { @class = "control-label col-md-3 required" })
+        <div class="col-md-9">
+            @Html.TextAreaFor(model => model.Opis, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Opis, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Rezultati, htmlAttributes: new { @class = "control-label col-md-3 required" })
+        <div class="col-md-9">
+            @Html.TextAreaFor(model => model.Rezultati, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Rezultati, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.OpciSpecificniCiljevi, htmlAttributes: new { @class = "control-label col-md-3 required" })
+        <div class="col-md-9">
+            @Html.TextAreaFor(model => model.OpciSpecificniCiljevi, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.OpciSpecificniCiljevi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.Kraj, htmlAttributes: new { @class = "control-label col-md-3" })
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.Kraj, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kraj, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class=" col-md-12">
+        <div style="background-color: #EF7215 ">
+            <hr class="thick" style="color: #EF7215 " />
+            <h4 style="color: #FFFFFF"> &nbsp; AKTIVNOSTI I PRORAČUN</h4>
+
+            <hr class="thick" style="color: #EF7215 " />
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.IzvorFinanciranja, htmlAttributes: new { @class = "control-label col-md-4 required" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.IzvorFinanciranja, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.IzvorFinanciranja, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @{ Html.EnableClientValidation(false); }
+        @Html.LabelFor(model => model.ProcijenjenaVrijednost, htmlAttributes: new { @class = "control-label col-md-4 required" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.ProcijenjenaVrijednost, new { htmlAttributes = new { @class = "form-control narrow", pattern = @"[0-9]+([,][0-9]+)?" } })
+            @Html.ValidationMessageFor(model => model.ProcijenjenaVrijednost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.ProcijenjeniTroskoviPripreme, htmlAttributes: new { @class = "control-label col-md-4 required" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.ProcijenjeniTroskoviPripreme, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviPripreme, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        @Html.LabelFor(model => model.ProcijenjeniTroskoviProvedbe, htmlAttributes: new { @class = "control-label col-md-4 required" })
+        <div class="col-md-8">
+            @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbe, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviProvedbe, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class=" col-md-12">
+        <div class="okvirPodnaslova">
+            <hr class="thick okvirPodnaslova" />
+            <h4 style="color: #FFFFFF"> &nbsp; AKTIVNOSTI</h4>
+
+            <hr class="thick okvirPodnaslova" />
+        </div>
+    </div>
+
+
+    @{ Html.EnableClientValidation(true); }
+    <div class="form-group col-md-12">
+        <div class="col-md-12">
+            <table id="tableAktivnosti" class="table">
+                <tbody>
+                    @for (int i = 0; i < Model.Aktivnosti.Count; i++)
+                    {
+                        { Html.RenderPartial("AktivnostiPartial", Model.Aktivnosti[i]); }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-12">
+            <input type="button" value="+" id="dodajAktivnost" class="btn btn-primary" />
+        </div>
+    </div>
+    <br />
+
+    <div class=" col-md-12">
+        <div class="okvirPodnaslova">
+            <hr class="thick okvirPodnaslova" />
+            <h4 style="color: #FFFFFF"> &nbsp; FINANCIRANJE, USKLAĐENOST</h4>
+
+            <hr class="thick okvirPodnaslova" />
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        <div class="col-md-12">
+            <table id="tableFinanciranja" class="table">
+                <tbody>
+                    @for (int i = 0; i < Model.Financiranja.Count; i++)
+                    {
+                        { Html.RenderPartial("FinanciranjaPartial", Model.Financiranja[i]); }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="col-md-12">
+            <input type="button" value="+" id="dodajFinanciranje" class="btn btn-primary" />
+        </div>
+    </div>
+    <br />
+
+    <div class=" col-md-12">
+        <div class="okvirPodnaslova">
+            <hr class="thick okvirPodnaslova" />
+            <h4 style="color: #FFFFFF"> &nbsp; DIONICI</h4>
+
+            <hr class="thick okvirPodnaslova" />
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        <div class="col-md-12">
+            <table id="tableDionici" class="table">
+                <tbody>
+                    @for (int i = 0; i < Model.Dionici.Count; i++)
+                    {
+                        { Html.RenderPartial("DioniciPartial", Model.Dionici[i]); }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="col-md-12">
+            <input type="button" value="+" id="dodajDionika" class="btn btn-primary" />
+        </div>
+    </div>
+    <br />
+
+    <div class=" col-md-12">
+        <div class="okvirPodnaslova">
+            <hr class="thick okvirPodnaslova" />
+            <h4 style="color: #FFFFFF"> &nbsp; POKAZATELJI</h4>
+
+            <hr class="thick okvirPodnaslova" />
+        </div>
+    </div>
+
+    <div class="form-group col-md-12">
+        <div class="col-md-12">
+            <table id="tablePokazatelji" class="table">
+                <tbody>
+                    @for (int i = 0; i < Model.Pokazatelji.Count; i++)
+                    {
+                        { Html.RenderPartial("PokazateljiPartial", Model.Pokazatelji[i]); }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <hr />
+        <div class="col-md-12">
+            <input type="button" value="+" id="dodajPokazatelja" class="btn btn-primary" />
+        </div>
+    </div>
+    <br />
+
+    <div class=" col-md-12">
+        <div style="background-color: #EF7215 ">
+            <hr class="thick" style="color: #EF7215 " />
+            <h4 style="color: #FFFFFF"> &nbsp; KONTAKT OSOBA</h4>
+
+            <hr class="thick" style="color: #EF7215 " />
+        </div>
+    </div>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.Ime, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kontakt.Ime, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kontakt.Ime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.Prezime, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kontakt.Prezime, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kontakt.Prezime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.Organizacija.Naziv, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kontakt.Organizacija.Naziv, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kontakt.Organizacija.Naziv, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.Organizacija.Adresa, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kontakt.Organizacija.Adresa, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kontakt.Organizacija.Adresa, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.Organizacija.Mjesto, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kontakt.Organizacija.Mjesto, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kontakt.Organizacija.Mjesto, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.Organizacija.Drzava, "Država", htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.Kontakt.Organizacija.Drzava, new[] { new SelectListItem() { Text = "Hrvatska", Value = "Hrvatska" } }, htmlAttributes: new { @class = "form-control narrow" })
+            @Html.ValidationMessageFor(model => model.Kontakt.Organizacija.Drzava, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.Email, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kontakt.Email, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kontakt.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Kontakt.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-2 required" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Kontakt.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.Kontakt.BrojTelefona, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <hr class="thick" />
+
+    <div class="form-group col-md-12">
+        <div class="col-md-offset-2 col-md-6">
+            @if (User.Identity.IsAuthenticated && Model.Upisano != true || User.Identity.IsAuthenticated && Model.Ispravno == false && Model.Upisano != true)
+            {
+                <input type="submit" name="submitButton" value="Spremi" class="btn btn-success btn-lg" style="background-color: #EF7215 !important" />
+            }
+            @if (User.Identity.IsAuthenticated && Model.Upisano != true || User.Identity.IsAuthenticated && Model.Ispravno == false && Model.Upisano == true)
+            {
+                <input type="submit" name="submitButton" value="Pošalji" class="btn btn-success btn-lg" />
+            }
+            </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Natrag na popis", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

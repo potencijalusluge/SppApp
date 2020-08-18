@@ -1,0 +1,34 @@
+﻿@using SppApp.Helpers
+@model  SppApp.Models.Dionici
+
+<tr class="tableData">
+    @using (Html.BeginCollectionItem("DioniciLista"))
+    {
+
+        <td>
+            @Html.LabelFor(model => model, "Naziv subjekta")<br />
+            @Html.TextAreaFor(model => model.Naziv, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+
+        </td>
+        <td>
+            @Html.LabelFor(model => model.Vrsta)<br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Nositelj projekta") Nositelj projekta <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Partner") Partner <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Ciljana skupina") Ciljana skupina <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Korisnik") Korisnik <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Investitor") Investitor <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Sunositelj") Sunositelj <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Koordinator") Koordinator <br />
+            @Html.ValidationMessageFor(model => model.Vrsta, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @Html.LabelFor(model => model.Uloga, "Uloga na projektu")<br />
+            @Html.TextAreaFor(model => model.Uloga, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.Uloga, "", new { @class = "text-danger" })
+        </td>
+
+
+    }
+</tr>
+<tr><td><td></td><td></td></tr>
