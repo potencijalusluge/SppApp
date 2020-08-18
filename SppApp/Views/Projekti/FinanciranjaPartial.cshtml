@@ -1,0 +1,45 @@
+﻿@using SppApp.Helpers
+@model  SppApp.Models.Financiranja
+
+<tr class="tableData">
+    @using (Html.BeginCollectionItem("FinanciranjaLista"))
+    {
+
+        <td>
+            @Html.LabelFor(model => model.NazivIzvora, "Naziv izvora")<br />
+            @Html.TextAreaFor(model => model.NazivIzvora, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.NazivIzvora, "", new { @class = "text-danger" })
+
+        </td>
+        <td>
+            @Html.LabelFor(model => model.IzvorFinanciranja)<br />
+            @Html.RadioButtonFor(model => model.IzvorFinanciranja, "EU") EU <br />
+            @Html.RadioButtonFor(model => model.IzvorFinanciranja, "Vlastiti izvori") Vlatiti izvori <br />
+            @Html.RadioButtonFor(model => model.IzvorFinanciranja, "Ostalo") Ostalo <br />
+            @Html.ValidationMessageFor(model => model.IzvorFinanciranja, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(false); }
+            @Html.LabelFor(model => model.IznosHRK, "Iznos (HRK)")<br />
+            @Html.EditorFor(model => model.IznosHRK, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.IznosHRK, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @Html.LabelFor(model => model.IznosEUR, "Iznos (EUR)")<br />
+            @Html.EditorFor(model => model.IznosEUR, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.IznosEUR, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.IzvorSufinanciranja)<br />
+            @Html.RadioButtonFor(model => model.IzvorSufinanciranja, "Vlastita sredstva") Vlastita sredstva <br />
+            @Html.RadioButtonFor(model => model.IzvorSufinanciranja, "Kreditna sredstva poslovnih banaka") Kreditna sredstva poslovnih banaka <br />
+            @Html.RadioButtonFor(model => model.IzvorSufinanciranja, "Državni proračun") Državni proračun <br />
+            @Html.RadioButtonFor(model => model.IzvorSufinanciranja, "Ostalo") Ostalo <br />
+            @Html.ValidationMessageFor(model => model.IzvorSufinanciranja, "", new { @class = "text-danger" })
+        </td>
+
+
+    }
+</tr>
+<tr><td></td><td></td><td></td><td></td><td></td></tr>

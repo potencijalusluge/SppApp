@@ -3,193 +3,110 @@
 @{
     ViewBag.Title = "Index";
 }
+<style>
+    li.navbar-projekti > a {
+        color: #898989 !important;
+        background-color: #FFF !important;
+    }
 
-<h2>Index</h2>
+        li.navbar-projekti > a:hover {
+            /*color: #CEE0C1 !important;*/
+            color: #FFF !important;
+            background-color: #898989 !important;
+            /*background-color: #FFF !important;*/
+        }
+</style>
+<h2>Popis projekata</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Dodaj novi", "Create")
 </p>
-<table class="table">
+<table class="table col-md-12">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Kontakt.Ime)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Organizacija.Naziv)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Naziv)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Lokacija)
+            @Html.DisplayName("Naziv nositelja projekta")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StatusProjekta)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Pocetak)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VrstaProjekta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProglasenStrateskim)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Faza)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.VlasnickaDokumentacija)
+            @Html.DisplayNameFor(model => model.Kontakt.Ime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StudijaIzvodivosti)
+            @Html.DisplayNameFor(model => model.Kontakt.Prezime)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.InvesticijskaStudija)
+            @Html.DisplayNameFor(model => model.Kontakt.Organizacija.Naziv)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IdejnoRjesenje)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LokacijskaDozvola)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UpravnoPodrucje)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Sektor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Opis)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rezultati)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OpciSpecificniCiljevi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kraj)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IzvorFinanciranja)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProcijenjenaVrijednost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProcijenjeniTroskoviPripreme)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProcijenjeniTroskoviProvedbe)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Upisano)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ispravno)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DatumPredaje)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UserId)
-        </th>
+        @if (User.IsInRole("Admin"))
+        {
+            <th>
+                @Html.DisplayNameFor(model => model.Ispravno)
+            </th>
+        }
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kontakt.Ime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Organizacija.Naziv)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Naziv)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Lokacija)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StatusProjekta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pocetak)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VrstaProjekta)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProglasenStrateskim)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Faza)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.VlasnickaDokumentacija)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StudijaIzvodivosti)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InvesticijskaStudija)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdejnoRjesenje)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LokacijskaDozvola)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UpravnoPodrucje)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Sektor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Opis)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rezultati)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OpciSpecificniCiljevi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kraj)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IzvorFinanciranja)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProcijenjenaVrijednost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProcijenjeniTroskoviPripreme)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProcijenjeniTroskoviProvedbe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Upisano)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ispravno)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DatumPredaje)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserId)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        if (item.UserId == ViewBag.CurrentUserID || User.IsInRole("Admin") && item.Upisano==true)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Organizacija.Naziv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StatusProjekta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Faza)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kontakt.Ime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kontakt.Prezime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kontakt.Organizacija.Naziv)
+                </td>
+                @if (User.IsInRole("Admin"))
+                {                    
+                    <td>
+                        @if (item.Ispravno != null)
+                        {
+                            @Html.DisplayFor(modelItem => item.Ispravno)
+                        }
+                    </td>
+                }
+                <td>
+                <td>
+                    @Html.ActionLink("Detalji", "Details", new { id = item.Id })
+                    |
+                    @Html.ActionLink("PDF", "PrintPartialViewToPdf", new { id = item.Id })
+
+                    @if (User.IsInRole("Admin") || item.Upisano != true || item.Ispravno == false)
+                    {
+                        <span>|</span>
+                        @Html.ActionLink("Uredi", "Edit", new { id = item.Id })
+                    }
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <span>|</span>
+                        @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
+                    }
+                </td>
+            </tr>
+        }
+    }
 
 </table>
