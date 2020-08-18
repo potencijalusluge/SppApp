@@ -267,6 +267,10 @@
     <Content Include="Views\Projekti\Details.cshtml" />
     <Content Include="Views\Projekti\Edit.cshtml" />
     <Content Include="Views\Projekti\Index.cshtml" />
+    <Content Include="Views\Projekti\AktivnostiPartial.cshtml" />
+    <Content Include="Views\Projekti\DioniciPartial.cshtml" />
+    <Content Include="Views\Projekti\FinanciranjaPartial.cshtml" />
+    <Content Include="Views\Projekti\PokazateljiPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
