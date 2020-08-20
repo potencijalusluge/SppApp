@@ -117,7 +117,7 @@ namespace SppApp.Controllers
             {
                 projekti.Lokacija = form["lokacija-input"];
             }
-            if (dozvolaDatoteke.Any(x => x!= null))
+            if (dozvolaDatoteke.Any(x => x != null))
             {
                 foreach (var itemDozvole in dozvolaDatoteke)
                 {
@@ -130,7 +130,7 @@ namespace SppApp.Controllers
 
                         dozvola.Naziv = itemDozvole.FileName;
 
-                        dozvola.Putanja = Path.Combine(Server.MapPath("~/Files/") + FileName); 
+                        dozvola.Putanja = Path.Combine(Server.MapPath("~/Files/") + FileName);
 
                         dozvola.Datoteka = itemDozvole;
                         projekti.GradjevinskeDozvole.Add(dozvola);
@@ -246,14 +246,14 @@ namespace SppApp.Controllers
 
             string user = User.Identity.GetUserId();
 
-            if (user!=null)
+            if (user != null)
             {
                 projekti.UserId = user;
                 projekti.Kontakt.UserId = user;
                 projekti.Organizacija.UserId = user;
                 projekti.Kontakt.Organizacija.UserId = user;
-            }            
-            
+            }
+
             try
             {
                 if (ModelState.IsValid)
@@ -263,7 +263,7 @@ namespace SppApp.Controllers
                     if (submitButton.Equals("Pošalji"))
                     {
                         projekti.DatumPredaje = DateTime.Now;
-                        projekti.Upisano = true; 
+                        projekti.Upisano = true;
                         db.Projekti.Add(projekti);
                         db.SaveChanges();
 
@@ -277,7 +277,7 @@ namespace SppApp.Controllers
                         db.SaveChanges();
 
                         return RedirectToAction("Index", "Projekti", new { id = projekti.Id });
-                    }       
+                    }
 
                 }
             }
@@ -316,13 +316,13 @@ namespace SppApp.Controllers
             {
                 return HttpNotFound();
             }
-            
-            if (projekti.Lokacija != "Grad" && projekti.Lokacija !="Općina")
+
+            if (projekti.Lokacija != "Grad" && projekti.Lokacija != "Općina")
             {
                 ViewBag.Lokacija = projekti.Lokacija;
             }
             ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekti.KontaktId);
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);            
+            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);
             return View(projekti);
         }
 
@@ -387,6 +387,23 @@ namespace SppApp.Controllers
             List<OstalaDokumentacija> lsOstalaDokumentacija = db.OstalaDokumentacija.Where(x => x.ProjektId == projekt.Id).ToList();
             List<int> lsOstalaDokumentacijaIDs = lsOstalaDokumentacija.Select(x => x.Id).ToList();
             projekt.OstalaDokumentacija = lsOstalaDokumentacija;
+
+            foreach (var itemDozvole in lsGradjevinskeDozvole)
+            {
+                if (System.IO.File.Exists(itemDozvole.Putanja))
+                {
+                    System.IO.File.Delete(itemDozvole.Putanja);
+                }
+            }
+
+            foreach (var itemDokumentacija in lsOstalaDokumentacija)
+            {
+                if (System.IO.File.Exists(itemDokumentacija.Putanja))
+                {
+                    System.IO.File.Delete(itemDokumentacija.Putanja);
+                }
+            }
+
 
             db.Projekti.Remove(projekt);
             db.SaveChanges();
@@ -484,7 +501,7 @@ namespace SppApp.Controllers
 
                 return File(putanja, "application/force-download", FileName.Substring(15));
             }
-            return RedirectToAction("Details/"+ idModela);
+            return RedirectToAction(idModela);
         }
     }
 }
