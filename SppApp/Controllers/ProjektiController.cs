@@ -474,6 +474,13 @@ namespace SppApp.Controllers
                 ViewBag.Message = "Greška kod spremanja datoteke!";
                 return View();
             }
-        }        
+        }
+
+        public FileResult Download(string putanja)
+        {
+            string FileName = Path.GetFileName(putanja);
+
+            return File(putanja, "application/force-download", FileName.Substring(15));
+        }
     }
 }

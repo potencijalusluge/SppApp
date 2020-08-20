@@ -21,7 +21,7 @@ namespace SppApp.Helpers
             message.ToRecipients.Add("adrijana.jurilj@vpc.hr");
 
             //To do: Uncomment this
-            //message.SendAndSaveCopy();
+            message.SendAndSaveCopy();
         }
         
         public static void GeneratePDF()
