@@ -16,6 +16,8 @@ namespace SppApp.Models
 
         [Display(Name = "Građevinska dozvola")]
         [StringLength(500)]
+        public string Naziv { get; set; }
+        
         public string Putanja { get; set; }
 
         public int? ProjektId { get; set; }

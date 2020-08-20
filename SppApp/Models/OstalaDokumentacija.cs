@@ -15,6 +15,8 @@ namespace SppApp.Models
 
         [Display(Name = "Ostala dokumentacija")]
         [StringLength(500)]
+        public string Naziv { get; set; }
+
         public string Putanja { get; set; }
 
         [NotMapped]

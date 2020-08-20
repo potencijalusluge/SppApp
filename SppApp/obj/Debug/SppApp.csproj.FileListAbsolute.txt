@@ -115,3 +115,4 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Microsoft.Exchange.WebServices.
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Microsoft.Exchange.WebServices.Auth.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.InitialMigration.resources
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.csproj.GenerateResource.cache
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.UpdatFileTales.resources

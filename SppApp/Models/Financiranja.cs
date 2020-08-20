@@ -25,7 +25,7 @@ namespace SppApp.Models
         [Display(Name = "Iznos (HRK)")]
         public decimal? IznosHRK { get; set; }
 
-        [RegularExpression(@"^\d+\,\d{0,2}$")]
+        [DataType(DataType.Currency)]
         [Display(Name = "Iznos (EUR)")]
         public decimal? IznosEUR { get; set; }
 

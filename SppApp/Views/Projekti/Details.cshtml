@@ -234,7 +234,7 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => Model.GradjevinskeDozvole[i].Putanja)
+                    @Html.DisplayFor(model => Model.OstalaDokumentacija[i].Putanja)
                 </dd>
 
                 <dt>
@@ -521,16 +521,18 @@
             </dd>
         }
 
-
-        <dt></dt>
-        <dd>&nbsp;</dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.DatumPredaje)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.DatumPredaje)
-        </dd>
-    </dl>
+        @if (Model.DatumPredaje != null)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatumPredaje)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DatumPredaje)
+            </dd>
+        }
+        </dl>
 </div>
 <p>
     @*@if (User.IsInRole("Admin") || Model.Ispravno == false)
