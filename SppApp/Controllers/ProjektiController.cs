@@ -476,11 +476,15 @@ namespace SppApp.Controllers
             }
         }
 
-        public FileResult Download(string putanja)
+        public ActionResult Download(string putanja, string idModela)
         {
-            string FileName = Path.GetFileName(putanja);
+            if (System.IO.File.Exists(putanja))
+            {
+                string FileName = Path.GetFileName(putanja);
 
-            return File(putanja, "application/force-download", FileName.Substring(15));
+                return File(putanja, "application/force-download", FileName.Substring(15));
+            }
+            return RedirectToAction("Details/"+ idModela);
         }
     }
 }

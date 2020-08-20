@@ -213,7 +213,7 @@
                 </dt>
 
                 <dd>
-                    @Html.DisplayFor(model => Model.GradjevinskeDozvole[i].Putanja)
+                    @Html.ActionLink(Model.GradjevinskeDozvole[i].Naziv, "Download", "Projekti", new { putanja = Model.GradjevinskeDozvole[i].Putanja }, null)
                 </dd>
 
 
@@ -376,7 +376,14 @@
                             <td>@Html.DisplayFor(model => Model.Financiranja[i].NazivIzvora)</td>
                             <td>@Html.DisplayFor(model => Model.Financiranja[i].IzvorFinanciranja)</td>
                             <td>@Html.DisplayFor(model => Model.Financiranja[i].IznosHRK)</td>
-                            <td>@Html.DisplayFor(model => Model.Financiranja[i].IznosEUR) €</td>
+                            <td>
+                                @Model.Financiranja[i].IznosEUR
+                                @if (@Model.Financiranja[i].IznosEUR!=null)
+                                {
+                                <span>€</span>
+                                }
+
+                            </td>
                             <td>@Html.DisplayFor(model => Model.Financiranja[i].IzvorSufinanciranja)</td>
                         </tr>
                     }
@@ -500,16 +507,6 @@
         <dd>
             @Html.DisplayFor(model => model.Kontakt.BrojTelefona)
         </dd>
-        @if (Model.Upisano != null)
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.Upisano)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Upisano)
-            </dd>
-        }
         @if (Model.Ispravno != null)
         {
             <dt>
