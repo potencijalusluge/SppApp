@@ -13,19 +13,11 @@ using SppApp.Models;
 using SppApp.Helpers;
 using System.Data.Entity.Validation;
 using Rotativa;
-using Microsoft.Extensions.Hosting;
 
 namespace SppApp.Controllers
 {
     public class ProjektiController : Controller
     {
-        private readonly IHostingEnvironment _env;
-
-        public ProjektiController(IHostingEnvironment env)
-        {
-            _env = env;
-        }
-
         private ApplicationDbContext db = new ApplicationDbContext();
 
         [Authorize]
