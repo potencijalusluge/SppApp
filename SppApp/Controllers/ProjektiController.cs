@@ -128,6 +128,8 @@ namespace SppApp.Controllers
                         string FileExtension = Path.GetExtension(itemDozvole.FileName);
                         FileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "-" + FileName.Trim() + FileExtension;
 
+                        dozvola.Naziv = itemDozvole.FileName;
+
                         dozvola.Putanja = Path.Combine(Server.MapPath("~/Files/") + FileName); 
 
                         dozvola.Datoteka = itemDozvole;
@@ -148,6 +150,8 @@ namespace SppApp.Controllers
                         string FileName = Path.GetFileNameWithoutExtension(itemOstale.FileName);
                         string FileExtension = Path.GetExtension(itemOstale.FileName);
                         FileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "-" + FileName.Trim() + FileExtension;
+
+                        ostala.Naziv = itemOstale.FileName;
 
                         ostala.Putanja = Path.Combine(Server.MapPath("~/Files/") + FileName);
 
@@ -272,7 +276,7 @@ namespace SppApp.Controllers
                         db.Projekti.Add(projekti);
                         db.SaveChanges();
 
-                        return RedirectToAction("Edit", "Projekti", new { id = projekti.Id });
+                        return RedirectToAction("Index", "Projekti", new { id = projekti.Id });
                     }       
 
                 }
@@ -298,7 +302,7 @@ namespace SppApp.Controllers
             return View(projekti);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         // GET: Projekti/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -307,16 +311,22 @@ namespace SppApp.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Projekti projekti = db.Projekti.Find(id);
+
             if (projekti == null)
             {
                 return HttpNotFound();
             }
+            
+            if (projekti.Lokacija != "Grad" && projekti.Lokacija !="Općina")
+            {
+                ViewBag.Lokacija = projekti.Lokacija;
+            }
             ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekti.KontaktId);
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);
+            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);            
             return View(projekti);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         // POST: Projekti/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -335,7 +345,7 @@ namespace SppApp.Controllers
             return View(projekti);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         // GET: Projekti/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -351,7 +361,7 @@ namespace SppApp.Controllers
             return View(projekti);
         }
 
-        [Authorize(Roles = "Admin")]
+        [Authorize]
         // POST: Projekti/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -464,6 +474,6 @@ namespace SppApp.Controllers
                 ViewBag.Message = "Greška kod spremanja datoteke!";
                 return View();
             }
-        }
+        }        
     }
 }

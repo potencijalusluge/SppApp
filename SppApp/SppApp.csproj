@@ -189,6 +189,10 @@
     <Compile Include="Migrations\202008180611269_InitialMigration.Designer.cs">
       <DependentUpon>202008180611269_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008200345264_UpdatFileTales.cs" />
+    <Compile Include="Migrations\202008200345264_UpdatFileTales.Designer.cs">
+      <DependentUpon>202008200345264_UpdatFileTales.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aktivnosti.cs" />
@@ -297,6 +301,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202008180611269_InitialMigration.resx">
       <DependentUpon>202008180611269_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008200345264_UpdatFileTales.resx">
+      <DependentUpon>202008200345264_UpdatFileTales.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
