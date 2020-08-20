@@ -99,7 +99,7 @@
                         <span>|</span>
                         @Html.ActionLink("Uredi", "Edit", new { id = item.Id })
                     }
-                    @if (User.IsInRole("Admin"))
+                    @if (User.IsInRole("Admin") || item.Upisano != true)
                     {
                         <span>|</span>
                         @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
