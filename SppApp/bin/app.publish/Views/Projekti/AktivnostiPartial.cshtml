@@ -45,7 +45,15 @@
         <td>
             @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.DatumZavrsetka, "Očekivani datum završetka")<br />
-            @Html.EditorFor(model => model.DatumZavrsetka, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @if (Model.DatumZavrsetka != null)
+            {
+                DateTime NewDatum = (DateTime)Model.DatumZavrsetka;
+                @Html.EditorFor(model => model.DatumZavrsetka, new { htmlAttributes = new { @class = "form-control", @Value = NewDatum.ToString("yyyy-MM-dd") } })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.DatumZavrsetka, new { htmlAttributes = new { @class = "form-control"} })
+            }<br />
             @Html.ValidationMessageFor(model => model.DatumZavrsetka, "", new { @class = "text-danger" })
         </td>
 

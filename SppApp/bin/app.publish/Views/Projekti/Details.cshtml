@@ -213,7 +213,7 @@
                 </dt>
 
                 <dd>
-                    @Html.ActionLink(Model.GradjevinskeDozvole[i].Naziv, "Download", "Projekti", new { putanja = Model.GradjevinskeDozvole[i].Putanja, idModela = Model.Id }, null)
+                    @Html.ActionLink(Model.GradjevinskeDozvole[i].Naziv, "Download", "Projekti", new { putanja = Model.GradjevinskeDozvole[i].Putanja, idModela = "Details/" + Model.Id }, null)
                 </dd>
 
 
@@ -234,7 +234,7 @@
                 </dt>
 
                 <dd>
-                    @Html.ActionLink(Model.OstalaDokumentacija[i].Naziv, "Download", "Projekti", new { putanja = Model.OstalaDokumentacija[i].Putanja, idModela = Model.Id }, null)
+                    @Html.ActionLink(Model.OstalaDokumentacija[i].Naziv, "Download", "Projekti", new { putanja = Model.OstalaDokumentacija[i].Putanja, idModela = "Details/" + Model.Id }, null)
                 </dd>
 
                 <dt>
