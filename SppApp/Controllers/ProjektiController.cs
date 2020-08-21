@@ -321,6 +321,7 @@ namespace SppApp.Controllers
             {
                 ViewBag.Lokacija = projekti.Lokacija;
             }
+           
             ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekti.KontaktId);
             ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);
             return View(projekti);
@@ -332,8 +333,12 @@ namespace SppApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Naziv,Lokacija,OrganizacijaId,StatusProjekta,Pocetak,VrstaProjekta,ProglasenStrateskim,Faza,VlasnickaDokumentacija,StudijaIzvodivosti,InvesticijskaStudija,IdejnoRjesenje,LokacijskaDozvola,UpravnoPodrucje,Sektor,Opis,Rezultati,OpciSpecificniCiljevi,Kraj,IzvorFinanciranja,ProcijenjenaVrijednost,ProcijenjeniTroskoviPripreme,ProcijenjeniTroskoviProvedbe,KontaktId,Upisano,Ispravno")] Projekti projekti)
+        public ActionResult Edit(Projekti projekti, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
         {
+            if (submitButton.Equals("Odustani"))
+            {
+                return RedirectToAction("Index", "Projekti");
+            }
             if (ModelState.IsValid)
             {
                 db.Entry(projekti).State = EntityState.Modified;

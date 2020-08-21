@@ -617,11 +617,11 @@
 
         <div class="form-group col-md-12">
             <div class="col-md-offset-2 col-md-6">
+                <input type="submit" name="submitButton" value="Pošalji" class="btn btn-success btn-lg" />
                 @if (User.Identity.IsAuthenticated && Model.Upisano != true)
                 {
-                    <input type="submit" name="submitButton" value="Spremi" class="btn btn-success btn-lg" style="background-color: #EF7215 !important" />
+                    <input type="submit" name="submitButton" value="Spremi" class="btn btn-success btn-lg" style="background-color: #EF7215 !important; border-color: #EF7215 !important" />
                 }
-                <input type="submit" name="submitButton" value="Pošalji" class="btn btn-success btn-lg" />
             </div>
         </div>
     </div>
