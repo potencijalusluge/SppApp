@@ -5,7 +5,7 @@
 <h2>Detalji projekta</h2>
 
 <div>
-    @if (ViewBag.Zaprimljena != null)
+    @if (ViewBag.Zaprimljena != null && Model.Upisano == true)
     {
         <h4 style="color: #EF7215 ">@ViewBag.Zaprimljena</h4>
     }

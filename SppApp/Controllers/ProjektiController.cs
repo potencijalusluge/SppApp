@@ -111,174 +111,48 @@ namespace SppApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Projekti projekti, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
+        public ActionResult Create(Projekti projekt, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
         {
-            if (!form["lokacija-input"].IsNullOrWhiteSpace())
-            {
-                projekti.Lokacija = form["lokacija-input"];
-            }
-            if (dozvolaDatoteke.Any(x => x != null))
-            {
-                foreach (var itemDozvole in dozvolaDatoteke)
-                {
-                    if (itemDozvole != null)
-                    {
-                        GradjevinskeDozvole dozvola = new GradjevinskeDozvole();
-                        string FileName = Path.GetFileNameWithoutExtension(itemDozvole.FileName);
-                        string FileExtension = Path.GetExtension(itemDozvole.FileName);
-                        FileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "-" + FileName.Trim() + FileExtension;
+            projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
 
-                        dozvola.Naziv = itemDozvole.FileName;
+            projekt = HelperMethods.DodajUsera(projekt, User.Identity.GetUserId());
 
-                        dozvola.Putanja = Path.Combine(Server.MapPath("~/Files/") + FileName);
+            projekt = HelperMethods.DodajAktivnosti(projekt, form);
 
-                        dozvola.Datoteka = itemDozvole;
-                        projekti.GradjevinskeDozvole.Add(dozvola);
+            projekt = HelperMethods.DodajFinanciranja(projekt, form);
 
-                        dozvola.Datoteka.SaveAs(dozvola.Putanja);
+            projekt = HelperMethods.DodajDionike(projekt, form);
 
-                    }
-                }
-            }
-            if (ostaleDatoteke.Any(x => x != null))
-            {
-                foreach (var itemOstale in ostaleDatoteke)
-                {
-                    if (itemOstale != null)
-                    {
-                        OstalaDokumentacija ostala = new OstalaDokumentacija();
-                        string FileName = Path.GetFileNameWithoutExtension(itemOstale.FileName);
-                        string FileExtension = Path.GetExtension(itemOstale.FileName);
-                        FileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "-" + FileName.Trim() + FileExtension;
-
-                        ostala.Naziv = itemOstale.FileName;
-
-                        ostala.Putanja = Path.Combine(Server.MapPath("~/Files/") + FileName);
-
-                        ostala.Datoteka = itemOstale;
-                        projekti.OstalaDokumentacija.Add(ostala);
-
-                        ostala.Datoteka.SaveAs(ostala.Putanja);
-                    }
-                }
-            }
-            List<string> lsAktivnostiOpis = form.AllKeys.Where(x => x.StartsWith("AktivnostiLista[") && x.EndsWith("].Opis")).Distinct().ToList();
-            foreach (var opis in lsAktivnostiOpis)
-            {
-                if (!form[opis].IsNullOrWhiteSpace())
-                {
-                    string sKlasa = opis.Replace("Opis", "");
-                    Aktivnosti aktivnost = new Aktivnosti();
-                    aktivnost.Opis = form[opis];
-                    aktivnost.Vrsta = form[sKlasa + "Vrsta"];
-                    aktivnost.JedinicaMjere = form[sKlasa + "JedinicaMjere"];
-                    if (!form[sKlasa + "BrojJedinica"].IsNullOrWhiteSpace())
-                    {
-                        aktivnost.BrojJedinica = Decimal.Parse(form[sKlasa + "BrojJedinica"]);
-                    }
-                    if (!form[sKlasa + "JedinicnaCijena"].IsNullOrWhiteSpace())
-                    {
-                        aktivnost.JedinicnaCijena = Decimal.Parse(form[sKlasa + "JedinicnaCijena"]);
-                    }
-                    if (!form[sKlasa + "DatumZavrsetka"].IsNullOrWhiteSpace())
-                    {
-                        aktivnost.DatumZavrsetka = DateTime.Parse(form[sKlasa + "DatumZavrsetka"]);
-                    }
-                    projekti.Aktivnosti.Add(aktivnost);
-                }
-            }
-
-            List<string> lsFinanciranjaNazivIzvora = form.AllKeys.Where(x => x.StartsWith("FinanciranjaLista[") && x.EndsWith("].NazivIzvora")).Distinct().ToList();
-            foreach (var nazivIzvora in lsFinanciranjaNazivIzvora)
-            {
-                if (!form[nazivIzvora].IsNullOrWhiteSpace())
-                {
-                    string sKlasa = nazivIzvora.Replace("NazivIzvora", "");
-                    Financiranja financiranje = new Financiranja();
-                    financiranje.NazivIzvora = form[nazivIzvora];
-                    financiranje.IzvorFinanciranja = form[sKlasa + "IzvorFinanciranja"];
-                    if (!form[sKlasa + "IznosHRK"].IsNullOrWhiteSpace())
-                    {
-                        financiranje.IznosHRK = Decimal.Parse(form[sKlasa + "IznosHRK"]);
-                    }
-                    if (!form[sKlasa + "IznosEUR"].IsNullOrWhiteSpace())
-                    {
-                        financiranje.IznosEUR = Decimal.Parse(form[sKlasa + "IznosEUR"]);
-                    }
-                    financiranje.IzvorSufinanciranja = form[sKlasa + "IzvorSufinanciranja"];
-                    projekti.Financiranja.Add(financiranje);
-                }
-            }
-
-            List<string> lsDioniciNaziv = form.AllKeys.Where(x => x.StartsWith("DioniciLista[") && x.EndsWith("].Naziv")).Distinct().ToList();
-            foreach (var naziv in lsDioniciNaziv)
-            {
-                if (!form[naziv].IsNullOrWhiteSpace())
-                {
-                    string sKlasa = naziv.Replace("Naziv", "");
-                    Dionici dionik = new Dionici();
-                    dionik.Naziv = form[naziv];
-                    dionik.Vrsta = form[sKlasa + "Vrsta"];
-                    dionik.Uloga = form[sKlasa + "Uloga"];
-
-                    projekti.Dionici.Add(dionik);
-                }
-            }
-
-            List<string> lsPokazateljiNaziv = form.AllKeys.Where(x => x.StartsWith("PokazateljiLista[") && x.EndsWith("].Naziv")).Distinct().ToList();
-            foreach (var pokazateljNaziv in lsPokazateljiNaziv)
-            {
-                if (!form[pokazateljNaziv].IsNullOrWhiteSpace())
-                {
-                    string sKlasa = pokazateljNaziv.Replace("Naziv", "");
-                    Pokazatelji pokazatelj = new Pokazatelji();
-                    pokazatelj.Naziv = form[pokazateljNaziv];
-                    pokazatelj.JedinicaMjere = form[sKlasa + "JedinicaMjere"];
-                    if (!form[sKlasa + "BrojJedinica"].IsNullOrWhiteSpace())
-                    {
-                        pokazatelj.BrojJedinica = Decimal.Parse(form[sKlasa + "BrojJedinica"]);
-                    }
-                    pokazatelj.NacinOstvarenja = form[sKlasa + "NacinOstvarenja"];
-
-                    projekti.Pokazatelji.Add(pokazatelj);
-                }
-            }
-
-            string user = User.Identity.GetUserId();
-
-            if (user != null)
-            {
-                projekti.UserId = user;
-                projekti.Kontakt.UserId = user;
-                projekti.Organizacija.UserId = user;
-                projekti.Kontakt.Organizacija.UserId = user;
-            }
+            projekt = HelperMethods.DodajPokazatelje(projekt, form);            
 
             try
             {
                 if (ModelState.IsValid)
                 {
-                    Session["projektID"] = projekti.Id;
+                    projekt = HelperMethods.DodajGradjevinskeDozvole(projekt, dozvolaDatoteke);
+
+                    projekt = HelperMethods.DodajOstaluDokumentaciju(projekt, ostaleDatoteke);
+
+                    Session["projektID"] = projekt.Id;
 
                     if (submitButton.Equals("Pošalji"))
                     {
-                        projekti.DatumPredaje = DateTime.Now;
-                        projekti.Upisano = true;
-                        db.Projekti.Add(projekti);
+                        projekt.DatumPredaje = DateTime.Now;
+                        projekt.Upisano = true;
+                        db.Projekti.Add(projekt);
                         db.SaveChanges();
 
-                        HelperMethods.SendEmailNotification(projekti);
+                        HelperMethods.SendEmailNotification(projekt);
 
-                        return RedirectToAction("Details", "Projekti", new { id = projekti.Id });
+                        return RedirectToAction("Details", "Projekti", new { id = projekt.Id });
                     }
                     else
                     {
-                        db.Projekti.Add(projekti);
+                        db.Projekti.Add(projekt);
                         db.SaveChanges();
 
-                        return RedirectToAction("Index", "Projekti", new { id = projekti.Id });
-                    }
-
+                        return RedirectToAction("Index");
+                    }                    
                 }
             }
             catch (DbEntityValidationException e)
@@ -297,9 +171,9 @@ namespace SppApp.Controllers
             }
 
 
-            ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekti.KontaktId);
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);
-            return View(projekti);
+            ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
+            return View(projekt);
         }
 
         [Authorize]
@@ -333,21 +207,56 @@ namespace SppApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Projekti projekti, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
+        public ActionResult Edit(Projekti projekt, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
         {
+            projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
+            if (!form["UserId"].IsNullOrWhiteSpace())
+            {
+                projekt = HelperMethods.DodajUsera(projekt, form["UserId"]);
+            }
+
+            projekt = HelperMethods.DodajAktivnosti(projekt, form);
+
+            projekt = HelperMethods.DodajFinanciranja(projekt, form);
+
+            projekt = HelperMethods.DodajDionike(projekt, form);
+
+            projekt = HelperMethods.DodajPokazatelje(projekt, form);
+
             if (submitButton.Equals("Odustani"))
             {
                 return RedirectToAction("Index", "Projekti");
             }
             if (ModelState.IsValid)
             {
-                db.Entry(projekti).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                projekt = HelperMethods.DodajGradjevinskeDozvole(projekt, dozvolaDatoteke);
+
+                projekt = HelperMethods.DodajOstaluDokumentaciju(projekt, ostaleDatoteke);
+
+                Session["projektID"] = projekt.Id;
+
+                if (submitButton.Equals("Pošalji"))
+                {
+                    projekt.DatumPredaje = DateTime.Now;
+                    projekt.Upisano = true;
+                    db.Entry(projekt).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                    HelperMethods.SendEmailNotification(projekt);
+
+                    return RedirectToAction("Details", "Projekti", new { id = projekt.Id });
+                }
+                else
+                {
+                    db.Entry(projekt).State = EntityState.Modified;
+                    db.SaveChanges();
+
+                    return RedirectToAction("Index");
+                }
             }
-            ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekti.KontaktId);
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);
-            return View(projekti);
+            ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
+            return View(projekt);
         }
 
         [Authorize]
