@@ -25,7 +25,7 @@ namespace SppApp.Helpers
             message.ToRecipients.Add("adrijana.jurilj@vpc.hr");
 
             //To do: Uncomment this
-            message.SendAndSaveCopy();
+            //message.SendAndSaveCopy();
         }
 
         public static Projekti DodajCustomLokaciju(Projekti projekt, FormCollection form)
@@ -60,6 +60,11 @@ namespace SppApp.Helpers
                 {
                     string sKlasa = opis.Replace("Opis", "");
                     Aktivnosti aktivnost = new Aktivnosti();
+                    if (form.AllKeys.Contains(sKlasa + "Id"))
+                    {
+                        aktivnost.Id = int.Parse(form[sKlasa + "Id"]);
+                        aktivnost.ProjektId = int.Parse(form[sKlasa + "ProjektId"]);
+                    }
                     aktivnost.Opis = form[opis];
                     aktivnost.Vrsta = form[sKlasa + "Vrsta"];
                     aktivnost.JedinicaMjere = form[sKlasa + "JedinicaMjere"];
@@ -91,6 +96,11 @@ namespace SppApp.Helpers
                 {
                     string sKlasa = nazivIzvora.Replace("NazivIzvora", "");
                     Financiranja financiranje = new Financiranja();
+                    if (form.AllKeys.Contains(sKlasa + "Id"))
+                    {
+                        financiranje.Id = int.Parse(form[sKlasa + "Id"]);
+                        financiranje.ProjektId = int.Parse(form[sKlasa + "ProjektId"]);
+                    }
                     financiranje.NazivIzvora = form[nazivIzvora];
                     financiranje.IzvorFinanciranja = form[sKlasa + "IzvorFinanciranja"];
                     if (!form[sKlasa + "IznosHRK"].IsNullOrWhiteSpace())
@@ -118,6 +128,11 @@ namespace SppApp.Helpers
                 {
                     string sKlasa = naziv.Replace("Naziv", "");
                     Dionici dionik = new Dionici();
+                    if (form.AllKeys.Contains(sKlasa + "Id"))
+                    {
+                        dionik.Id = int.Parse(form[sKlasa + "Id"]);
+                        dionik.ProjektId = int.Parse(form[sKlasa + "ProjektId"]);
+                    }
                     dionik.Naziv = form[naziv];
                     dionik.Vrsta = form[sKlasa + "Vrsta"];
                     dionik.Uloga = form[sKlasa + "Uloga"];
@@ -138,6 +153,11 @@ namespace SppApp.Helpers
                 {
                     string sKlasa = pokazateljNaziv.Replace("Naziv", "");
                     Pokazatelji pokazatelj = new Pokazatelji();
+                    if (form.AllKeys.Contains(sKlasa + "Id"))
+                    {
+                        pokazatelj.Id = int.Parse(form[sKlasa + "Id"]);
+                        pokazatelj.ProjektId = int.Parse(form[sKlasa + "ProjektId"]);
+                    }
                     pokazatelj.Naziv = form[pokazateljNaziv];
                     pokazatelj.JedinicaMjere = form[sKlasa + "JedinicaMjere"];
                     if (!form[sKlasa + "BrojJedinica"].IsNullOrWhiteSpace())

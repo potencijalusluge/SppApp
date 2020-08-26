@@ -239,7 +239,8 @@ namespace SppApp.Controllers
                 {
                     projekt.DatumPredaje = DateTime.Now;
                     projekt.Upisano = true;
-                    db.Entry(projekt).State = EntityState.Modified;
+                    db.Entry(projekt).State = EntityState.Modified;                    
+
                     db.SaveChanges();
 
                     HelperMethods.SendEmailNotification(projekt);

@@ -4,7 +4,11 @@
 <tr class="tableData">
     @using (Html.BeginCollectionItem("DioniciLista"))
     {
-
+        if (Model.Id != 0)
+        {
+            @Html.HiddenFor(model => model.Id);
+            @Html.HiddenFor(model => model.ProjektId);
+        }
         <td>
             @Html.LabelFor(model => model, "Naziv subjekta")<br />
             @Html.TextAreaFor(model => model.Naziv, new { @class = "form-control" })<br />
