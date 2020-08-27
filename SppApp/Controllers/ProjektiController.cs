@@ -123,7 +123,7 @@ namespace SppApp.Controllers
 
             projekt = HelperMethods.DodajDionike(projekt, form);
 
-            projekt = HelperMethods.DodajPokazatelje(projekt, form);            
+            projekt = HelperMethods.DodajPokazatelje(projekt, form);
 
             try
             {
@@ -152,7 +152,7 @@ namespace SppApp.Controllers
                         db.SaveChanges();
 
                         return RedirectToAction("Index");
-                    }                    
+                    }
                 }
             }
             catch (DbEntityValidationException e)
@@ -195,7 +195,7 @@ namespace SppApp.Controllers
             {
                 ViewBag.Lokacija = projekti.Lokacija;
             }
-           
+
             ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekti.KontaktId);
             ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);
             return View(projekti);
@@ -239,7 +239,7 @@ namespace SppApp.Controllers
                 {
                     projekt.DatumPredaje = DateTime.Now;
                     projekt.Upisano = true;
-                    db.Entry(projekt).State = EntityState.Modified;                    
+                    db.Entry(projekt).State = EntityState.Modified;
 
                     db.SaveChanges();
 
@@ -249,7 +249,107 @@ namespace SppApp.Controllers
                 }
                 else
                 {
+                    //var dbProjekt = db.Projekti
+                    //  .Include(x => x.Kontakt)
+                    //  .Include(x => x.Organizacija)
+                    //  .Include(x => x.Organizacija.Kontakt)
+                    //  .Single(c => c.Id == projekt.Id);
+
+                    //db.Entry(dbProjekt).CurrentValues.SetValues(projekt);
+                    //db.Entry(dbProjekt.Kontakt).CurrentValues.SetValues(projekt.Kontakt);
+                    //db.Entry(dbProjekt.Organizacija).CurrentValues.SetValues(projekt.Organizacija);
+                    //db.Entry(dbProjekt.Organizacija.Kontakt).CurrentValues.SetValues(projekt.Organizacija.Kontakt);
+
+                    //db.SaveChanges();
+
                     db.Entry(projekt).State = EntityState.Modified;
+                    db.Entry(projekt.Kontakt).State = EntityState.Modified;
+                    db.Entry(projekt.Organizacija).State = EntityState.Modified;
+                    db.Entry(projekt.Kontakt.Organizacija).State = EntityState.Modified;
+
+                    foreach (var item in projekt.Aktivnosti)
+                    {
+                        if (item.Id != 0)
+                        {
+                            db.Entry(item).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            db.Entry(item).State = EntityState.Added;
+                        }
+                    }
+                    foreach (var item in projekt.Dionici)
+                    {
+                        if (item.Id != 0)
+                        {
+                            db.Entry(item).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            db.Entry(item).State = EntityState.Added;
+                        }
+                    }
+                    foreach (var item in projekt.Financiranja)
+                    {
+                        if (item.Id != 0)
+                        {
+                            db.Entry(item).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            db.Entry(item).State = EntityState.Added;
+                        }
+                    }
+                    foreach (var item in projekt.Pokazatelji)
+                    {
+                        if (item.Id != 0)
+                        {
+                            db.Entry(item).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            db.Entry(item).State = EntityState.Added;
+                        }
+                    }
+
+                    foreach (var item in projekt.GradjevinskeDozvole)
+                    {
+                        if (item.Id != 0)
+                        {
+                            db.Entry(item).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            db.Entry(item).State = EntityState.Added;
+                        }
+                    }
+                    foreach (var item in projekt.OstalaDokumentacija)
+                    {
+                        if (item.Id != 0)
+                        {
+                            db.Entry(item).State = EntityState.Modified;
+                        }
+                        else
+                        {
+                            db.Entry(item).State = EntityState.Added;
+                        }
+                    }
+                    //foreach (var aktivnost in projekt.Aktivnosti.ToList())
+                    //    if (!projekt.Aktivnosti.Any(s => s.Id == aktivnost.Id))
+                    //        db.Aktivnosti.Remove(aktivnost);
+
+                    //foreach (var aktivnost in projekt.Aktivnosti)
+                    //{
+                    //    var dbAktivnost = projekt.Aktivnosti.SingleOrDefault(s => s.Id == aktivnost.Id);
+                    //    if (dbAktivnost != null)
+                    //        // Update subFoos that are in the newFoo.SubFoo collection
+                    //        db.Entry(dbAktivnost).CurrentValues.SetValues(aktivnost);
+                    //    else
+                    //        // Insert subFoos into the database that are not
+                    //        // in the dbFoo.subFoo collection
+                    //        projekt.Aktivnosti.Add(aktivnost);
+                    //}
+
                     db.SaveChanges();
 
                     return RedirectToAction("Index");

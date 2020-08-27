@@ -80,6 +80,8 @@ namespace SppApp.Helpers
                     {
                         aktivnost.DatumZavrsetka = DateTime.Parse(form[sKlasa + "DatumZavrsetka"]);
                     }
+                    aktivnost.ProjektId = projekt.Id;
+
                     projekt.Aktivnosti.Add(aktivnost);
                 }
             }
@@ -112,6 +114,8 @@ namespace SppApp.Helpers
                         financiranje.IznosEUR = Decimal.Parse(form[sKlasa + "IznosEUR"]);
                     }
                     financiranje.IzvorSufinanciranja = form[sKlasa + "IzvorSufinanciranja"];
+                    financiranje.ProjektId = projekt.Id;
+
                     projekt.Financiranja.Add(financiranje);
                 }
             }
@@ -136,6 +140,7 @@ namespace SppApp.Helpers
                     dionik.Naziv = form[naziv];
                     dionik.Vrsta = form[sKlasa + "Vrsta"];
                     dionik.Uloga = form[sKlasa + "Uloga"];
+                    dionik.ProjektId = projekt.Id;
 
                     projekt.Dionici.Add(dionik);
                 }
@@ -165,6 +170,7 @@ namespace SppApp.Helpers
                         pokazatelj.BrojJedinica = Decimal.Parse(form[sKlasa + "BrojJedinica"]);
                     }
                     pokazatelj.NacinOstvarenja = form[sKlasa + "NacinOstvarenja"];
+                    pokazatelj.ProjektId = projekt.Id;
 
                     projekt.Pokazatelji.Add(pokazatelj);
                 }
