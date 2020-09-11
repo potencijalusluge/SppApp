@@ -25,7 +25,7 @@ namespace SppApp.Helpers
             message.ToRecipients.Add("adrijana.jurilj@vpc.hr");
 
             //To do: Uncomment this
-            //message.SendAndSaveCopy();
+            message.SendAndSaveCopy();
         }
 
         public static Projekti DodajCustomLokaciju(Projekti projekt, FormCollection form)
@@ -197,6 +197,9 @@ namespace SppApp.Helpers
                         dozvola.Putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Files/") + FileName);
 
                         dozvola.Datoteka = itemDozvole;
+
+                        dozvola.ProjektId = projekt.Id;
+
                         projekt.GradjevinskeDozvole.Add(dozvola);
 
                         dozvola.Datoteka.SaveAs(dozvola.Putanja);
@@ -225,6 +228,9 @@ namespace SppApp.Helpers
                         ostala.Putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Files/") + FileName);
 
                         ostala.Datoteka = itemOstale;
+
+                        ostala.ProjektId = projekt.Id;
+
                         projekt.OstalaDokumentacija.Add(ostala);
 
                         ostala.Datoteka.SaveAs(ostala.Putanja);

@@ -307,7 +307,7 @@
         <div class="form-group col-md-12">
             @Html.LabelFor(model => model.UpravnoPodrucje, htmlAttributes: new { @class = "control-label col-md-3 required" })
             <div class="col-md-9">
-                @Html.DropDownListFor(model => model.UpravnoPodrucje, new[] { new SelectListItem() { Text = "", Value = "" }, new SelectListItem() { Text = "Financije", Value = "Financije" }, new SelectListItem() { Text = "Financije", Value = "Financije" }, new SelectListItem() { Text = "Rad i socijalna skrb", Value = "Rad i socijalna skrb" }, new SelectListItem() { Text = "Obrana", Value = "Obrana" }, new SelectListItem() { Text = "Vanjski poslovi", Value = "Vanjski poslovi" }, new SelectListItem() { Text = "Unutarnji poslovi", Value = "Unutarnji poslovi" }, new SelectListItem() { Text = "Pravosuđe", Value = "Pravosuđe" }, new SelectListItem() { Text = "Državno uređenje", Value = "Državno uređenje" }, new SelectListItem() { Text = "Politički i upravni stav", Value = "Politički i upravni stav" }, new SelectListItem() { Text = "Gospodarstvo", Value = "Gospodarstvo" }, new SelectListItem() { Text = "Zdravstvo", Value = "Zdravstvo" }, new SelectListItem() { Text = "Promet i insfrastruktura", Value = "Promet i insfrastruktura" }, new SelectListItem() { Text = "Poljoprivreda", Value = "Poljoprivreda" }, new SelectListItem() { Text = "Zaštita okoliša i prirode", Value = "Zaštita okoliša i prirode" }, new SelectListItem() { Text = "Graditeljstvo i prostorno uređenje", Value = "Graditeljstvo i prostorno uređenje" }, new SelectListItem() { Text = "Znanost, obrazovanje i sport", Value = "Znanost, obrazovanje i sport" }, new SelectListItem() { Text = "Kultura", Value = "Kultura" }, new SelectListItem() { Text = "Ostalo", Value = "Ostalo" } }, htmlAttributes: new { @class = "form-control narrow" })
+                @Html.DropDownListFor(model => model.UpravnoPodrucje, new[] { new SelectListItem() { Text = "", Value = "" }, new SelectListItem() { Text = "Financije", Value = "Financije" }, new SelectListItem() { Text = "Rad i socijalna skrb", Value = "Rad i socijalna skrb" }, new SelectListItem() { Text = "Obrana", Value = "Obrana" }, new SelectListItem() { Text = "Vanjski poslovi", Value = "Vanjski poslovi" }, new SelectListItem() { Text = "Unutarnji poslovi", Value = "Unutarnji poslovi" }, new SelectListItem() { Text = "Pravosuđe", Value = "Pravosuđe" }, new SelectListItem() { Text = "Državno uređenje", Value = "Državno uređenje" }, new SelectListItem() { Text = "Politički i upravni stav", Value = "Politički i upravni stav" }, new SelectListItem() { Text = "Gospodarstvo", Value = "Gospodarstvo" }, new SelectListItem() { Text = "Zdravstvo", Value = "Zdravstvo" }, new SelectListItem() { Text = "Promet i insfrastruktura", Value = "Promet i insfrastruktura" }, new SelectListItem() { Text = "Poljoprivreda", Value = "Poljoprivreda" }, new SelectListItem() { Text = "Zaštita okoliša i prirode", Value = "Zaštita okoliša i prirode" }, new SelectListItem() { Text = "Graditeljstvo i prostorno uređenje", Value = "Graditeljstvo i prostorno uređenje" }, new SelectListItem() { Text = "Znanost, obrazovanje i sport", Value = "Znanost, obrazovanje i sport" }, new SelectListItem() { Text = "Kultura", Value = "Kultura" }, new SelectListItem() { Text = "Ostalo", Value = "Ostalo" } }, htmlAttributes: new { @class = "form-control narrow" })
                 @Html.ValidationMessageFor(model => model.UpravnoPodrucje, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -538,7 +538,7 @@
         </div>
         <br />
 
-        <div class=" col-md-12">
+        <div class="col-md-12">
             <div style="background-color: #EF7215 ">
                 <hr class="thick" style="color: #EF7215 " />
                 <h4 style="color: #FFFFFF"> &nbsp; KONTAKT OSOBA</h4>
@@ -547,8 +547,8 @@
             </div>
         </div>
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.Ime, htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Kontakt.Ime, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -556,8 +556,8 @@
             </div>
         </div>
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.Prezime, htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Kontakt.Prezime, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -565,7 +565,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.Organizacija.Naziv, htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Kontakt.Organizacija.Naziv, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -573,7 +573,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.Organizacija.Adresa, htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Kontakt.Organizacija.Adresa, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -581,7 +581,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.Organizacija.Mjesto, htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Kontakt.Organizacija.Mjesto, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -589,7 +589,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.Organizacija.Drzava, "Država", htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.DropDownListFor(model => model.Kontakt.Organizacija.Drzava, new[] { new SelectListItem() { Text = "Hrvatska", Value = "Hrvatska" } }, htmlAttributes: new { @class = "form-control narrow" })
@@ -597,7 +597,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.Email, htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Kontakt.Email, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -605,7 +605,7 @@
             </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-12">
             @Html.LabelFor(model => model.Kontakt.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-2 required" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Kontakt.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })

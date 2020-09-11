@@ -209,29 +209,52 @@ namespace SppApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Projekti projekt, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
         {
-            projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
-            if (!form["UserId"].IsNullOrWhiteSpace())
-            {
-                projekt = HelperMethods.DodajUsera(projekt, form["UserId"]);
-            }
-
-            projekt = HelperMethods.DodajAktivnosti(projekt, form);
-
-            projekt = HelperMethods.DodajFinanciranja(projekt, form);
-
-            projekt = HelperMethods.DodajDionike(projekt, form);
-
-            projekt = HelperMethods.DodajPokazatelje(projekt, form);
-
+            
             if (submitButton.Equals("Odustani"))
             {
                 return RedirectToAction("Index", "Projekti");
             }
+
+            projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
+
             if (ModelState.IsValid)
             {
+
+                if (!form["UserId"].IsNullOrWhiteSpace())
+                {
+                    projekt = HelperMethods.DodajUsera(projekt, form["UserId"]);
+                }
+
+                projekt = HelperMethods.DodajAktivnosti(projekt, form);
+
+                projekt = HelperMethods.DodajFinanciranja(projekt, form);
+
+                projekt = HelperMethods.DodajDionike(projekt, form);
+
+                projekt = HelperMethods.DodajPokazatelje(projekt, form);
+
                 projekt = HelperMethods.DodajGradjevinskeDozvole(projekt, dozvolaDatoteke);
 
                 projekt = HelperMethods.DodajOstaluDokumentaciju(projekt, ostaleDatoteke);
+
+                //if (HttpContext.Request.Files.AllKeys.Any())
+                //{
+                    //var test = HttpContext.Request.Files.AllKeys.ToArray(); // remove this after test
+
+                    //// Get the uploaded image from the Files collection
+                    //var httpPostedFile = HttpContext.Request.Files[0];
+
+                    //if (httpPostedFile != null)
+                    //{
+                    //    // Validate the uploaded image(optional)
+
+                    //    // Get the complete file path
+                    //    var fileSavePath = (HttpContext.Server.MapPath("~/UploadedFiles") + httpPostedFile.FileName.Substring(httpPostedFile.FileName.LastIndexOf(@"\")));
+
+                    //    // Save the uploaded file to "UploadedFiles" folder
+                    //    httpPostedFile.SaveAs(fileSavePath);
+                    //}
+                //}
 
                 Session["projektID"] = projekt.Id;
 

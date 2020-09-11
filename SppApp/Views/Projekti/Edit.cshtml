@@ -133,7 +133,7 @@
 </script>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Projekti", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -173,7 +173,7 @@
             </div>
             @if (ViewBag.Lokacija != null)
             {
-                <div class="col-md-8">
+                <div class="col-md-6">
                     <div class="col-md-1">
                         @Html.RadioButtonFor(model => model.Lokacija, "Ostalo", new { @id = "lokacija-rb", @checked = "checked" })
                     </div>
@@ -384,14 +384,14 @@
         <div class="col-md-10" id="licenceFileList"></div>
         @if (Model.GradjevinskeDozvole.Count > 0)
         {
-            <span class="col-md-10" id="modelDozvoleFileList">
+            <div class="col-md-10" id="modelDozvoleFileList">
                 <ul>
                     @foreach (var item in Model.GradjevinskeDozvole)
                     {
                         <li>@item.Naziv</li>
                     }
                 </ul>
-            </span>
+            </div>
         }
     </div>
 
@@ -404,14 +404,14 @@
         <div class="col-md-10" id="otherFileList"></div>
         @if (Model.OstalaDokumentacija.Count > 0)
         {
-            <span class="col-md-10" id="modelOtherFileList">
+            <div class="col-md-10" id="modelOtherFileList">
                 <ul>
                     @foreach (var item in Model.OstalaDokumentacija)
                     {
                         <li>@item.Naziv</li>
                     }
                 </ul>
-            </span>
+            </div>
         }
     </div>
 
@@ -630,8 +630,8 @@
 
     @Html.HiddenFor(model => model.Kontakt.Id)
 
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.Ime, htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Kontakt.Ime, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -639,8 +639,8 @@
         </div>
     </div>
 
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.Prezime, htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Kontakt.Prezime, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -652,7 +652,7 @@
 
     @Html.HiddenFor(model => model.Kontakt.Organizacija.Id)
 
-    <div class="form-group">
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.Organizacija.Naziv, htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Kontakt.Organizacija.Naziv, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -660,7 +660,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.Organizacija.Adresa, htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Kontakt.Organizacija.Adresa, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -668,7 +668,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.Organizacija.Mjesto, htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Kontakt.Organizacija.Mjesto, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -676,7 +676,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.Organizacija.Drzava, "Država", htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.Kontakt.Organizacija.Drzava, new[] { new SelectListItem() { Text = "Hrvatska", Value = "Hrvatska" } }, htmlAttributes: new { @class = "form-control narrow" })
@@ -684,7 +684,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.Email, htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Kontakt.Email, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -692,7 +692,7 @@
         </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group col-md-12">
         @Html.LabelFor(model => model.Kontakt.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-2 required" })
         <div class="col-md-10">
             @Html.EditorFor(model => model.Kontakt.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -700,7 +700,6 @@
         </div>
     </div>
 
-    <hr class="thick" />
 
     <div class="form-group col-md-12">
         <div class="col-md-offset-2 col-md-6">
