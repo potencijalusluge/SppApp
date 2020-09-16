@@ -43,9 +43,11 @@
             @Html.TextAreaFor(model => model.NacinOstvarenja, new { @class = "form-control" })<br />
             @Html.ValidationMessageFor(model => model.NacinOstvarenja, "", new { @class = "text-danger" })
         </td>
-
+        <td>
+            <input type="button" value="&#8212;" id="pokazateljiRedak" onclick="DeleteRow(this);" class="btn btn-primary" style="float:right; background-color: #EF7215 !important; border-color: #EF7215 !important" />
+        </td>
 
     }
 </tr>
-<tr><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="5"></td></tr>
 

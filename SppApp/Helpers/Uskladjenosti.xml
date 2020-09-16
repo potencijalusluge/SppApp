@@ -1,0 +1,1330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Uskladjenosti>
+	<Razina1 Naziv="Nacionalni strateški dokumenti">
+		<Razina2 Naziv="Zaštita okoliša i energetika">
+			<Razina3 Naziv="Strategija gospodarenja otpadom RH do 2025.">
+				<Razina4 Naziv="1. Izbjegavanje nastajanja i smanjivanje količina otpada na izvoru te otpada kojega se mora odložiti, uz materijalnu i energetsku oporabu otpada:">
+					<Razina5 Naziv="1.1. Izbjegavanje nastajanja i smanjivanje količina otpada na mjestu nastanka čistijom proizvodnjom, odgojem i obrazovanjem, ekonomskim instrumentima, planovima gospodarenja otpadom, primjenom pozitivnih propisa, Direktive o integriranom sprečavanju i nadzoru onečišćenja (IPPC direktiva), ulaganjem u moderne tehnologije i sl.">
+						<Razina6 Naziv="1.1.1. Edukacija javnosti, stručnjaka i upravnih struktura za rješavanje problema gospodarenja otpadom"/>
+						<Razina6 Naziv="1.1.2. Donošenje Planova gospodarenja otpadom, unapređivanje ekonomskih instrumenata"/>
+					</Razina5>
+					<Razina5 Naziv="1.2. Odvojeno skupljanje otpada na izvoru">
+						<Razina6 Naziv="1.2.1. Provođenje i širenje projekata i prakse čistije proizvodnje"/>
+						<Razina6 Naziv="1.2.2. Smanjivanje pritisaka na okoliš od otpada na zaštićenim dijelovima prirode, kršu i otocima"/>
+					</Razina5>
+					<Razina5 Naziv="1.3. Gradnja podsustava odvojenog skupljanja i iskorištavanja, odnosno zbrinjavanja važnijih vrsta otpada (ambalažni otpad, stari automobili, kućanski aparati, e-otpad, itd.)">
+						<Razina6 Naziv="1.3.1. Unapređivanje sustava odvojenog skupljanja i recikliranja otpada"/>
+						<Razina6 Naziv="1.3.2. Podupiranje i unapređivanje rada Hrvatske burze otpada"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="2. Razvitak infrastrukture za cjeloviti sustav gospodarenja otpadom IVO (stvaranje uvjeta za učinkovito funkcioniranje sustava):">
+					<Razina5 Naziv="2.1. Usklađivanje hrvatske regulative i informacijskog sustava s EU-om">
+						<Razina6 Naziv="2.1.1. Izrada programa gradnje i standarda građevina i postrojenja i njihova unošenja u prostorne planove"/>
+					</Razina5>
+					<Razina5 Naziv="2.2. Gradnja infrastrukturnih građevina i postrojenja (regionalna odlagališta, energane na otpad i spalionice, postrojenja za mehaničko-biološku obradu, biokompostane, odlagališta)">
+						<Razina6 Naziv="2.2.1. Gospodarenje neopasnim otpadom"/>
+					</Razina5>
+					<Razina5 Naziv="2.3. Gradnja kapaciteta servisnih službi sustava gospodarenja otpadom">
+						<Razina6 Naziv="2.3.1. Gospodarenje inertnim otpadom"/>
+						<Razina6 Naziv="2.3.2. Gospodarenje opasnim otpadom"/>
+					</Razina5>
+					<Razina5 Naziv="2.4. Jačanje kapaciteta, uključivo edukacija upravnih struktura, stručnjaka i javnosti"/>
+				</Razina4>
+				<Razina4 Naziv="3. Smanjivanje rizika od otpada">
+					<Razina5 Naziv="3.1. Sanacija postojećih odlagališta uz zatvaranje ili produživanje rada">
+						<Razina6 Naziv="3.1.1. Provođenje sanacije odlagališta otpada i starih opterećenja"/>
+					</Razina5>
+					<Razina5 Naziv="3.2. Korištenje postojećih energetskih i industrijskih kapaciteta za zbrinjavanje opasnog otpada">
+						<Razina6 Naziv="3.2.1. Poticanje termičke obrade otpada u postojećim kapacitetima"/>
+					</Razina5>
+					<Razina5 Naziv="3.3. Primjena prihvatljivih metoda i načina gospodarenja otpadom rukovodeći se najboljom praksom">
+						<Razina6 Naziv="3.3.1. Primjena drugih prihvatljivih metoda i načina gospodarenja otpadom u odnosu na najbolje prakse razvijenih zemalja EU-a i svijeta"/>
+						<Razina6 Naziv="3.3.2. Unapređivanje gospodarenja opasnim otpadom koji se obrađuje kemijsko-fizikalnim postupcima"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="4. Doprinos zaposlenosti u Hrvatskoj">
+					<Razina5 Naziv="4.1. Razvoj domaće industrije i poduzetništva"/>
+					<Razina5 Naziv="4.2. Usavršavanje organiziranosti domaće industrije"/>
+					<Razina5 Naziv="4.3. Proizvodnja komunalne opreme"/>
+				</Razina4>
+				<Razina4 Naziv="5. Edukacija upravnih struktura, stručnjaka i javnosti za rješavanje problema gospodarenje otpadom"/>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Poljoprivreda i ribarstvo">
+			<Razina3 Naziv="Nacionalni strateški plan razvoja ribarstva Republike Hrvatske do 2020.">
+				<Razina4 Naziv="Kratkoročni prioriteti i ciljevi">
+					<Razina5 Naziv="1. Prilagodba ribarske flote">
+						<Razina6 Naziv="Uspostava održive ravnoteže između ribolovnog kapaciteta i raspoloživih ribolovnih resursa">
+							<Razina7 Naziv="Mjera: Trajna obustava ribolovnih aktivnosti"/>
+							<Razina7 Naziv="Mjera: Privremena obustava ribolovnih aktivnosti"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="2. Održivi razvoj akvakulture">
+						<Razina6 Naziv="Povećanje proizvodnje i jačanje konkurentnosti akvakulture">
+							<Razina7 Naziv="Mjera: Proizvodne investicije u akvakulturi"/>
+							<Razina7 Naziv="Mjera: Mjere ulaganja u zaštitu okoliša"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="3. Održivi razvoj prerade i marketinga proizvoda ribarstva i akvakulture">
+						<Razina6 Naziv="Jačanje prerađivačkih i tržišnih kapaciteta">
+							<Razina7 Naziv="Mjera: Ulaganje u proizvodne kapacitete"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="4. Unaprjeđenje administracije u ribarstvu i sektora za korištenje strukturne potpore kroz Tehničku pomoć">
+						<Razina6 Naziv="Poboljšanje administrativnih kapaciteta i informiranosti dionika sektora"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="Dugoročni ciljevi">
+					<Razina5 Naziv="1. Održivi razvoj gospodarskog ribolova"/>
+					<Razina5 Naziv="2. Akvakultura"/>
+					<Razina5 Naziv="3. Održivi razvoj ribarskih područja"/>
+					<Razina5 Naziv="4. Trženje i prerada"/>
+					<Razina5 Naziv="5. Sustav kontrole i provedbe Zajedničke ribarstvene politike"/>
+					<Razina5 Naziv="6. Tehnička pomoć"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="Nacionalni strateški plan razvoja akvakulture 2014.- 2020.">
+				<Razina4 Naziv="Opći ciljevi razvoja i rasta morske i slatkovodne akvakulture (2014 – 2020)">
+					<Razina5 Naziv="Cilj 1 Jačanje društvenog i poslovno-političkog okruženja za razvoj akvakulture"/>
+					<Razina5 Naziv="Cilj 2 Povećanje ukupne proizvodnje na 44.500 tona uz poštivanje načela ekonomske, socijalne i ekološke održivosti"/>
+					<Razina5 Naziv="Cilj 3 Poboljšanje percepcije i povećanje nacionalne potrošnje proizvoda akvakulture"/>
+				</Razina4>
+				<Razina4 Naziv="Opći prioriteti razvoja i rasta morske i slatkovodne akvakulture (2014 – 2020)">
+					<Razina5 Naziv="1.Zakonodavni okvir i administracija">
+						<Razina6 Naziv ="1.1 Pojednostavljenje administrativnih postupaka"/>
+						<Razina6 Naziv ="1.2 Unaprjeđenje sustava prikupljanja podataka"/>
+					</Razina5>
+					<Razina5 Naziv="2.Smještanje djelatnosti u prostor i prostorno planiranje">
+						<Razina6 Naziv ="2.1 Osiguranje održivog razvoja i rasta kroz koordinirano prostorno planiranje i osiguravanje potrebnih lokacija za uzgoj, te lokacija za prateću infrastrukturu"/>
+						<Razina6 Naziv ="2.2 Zoniranje riječnih slivova i morskih područja za uzgoj riba i školjkaša radi osiguranja slijedivosti kontrole kretanja"/>
+						<Razina6 Naziv ="2.3 Osiguravanje odgovarajuće količine vode za uzgoj"/>
+					</Razina5>
+					<Razina5 Naziv="3.Okoliš i priroda">
+						<Razina6 Naziv ="3.1 Primjena ekološki prihvatljivih tehnologija"/>
+						<Razina6 Naziv ="3.2 Zaštita i naknada šteta od predatora"/>
+					</Razina5>
+					<Razina5 Naziv="4.Zdravlje organizama u uzgoju">
+						<Razina6 Naziv ="4.1 Utvrđivanje i provođenje protokola u cilju prevencije i kontrole bolesti te dobrobiti vodenih životinja u uzgoju"/>
+					</Razina5>
+					<Razina5 Naziv="5.Tržište i konkurentnost">
+						<Razina6 Naziv ="5.1 Diversifikacija proizvodnje i uvođenje novih vrsta u uzgoj"/>
+						<Razina6 Naziv ="5.2 Unaprjeđenje suradnje industrije sa znanstvenim i istraživačko-razvojnim institucijama"/>
+						<Razina6 Naziv ="5.3 Omogućavanje uzgoja drugih vodenih organizama, osim riba i školjkaša"/>
+						<Razina6 Naziv ="5.4 Osiguranje organizama u uzgoju"/>
+						<Razina6 Naziv ="5.5 Osnivanje organizacija proizvođača"/>
+					</Razina5>
+					<Razina5 Naziv="6.Percepcija i komunikacija">
+						<Razina6 Naziv ="6.1 Povećanje konkurentnosti, certifikacija, brendiranje"/>
+						<Razina6 Naziv ="6.2 Razvoj domaćeg tržišta, marketinške strategije i promocija proizvoda akvakulture uključujući unaprjeđenje komunikacije sa potrošačima"/>
+					</Razina5>
+					<Razina5 Naziv="7.Edukacija i zapošljavanje">
+						<Razina6 Naziv ="7.1 Kontinuirana opća edukacija i informiranje sudionika u akvakulturi uz posebnu brigu za zdravlje i dobrobit vodenih životinja, uz jačanje uloge savjetodavnih usluga"/>
+						<Razina6 Naziv ="7.2 Unaprjeđenje sigurnosti na radu"/>
+						<Razina6 Naziv ="7.3 Povećanje zaposlenosti"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="Ciljevi i prioriteti razvoja i rasta po pojedinim segmentima morske i slatkovodne akvakulture (2014-2020)">
+					<Razina5 Naziv="Morska akvakultura">
+						<Razina6 Naziv ="1 Mrijestilišta bijele ribe - Povećanje proizvodnje na 40.000.000 komada mlađi uz poštivanje načela ekonomske, socijalne i ekološke održivosti">
+							<Razina7 Naziv ="1.1 Modernizacija i rekonstrukcija postojećih mrjestilišta"/>
+							<Razina7 Naziv ="1.2 Izgradnja novih mrjestilišta i predrasta na kopnu"/>
+							<Razina7 Naziv ="1.3 Selekcijski rad"/>
+						</Razina6>
+						<Razina6 Naziv ="2 Uzgajališta bijele ribe - Povećanje proizvodnje na 15-18.000 tona uz poštivanje načela ekonomske, socijalne i ekološke održivosti">
+							<Razina7 Naziv ="2.1 Modernizacija i rekonstrukcija postojećih uzgajališta"/>
+							<Razina7 Naziv ="2.2 Uspostava novih uzgajališta"/>
+							<Razina7 Naziv ="2.3 Razvoj i uvođenje novih uzgojnih tehnologija"/>
+							<Razina7 Naziv ="2.4 Razvoj i uvođenje recirkulacijskih sustava (RAS) uzgoja na kopnu"/>
+							<Razina7 Naziv ="2.5 Dodavanje novih vrijednosti kroz preradu"/>
+							<Razina7 Naziv ="2.6 Unaprjeđenje kvalitete proizvoda"/>
+							<Razina7 Naziv ="2.7 Smanjenje negativnih utjecaja uzgojnih aktivnosti na prirodu i okoliš"/>
+							<Razina7 Naziv ="2.8 Uzgoj u polikulturi"/>
+							<Razina7 Naziv ="2.9 Povećanje proizvodnje na postojećim lokacijama uz zadržavanje ili smanjivanje intenziteta utjecaja na okoliš"/>
+						</Razina6>
+						<Razina6 Naziv ="3 Uzgajališta tuna - Optimizacija proizvodnje ovisno o ribolovnim kvotama, odnosno zootehničkim i tržišnim mogućnostima">
+							<Razina7 Naziv ="3.1 Modernizacija i rekonstrukcija postojećih uzgajališta"/>
+							<Razina7 Naziv ="3.2 Modernizacija i uvođenje novih tehnologija uzgoja"/>
+						</Razina6>
+						<Razina6 Naziv ="4 Uzgajališta kalifornijske pastrve u moru - Proizvodnja 3-5.000 tona uz poštivanje načela ekonomske, socijalne i ekološke održivosti">
+							<Razina7 Naziv ="4.1 Razvoj i uvođenje uzgojne tehnologije"/>
+						</Razina6>
+						<Razina6 Naziv ="5 Mrijestilišta školjkaša - Proizvodnja minimalno 20.000.000 komada mlađi školjkaša uz poštivanje načela ekonomske, socijalne i ekološke održivosti">
+							<Razina7 Naziv ="5.1 Izgradnja mrjestilišta za školjkaše"/>
+							<Razina7 Naziv ="5.2 Usvajanje tehnologije za proizvodnju mlađi europske plosnate kamenice (Ostrea edulis), jakovske kapice (Pecten jacobaeus) i drugih vrsta školjkaša"/>
+						</Razina6>
+						<Razina6 Naziv ="6 Uzgajališta školjkaša - Povećanje proizvodnje na 10.000 tona uz poštivanje načela ekonomske, socijalne i ekološke održivosti">
+							<Razina7 Naziv ="6.1 Uspostava novih uzgajališta"/>
+							<Razina7 Naziv ="6.2 Uspostava kontrole ispusnih voda na područjima za uzgoj školjkaša"/>
+							<Razina7 Naziv ="6.3 Unaprjeđenje tehnologija uzgoja kamenica i dagnji"/>
+							<Razina7 Naziv ="6.4 Dodavanje novih vrijednosti kroz preradu"/>
+							<Razina7 Naziv ="6.5 Izgradnja centara za distribuciju i pročišćavanje"/>
+							<Razina7 Naziv ="6.6 Utvrđivanje zona mrijesta kamenica i unapređenje tehnologije prikupljanja mlađi iz prirode"/>
+							<Razina7 Naziv ="6.7 Uspostava sustava za naknadu u slučaju privremene obustave izlova, isključivo iz razloga zaštite javnog zdravlja"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="Slatkovodna akvakultura">
+						<Razina6 Naziv ="7 Mrijestilišta i rastilišta toplovodnih vrsta">
+							<Razina7 Naziv ="7.1 Izgradnja novih mrjestilišta i rastilišta"/>
+							<Razina7 Naziv ="7.2 Modernizacija i rekonstrukcija postojećih mrjestilišta i rastilišta"/>
+							<Razina7 Naziv ="7.3 Selekcijski rad"/>
+						</Razina6>
+						<Razina6 Naziv ="8 Uzgajališta toplovodnih vrsta">
+							<Razina7 Naziv ="8.1 Modernizacija i rekonstrukcija postojećih uzgajališta"/>
+							<Razina7 Naziv ="8.2 Uspostava novih uzgajališta"/>
+							<Razina7 Naziv ="8.3 Unaprjeđenje i uvođenje novih tehnologija uzgoja"/>
+							<Razina7 Naziv ="8.4 Osiguravanje održivosti proizvodnje unutar zaštićenih područja i područja ekološke mreže"/>
+							<Razina7 Naziv ="8.5 Izgradnja prateće infrastrukture"/>
+							<Razina7 Naziv ="8.6 Dodavanje novih vrijednosti kroz preradu i diversifikaciju aktivnosti (multifunkcionalna uzgajališta)"/>
+							<Razina7 Naziv ="8.7 Rekonstrukcija postojećih zapuštenih uzgajališta"/>
+							<Razina7 Naziv ="8.8. Selekcijski rad"/>
+						</Razina6>
+						<Razina6 Naziv ="9 Mrijestilišta hladnovodnih vrsta">
+							<Razina7 Naziv ="9.1 Modernizacija i rekonstrukcija postojećih mrijestilišta"/>
+							<Razina7 Naziv ="9.2 Izgradnja novih mrijestilišta"/>
+						</Razina6>
+						<Razina6 Naziv ="10 Uzgajališta hladnovodnih vrsta">
+							<Razina7 Naziv ="10.1 Modernizacija i rekonstrukcija postojećih uzgajališta"/>
+							<Razina7 Naziv ="10.2 Uspostava novih uzgajališta"/>
+							<Razina7 Naziv ="10.3 Unaprjeđenje i uvođenje novih tehnologije uzgoja"/>
+							<Razina7 Naziv ="10.4 Izgradnja prateće infrastrukture"/>
+							<Razina7 Naziv ="10.5 Dodavanje novih vrijednosti kroz preradu i diversifikaciju aktivnosti"/>
+						</Razina6>
+					</Razina5>
+				</Razina4>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Zdravstvo">
+			<Razina3 Naziv="Nacionalna strategija razvoja zdravstva 2012. - 2020.">
+				<Razina4 Naziv="1. Razvoj informatizacije i eZdravstva">
+					<Razina5 Naziv="1.1. Ujednačavanje stupnja informatiziranosti u zdravstvu, integriranje zdravstvenih informacija i uspostavljanje komunikacije između svih razina zdravstvene zaštite, između zdravstvenog sustava i pacijenata te između tijela državne uprave i europskih zdravstvenih sustava"/>
+					<Razina5 Naziv="1.2. Uspostavljanje informacijskih sustava za praćenje zdravstvene statistike te za analizu podataka i izradu izvješća koji služe kao potpora odlučivanju upravljačkim tijelima u zdravstvu (eng. business intelligence)"/>
+					<Razina5 Naziv="1.3. Funkcionalno unapređenje i modernizacija postojećih te razvoj novih informacijskih sustava i aplikacija u zdravstvu"/>
+					<Razina5 Naziv="1.4. Izgradnja sustava za podršku objedinjenoj nabavi i ostalim zajedničkim procesima bolničkog i čitavog zdravstvenog sustava"/>
+					<Razina5 Naziv="1.5. Integracija telemedicine u službu hitne medicinske pomoći i druge zdravstvene djelatnosti"/>
+					<Razina5 Naziv="1.6. Normizacija i certifikacija informacijskih sustava u zdravstvu, uz kontinuiranu provjeru funkcionalnosti, sigurnosti podataka i sustava te interoperabilnosti"/>
+					<Razina5 Naziv="1.7. Objedinjavanje nabave i ujednačavanje standarda za računalnu opremu, licence, komunikacijsku infrastrukturu, održavanje i tehničku podršku"/>
+					<Razina5 Naziv="1.8. Izobrazba zdravstvenih djelatnika i upravljanje promjenama pri uvođenju informacijsko-komunikacijskih tehnologija"/>
+					<Razina5 Naziv="1.9. Povećanje sredstava za informatizaciju u ukupnom zdravstvenom proračunu, u sinergiji sa sredstvima iz fondova EU-a"/>
+					<Razina5 Naziv="1.10. Zakonsko reguliranje eZdravstva"/>
+				</Razina4>
+				<Razina4 Naziv="2. Jačanje i bolje korištenje ljudskih resursa u zdravstvu">
+					<Razina5 Naziv="2.1. Izrada Strateškog plana razvoja ljudskih resursa u zdravstvu"/>
+					<Razina5 Naziv="2.2. Jačanje zaštite od osobne odgovornosti zdravstvenih djelatnika"/>
+					<Razina5 Naziv="2.3. Izrada i provedba nacionalnog programa zaštite zdravlja i sigurnosti zaposlenih u zdravstvu"/>
+					<Razina5 Naziv="2.4. Omogućavanje ostvarivanja viših razina obrazovanja za sve zdravstvene djelatnike"/>
+					<Razina5 Naziv="2.5. Definiranje kompetencija i omogućavanje preuzimanje zadataka u skladu s višom razinom postignutog obrazovanja zdravstvenih djelatnika (eng. task shifting)"/>
+					<Razina5 Naziv="2.6. Povećanje horizontalne i vertikalne mobilnosti zdravstvenih djelatnika unutar hrvatskog zdravstvenog sustava"/>
+					<Razina5 Naziv="2.7. Odobravanje specijalizacija prema jasno dokumentiranim potrebama u mreži javne zdravstvene službe"/>
+					<Razina5 Naziv="2.8. Omogućavanje rada zdravstvenim djelatnicima i nakon dobi za umirovljenje, onima koji to žele i na mjestima gdje postoji potreba"/>
+				</Razina4>
+				<Razina4 Naziv="3. Jačanje upravljačkih kapaciteta u zdravstvu">
+					<Razina5 Naziv="3.1. Izobrazba upravljačkog kadra"/>
+					<Razina5 Naziv="3.2. Razdvajanje organizacijsko-financijskog i medicinskog upravljanja"/>
+					<Razina5 Naziv="3.3. Uspostavljanje odjela za analitiku, planiranje i projekte EU-a"/>
+					<Razina5 Naziv="3.4. Poticanje istraživanja sustava zdravstva"/>
+					<Razina5 Naziv="3.5. Jačanje upravljačkih ovlasti Domova zdravlja kroz zakonski okvir koji jasno uređuje koncesije u zdravstvu"/>
+				</Razina4>
+				<Razina4 Naziv="4. Reorganizacija ustroja i djelovanja zdravstvenih ustanova">
+					<Razina5 Naziv="4.1. Poticanje otvaranja i opremanja grupnih praksi u primarnoj zdravstvenoj zaštiti"/>
+					<Razina5 Naziv="4.2. Jačanje interdisciplinarne suradnje u zdravstvu (timovi za rehabilitaciju u zajednici i zaštitu mentalnog zdravlja u zajednici, timovi za palijativnu skrb)"/>
+					<Razina5 Naziv="4.3. Preciznije zakonsko definiranje koncesije za obavljanje javne zdravstvene službe"/>
+					<Razina5 Naziv="4.4. Izrada i implementacija »master plana« bolnica (MPB)">
+						<Razina6 Naziv="4.4.1. Udruživanje bolnica u regionalne bolničke mreže ili zajednice ustanova"/>
+						<Razina6 Naziv="4.4.2. Preraspodjela i koncentriranje bolničkih usluga unutar regionalnih bolničkih mreža ili zajednica ustanova"/>
+						<Razina6 Naziv="4.4.3. Povezivanje bolnica sekundarne i tercijarne razine u obrazovne mreže"/>
+						<Razina6 Naziv="4.4.4. Funkcionalno povezivanje domova zdravlja, liječnika obiteljske medicine u koncesiji, dnevnih bolnica i specijalističko-konzilijarne zdr. zaštite u bolnicama"/>
+						<Razina6 Naziv="4.4.5. Povećanje kapaciteta dnevnih bolnica i kapaciteta za kronično liječenje i palijativnu skrb"/>
+						<Razina6 Naziv="4.4.6. Funkcionalne i građevinske preinake bolnica, uz povećanje energetske učinkovitosti"/>
+						<Razina6 Naziv="4.4.7. Izdvajanje određenih nezdravstvenih djelatnosti iz nadležnosti bolnice u posebnu tvrtku u vlasništvu države (eng. spin-off) ili prepuštanje tih djelatnosti privatnih tvrtkama (eng. outsourcing)"/>
+					</Razina5>
+					<Razina5 Naziv="4.5. Objedinjavanje bolničke nabave za bolnice u vlasništvu RH kroz okvirne sporazume"/>
+					<Razina5 Naziv="4.6. Objedinjavanje izvanbolničke i bolničke djelatnosti hitne medicine"/>
+					<Razina5 Naziv="4.7. Nabavka vozila i opreme za hitni zračni i pomorski prijevoz pacijenata"/>
+				</Razina4>
+				<Razina4 Naziv="5. Poticanje kvalitete u zdravstvenoj zaštiti">
+					<Razina5 Naziv="5.1. Jačanje zdravstvene inspekcije"/>
+					<Razina5 Naziv="5.2. Uvođenje sadržaja iz kvalitete zdravstvene zaštite i sigurnosti bolesnika na svim razinama izobrazbe zdravstvenih djelatnika"/>
+					<Razina5 Naziv="5.3. Uspostava funkcionalnog sustava zaprimanja i obrade pritužbi pacijenata"/>
+					<Razina5 Naziv="5.4. Izrada kliničkih smjernica utemeljenih na znanstvenim dokazima i najboljoj praksi"/>
+					<Razina5 Naziv="5.5. Nacionalna akreditacija zdravstvenih ustanova"/>
+					<Razina5 Naziv="5.6. Praćenje i analiza pokazatelja kvalitete na svim razinama zdr. zaštite"/>
+					<Razina5 Naziv="5.7. Uspostava modela ugovaranja zdravstvene zaštite temeljenog na mjerljivim pokazateljima učinkovitosti i kvalitete"/>
+					<Razina5 Naziv="5.8. Uspostava modela plaćanja zdravstvenih djelatnika kojim bi se nagrađivao kvalitetan rad"/>
+					<Razina5 Naziv="5.9. Jačanje procjene zdravstvenih tehnologija"/>
+				</Razina4>
+				<Razina4 Naziv="6. Jačanje preventivnih aktivnosti">
+					<Razina5 Naziv="6.1. Povećanje udjela izdvajanja za preventivne programe i aktivnosti"/>
+					<Razina5 Naziv="6.2. Poticanje preventivnih aktivnosti u svim područjima zdravstvene zaštite"/>
+					<Razina5 Naziv="6.3. Poboljšanje upravljanja preventivnim aktivnostima"/>
+					<Razina5 Naziv="6.4. Uspostava modela ugovaranja zdravstvene zaštite temeljenog na mjerljivoj uključenosti u preventivne aktivnosti"/>
+					<Razina5 Naziv="6.5. Razvoj analitičkih kapaciteta Hrvatskog zavoda za javno zdravstvo"/>
+					<Razina5 Naziv="6.6. Jačanje sustava praćenja, nadzora i prevencije zdravstvenih rizika koji su određeni čimbenicima okoliša"/>
+					<Razina5 Naziv="6.7. Razvoj zdravstvene komponente sustava za rano uzbunjivanje i djelovanje na prijetnje zdravlju"/>
+				</Razina4>
+				<Razina4 Naziv="7. Očuvanje financijske stabilnosti zdravstva">
+					<Razina5 Naziv="7.1. Razvoj regulatornog okvira za jačanje dopunskih i dodatnih zdravstvenih osiguranja kako bi se povećao udio privatnih financijskih plaćanja za stanovništvo koje si to može priuštiti"/>
+					<Razina5 Naziv="7.2. Jača kontrola financijskog poslovanja"/>
+					<Razina5 Naziv="7.3. Strateška alokacija resursa prema definiranim prioritetima i u sinergiji sa sredstvima iz fondova EU-a"/>
+					<Razina5 Naziv="7.4. Suzbijanje korupcije i neformalnih plaćanja u zdravstvu"/>
+				</Razina4>
+				<Razina4 Naziv="8. Suradnja s drugim resorima i društvom u cjelini">
+					<Razina5 Naziv="8.1. Jačanje međuresorne suradnje (među ministarstvima)"/>
+					<Razina5 Naziv="8.2. Jačanje suradnje s lokalnom samoupravom"/>
+					<Razina5 Naziv="8.3. Suradnja s civilnim društvom i medijima"/>
+				</Razina4>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Turizam">
+			<Razina3 Naziv="Strategija razvoja nautičkog turizma RH (2009-2019)">
+				<Razina4 Naziv="1. Održivo korištenje i upravljanje resursima">
+					<Razina5 Naziv="1.1. Prostor i okoliš (kapacitet, zaštićena područja - prirodna, kulturna,…)">
+						<Razina6 Naziv="1.1.1. Zaštita okoliša i prirodnih i kulturnih vrijednosti otoka i priobalja"/>
+						<Razina6 Naziv="1.1.2. Izrada modela koji će produžiti sezonu korištenja resursa u nautičkom turizmu"/>
+						<Razina6 Naziv="1.1.3. U postupku odabira potencijalnih lokacija luka nautičkog turizma u prirodno i kulturno vrijednim lokalitetima osobito u nacionalnim parkovima i parkovima prirode primijeniti dodatne kriterije odabira lokacija temeljene na instrumentima zaštite okoliša i prirode te prostornog planiranja"/>
+						<Razina6 Naziv="1.1.4. Povećanje opće razine opremljenosti komunalne i druge infrastrukture u priobalju i na otocima"/>
+					</Razina5>
+					<Razina5 Naziv="1.2. Nautička infrastruktura (luke nautičkog turizma, brodogradilišta, luke otvorene za javni promet)">
+						<Razina6 Naziv="1.2.1. Proširenje ukupnih kapaciteta luka nautičkog turizma i luka otvorenih za javni promet"/>
+						<Razina6 Naziv="1.2.2. Planiranje izgradnje novih luka nautičkog turizma"/>
+						<Razina6 Naziv="1.2.3. Okolišu prikladna gradnja"/>
+					</Razina5>
+					<Razina5 Naziv="1.3. Usluge u nautičkom turizmu">
+						<Razina6 Naziv="1.3.1. Povećanje razine usluga u nautičkom turizmu"/>
+						<Razina6 Naziv="1.3.2. Organiziranje manifestacija koje doprinose promidžbi nautičkog turizma"/>
+						<Razina6 Naziv="1.3.3. Podizanje razine kvalitete usluga i sadržaja u lukama nautičkog turizma i u nautičkom dijelu luka otvorenih za javni promet, te u njihovom okruženju"/>
+						<Razina6 Naziv="1.3.4. Izrada kreativnih programa za nautičare"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="2. Revidiranje prostorno-planskih dokumenata za realizaciju scenarija umjerene izgradnje novih prihvatnih kapaciteta">
+					<Razina5 Naziv="2.1. Donošenje odgovarajućih dokumenata prostornog uređenja za planiranu izgradnju, uvažavajući instrumente zaštite okoliša, posebice stratešku procjenu utjecaja na okoliš"/>
+				</Razina4>
+				<Razina4 Naziv="3. Povećanje prihvatnih kapaciteta sanacijom, rekonstrukcijom i revitalizacijom postojećih luka (povijesne luke u urbanim sredinama, napuštene vojne luke, proširenje luka nautičkog turizma radi prihvata velikih jahti)">
+					<Razina5 Naziv="3.1. Usmjeravanje investicija nautičkog turizma u smislu proširenja postojećih luka otvorenih za javni promet radi prihvata nautičkih plovnih objekata, posebice velikih jahti"/>
+					<Razina5 Naziv="3.2. Osiguranje prepoznatljivosti lokacije kroz izgradnju, uređenje i revitalizaciju tradicionalnih lokacija na kojima domicilno stanovništvo drži svoje brodice"/>
+				</Razina4>
+				<Razina4 Naziv="4. Uspostava sustava nadzora i upravljanja pomorskom plovidbom">
+					<Razina5 Naziv="4.1. Stalno unapređivanje svih elemenata sustava sigurnosti plovidbe na moru u svrhu stvaranja što boljih uvjeta za sigurnu plovidbu i zaštitu morskog okoliša od nezgoda i opasnosti koje prijete s brodova, jahti i brodica"/>
+					<Razina5 Naziv="4.2. Informatičko umrežavanje u sustav upravljanja pomorskim prometom svih subjekata i sudionika nautičkog turizma"/>
+					<Razina5 Naziv="4.3. Unaprjeđivanje mjera za zaštitu i spašavanje nautičara"/>
+				</Razina4>
+				<Razina4 Naziv="5. Opremanje i nadzor plovnih objekata i luka nautičkog turizma uređajima i opremom za zaštitu mora od onečišćenja">
+					<Razina5 Naziv="5.1. Primjena sustava upravljanja okolišem ISO 14000 i ISO 9000 – uspostavljanje nadzora nad kvalitetom (certifikati) u području nautičkog turizma"/>
+					<Razina5 Naziv="5.2. Donošenje propisa za ugradnju i korištenje spremnika za otpadne vode u plovilima, te za uređaje za pražnjenje spremnika u lukama, kao i nadzor tih postupaka"/>
+				</Razina4>
+				<Razina4 Naziv="6. Uspostava integralnog upravljanja sustavom nautičkog turizma (informatizacija s bazom podataka i registrom pomorskog dobra)">
+					<Razina5 Naziv="6.1. Definiranje i formiranje baze podataka potrebne za upravljanje i nadzor nad sustavom nautičkog turizma"/>
+					<Razina5 Naziv="6.2. Usklađivanje metodologija i formiranje statističko-dokumentacijske osnove za praćenje ukupnih gospodarskih učinaka sustava nautičkog turizma"/>
+					<Razina5 Naziv="6.3. Uspostavljanje učinkovite informacijske komunikacije na svim razinama. Provođenje informatičke integracije sustava i razvijanje informatičke mreže preko Jadrana"/>
+				</Razina4>
+				<Razina4 Naziv="7. Pojednostavljenje administrativnih procedura i usklađivanje zakonodavstva">
+					<Razina5 Naziv="7.1. Model kontrole složenih administrativnih procedura i primjerenosti zakonske regulative u nautičkom turizmu"/>
+					<Razina5 Naziv="7.2. Primjena suvremene organizacije poslovanja, usklađene sa zahtjevima međunarodih normi u području nautičkog turizma"/>
+					<Razina5 Naziv="7.3. Primjena propisa i njihova evaluacija u odnosu na carinske i druge propise vezane za boravak nautičara"/>
+					<Razina5 Naziv="7.4. Primjena modela javno-privatnog partnerstva"/>
+				</Razina4>
+				<Razina4 Naziv="8. Povećanje proizvodnje plovnih objekata za nautički turizam u hrvatskim brodogradilištima – razvoj klastera nautičkog turizma">
+					<Razina5 Naziv="8.1. Poticanje razvoja proizvodnje plovila i opreme za nautičare (na kontinentu i u brodogradilištima na obali)"/>
+					<Razina5 Naziv="8.2. Programi oživljavanja tradicionalnih zanata i vještina koje izumiru, a osobito izgradnje tradicionalnih brodica (kalafati i brodograditelji)"/>
+				</Razina4>
+				<Razina4 Naziv="9. Poticanje razvitka postojećih i izgradnja novih remontnih i servisnih centara">
+					<Razina5 Naziv="9.1. Izrada razvojne studije"/>
+					<Razina5 Naziv="9.2. Program zapošljavanja lokalnog stanovništva u djelatnostima nautičkog turizma"/>
+				</Razina4>
+				<Razina4 Naziv="10. Jačanje konkurentnosti svih subjekata nautičkog turizma">
+					<Razina5 Naziv="10.1. Promicanje izvrsnosti hrvatskog pomorstva"/>
+					<Razina5 Naziv="10.2. Povećanje stupnja obrazovanja domicilnog stanovništva"/>
+					<Razina5 Naziv="10.3. Izrada programa za oživljavanje gospodarstva na otocima i u priobalju"/>
+				</Razina4>
+				<Razina4 Naziv="11. Primjena novih tehnologija i ekoloških standarda">
+					<Razina5 Naziv="11.1. Implementacijom novih tehnologija i ekoloških standarda zaštititi posebne prirodne vrijednosti, biološku raznolikost i okoliš"/>
+					<Razina5 Naziv="11.2. Podizanje svijesti o ekološkoj kulturi poboljšanjem informiranja i sudjelovanja javnosti"/>
+					<Razina5 Naziv="11.3. Ustroj Eko patrola na razini lokalne samouprave"/>
+				</Razina4>
+				<Razina4 Naziv="12. Uspostava sustava kontinuiranog obrazovanja sudionika u nautičkom turizmu">
+					<Razina5 Naziv="12.1. Obrazovanje sudionika u nautičkom turizmu"/>
+					<Razina5 Naziv="12.2. Poticanje razvoja programa pri edukacijskim ustanovama za potrebe nautičkog turizma"/>
+					<Razina5 Naziv="12.3. Stvaranje ozračja privlačnosti rada u nautičkom turizmu"/>
+					<Razina5 Naziv="12.4. Izrada programa edukacije, razvitka i usavršavanja zaposlenih u sustavu nautičkog turizma"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="Strategija razvoja turizma RH do 2020">
+				<Razina4 Naziv="1. Usklađivanje i unapređenje zakonskog okvira u funkciji jačanja poduzetništva i investicija">
+					<Razina5 Naziv="1.a Izmjene i dopune Zakona o prostornom uređenju i gradnji"/>
+					<Razina5 Naziv="1.b Izmjene i dopune propisa i mjera s područja rada i zapošljavanja"/>
+					<Razina5 Naziv="1.c Izmjene i dopune Zakona o pomorskom dobru i morskim lukama"/>
+					<Razina5 Naziv="1.d Izmjene i dopune Zakona o šumama"/>
+					<Razina5 Naziv="1.e Izmjene i dopune Zakona o zaštiti kulturnih dobara"/>
+					<Razina5 Naziv="1.f Izmjene i dopune Zakona o turističkom i ostalom građevinskom zemljištu"/>
+				</Razina4>
+				<Razina4 Naziv="2. Ubrzavanje investicijske aktivnosti donošenjem posebnog zakona"/>
+				<Razina4 Naziv="3. Ubrzano rješavanje imovinsko - vlasničke problematike"/>
+				<Razina4 Naziv="4. Izrada i provedba programa privatizacije turističkih poduzeća u većinskom državnom vlasništvu"/>
+				<Razina4 Naziv="5. Gospodarsko aktiviranje turistički interesantnih objekata/lokaliteta kojima upravlja Agencija za upravljanje državnom imovinom"/>
+				<Razina4 Naziv="6. Proaktivna fiskalna politika u turizmu"/>
+				<Razina4 Naziv="7. Pokretanje novih programa za poticanje razvoja malih, srednjih i velikih poduzetničkih poduhvata u turizmu"/>
+				<Razina4 Naziv="8. Nacionalni program razvoja malih obiteljskih hotela"/>
+				<Razina4 Naziv="9. Nacionalni program unapređenja obiteljskog smještaja"/>
+				<Razina4 Naziv="10. Stvaranje poduzetničkih klastera"/>
+				<Razina4 Naziv="11. Definiranje jedinstvenih kriterija za strateško planiranje turističkog razvoja i izrada strateških planova razvoja turizma na županijskoj/lokalnoj razini"/>
+				<Razina4 Naziv="12. Regionalni/lokalni programi uređenja i upravljanja plažama"/>
+				<Razina4 Naziv="13. Akcijski plan razvoaj nautičkog turizma – yachtinga"/>
+				<Razina4 Naziv="14. Akcijski plan razvoja zdravstvenog turizma"/>
+				<Razina4 Naziv="15. Akcijski plan razvoja kulturnog turizma"/>
+				<Razina4 Naziv="16. Akcijski plan razvoja kongresne ponude"/>
+				<Razina4 Naziv="17. Akcijski plan razvoja golf ponude"/>
+				<Razina4 Naziv="18. Program razvoj cikloturizma"/>
+				<Razina4 Naziv="19. Usklađivanje sustava obrazovanja u ugostiteljstvu s potražnjom"/>
+				<Razina4 Naziv="20. Nacionalni program cjeloživotnog učenja za djelatnike u turizmu"/>
+				<Razina4 Naziv="21. Preustroj postojećeg sustava turističkih zajednica i izgradnja efikasnog sustava upravljanja turističkom destinacijom"/>
+				<Razina4 Naziv="22. Izrada novog strateškog marketing plana hrvatskog turizma"/>
+				<Razina4 Naziv="23. Razvojni program specijalizacije receptivnih turističkih agencija"/>
+				<Razina4 Naziv="24. Kontinuirana izrada TSA i regionalnih TSA"/>
+				<Razina4 Naziv="25. Promocija investicija u turizam"/>
+				<Razina4 Naziv="26. Pozicioniranje Ministarstva turizma kao posredničkog tijela u operativnoj strukturi za upravljanje procesom korištenja fondova EU 2014. - 2020."/>
+			</Razina3>
+			<Razina3 Naziv="Nacionalni program upravljanja i uređenja morskih plaža 2014.">
+				<Razina4 Naziv="1. Izrada nacionalnog programa uređenja i upravljanja plažama"/>
+				<Razina4 Naziv="2. Izrada regionalnih programa uređenja i upravljanja plažama"/>
+				<Razina4 Naziv="3. Izrada nacionalnog katastra morskih plaža"/>
+				<Razina4 Naziv="4. Izrada provedbenih propisa o tematiziranju morskih plaža"/>
+				<Razina4 Naziv="5. Provođenje postupka tematizacije"/>
+				<Razina4 Naziv="6. Marketinški plan brendiranja i promocije jadranskih plaža"/>
+				<Razina4 Naziv="7. Izrada provedbenih propisa o kategorizaciji morskih plaža"/>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Obrana"/>
+		<Razina2 Naziv="Obrazovanje">
+			<Razina3 Naziv="Strategija stručnog usavršavanja za profesionalni razvoj odgojnoobrazovnih radnika (2014‐2020)">
+				<Razina4 Naziv="Opći ciljevi">
+					<Razina5 Naziv="Očuvati nacionalni identitet temeljen na znanju"/>
+					<Razina5 Naziv="Osigurati provedbu nacionalnih prioriteta obrazovne politike"/>
+					<Razina5 Naziv="Pratiti promjene u društvu i sustavu odgoja i obrazovanja"/>
+					<Razina5 Naziv="Poboljšati kvalitetu učenja i poučavanja"/>
+				</Razina4>
+				<Razina4 Naziv="Operativni ciljevi">
+					<Razina5 Naziv="Razvijati učinkovitiji sustav stručnog usavršavanja temeljen na kvaliteti"/>
+					<Razina5 Naziv="Uskladiti sustav stručnog usavršavanja s preporukama EU‐a"/>
+					<Razina5 Naziv="Razvijati ljudske i materijalne potencijale Agencije za odgoj i obrazovanje"/>
+					<Razina5 Naziv="Poticati profesionalni razvoj odgojno‐obrazovnih radnika"/>
+					<Razina5 Naziv="Pratiti potrebe odgojno‐obrazovnih radnika za razvojem kompetencija"/>
+					<Razina5 Naziv="Organizirati stručna usavršavanja sukladno potrebama odgojno‐obrazovnog sustava"/>
+					<Razina5 Naziv="Pružati dodatnu profesionalnu pomoć odgojno‐obrazovnim radnicima"/>
+					<Razina5 Naziv="Uspostavljati i održavati partnerstva s nacionalnim i međunarodnim organizacijama"/>
+					<Razina5 Naziv="Koristiti EU programe i fondove"/>
+					<Razina5 Naziv="Promicati obrazovna istraživanja u svrhu razvoja"/>
+					<Razina5 Naziv="Promicati aktivnosti Agencije za odgoj i obrazovanje"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="Strategija obrazovanja, znanosti i tehnologije">
+				<Razina4 Naziv="Cjeloživotno učenje">
+					<Razina5 Naziv="1. cilj: Izgraditi sustav za identificiranje, poticanje i razvoj sposobnosti i potencijala pojedinaca te ojačati službe za cjeloživotno osobno i profesionalno usmjeravanje"/>
+					<Razina5 Naziv="2. cilj: Unaprijediti kvalitetu i uspostaviti sustav osiguravanja kvalitete"/>
+					<Razina5 Naziv="3. cilj: Razviti procese i sustav priznavanja neformalno i informalno stečenih znanja i vještina"/>
+					<Razina5 Naziv="4. cilj: Unaprijediti sustav trajnoga profesionalnog razvoja i usavršavanja odgojno-obrazovnih djelatnika"/>
+					<Razina5 Naziv="5. cilj: Proširiti i unaprijediti primjenu informacijske i komunikacijske tehnologije u učenju i obrazovanju"/>
+				</Razina4>
+				<Razina4 Naziv="Rani i predškolski, osnovnoškolski i srednjoškolski odgoj i obrazovanje">
+					<Razina5 Naziv="1. cilj: Unaprijediti razvojni potencijal odgojno-obrazovnih ustanova"/>
+					<Razina5 Naziv="2. cilj: Provesti cjelovitu kurikularnu reformu"/>
+					<Razina5 Naziv="3. cilj: Izmijeniti strukturu osnovnog obrazovanja"/>
+					<Razina5 Naziv="4. cilj: Podići kvalitetu rada i društvenog ugleda učitelja"/>
+					<Razina5 Naziv="5. cilj: Unaprijediti kvalitetu rukovođenja odgojno-obrazovnim ustanovama"/>
+					<Razina5 Naziv="6. cilj: Razviti cjelovit sustav podrške učenicima"/>
+					<Razina5 Naziv="7. cilj: Osigurati optimalne uvjete rada odgojno-obrazovnih ustanova"/>
+					<Razina5 Naziv="8. cilj: Ustrojiti sustav osiguravanja kvalitete odgoja i obrazovanja"/>
+				</Razina4>
+				<Razina4 Naziv="Visoko obrazovanje">
+					<Razina5 Naziv="1. cilj: Unaprijediti studijske programe dosljednom provedbom postavki bolonjske reforme i redefinirati kompetencije koje se njima stječu"/>
+					<Razina5 Naziv="2. cilj: Ustrojiti kvalitetan binarni sustav visokog obrazovanja usklađen s nacionalnim potrebama i načelom učinkovita upravljanja visokim učilištima"/>
+					<Razina5 Naziv="3. cilj: Osigurati kvalitetnu kadrovsku strukturu visokih učilišta kao osnovu za unapređenje kvalitete visokog obrazovanja"/>
+					<Razina5 Naziv="4. cilj: Osigurati učinkovit i razvojno poticajan sustav financiranja visokih učilišta"/>
+					<Razina5 Naziv="5. cilj: Osigurati zadovoljavajuće prostorne i informacijsko-komunikacijske resurse visokih učilišta"/>
+					<Razina5 Naziv="6. cilj: Unaprijediti studentski standard uz posebnu skrb za socijalnu dimenziju studiranja"/>
+					<Razina5 Naziv="7. cilj: Internacionalizirati visoko obrazovanje i jače ga integrirati u europski i svjetski visokoobrazovni prostor"/>
+					<Razina5 Naziv="8. cilj: Osigurati primjerenu važnost kulture kvalitete i načela odgovornosti u visokom obrazovanju"/>
+				</Razina4>
+				<Razina4 Naziv="Obrazovanje odraslih">
+					<Razina5 Naziv="1. cilj: Osigurati preduvjete za povećanje uključenosti odraslih u procese cjeloživotnog učenja i obrazovanja"/>
+					<Razina5 Naziv="2. cilj: Unaprijediti i proširiti učenje, obrazovanje, osposobljavanje i usavršavanje kroz rad"/>
+					<Razina5 Naziv="3. cilj: Uspostaviti sustav osiguravanja kvalitete u obrazovanju odraslih"/>
+					<Razina5 Naziv="4. cilj: Poboljšati organiziranost, financiranje i upravljanje procesima obrazovanja odraslih"/>
+				</Razina4>
+				<Razina4 Naziv="Znanost i tehnologija">
+					<Razina5 Naziv="1. cilj: Brzo pokretanje promjena u sustavu visokog obrazovanja i znanosti"/>
+					<Razina5 Naziv="2. cilj: Međunarodno kompetitivna javna sveučilišta i javni znanstveni instituti u hrvatskome visokoobrazovnom i istraživačkom prostoru koji stvaraju novu znanstvenu, društvenu, kulturnu i gospodarsku vrijednost"/>
+					<Razina5 Naziv="3. cilj: Okružje koje omogućuje i potiče interakcijske i transferne mehanizme suradnje istraživačke zajednice s inovativnim gospodarstvom i društvenim djelatnostima"/>
+					<Razina5 Naziv="4. cilj: Sveučilišta, veleučilišta i znanstveni instituti uključeni u procese pametne specijalizacije i s njima povezane smjernice tehnološkog razvoja"/>
+					<Razina5 Naziv="5. cilj: Nacionalne istraživačke i inovacijske infrastrukture s javnim pristupom, uz uključivanje u europske infrastrukture i povezivanje s njima"/>
+					<Razina5 Naziv="6. cilj: Rast ulaganja u istraživanje i razvoj unapređenjem sustava javnog financiranja te poticanjem ulaganja poslovnog i društvenog sektora u istraživanje i razvoj"/>
+				</Razina4>
+				<Razina4 Naziv="Smjernice za provedbu Strategije">
+					<Razina5 Naziv="1. cilj: Osigurati provedbeni okvir za ostvarivanje Strategije"/>
+					<Razina5 Naziv="2. cilj: Poboljšati financiranje obrazovanja i znanosti"/>
+					<Razina5 Naziv="3. cilj: Osigurati druge preduvjete za provedbu Strategije"/>
+					<Razina5 Naziv="4. cilj: Projektnim planiranjem izraditi akcijske planove za provedbu Strategije"/>
+					<Razina5 Naziv="5. cilj: Integrirati politike cjeloživotnog učenja i obrazovanja s ciljevima osobnog, društvenog, gospodarskog, regionalnog i kulturnog razvoja te s politikama zapošljavanja i socijalnom skrbi"/>
+				</Razina4>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Demografija, obitelj, mladi i socijalna politika">
+			<Razina3 Naziv="Strategija borbe protiv siromaštva i socijalne isključenosti u RH 2014.- 2020.">
+				<Razina4 Naziv="1. Osiguravanje uvjeta za uspješnu borbu protiv siromaštva i socijalne isključenosti te smanjenje nejednakosti u društvu"/>
+				<Razina4 Naziv="2. Osiguravanje uvjeta za sprječavanje nastanka novih kategorija siromašnih kao i smanjenja broja siromašnih i socijalno isključenih osoba"/>
+				<Razina4 Naziv="3. Uspostavljanje koordiniranog sustava potpore skupinama u riziku od siromaštva i socijalne isključenosti, te sustava praćenja i evaluacije"/>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="More, promet i infrastruktura">
+			<Razina3 Naziv="Nacionalni plan županijske luke">
+				<Razina4 Naziv="Scenarij 1: Razvoj usmjeren na osiguravanje prometnog povezivanja i javni linijski prijevoz putnika i /ili tereta, uključujući zračni promet"/>
+				<Razina4 Naziv="Scenarij 2: Razvoj usmjeren na turističke djelatnosti i osiguranje pristupa plovila nautičkog turizma"/>
+				<Razina4 Naziv="Scenarij 3: razvoj usmjeren na turističke djelatnosti i osiguranje pristupa plovila nautičkog turizma"/>
+				<Razina4 Naziv="Scenarij 4: Razvoj u funkciji zašite prirodnih kulturno - povijesnih i ambijentalnih vrijednosti"/>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Pravosuđe"/>
+		<Razina2 Naziv="Vanjski i europski poslovi"/>
+		<Razina2 Naziv="Unutarnji poslovi"/>
+		<Razina2 Naziv="Financije"/>
+		<Razina2 Naziv="Uprava"/>
+		<Razina2 Naziv="Graditeljstvo i prostorno uređenje"/>
+		<Razina2 Naziv="Rad i mirovinski sustav"/>
+		<Razina2 Naziv="Kultura"/>
+		<Razina2 Naziv="Znanost i obrazovanje"/>
+		<Razina2 Naziv="Gospodarstvo, poduzetništvo i obrtništvo">
+			<Razina3 Naziv="Prijedlozi za unapređenje zadružnog gospodarstva u Republici Hrvatskoj"/>
+		</Razina2>
+		<Razina2 Naziv="Regionalni razvoj i fondovi Europske unije">
+			<Razina3 Naziv="Strategija regionalnoga razvoja RH za razdoblje do kraja 2020.">
+				<Razina4 Naziv="1. Povećanje kvalitete života poticanjem održivog teritorijalnog razvoja">
+					<Razina5 Naziv="1.1. Podizanje razine znanja i sposobnosti za poboljšanje kvalitete života">
+						<Razina6 Naziv="1.1.1. Unapređenje regionalnih i lokalnih razvojnih kapaciteta u odgoju, obrazovanju i sportu"/>
+						<Razina6 Naziv="1.1.2. Unapređenje usluga sustava zdravstvene i socijalne skrbi na regionalnoj i lokalnoj razini"/>
+						<Razina6 Naziv="1.1.3. Podrška afirmaciji kulturnog identiteta i razvoju civilnog društva"/>
+					</Razina5>
+					<Razina5 Naziv="1.2. Osiguranje iunapređenje osnovne lokalne i regionalne infrastrukture">
+						<Razina6 Naziv="1.2.1. Razvoj javne infrastrukture od lokalnog značaja"/>
+						<Razina6 Naziv="1.2.2. Razvoj javne infrastrukture od regionalnog značaja"/>
+						<Razina6 Naziv="1.2.3. Održivo korištenje i vrednovanje kulturne i prirodne baštine"/>
+						<Razina6 Naziv="1.2.4. Podrška primjeni mjera zaštite okoliša i energetske učinkovitosti na lokalnoj i regionalnoj razini"/>
+					</Razina5>
+					<Razina5 Naziv="1.3. Podrška potpomognutim područjima i područjima s razvojnim posebnostima">
+						<Razina6 Naziv="1.3.1. Pružanje podrške razvoju potpomognutih područja"/>
+						<Razina6 Naziv="1.3.2. Pružanje podrške održivom otočnom razvoju"/>
+						<Razina6 Naziv="1.3.3. Pružanje podrške razvoju brdsko-planinskih područja"/>
+						<Razina6 Naziv="1.3.4. Unaprjeđenje kvalitete života i razvoj urbanih područja"/>
+						<Razina6 Naziv="1.3.5. Stvaranje poželjnih uvjeta za život u pograničnim područjima"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="2. Povećanje konkurentnosti regionalnoga gospodarstva i zaposlenosti">
+					<Razina5 Naziv="2.1. Unaprjeđenje gospodarske infrastrukture na regionalnoj i lokalnoj razini">
+						<Razina6 Naziv="2.1.1. Definiranje i primjena jasnih kriterija za osnivanje i financiranje poduzetničkih zona"/>
+						<Razina6 Naziv="2.1.2. Aktiviranje državne imovine na lokalnoj i regionalnoj razini (veza 1.2.1., 3.1.4.)"/>
+						<Razina6 Naziv="2.1.3. Razvoj lokalnih kapaciteta za programe održavanja povijesnih jezgri naselja i objekata kulturne baštine (veza 1.2.1., 1.2.3., 3.3.1)"/>
+					</Razina5>
+					<Razina5 Naziv="2.2. Stvaranje poticajnoga poslovnog okruženja na regionalnoj i lokalnoj razini">
+						<Razina6 Naziv="2.2.1. Jačanje lokalnih i regionalnih poduzetničkih potpornih institucija"/>
+						<Razina6 Naziv="2.2.2. Aktiviranje lokalnog razvoja kroz potporu novim gospodarskim subjektima i inovativnim gospodarskim koncepcijama"/>
+						<Razina6 Naziv="2.2.3. Razvoj kolaborativne ekonomije kroz potporu udruživanju gospodarskih subjekata na regionalnoj i lokalnoj razini"/>
+						<Razina6 Naziv="2.2.4. Povećanje atraktivnosti regija kroz teritorijalno brendiranje"/>
+					</Razina5>
+					<Razina5 Naziv="2.3. Jačanje ljudskih potencijala i obrazovanje povezano s potrebama gospodarstva na regionalnoj i lokalnoj razini">
+						<Razina6 Naziv="2.3.1. Podrška povećanju osposobljenosti radne snage na regionalnoj i lokalnoj razini"/>
+						<Razina6 Naziv="2.3.2. Poticanje migracija stanovništva prema područjima s nedostatkom radne snage"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="3. Sustavno upravljanje regionalnim razvojem">
+					<Razina5 Naziv="3.1. Učinkovito upravljanje (u skladu s načelom supsidijarnosti)">
+						<Razina6 Naziv="3.1.1. Unapređenje ciklusa upravljana javnim politikama na svim razinama upravljanja"/>
+						<Razina6 Naziv="3.1.2. Unapređenje upravljanja regionalnim razvojnim projektima"/>
+						<Razina6 Naziv="3.1.3. Unapređenje kvalitete javnih usluga kroz suradnju u procesima funkcionalne i fiskalne decentralizacije"/>
+						<Razina6 Naziv="3.1.4. Povećanje učinkovitosti upravljanja imovinom na svim razinama javnog upravljanja"/>
+					</Razina5>
+					<Razina5 Naziv="3.2. Djelotvorna međusektorska suradnja (u skladu s načelom participacije i integrativnog pristupa)">
+						<Razina6 Naziv="3.2.1. Međuresorno usklađivanje provedbe javnih politika na nacionalnoj i regionalnoj razini"/>
+						<Razina6 Naziv="3.2.2. Poboljšanje vertikalne i horizontalne koordinacije dionika u regionalnom razvojnom upravljanju"/>
+					</Razina5>
+					<Razina5 Naziv="3.3. Jačanje financijskih i administrativnih sposobnosti za razvoj na lokalnoj i regionalnoj razini">
+						<Razina6 Naziv="3.3.1. Jačanje dionika u regionalnom razvojnom upravljanju i provedbi razvojnih projekata"/>
+						<Razina6 Naziv="3.3.2. Unapređenje sustava i povećanje učinkovitosti upravljanja državnim potporama na svim razinama upravljanja"/>
+					</Razina5>
+				</Razina4>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Branitelji">
+			<Razina3 Naziv="Nacionalni program psihosocijalne i zdravstvene pomoći sudionicima i stradalnicima Domovinskog rata, Drugog svjetskog rata te povratnicima iz mirovnih misija">
+				<Razina4 Naziv="1. Nacionalni centar za psihotraumu"/>
+				<Razina4 Naziv="2. Regionalni centri za psihotraumu"/>
+				<Razina4 Naziv="3. Program za poboljšanje kvalitete življenja"/>
+			</Razina3>
+		</Razina2>
+	</Razina1>
+	<Razina1 Naziv="Županijski strateški dokumenti">
+		<Razina2 Naziv="Zagrebačka županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Krapinsko-zagorska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Sisačko-moslavačka županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Karlovačka županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Varaždinska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Koprivničko-križevačka županija">
+			<Razina3 Naziv="RS Koprivničko - križevačke županije 2014. - 2020."></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Bjelovarsko-bilogorska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Primorsko-goranska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Ličko-senjska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Virovitičko-podravska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Požeško-slavonska županija">
+			<Razina3 Naziv="RS Požeško-slavonske županije do 2020. godine"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Brodsko-posavska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Zadarska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Osječko-baranjska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti">
+				<Razina4 Naziv ="RS Osječko-baranjske županija 2011. - 2013.">
+					<Razina5 Naziv="1. Održivi razvoj i unaprjeđenje prostora">
+						<Razina6 Naziv="1.1. Održivo gospodarenje prostorom">
+							<Razina7 Naziv="1.1.1. Unaprjeđenje sustava održivog gospodarenja prostorom"/>
+							<Razina7 Naziv="1.1.2. Unaprjeđenje sustava prostornog uređenja i gradnje na načelima održivog razvitka"/>
+							<Razina7 Naziv="1.1.3. Poticanje korištenja prostora temeljenog na sveobuhvatnom upravljanju prostorom"/>
+							<Razina7 Naziv="1.1.4. Poticanje funkcionalnog osposobljavanja naselja i iskorištavanja njihovog unutarnjeg potencijala"/>
+							<Razina7 Naziv="1.1.5. Revitalizacija zapuštenih urbanih zemljišta i sanacija industrijskih zona s ugašenim proizvodnjama"/>
+							<Razina7 Naziv="1.1.6. Uspostava i unaprjeđenje informacijskog sustava prostornog uređenja baziranog na GIS tehnologijama"/>
+						</Razina6>
+						<Razina6 Naziv="1.2. Razminiranje">
+							<Razina7 Naziv="1.2.1. Razminiranje sukladno prioritetima humanog razminiranja (Plan HCR-a 2009.-2011., i godišnji planovi razminiranja OBŽ-a)"/>
+						</Razina6>
+						<Razina6 Naziv="1.3. Unaprjeđenje sustava zaštite okoliša i poboljšanje kakvoće okoliša">
+							<Razina7 Naziv="1.3.1. Unaprjeđenje sustava praćenja kakvoće okoliša"/>
+							<Razina7 Naziv="1.3.2. Izgradnja cjelovitog sustava gospodarenja otpadom"/>
+							<Razina7 Naziv="1.3.3. Poboljšanje sustava odvodnje i pročišćavanja otpadnih voda"/>
+							<Razina7 Naziv="1.3.4. Stvaranje programa i potpora za korištenje obnovljivih izvora energije"/>
+							<Razina7 Naziv="1.3.5. Unaprjeđenje sustava obrane od poplava i tuče"/>
+							<Razina7 Naziv="1.3.6. Zaštita tla i vodnih resursa"/>
+							<Razina7 Naziv="1.3.7. Sanacija onečišćenih tala"/>
+							<Razina7 Naziv="1.3.8. Edukacija za okoliš"/>
+						</Razina6>
+						<Razina6 Naziv="1.4. Razvoj infrastrukturnih sustava">
+							<Razina7 Naziv="1.4.1. Izgradnja i unaprjeđenje sustava prometne infrastrukture">
+								<Razina8 Naziv="1.4.1.1. Izgradnja i unaprjeđenje cestovne infrastrukture uvažavajući međunarodne i međuregionalne prometne pravce kao i potrebe stanovništva i gospodarstva"/>
+								<Razina8 Naziv="1.4.1.2. Izgradnja i unaprjeđenje postojeće i izgradnja nove željezničke infrastrukture kao održivog i ekonomičnog transporta"/>
+								<Razina8 Naziv="1.4.1.3. Izgradnja i unaprjeđenje riječnog prometa i revalorizacija Drave i Dunava kao međunarodnih ruta, rekonstrukcijom postojeće i izgradnjom nove lučke infrastrukture u svrhu razvoja gospodarstva"/>
+								<Razina8 Naziv="1.4.1.4. Izgradnja i unaprjeđenje zračnog prometa i zračne luke Osijek u svrhu prometa robe i putnika"/>
+								<Razina8 Naziv="1.4.1.5. Izgradnja i unaprjeđenje gradskog i međugradskog javnog prometa uz uvažavanje potreba građana Županije (osobito održivih načina transporta kao tramvaj, željeznica i dr.)"/>
+							</Razina7>
+							<Razina7 Naziv="1.4.2. Izgradnja i unapređenje sustava vodoopskrbe i odvodnje"/>
+							<Razina7 Naziv="1.4.3. Izgradnja i unaprjeđenje sustava za navodnjavanje i melioracijsku odvodnju"/>
+							<Razina7 Naziv="1.4.4. Izgradnja i unaprjeđenje akumulacija kao višenamjenskih građevina (VHS Osijek i dr.)"/>
+							<Razina7 Naziv="1.4.5. Razvoj društvene infrastrukture (objekti javne namjene)"/>
+							<Razina7 Naziv="1.4.6. Izgradnja i unaprjeđenje sustava elektroničke komunikacijske mreže za prijenos podataka, govora, videa itd."/>
+						</Razina6>
+						<Razina6 Naziv="1.5. Osiguranje pouzdane i kvalitetne opskrbe energijom uz smanjivanje negativnih utjecaja na okoliš i društvo">
+							<Razina7 Naziv="1.5.1. Povećanje udjela obnovljive energije"/>
+							<Razina7 Naziv="1.5.2. Smanjenje broja kućanstava koji nemaju pristup električnoj energiji"/>
+							<Razina7 Naziv="1.5.3. Plinofikacija"/>
+							<Razina7 Naziv="1.5.4. Promoviranje i poticanje poboljšanja energetske učinkovitosti"/>
+							<Razina7 Naziv="1.5.5. Povećanje uporabe geotermalne energije"/>
+							<Razina7 Naziv="1.5.6. Izgradnja i unaprjeđenje prometnog sustava u smjeru održivog razvitka"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="2. Razvoj konkurentnog gospodarstva">
+						<Razina6 Naziv="2.1. Razvoj malog i srednjeg poduzetništva i poticanje ulaganja">
+							<Razina7 Naziv="2.1.1. Definiranje i provedba sustavnih mjera potpore razvoju gospodarstva temeljenog na inovacijama i znanju">
+								<Razina8 Naziv="2.1.1.1. potpore ulaganjima u nove tehnologije"/>
+								<Razina8 Naziv="2.1.1.2. potpore inovatorstvu"/>
+								<Razina8 Naziv="2.1.1.3. potpore jačanja konkurentnosti na temeljima znanja i suradnje sa znanstvenim institucijama"/>
+							</Razina7>
+							<Razina7 Naziv="2.1.2. Definiranje i provedba sustavnih mjera potpore poduzetnicima">
+								<Razina8 Naziv="2.1.2.1. potpore edukacijama za potrebe poduzetnika"/>
+								<Razina8 Naziv="2.1.2.2. potpore izvoznicima i tvrtkama s potencijalom izvoza"/>
+								<Razina8 Naziv="2.1.2.3. potpore gospodarskim subjektima koji mogu izaći iz poteškoća temeljem programa restrukturiranja"/>
+								<Razina8 Naziv="2.1.2.4. potpore gospodarskim subjektima koji imaju interesa za revitalizaciju tradicionalnih industrija Županije"/>
+								<Razina8 Naziv="2.1.2.5. potpore obrtima"/>
+							</Razina7>
+							<Razina7 Naziv="2.1.3. Poticanje stvaranja financijskog okruženja za razvoj poduzetničke aktivnosti">
+								<Razina8 Naziv="2.1.3.1. financijske potpore kreditiranju malog i srednjeg poduzetništva"/>
+								<Razina8 Naziv="2.1.3.2. potpore putem jamstvenih fondova"/>
+							</Razina7>
+							<Razina7 Naziv="2.1.4. Sustavan razvoj gospodarenja zonama i izgradnja poduzetničke infrastrukture">
+								<Razina8 Naziv="2.1.4.1. podrška uspostavi novih gospodarskih zona i maksimalno angažiranje prostora postojećih zona"/>
+								<Razina8 Naziv="2.1.4.2. potpore institucijama koje pružaju stručnu pomoć malom i srednjem poduzetništvu"/>
+								<Razina8 Naziv="2.1.4.3. stručna i tehnička pomoć poduzetnicima u izradi projekata, investicijskih elaborata, studija izvodivosti i dr."/>
+								<Razina8 Naziv="2.1.4.4. potpore poslovnom povezivanju"/>
+							</Razina7>
+							<Razina7 Naziv="2.1.5. Sustavno privlačenje i praćenje ulagača na području Županije">
+								<Razina8 Naziv="2.1.5.1. razvoj poticajne lokalne fiskalne politike prema ulagačima"/>
+								<Razina8 Naziv="2.1.5.2. programi promocije Županije za privlačenje ulaganja (brownfield i greenfield)"/>
+							</Razina7>
+						</Razina6>
+						<Razina6 Naziv="2.2. Razvoj konkurentne poljoprivrede">
+							<Razina7 Naziv="2.2.1. Definiranje i provedba sustavnih mjera razvoja poljoprivrede"/>
+							<Razina7 Naziv="2.2.2. Okrupnjavanje zemljišta"/>
+							<Razina7 Naziv="2.2.3. Povećanje konkurentnosti komercijalnih poljoprivrednih proizvođača kroz edukaciju i prezentiranje znanstvenih istraživanja i dostignuća"/>
+							<Razina7 Naziv="2.2.4. Unaprjeđenje poslovanja (proizvodnje, skladištenja, prerade i plasmana poljoprivrednih proizvoda) malih poljoprivrednih proizvođača kroz zadruge, klastere i dr."/>
+							<Razina7 Naziv="2.2.5. Vrednovanje i unaprjeđenje proizvodnje autohtonih proizvoda"/>
+						</Razina6>
+						<Razina6 Naziv="2.3. Razvoj ruralnog prostora">
+							<Razina7 Naziv="2.3.1. Stvaranje sustava podrške Lokalnim akcijskim grupama i provedba LEADER pristupa"/>
+							<Razina7 Naziv="2.3.2. Poticanje diverzifikacije gospodarskih aktivnosti u ruralnim područjima"/>
+							<Razina7 Naziv="2.3.3. Poticanje integriranog ruralnog razvoja (gospodarski, socijalni, kulturni i ostali aspekti življenja u ruralnom prostoru)"/>
+							<Razina7 Naziv="2.3.4. Razvoj i očuvanje tradicijskih obrta"/>
+							<Razina7 Naziv="2.3.5. Izgradnja i unaprjeđenje vinskih cesta"/>
+						</Razina6>
+						<Razina6 Naziv="2.4. Poticanje razvoja i primjene visokih tehnologija i inovacija, te prijenosa znanja sa znanstveno-istraživačkog na poslovni sektor">
+							<Razina7 Naziv="2.4.1. 2.4.1. Poticanje povezivanja gospodarstva, znanstvenih i razvojnih institucija u cilju institucionalne potpore kroz savjetodavnu, konzultantsku i tehničku pomoć u primjeni inovacija i novih tehnologija."/>
+							<Razina7 Naziv="2.4.2. Razvoj tehnoloških parkova i poduzetničkih inkubatora za poduzetništvo koje primjenjuje inovacije i nove tehnologije s visokom razinom dodane vrijednosti"/>
+							<Razina7 Naziv="2.4.3. Razvoj i primjena informatičke tehnologije u izgradnji informacijskih sustava"/>
+						</Razina6>
+						<Razina6 Naziv="2.5. Razvoj kontinentalnog turizma">
+							<Razina7 Naziv="2.5.1. Objedinjavanje i unaprjeđenje turističke ponude"/>
+							<Razina7 Naziv="2.5.2. Očuvanje prirodne i kulturne baštine i tradicije u funkciji razvitka"/>
+							<Razina7 Naziv="2.5.3. Unaprjeđenje znanja i vještina ljudskih resursa u turizmu"/>
+							<Razina7 Naziv="2.5.4. Razvoj turističkih proizvoda i usluga i podizanje njihova standarda"/>
+							<Razina7 Naziv="2.5.5. Promocija turističkih potencijala Županije"/>
+							<Razina7 Naziv="2.5.6. Razvoj svih oblika kontinentalnog turizma s naglaskom na ruralni"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="3. Razvoj ljudskih resursa i kvalitetno zadovoljavanje javnih potreba građana">
+						<Razina6 Naziv="3.1. Podizanje razine zaposlenosti">
+							<Razina7 Naziv="3.1.1. Unaprjeđenje zapošljavanja na županijskoj razini"/>
+							<Razina7 Naziv="3.1.2. Razvoj lokalnog tržišta rada"/>
+							<Razina7 Naziv="3.1.3. Poticanje socijalnog zapošljavanja"/>
+							<Razina7 Naziv="3.1.4. Razvoj zapošljavanja teško zapošljivih društvenih skupina (mladi, žene, osobe s invaliditetom i dr.)"/>
+						</Razina6>
+						<Razina6 Naziv="3.2. Razvoj ljudskih resursa">
+							<Razina7 Naziv="3.2.1. Unaprjeđenje predškolskog, osnovnog i srednjoškolskog obrazovanja"/>
+							<Razina7 Naziv="3.2.2. Razvoj visokog obrazovanja i specijalističkog usavršavanja"/>
+							<Razina7 Naziv="3.2.3. Jačanje znanstveno-istraživačkih institucija i poticanje istraživanja"/>
+							<Razina7 Naziv="3.2.4. Razvoj i prilagodba obrazovnog sustava sukladno potrebama gospodarstva"/>
+							<Razina7 Naziv="3.2.5. Stvaranje uvjeta za cjeloživotno učenje"/>
+							<Razina7 Naziv="3.2.6. Poticanje rasta broja stanovnika RH"/>
+							<Razina7 Naziv="3.2.7. Potpora aktivnostima koje pridonose poboljšanju kvalitete života mladih kao i jačanju njihove uloge u društvu"/>
+						</Razina6>
+						<Razina6 Naziv="3.3. Jačanje razvojnih kapaciteta">
+							<Razina7 Naziv="3.3.1. Razvoj institucionalnih kapaciteta u JLPRS Unaprjeđenje predškolskog, osnovnog i srednjoškolskog obrazovanja"/>
+							<Razina7 Naziv="3.3.2. Stručno jačanje razvojnih subjekata Razvoj visokog obrazovanja i specijalističkog usavršavanja"/>
+							<Razina7 Naziv="3.3.3. Poticanje međusektorske, međuopćinske, međužupanijske i međunarodne suradnje i promicanje primjera dobre prakse Jačanje znanstveno-istraživačkih institucija i poticanje istraživanja"/>
+						</Razina6>
+						<Razina6 Naziv="3.4. Razvoj civilnog društva i građanskih inicijativa">
+							<Razina7 Naziv="3.4.1. Unaprjeđenje postojećih institucionalnih mehanizama za suradnju i koordinaciju između tijela JLPRS i civilnog društva"/>
+							<Razina7 Naziv="3.4.2. Razvoj organizacija civilnog društva te stvaranje sustava financijske potpore za korištenje EU fondova (predfinanciranje, sufinanciranje)"/>
+							<Razina7 Naziv="3.4.3. Poticanje socijalnog poduzetništva, društvenoodgovornog ponašanja i poslovanja"/>
+							<Razina7 Naziv="3.4.4. Unaprjeđenje zaštite ljudskih prava i prava pojedinaca i promicanje rasne, spolne i druge jednakosti"/>
+						</Razina6>
+						<Razina6 Naziv="3.5. Stvaranje preduvjeta za dostupno cjeloživotno obrazovanje svih građana">
+							<Razina7 Naziv="3.5.1. Razvoj preduvjeta za cjeloživotno obrazovanje građana"/>
+							<Razina7 Naziv="3.5.2. Razvoj programa izvaninstitucionalnog obrazovanja"/>
+							<Razina7 Naziv="3.5.3. Jačanje informiranja građana o mogućnostima cjeloživotnog obrazovanja"/>
+						</Razina6>
+						<Razina6 Naziv="3.6. Podizanje razine usluga u zdravstvu">
+							<Razina7 Naziv="3.6.1. Unaprjeđenje uvjeta i kvalitete rada te dostupnosti usluga u zdravstvenoj djelatnosti"/>
+							<Razina7 Naziv="3.6.2. Promicanje zdravog načina života"/>
+							<Razina7 Naziv="3.6.3. Prevencija, rano otkrivanje, liječenje i rehabilitacija bolesti koje su prepoznate kao županijski prioriteti (i kampanje koje ih prate)"/>
+							<Razina7 Naziv="3.6.4. Unaprjeđenje zdravstvene zaštite djece, osoba s invaliditetom, starijih osoba, socijalno ugroženih građana i sportaša"/>
+							<Razina7 Naziv="3.6.5. Razvoj institucionalnih i izvaninstitucionalnih oblika pružanja zdravstvenih usluga"/>
+						</Razina6>
+						<Razina6 Naziv="3.7. Podizanje razine usluga u sustavu socijalne skrbi">
+							<Razina7 Naziv="3.7.1. Unaprjeđenje uvjeta i kvalitete rada u sustavu socijalne skrbi"/>
+							<Razina7 Naziv="3.7.2. Razvoj novih modela organiziranja ustanova socijalne skrbi"/>
+							<Razina7 Naziv="3.7.3. Razvoj izvaninstitucionalnih oblika pružanja usluga socijalne skrbi"/>
+						</Razina6>
+						<Razina6 Naziv="3.8. Stvaranje preduvjeta za kvalitetnu provedbu programa kulture, športa i tehničke kulture">
+							<Razina7 Naziv="3.8.1. Poticanje uključenosti građana u programe kulture, tehničke kulture i športa"/>
+							<Razina7 Naziv="3.8.2. Poticanje programa i aktivnosti kojima se diverzificira korištenje postojećih resursa u kulturi, športu i tehničkoj kulturi"/>
+							<Razina7 Naziv="3.8.3. Podizanje standarda kulturnih, športskih i programa tehničke kulture"/>
+						</Razina6>
+					</Razina5>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti">
+				<Razina4 Naziv="Strategija razvoja grada Valpova za razdoblje 2015. - 2020.">
+					<Razina5 Naziv="1. Održivi razvoj prostora i unaprjeđenje infrastrukture">
+						<Razina6 Naziv="1.1. Održivo gospodarenje prostorom">
+							<Razina7 Naziv="1.1.1. Cjelovito planiranje prostornog razvoja sukladno sa razvojnim potrebama Grada i unaprjeđenje sustava održivog gospodarenja prostorom"/>
+							<Razina7 Naziv="1.1.2. Unaprjeđenje i održivo korištenje prostora i objekata Grada te poticanje obnove pročelja"/>
+							<Razina7 Naziv="1.1.3. Unaprjeđenje postojećih i uređenje novih javnih gradskih prostora i površina"/>
+							<Razina7 Naziv="1.1.4. Revitalizacija zapuštenih objekata i zemljišta"/>
+							<Razina7 Naziv="1.1.5. Sanacija industrijske infrastrukture s ugašenim proizvodnjama"/>
+							<Razina7 Naziv="1.1.6. Uspostava i unaprjeđenje informacijskog sustava prostornog uređenja baziranog na GIS tehnologijama"/>
+						</Razina6>
+						<Razina6 Naziv="1.2. Razvoj i unapređenje infrastrukturnog sustava Grada">
+							<Razina7 Naziv="1.2.1. Izgradnja i unaprjeđenje sustava prometne infrastrukture"/>
+							<Razina7 Naziv="1.2.2. Izgradnja i održavanje lokalnih i nerazvrstanih cesta te šumskih i poljskih putova"/>
+							<Razina7 Naziv="1.2.3. Izgradnja i sanacija nogostupa u naseljima"/>
+							<Razina7 Naziv="1.2.4. Razvoj mreže biciklistiĉkih staza i biciklistiĉkog prometa"/>
+							<Razina7 Naziv="1.2.5. Razvoj i unaprjeđenje sustava odvodnje sukladno razvoju Grada"/>
+							<Razina7 Naziv="1.2.6. Razvoj i povećanje uĉinkovitosti vodoopskrbnog sustava Grada"/>
+							<Razina7 Naziv="1.2.7. Profiliranje, sadržajno i oblikovno unapređivanje te stvaranje novih tržnica i javnih zelenih površina"/>
+							<Razina7 Naziv="1.2.8. Razvoj i unaprjeđenje elektroenergetske i telekomunikacijske mreže sukladno razvoju Grada"/>
+							<Razina7 Naziv="1.2.9. Razvoj infrastrukture širokopojasnog interneta u Gradu Valpovu"/>
+							<Razina7 Naziv="1.2.10. Unaprjeđenje javne rasvjete"/>
+							<Razina7 Naziv="1.2.11. Izgradnja mreže i unaprjeđenje sustava komunalnih usluga i infrastrukture Grada"/>
+						</Razina6>
+						<Razina6 Naziv="1.3. Unaprjeđenje sustava zaštite okoliša i poboljšanje kvalitete okoliša">
+							<Razina7 Naziv="1.3.1. Unaprjeđenje sustava zaštite okoliša i poboljšanje kvalitete okoliša"/>
+							<Razina7 Naziv="1.3.2. Izgradnja cjelovitog sustava gospodarenja otpadom"/>
+							<Razina7 Naziv="1.3.3. Sprjeĉavanje i sanacija nastajanja divljih odlagališta otpada"/>
+							<Razina7 Naziv="1.3.4. Oĉuvanje biološke raznolikosti"/>
+							<Razina7 Naziv="1.3.5. Povećanje informiranosti stanovništva po pitanjima zaštite okoliša"/>
+							<Razina7 Naziv="1.3.6. Promoviranje „ĉišćeg“ prometa koji poštuje okoliš koristeći „alternativna“ pogonska goriva"/>
+						</Razina6>
+						<Razina6 Naziv="1.4. Održivo gospodarenje energijom i povećanje udjela obnovljivih izvora">
+							<Razina7 Naziv="1.4.1. Povećanje energetske uĉinkovitosti u javnim, poslovnim, industrijskim i stambenim objektima, prometu i javnoj rasvjeti"/>
+							<Razina7 Naziv="1.4.2. Diversifikacija energetskog sustava i poticanje korištenja obnovljivih izvora energije"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="2. Razvoj konkurentnog i održivog gospodarstva">
+						<Razina6 Naziv="2.1. Povećanje primjene znanja, inovacija i novih tehnologija u gospodarstvu">
+							<Razina7 Naziv="2.1.1. Povezivanje sa znanstvenim i obrazovnim sektorom i omogućavanje prijenosa znanja"/>
+							<Razina7 Naziv="2.1.2. Edukacija poduzetnika, te poticanje razvoja temeljenog na inovacijama, znanju i naĉelima održivog razvoja"/>
+							<Razina7 Naziv="2.1.3. Zaštita intelektualnog vlasništva inovativnih proizvoda"/>
+						</Razina6>
+						<Razina6 Naziv="2.2. Razvoj malog i srednjeg poduzetništva">
+							<Razina7 Naziv="2.2.1. Definiranje i provedba sustavnih mjera potpore razvoju malog i srednjeg poduzetništva"/>
+							<Razina7 Naziv="2.2.2. Razvoj poslovne infrastrukture za podrške malom i srednjem poduzetništvu"/>
+							<Razina7 Naziv="2.2.3. Oĉuvanje tradicijskih obrta te poticanje razvoja kreativnih industrija"/>
+							<Razina7 Naziv="2.2.4. Poticanje udruživanja i razvoj klastera"/>
+							<Razina7 Naziv="2.2.5.Uvođenje standarda kvalitete u poslovanju i proizvodnji"/>
+						</Razina6>
+						<Razina6 Naziv="2.3. Razvoj konkurentne poljoprivrede i prehrambene industrije">
+							<Razina7 Naziv="2.3.1. Definiranje i provedba sustavnih mjera potpore razvoju poljoprivrede i prehrambene industrije u skladu s Programom ruralnog razvoja RH 2014.- 2020."/>
+							<Razina7 Naziv="2.3.2. Razvoj agrozona i ostale poslovne infrastrukture"/>
+							<Razina7 Naziv="2.3.3. Poticanje razvoja obiteljskih gospodarstava i ekološke poljoprivrede"/>
+							<Razina7 Naziv="2.3.4. Poticanje uzgoja autohtonih vrsta i pasmina"/>
+							<Razina7 Naziv="2.3.5. Poticanje standardizacije poljoprivrednih i prehrambenih proizvoda te višeg stupnja finalizacije"/>
+							<Razina7 Naziv="2.3.6. Poticanje diversifikacije gospodarskih aktivnosti"/>
+							<Razina7 Naziv="2.3.7. Poticanje udruţivanja poljoprivrednih i prehrambenih proizvođaĉa, posebice zadruga, proizvođaĉkih grupa i organizacija"/>
+							<Razina7 Naziv="2.3.8. Stvaranje preduvjeta za razvoj lokalnog tržišta i kratkih lanaca opskrbe"/>
+							<Razina7 Naziv="2.3.9. Poticanje zaštite, certificiranja i brendiranja autohtonih proizvoda"/>
+							<Razina7 Naziv="2.3.10. Razvoj lokalnih brendova za lokalno proizvedene poljoprivredne i prehrambene proizvode"/>
+							<Razina7 Naziv="2.3.11. Stvaranje povoljnog okruženja za razvoj prerađivaĉke industrije visokih tehnologija s integriranom brigom za okoliš"/>
+							<Razina7 Naziv="2.3.12. Stvaranje okruženja za ukljuĉivanje u EIP (Europsko inovacijsko partnerstvo)"/>
+						</Razina6>
+						<Razina6 Naziv="2.4. Razvoj kontinentalnog turizma">
+							<Razina7 Naziv="2.4.1. Razvoj turistiĉkog identiteta Grada"/>
+							<Razina7 Naziv="2.4.2. Razvoj specifiĉnih oblika turistiĉke ponude"/>
+							<Razina7 Naziv="2.4.3. Kreiranje prepoznatljivih turistiĉkih proizvoda i usluga, manifestacija, sajmova i sliĉno, te bolje upravljanje postojećim"/>
+							<Razina7 Naziv="2.4.4. Razvoj turistiĉke infrastrukture"/>
+							<Razina7 Naziv="2.4.5. Razvoj turistiĉkih sadržaja temeljenih na bogatoj kulturnoj baštini Grada"/>
+							<Razina7 Naziv="2.4.6. Oĉuvanje tradicionalnih obilježja seoskih naselja"/>
+						</Razina6>
+						<Razina6 Naziv="2.5. Razvoj socijalnog i društvenog poduzetništva">
+							<Razina7 Naziv="2.5.1. Definiranje programa i provedba sustavnih mjera potpore razvoju socijalnog/društvenog poduzetništva"/>
+							<Razina7 Naziv="2.5.2. Promicanje zajedniĉkih inicijativa i partnerstava"/>
+							<Razina7 Naziv="2.5.3. Stavljanje u funkciju neiskorištenih javnih prostornih resursa: poslovnih, građevinskih, poljoprivrednih za razvoja socijalnog i društvenog poduzetništva"/>
+							<Razina7 Naziv="2.5.4. Promicanje važnosti i uloge socijalnog i društvenog poduzetništva kroz sve oblike obrazovanja"/>
+							<Razina7 Naziv="2.5.5. Potpore razvoju projekata udruga koje se bave podruĉjem socijalnog poduzetništva"/>
+						</Razina6>
+						<Razina6 Naziv="2.6 Podizanje razine lokalne konkurentnosti te privlaĉenje ulagaĉa i poticanje ulaganja u industrijski razvoj">
+							<Razina7 Naziv="2.6.1. Brendiranje Grada Valpova"/>
+							<Razina7 Naziv="2.6.2. Stvaranje pozitivnog investicijskog okruženja kroz posebno razvijene programe po mjeri investitora"/>
+							<Razina7 Naziv="2.6.3. Sustavan razvoj gospodarenja zonama i izgradnja poduzetniĉke infrastrukture"/>
+							<Razina7 Naziv="2.6.4. Sustavno privlaĉenje i praćenje ulagaĉa na podruĉju Grada te provedba programa promocije Grada za privlaĉenje ulaganja (brownfield i greenfield)"/>
+							<Razina7 Naziv="2.6.5.Razvoj Triple helix modela – Grad, privatni sektor, obrazovnoznanstveni sektor"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="3. Razvoj ljudskih potencijala i unaprjeđenje kvalitete života">
+						<Razina6 Naziv="3.1. Razvoj ljudskih potencijala">
+							<Razina7 Naziv="3.1.1. Poboljšanje kvalitete usluga sustava odgoja i obrazovanja na svim razinama"/>
+							<Razina7 Naziv="3.1.2. Poticanje prilagodbe obrazovanja potrebama gospodarstva"/>
+							<Razina7 Naziv="3.1.3. Razvoj i provedba programa cjeloživotnog uĉenja i profesionalnog usmjeravanja"/>
+							<Razina7 Naziv="3.1.4. Potpora integraciji osoba u nepovoljnom položaju na tržištu rada"/>
+							<Razina7 Naziv="3.1.5. Provedba posebnih programa s naglaskom na mlade i jačanju njihove uloge u društvu te osobe 55+"/>
+						</Razina6>
+						<Razina6 Naziv="3.2. Razvoj društvene infrastrukture i usluga">
+							<Razina7 Naziv="3.2.1. Izgradnja, obnova i održavanje društvenih domova te održivo korištenje i upravljanje"/>
+							<Razina7 Naziv="3.2.2. Izgradnja, obnova i održavanje društvene infrastrukture namijenjene djeci"/>
+							<Razina7 Naziv="3.2.3. Poboljšanje uvjeta i kvalitete usluga u zdravstvu i razvoj programa zdravstvene prevencije"/>
+							<Razina7 Naziv="3.2.4. Unaprjeđenje kvalitete infrastrukture u kulturi, kulturnih programa i koordinacije između kulturnih institucija"/>
+							<Razina7 Naziv="3.2.5. Oĉuvanje i jaĉanje prepoznatljivosti kulturno povijesne baštine s posebnim naglaskom na dvorac Prandau-Normann"/>
+							<Razina7 Naziv="3.2.6.Razvoj športa i rekreacije, te športske i rekreacijske infrastrukture"/>
+						</Razina6>
+						<Razina6 Naziv="3.3. Unaprjeđenje kvalitete života i razvoj socijalnih usluga">
+							<Razina7 Naziv="3.3.1. Unaprjeđenje pronatalitetne populacijske politike"/>
+							<Razina7 Naziv="3.3.2. Unaprjeđenje socijalne infrastrukture, usluga i programa te poboljšanje koordinacije između kljuĉnih dionika"/>
+							<Razina7 Naziv="3.3.3. Razvoj prilagođenih socijalnih usluga za osobe u nepovoljnom položaju"/>
+							<Razina7 Naziv="3.3.4. Razvoj socijalnih usluga za djecu bez odgovarajuće roditeljske skrbi te poticanje udomiteljstva"/>
+						</Razina6>
+						<Razina6 Naziv="3.4. Unaprjeđenje kvalitete stanovanja i sigurnosti stanovništva">
+							<Razina7 Naziv="3.4.1. Predviđanje budućih potrebe stambene izgradnje u naseljima i projektiranje te stvaranje preduvjeta za stambenu izgradnju"/>
+						</Razina6>
+					</Razina5>
+					<Razina5 Naziv="4. Učinkovito upravljanje razvojem">
+						<Razina6 Naziv="4.1. Jaĉanje razvojnih kapaciteta i unaprjeđenje sustava za upravljanje razvojem">
+							<Razina7 Naziv="4.1.1. Razvoj i unaprjeđenje institucionalnih kapaciteta Grada"/>
+							<Razina7 Naziv="4.1.2. Razvoj i uĉinkovito korištenje informacijskih i komunikacijskih tehnologija u javnom upravljanju i poboljšanju javnih usluga"/>
+							<Razina7 Naziv="4.1.3. Jaĉanje kapaciteta i kompetencija razvojnih subjekata i struĉnih službi"/>
+							<Razina7 Naziv="4.1.4. Jaĉanje kapaciteta za korištenje EU sredstava"/>
+						</Razina6>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="Strategije razvoja urbane aglomeracije Osijek do 2020."/>
+				<Razina4 Naziv="Strategija razvoja Grada Našica za razdoblje 2015. - 2020."/>
+				<Razina4 Naziv="Lokalna razvojna strategija Donjeg Miholjca za razdoblje 2015. - 2020."/>
+				<Razina4 Naziv="Intervencijski plan Grada Belog Manastira i općine Darda za razdoblje 2017. - 2022."/>
+				<Razina4 Naziv="Strategija razvoja grada Belišća za razdoblje 2014. - 2020."/>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Šibensko-kninska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Vukovarsko-srijemska županija">
+			<Razina3 Naziv="RS Vukovarsko srijemske županije"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Splitsko-dalmatinska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Istarska županija">
+			<Razina3 Naziv="1. Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="2. Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Dubrovačko-neretvanska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Međimurska županija">
+			<Razina3 Naziv="Županijski strateški dokumenti"></Razina3>
+			<Razina3 Naziv="Lokalni strateški dokumenti"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Grad Zagreb">
+			<Razina3 Naziv="RS Grad Zagreb do 2020. godine"></Razina3>
+			<Razina3 Naziv="Strategija razvoja urbane aglomeracije Zagreb za razdoblje do 2020."></Razina3>
+		</Razina2>
+		<Razina2 Naziv="Europska teritorijalna suradnja">
+			<Razina3 Naziv="Međuregionalna suradnja">
+				<Razina4 Naziv="INTERACT III 2014.-2020."/>
+				<Razina4 Naziv="INTERREG VC 2014.-2020."/>
+				<Razina4 Naziv="ESPON 2014.-2020."/>
+				<Razina4 Naziv="URBACT 2014.-2020."/>
+			</Razina3>
+			<Razina3 Naziv="Prekogranična suradnja">
+				<Razina4 Naziv="Program prekogranične suradnje INTERREG V-A Italija – Hrvatska 2014.-2020."/>
+				<Razina4 Naziv="Program prekogranične suradnje INTERREG V-A Mađarska – Hrvatska 2014.-2020."/>
+				<Razina4 Naziv="Program prekogranične suradnje INTERREG V-A Slovenija – Hrvatska 2014.-2020."/>
+				<Razina4 Naziv="INTERREG IPA program prekogranične suradnje Hrvatska – Bosna i Hercegovina – Crna Gora 2014.-2020."/>
+				<Razina4 Naziv="INTERREG IPA Program prekogranične suradnje Hrvatska – Srbija 2014.-2020."/>
+			</Razina3>
+			<Razina3 Naziv="Transnacionalna suradnja">
+				<Razina4 Naziv="Program transnacionalne suradnje INTERREG V-B Mediteran 2014.-2020."/>
+				<Razina4 Naziv="Program transnacionalne suradnje INTERREG V-B Dunav 2014.-2020."/>
+				<Razina4 Naziv="INTERREG V-B Jadransko-jonski program transnacionalne suradnje 2014.-2020."/>
+				<Razina4 Naziv="Program transnacionalne suradnje INTERREG Središnja Europa 2014.-2020."/>
+			</Razina3>
+		</Razina2>
+	</Razina1>
+	<Razina1 Naziv="ESI fondovi 2014. - 2020.">
+		<Razina2 Naziv="Operativni program Konkurentnost i kohezija 2014. - 2020.">
+			<Razina3 Naziv="1. Jačanje gospodarstva primjenom istraživanja i inovacija">
+				<Razina4 Naziv="1a Poboljšanje infrastrukture i kapaciteta za istraživanje i inovacije s ciljem razvijanja uspješnosti te promoviranje centara za kompetencije, posebice onih od europskog interesa">
+					<Razina5 Naziv="1a1 Povećana sposobnost sektora istraživanja i razvoja (IR) za obavljanje istraživanja vrhunske kvalitete i zadovoljavanje potreba gospodarstva"/>
+				</Razina4>
+				<Razina4 Naziv="1b Promicanje poslovnih ulaganja u inovacijama i istraživanjima te razvoj veza i sinergija između poduzeća, IR centara i visokog obrazovanja, osobito razvoja proizvoda i usluga, tehnološko povezivanje, socijalna inovacija, ekološka inovacija, kulturna i kreativna industrija, usluge javnog servisa, zahtjevi za poticajima, umrežavanje, klasteri i otvorena inovacija kroz pametnu specijalizaciju, tehnološko jačanje i primijenjeno istraživanje, pilot linije, pred proizvodna provjera valjanosti, napredne proizvodne mogućnosti i početne proizvodnje, osobito u Ključnim tehnologijama koje potiču razvoj i inovacije i širenje tehnologija za opću namjenu.">
+					<Razina5 Naziv="1b1 Novi proizvodi i usluge kao rezultat djelatnosti istraživanja, razvoja i inovacija (IRI)"/>
+					<Razina5 Naziv="1b2 Jačanje djelatnosti istraživanja, razvoja i inovacija (IRI) poslovnog sektora kroz stvaranje povoljnog inovacijskog okruženja"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="2. Korištenje informacijske i komunikacijske tehnologije">
+				<Razina4 Naziv="2a Razvoj infrastrukture širokopojasne mreže">
+					<Razina5 Naziv="2a1 Razvoj infrastrukture širokopojasne mreže sljedeće generacije u područjima bez infrastrukture širokopojasne mreže sljedeće generacije i bez dovoljno komercijalnog interesa, za maksimalno povećanje socijalne i ekonomske dobrobiti"/>
+				</Razina4>
+				<Razina4 Naziv="2c Jačanje aplikacija informacijskih i komunikacijskih tehnologija za e-vladu, e-učenje, e-uključenost, e-kulturu i e-zdravlje">
+					<Razina5 Naziv="2c1 Povećanje korištenja IKT-a u komunikaciji između građana i javne uprave putem uspostave IKT koordinacijske strukture i softverskih rješenja"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="3. Poslovna konkurentnost">
+				<Razina4 Naziv="3a Promicanje poduzetništva, posebno olakšavajući ekonomsko iskorištavanje novih ideja i poticanje stvaranja novih poduzeća, uključujući putem poslovnih inkubatora">
+					<Razina5 Naziv="3a1 Bolji pristup financiranju za male i srednje poduzetnike"/>
+					<Razina5 Naziv="3a2 Omogućavanje povoljnog okruženja za razvoj poduzetništva"/>
+				</Razina4>
+				<Razina4 Naziv="3d Podupiranje kapaciteta MSP-ova za rast na regionalnom, nacionalnom i međunarodnom tržištu te angažiranost u inovacijskim procesima">
+					<Razina5 Naziv="3d1 Poboljšan razvoj i rast malih i srednjih poduzetnika na domaćim i stranim tržištima"/>
+					<Razina5 Naziv="3d2 Poboljšana inovativnost malih i srednjih poduzetnika"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="4. Promicanje energetske učinkovitosti i obnovljivih izvora energije">
+				<Razina4 Naziv="4b Promicanje energetske učinkovitosti i korištenja obnovljivih izvora energije u poduzećima">
+					<Razina5 Naziv="4b1 Povećanje energetske učinkovitosti i korištenja OIE u proizvodnim industrijama"/>
+					<Razina5 Naziv="4b2 Povećanje energetske učinkovitosti i korištenja OIE u privatnom uslužnom sektoru (turizam i trgovina)"/>
+				</Razina4>
+				<Razina4 Naziv="4c Podupiranje energetske učinkovitosti, pametnog upravljanja energijom i korištenje OIE u javnoj infrastrukturi, uključujući javne zgrade i u stambenom sektoru">
+					<Razina5 Naziv="4c1 Smanjenje potrošnje energije u zgradama javnog sektora"/>
+					<Razina5 Naziv="4c2 Smanjenje potrošnje energije u stambenim zgradama (u višestambenim zgradama i obiteljskim kućama)"/>
+					<Razina5 Naziv="4c3 Povećanje učinkovitosti sustava toplinarstva"/>
+					<Razina5 Naziv="4c4 Povećanje učinkovitosti sustava javne rasvjete"/>
+				</Razina4>
+				<Razina4 Naziv="4d Razvoj i provedba pametnih sustava distribucije koji djeluju pri niskim i srednjim razinama napona">
+					<Razina5 Naziv="4d1 Pilot projekt uvođenja naprednih mreža"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="5. Klimatske promjene i upravljanje rizicima">
+				<Razina4 Naziv="5a Podupiranje ulaganja za prilagodbu na klimatske promjene, uključujući pristupe temeljene na ekosustavu">
+					<Razina5 Naziv="5a1 Poboljšanje praćenja, predviđanja i planiranja mjera prilagodbe klimatskim promjenama"/>
+				</Razina4>
+				<Razina4 Naziv="5b Promicanje ulaganja koja se odnose na posebne rizike, osiguranje otpornosti na katastrofe i razvoj sustava za upravljanje katastrofama">
+					<Razina5 Naziv="5b1 Jačanje sustava upravljanja katastrofama"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="6. Zaštita okoliša i održivost resursa">
+				<Razina4 Naziv="6c Očuvanje, zaštita, promicanje i razvoj prirodne i kulturne baštine">
+					<Razina5 Naziv="6c1 Povećanje zapošljavanja i turističkih izdataka kroz unaprjeđenje kulturne baštine"/>
+					<Razina5 Naziv="6c2 Povećanje atraktivnosti, edukativnog kapaciteta i održivog upravljanja odredištima prirodne baštine"/>
+				</Razina4>
+				<Razina4 Naziv="6e Aktivnosti kojima se poboljšava urbani okoliš, revitalizacija gradova, obnova i dekontaminacija nekadašnjeg industrijskog zemljišta (uključujući prenamijenjena područja), smanjenje zagađenja zraka i promocija mjera za smanjenje buke">
+					<Razina5 Naziv="6e1 Poboljšanje sustava upravljanja i praćenja kvalitete zraka sukladno Uredbi 2008/50/EZ"/>
+					<Razina5 Naziv="6e2 Obnova brownfield lokacija (bivša vojna i/ili industrijska područja) unutar ITU"/>
+				</Razina4>
+				<Razina4 Naziv="6i Ulaganje u sektor otpada kako bi se ispunili zahtjevi pravne stečevine Unije u području okoliša i zadovoljile potrebe koje su utvrdile države članice za ulaganjem koje nadilazi te zahtjeve">
+					<Razina5 Naziv="6i1 Smanjena količina otpada koji se odlaže na odlagališta"/>
+				</Razina4>
+				<Razina4 Naziv="6ii Ulaganje u vodni sektor kako bi ispunili zahtjevi pravne stečevine Unije u području okoliša i zadovoljile potrebe koje su utvrdile države članice za ulaganjem koje nadilazi te zahtjeve">
+					<Razina5 Naziv="6ii1 Unapređenje javnog vodoopskrbnog sustava sa svrhom osiguranja kvalitete i sigurnosti usluga opskrbe pitkom vodom"/>
+					<Razina5 Naziv="6ii2 Razvoj sustava prikupljanja i obrade otpadnih voda s ciljem doprinosa poboljšanju stanja voda"/>
+				</Razina4>
+				<Razina4 Naziv="6iii Zaštita i obnova biološke raznolikosti i tla te promicanje eko usluga, uključujući NATURA 2000 i „zelenu“ infrastrukturu">
+					<Razina5 Naziv="6iii1 Poboljšano znanje o stanju bioraznolikosti kao temelja za učinkovito praćenje i upravljanje bioraznolikošću"/>
+					<Razina5 Naziv="6iii2 Uspostava okvira za održivo upravljanje bioraznolikošću (primarno Natura 2000)"/>
+					<Razina5 Naziv="6iii3 Razminiranje, obnova i zaštita šuma i šumskog zemljišta u zaštićenim i Natura 2000 područjima 50.000.000 €"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="7. Povezanost i mobilnost">
+				<Razina4 Naziv="7a - Potpora jedinstvenom multimodalnom europskom prometnom prostoru">
+					<Razina5 Naziv="7a1– Unaprjeđenje cestovne mreže TEN-T i pristupa cestovnoj mreži TEN-T"/>
+				</Razina4>
+				<Razina4 Naziv="7b - Poboljšanje regionalne mobilnosti putem povezivanja sekundarnih i tercijarnih čvorišta s TEN-T infrastrukturom">
+					<Razina5 Naziv="7b1 – Poboljšanje cestovne sigurnosti u dijelovima s visokom razinom mješovitog prometa"/>
+				</Razina4>
+				<Razina4 Naziv="7i – Podupiranje multimodalnog jedinstvenog europskog prostora ulaganjem u TEN-T">
+					<Razina5 Naziv="7i1 – Povećanje teretnog prometa na unutarnjim vodnim putovima"/>
+				</Razina4>
+				<Razina4 Naziv="7ii - Razvoj i unapređenje prometnih sustava prihvatljivih za okoliš radi promicanja održive regionalne i lokalne mobilnosti">
+					<Razina5 Naziv="7ii1 – Poboljšanje dostupnosti naseljenih otoka za njihove stanovnike"/>
+					<Razina5 Naziv="7ii2 – Povećati broj prevezenih putnika u gradskom javnom prijevozu"/>
+					<Razina5 Naziv="7ii3 – Poboljšanje dostupnosti Dubrovnika zrakom"/>
+				</Razina4>
+				<Razina4 Naziv="7iii – Razvoj i obnova interoperabilnih željezničkih sustava">
+					<Razina5 Naziv="7iii1 – Povećanje uporabe i važnosti željezničke mreže"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="8. Socijalno uključivanje i zdravlje">
+				<Razina4 Naziv="9a - Ulaganje u zdravstvenu i socijalnu infrastrukturu što pridonosi smanjenju nejednakosti u smislu zdravstvenog statusa i promicanju socijalnog uključivanja">
+					<Razina5 Naziv="9a1 - Poboljšanje pristupa primarnoj i hitnoj zdravstvenoj zaštiti, sa fokusom na udaljena i deprivirana područja"/>
+					<Razina5 Naziv="9a2 - Poboljšanje učinkovitosti i dostupnosti bolničkog liječenja"/>
+					<Razina5 Naziv="9a3 - Promicanje socijalne uključenosti i smanjenje nejednakosti kroz poboljšani pristup socijalnim uslugama te prelazak s institucionalne skrbi na skrb u zajednici putem poboljšane socijalne infrastrukture"/>
+					<Razina5 Naziv="9a4 - Provedba pilot-aktivnosti koje imaju za cilj promociju socijalne uključenosti i smanjenje siromaštva ratnih veterana i civilnih žrtava Domovinskog rata"/>
+				</Razina4>
+				<Razina4 Naziv="9b - Pružanje podrške fizičkoj, gospodarskoj i socijalnoj obnovi zapuštenih zajednica na urbanim i ruralnim područjima">
+					<Razina5 Naziv="9b1 Održiva fizička, socijalna i gospodarska regeneracija pet depriviranih pilot-područja s ciljem smanjenja socijalnih nejednakosti, isključenosti i siromaštva"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="9. Obrazovanje, vještine i cjeloživotno učenje">
+				<Razina4 Naziv="10a - Ulaganje u obrazovanje, osposobljavanje i strukovno osposobljavanje razvijanjem infrastrukture za obrazovanje i osposobljavanje">
+					<Razina5 Naziv="10a1 Razvoj digitalno zrelih škola koje su spremne za korištenje potencijala informacijsko komunikacijske tehnologije u obrazovanju i razvoju vještina za 21. stoljeće, neophodnih na tržištu rada"/>
+					<Razina5 Naziv="10a2 Modernizacija, unaprjeđenje i proširenje infrastrukture studentskog smještaja u visokom obrazovanju s ciljem poboljšanja pristupa visokom obrazovanju te završetak studija za studente u nepovoljnom položaju"/>
+					<Razina5 Naziv="10a3 Povećanje relevantnosti strukovnog obrazovanja kroz poboljšanje uvjeta za stjecaje praktičnih vještina u ciljanim sektorima srednjeg strukovnog obrazovanja s ciljem postizanja veće zapošljivosti učenika srednjeg strukovnog obrazovan"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="10. Tehnička pomoć">
+				<Razina4 Naziv="A1 Osiguranje odgovarajućih i učinkovitih ljudskih resursa za provedbu operativnih programa"/>
+				<Razina4 Naziv="A2 Podrška učinkovitoj provedbi, praćenju i evaluaciji programa"/>
+				<Razina4 Naziv="TA3 Podrška informiranju javnosti i podizanju kapaciteta potencijalnih korisnika za pripremu projekata i njihovu provedbu"/>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="Program ruralnog razvoja 2014.-2020.">
+			<Razina3 Naziv="1. Prenošenje znanja i aktivnosti informiranja">
+				<Razina4 Naziv="1.1. Potpora za strukovno osposobljavanje i aktivnosti stjecanja vještina">
+					<Razina5 Naziv="1.1.1. Strukovno osposobljavanje za višestruku sukladnost, paket mjera poljoprivreda, okoliš i klimatske promjene, ekološki uzgoj"/>
+					<Razina5 Naziv="1.1.2. Strukovno osposobljavanje za poljoprivrednike"/>
+					<Razina5 Naziv="1.1.3. Strukovno osposobljavanje za mlade poljoprivrednike"/>
+					<Razina5 Naziv="1.1.4. Radionice za subjekte koji su uključeni u kratke lance opskrbe i proizvođačke grupe i organizacije"/>
+				</Razina4>
+				<Razina4 Naziv="1.2. Potpore za demonstracijske aktivnosti i informativne aktivnosti">
+					<Razina5 Naziv="1.2.1.Demonstracijske aktivnosti"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="2. Savjetodavne službe, službe za upravljanje poljoprivrednim gospodarstvom i pomoć poljoprivrednim gospodarstvima">
+				<Razina4 Naziv="2.1. Potpora za pružanje savjetodavnih usluga">
+					<Razina5 Naziv="2.1.1. Savjetovanje o višestrukoj sukladnosti, mjeri poljoprivreda, okoliš i klimatske promjene i ekološkoj poljoprivredi"/>
+					<Razina5 Naziv="2.1.2. Savjetovanje o modernizaciji i povećanju konkurentnosti poljoprivrednih gospodarstava"/>
+					<Razina5 Naziv="2.1.3. Savjetovanje šumoposjednika"/>
+					<Razina5 Naziv="2.1.4. Savjetovanje mladih poljoprivrednika"/>
+				</Razina4>
+				<Razina4 Naziv="2.3. Osposobljavanje savjetnika">
+					<Razina5 Naziv="2.3.1. Osposobljavanje savjetnika"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="3. Sustavi kvalitete za poljoprivredne proizvode i hranu">
+				<Razina4 Naziv="3.1. Potpora za novo sudjelovanje u sustavima kvalitete">
+					<Razina5 Naziv="3.1.1. Potpora za sudjelovanje poljoprivrednika u sustavima kvalitete za poljoprivredne i prehrambene proizvode"/>
+				</Razina4>
+				<Razina4 Naziv="3.2. Potpora za aktivnosti informiranja i promicanja koje provode skupine proizvođača na unutarnjem tržištu">
+					<Razina5 Naziv="3.2.1. Potpora za aktivnosti informiranja i promoviranja"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="4. Ulaganja u fizičku imovinu">
+				<Razina4 Naziv="4.1. Potpora za ulaganja u poljoprivredna gospodarstva">
+					<Razina5 Naziv="4.1.1. Restrukturiranje, modernizacija i povećanje konkurentnosti poljoprivrednih gospodarstava"/>
+					<Razina5 Naziv="4.1.2. Zbrinjavanje, rukovanje i korištenje stajskog gnojiva u cilju smanjenja štetnog utjecaja na okoliš"/>
+					<Razina5 Naziv="4.1.3. Korištenje obnovljivih izvora energije"/>
+				</Razina4>
+				<Razina4 Naziv="4.2. Potpora za ulaganja u preradu, marketing i/ili razvoj poljoprivrednih proizvoda">
+					<Razina5 Naziv="4.2.1. Povećanje dodane vrijednosti poljoprivrednim proizvodima"/>
+					<Razina5 Naziv="4.2.2. Korištenje obnovljivih izvora energije"/>
+				</Razina4>
+				<Razina4 Naziv="4.3. Potpora za ulaganja u infrastrukturu vezano uz razvoj, modernizaciju ili prilagodbu poljoprivrede i šumarstva">
+					<Razina5 Naziv="4.3.1. Investicije u osnovnu infrastrukturu javnog navodnjavanja"/>
+					<Razina5 Naziv="4.3.2. Komasacija poljoprivrednog zemljišta"/>
+					<Razina5 Naziv="4.3.3. Ulaganje u šumsku infrastrukturu"/>
+				</Razina4>
+				<Razina4 Naziv="4.4. Potpora neproizvodnim ulaganjima vezanim uz postizanje agro-okolišnih i klimatskih ciljeva">
+					<Razina5 Naziv="4.4.1. Neproizvodna ulaganja vezana uz očuvanje okoliša"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="5. Obnavljanje poljoprivrednog proizvodnog potencijala narušenog elementarnim nepogodama i katastrofalnim događajima te uvođenje odgovarajućih preventivnih aktivnosti">
+				<Razina4 Naziv="5.2. Potpora za ulaganja u obnovu poljoprivrednog zemljišta i proizvodnog potencijala narušenog elementarnim nepogodama, nepovoljnim klimatskim prilikama i katastrofalnim događajima">
+					<Razina5 Naziv="5.2.1. Obnova poljoprivrednog zemljišta i proizvodnog potencijala"/>
+					<Razina5 Naziv="5.2.2. Razminiranje poljoprivrednog zemljišta"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="6. Razvoj poljoprivrednih gospodarstava i poslovanja">
+				<Razina4 Naziv="6.1. Potpora mladim poljoprivrednicima"/>
+				<Razina4 Naziv="6.2. Potpora ulaganju u pokretanje nepoljoprivrednih djelatnosti u ruralnom području"/>
+				<Razina4 Naziv="6.3. Potpora razvoju malih poljoprivrednih gospodarstava"/>
+				<Razina4 Naziv="6.4. Ulaganja u razvoj nepoljoprivrednih djelatnosti u ruralnim područjima"/>
+			</Razina3>
+			<Razina3 Naziv="7. Temeljne usluge i obnova sela u ruralnim područjima">
+				<Razina4 Naziv="7.1. Sastavljanje i ažuriranje planova za razvoj općina i sela u ruralnim područjima i njihovih temeljnih usluga te planova zaštite i upravljanja koji se odnose na lokalitete Natura 2000. i druga područja visoke prirodne vrijednosti">
+					<Razina5 Naziv="7.1.1. Izrada planova za razvoj jedinica lokalne samouprave i naselja u ruralnim područjima"/>
+				</Razina4>
+				<Razina4 Naziv="7.2. Ulaganja u izradu, poboljšanje ili proširenje svih vrsta male infrastrukture, uključujući ulaganja u obnovljive izvore energije i uštedu energije">
+					<Razina5 Naziv="7.2.1. Ulaganja u građenje javnih sustava za vodoopskrbu, odvodnju i pročišćavanje otpadnih voda"/>
+					<Razina5 Naziv="7.2.2. Ulaganja u građenje nerazvrstanih cesta"/>
+				</Razina4>
+				<Razina4 Naziv="7.4. Ulaganja u pokretanje, poboljšanje ili proširenje lokalnih temeljnih usluga za ruralno stanovništvo, uključujući slobodno vrijeme i kulturne aktivnosti te povezanu infrastrukturu"/>
+			</Razina3>
+			<Razina3 Naziv="8. Ulaganja u razvoj šumskih područja i poboljšanje održivosti šuma">
+				<Razina4 Naziv="8.5. Potpora za ulaganja u poboljšanje otpornosti i okolišne vrijednosti šumskih ekosustava">
+					<Razina5 Naziv="8.5.1. Konverzija degradiranih šumskih sastojina i šumskih kultura"/>
+				</Razina4>
+				<Razina4 Naziv="8.6. Potpora za ulaganja u šumarske tehnologije te u preradu, mobilizaciju i marketing šumskih proizvoda">
+					<Razina5 Naziv="8.6.1. Modernizacija tehnologija, strojeva, alata i opreme u pridobivanju drva i šumskouzgojnim radovima"/>
+					<Razina5 Naziv="8.6.2. Modernizacija tehnologija, strojeva, alata i opreme u predindustrijskoj preradi drva"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="9. Uspostava proizvođačkih grupa i organizacija">
+				<Razina4 Naziv="9.1. Uspostava proizvođačkih grupa i organizacija u poljoprivrednom i šumarskom sektoru">
+					<Razina5 Naziv="9.1.1. Uspostava proizvođačkih grupa i organizacija"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="10. Poljoprivreda, okoliš i klimatske promjene">
+				<Razina4 Naziv="10.1. Plaćanja obveza povezanih s poljoprivredom, okolišem i klimatskim promjenama">
+					<Razina5 Naziv="10.1.1. Obrada tla i sjetva na terenu s nagibom za oranične jednogodišnje kulture (141 EUR/ha)"/>
+					<Razina5 Naziv="10.1.3. Očuvanje travnjaka velike prirodne vrijednosti (Kontinentalna nizinska regija 183 EUR/ha, Brdsko-planinska regiju 147 EUR/ha i Mediteranska regija 102 EUR/ha"/>
+					<Razina5 Naziv="10.1.4. Pilot mjera za zaštitu kosca – Crex crex (244 EUR/ha)"/>
+					<Razina5 Naziv="10.1.5. Pilot mjera za zaštitu leptira (za Močvarnog okaša – 326 EUR/ha, za Močvarnog plavaca, Zagasitog livadnog plavaca i Velikog livadnog plavaca iznosi – 274 EUR/ha)"/>
+					<Razina5 Naziv="10.1.6. Uspostava poljskih traka (za uspostavu cvjetnih traka 346 EUR/ha trake, za uspostavu travnih traka 169 EUR/ha trake)"/>
+					<Razina5 Naziv="10.1.7. Održavanje ekstenzivnih voćnjaka (385 EUR/ha)"/>
+					<Razina5 Naziv="10.1.8. Održavanje ekstenzivnih maslinika (804 EUR/ha)"/>
+					<Razina5 Naziv="10.1.9. Očuvanje ugroženih izvornih i zaštićenih pasmina domaćih životinja (maksimalna visina potpore 200 EUR/UG)."/>
+					<Razina5 Naziv="10.1.2. Obrada tla i sjetva na terenu s nagibom za oranične jednogodišnje kulture (141 EUR/ha)"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="11. Ekološki uzgoj">
+				<Razina4 Naziv="11.1. Plaćanja za prijelaz na prakse i metode ekološkog uzgoja"/>
+				<Razina4 Naziv="11.2. Plaćanja za održavanje praksi i metoda ekološkog uzgoja"/>
+			</Razina3>
+			<Razina3 Naziv="13. Plaćanja područjima s prirodnim ograničenjima ili ostalim posebnim ograničenjima">
+				<Razina4 Naziv="13.1. Plaćanja u gorsko planinskim područjima – GPP"/>
+				<Razina4 Naziv="13.2. Plaćanja u područjima sa značajnim prirodnim ograničenjima – ZPO"/>
+				<Razina4 Naziv="13.3. Plaćanja u područjima s posebnim ograničenjima – PPO"/>
+			</Razina3>
+			<Razina3 Naziv="16. Suradnja">
+				<Razina4 Naziv="16.1. Potpora za osnivanje i rad operativnih skupina Europskog inovacijskog partnerstva (EIP) za poljoprivrednu produktivnost i održivost">
+					<Razina5 Naziv="16.1.1. Potpora za osnivanje operativnih skupina"/>
+					<Razina5 Naziv="16.1.2. Operativne skupine"/>
+				</Razina4>
+				<Razina4 Naziv="16.2. Potpora za pilot-projekte i za razvoj novih proizvoda, postupaka, procesa i tehnologija">
+					<Razina5 Naziv="16.2.1. Pilot projekti i razvoj novih proizvoda, postupaka, procesa i tehnologija"/>
+				</Razina4>
+				<Razina4 Naziv="16.4. Potpora za horizontalnu i vertikalnu suradnju sudionika u lancu opskrbe za uspostavljanje i razvoj kratkih lanaca opskrbe i lokalnih tržišta te za promicanje aktivnosti u lokalnom kontekstu u vezi s razvojem kratkih lanaca opskrbe i lokalnih tržišta">
+					<Razina5 Naziv="16.4.1. Kratki lanci opskrbe i lokalna tržišta"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="17. Upravljanje rizicima">
+				<Razina4 Naziv="17.1. Premije za osiguranje usjeva, životinja i biljka">
+					<Razina5 Naziv="17.1.1. Osiguranje usjeva, životinja i biljaka (od proizvodnih gubitaka uzrokovanih nepovoljnim klimatskim prilikama, životinjskim i biljnim bolestima, najezdom nametnika, okolišnim incidentom i mjerom donesenom u skladu s Direktivom 2000/29/EZ)"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="18. Financiranje dodatnih nacionalnih izravnih plaćanja za Hrvatsku"/>
+			<Razina3 Naziv="19. LEADER (CLLD)">
+				<Razina4 Naziv="19.1. Pripremna pomoć"/>
+				<Razina4 Naziv="19.2. Provedba operacija unutar CLLD strategije"/>
+				<Razina4 Naziv="19.3. Priprema i provedba aktivnosti suradnje LAG-a"/>
+				<Razina4 Naziv="19.4. Tekući troškovi i animacija"/>
+			</Razina3>
+			<Razina3 Naziv="20. Tehnička pomoć"></Razina3>
+		</Razina2>
+		<Razina2 Naziv="OP Učinkoviti ljudski potencijali 2014.-2020.">
+			<Razina3 Naziv="1. Zapošljavanje i mobilnost radne snage">
+				<Razina4 Naziv="8.i: Pristup zapošljavanju za osobe koje traže posao i neaktivne osobe, uključujući one koji su dugotrajno nezaposleni i one koji su daleko od tržišta rada, kao i provedbom lokalnih inicijativa za zapošljavanje i potpore za mobilnost radne snage">
+					<Razina5 Naziv="8.i.1: Povećanje zapošljavanja nezaposlenih osoba, posebice dugotrajno nezaposlenih i osoba čije vještine ne odgovaraju potrebama tržišta rada"/>
+					<Razina5 Naziv="8.i.2: Povećanje održivog samozapošljavanja nezaposlenih osoba, posebice žena"/>
+					<Razina5 Naziv="8.i.3: Očuvanje radnih mjesta, zadržavanje u zaposlenju radnika koji su proglašeni viškom te jačanje brzog ponovnog zapošljavanja osoba koje su postale nezaposlene nakon što su proglašene viškom"/>
+				</Razina4>
+				<Razina4 Naziv="8.ii (YEI): Održiva integracija mladih na tržište rada, posebno onih koji nisu zaposleni, ne obrazuju se niti osposobljavaju, uključujući mlade koji su izloženi riziku od socijalne isključenosti i mlade iz marginaliziranih zajednica, uključujući provedbom Garancije za mlade">
+					<Razina5 Naziv="8.ii.1 (YEI): Povećanje zapošljavanja i brze integracije NEET skupine kroz Inicijativu za zapošljavanje mladih na tržište rada"/>
+				</Razina4>
+				<Razina4 Naziv="8.vii: Modernizacija ustanova tržišta rada kao što su javne i privatne službe za zapošljavanje te bolja usklađenost s potrebama tržišta rada, uključujući putem djelovanja koja povećavaju transnacionalnu mobilnost radne snage, kao i putem programa mobilnosti, te bolja suradnja institucija i relevantnih dionika">
+					<Razina5 Naziv="8.vii.1: Jačanje kapaciteta lokalnih partnerstava za zapošljavanje i povećanje zaposlenosti najranjivijih skupina na lokalnim tržištima rada"/>
+					<Razina5 Naziv="8.vii.2: Povećanje dostupnosti i kvalitete javno dostupnih informacija i usluga na tržištu rada, uključujući mjere APZ"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="2. Socijalno uključivanje">
+				<Razina4 Naziv="9.i: Aktivna uključenost, uključujući s ciljem promicanja jednakih mogućnosti te aktivnog sudjelovanja i poboljšanja zapošljivosti">
+					<Razina5 Naziv="9.i.1: Borba protiv siromaštva i socijalne isključenosti kroz promociju integracije na tržište rada i socijalne integracije ranjivih skupina, i borba protiv svih oblika diskriminacije"/>
+					<Razina5 Naziv="9.i.2: Jačanje aktivnog uključivanja kroz implementaciju integriranih projekata za obnovu 5 nerazvijenih pilot područja"/>
+				</Razina4>
+				<Razina4 Naziv="9.iv: Poboljšanje pristupa pristupačnim, održivim i visokokvalitetnim uslugama, uključujući usluge zdravstvene skrbi i socijalne usluge od općeg interesa">
+					<Razina5 Naziv="9.iv.1: Održivo poboljšanje pristupa zdravstvenoj skrbi u nerazvijenim područjima i za ranjive skupine te promocija zdravlja"/>
+					<Razina5 Naziv="9.iv.2: Poboljšanje pristupa visokokvalitetnim socijalnim uslugama, uključujući podršku procesu deinstitucionalizacije"/>
+				</Razina4>
+				<Razina4 Naziv="9.v: Promicanje društvenog poduzetništva i strukovne integracije u društvenim poduzećima te socijalne ekonomije i ekonomije solidarnosti radi olakšavanja pristupa zapošljavanju">
+					<Razina5 Naziv="9.v.1: Povećanje broja i održivosti društvenih poduzeća i njihovih zaposlenika"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="3. Obrazovanje i cjeloživotno učenje">
+				<Razina4 Naziv="10.ii: Poboljšanje kvalitete i učinkovitosti tercijarnog i ekvivalentnog obrazovanja te pristupa njemu radi povećanja sudjelovanja u njemu i njegova stjecanja, posebno za skupine u nepovoljnom položaju">
+					<Razina5 Naziv="10.ii.1: Poboljšanje kvalitete, relevantnosti i učinkovitosti visokog obrazovanja"/>
+					<Razina5 Naziv="10.ii.2: Povećanje stope stečenog visokog obrazovanja"/>
+					<Razina5 Naziv="10.ii.3: Poboljšanje uvjeta rada za hrvatske istraživače"/>
+				</Razina4>
+				<Razina4 Naziv="10.iii: Povećanje jednakog pristupa cjeloživotnom učenju za sve dobne skupine u formalnom, neformalnom i informalnom okruženju, unapređenje znanja, vještina i kompetencija radne snage, promicanje fleksibilnih načina učenja, između ostalog profesionalnim savjetovanjem i potvrđivanjem stečenih kompetencija">
+					<Razina5 Naziv="10.iii.1: Omogućavanje boljeg pristupa obrazovanju učenicima u nepovoljnom položaju u pred-tercijarnom obrazovanju"/>
+					<Razina5 Naziv="10.iii.2: Promicanje pristupa cjeloživotnom učenju kroz unapređivanje ključnih kompetencija studenata, te primjenu informacijskih i komunikacijskih tehnologija u poučavanju i učenju"/>
+					<Razina5 Naziv="10.iii.3: Poboljšanje obrazovnog sustava za odrasle i unapređenje vještina i kompetencija odraslih polaznika"/>
+				</Razina4>
+				<Razina4 Naziv="10.iv: Poboljšanje značaja obrazovnih sustava i sustava osposobljavanja za tržište rada, olakšavanje prijelaza iz škole na posao, jačanje sustava strukovnog obrazovanja i osposobljavanja te njihove kvalitete, između ostalog mehanizmima za predviđanje vještina, prilagodbom nastavnih planova i programa te uvođenjem i razvojem sustava učenja koji se temelje na radu, uključujući dualne sustave učenja i programe naukovanja">
+					<Razina5 Naziv="10.iv.1: Modernizacija ponude strukovnog obrazovanja te podizanje njegove kvalitete radi povećanja zapošljivosti učenika kao i mogućnosti za daljnje obrazovanje"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="4. Dobro upravljanje">
+				<Razina4 Naziv="11.ii: Izgradnja kapaciteta za sve dionike koji osiguravaju obrazovanje, cjeloživotno obrazovanje, osposobljavanje te zapošljavanje i socijalne politike, uključujući uz pomoć sektorskih i teritorijalnih paktova radi omogućavanja reformi na nacionalnoj, regionalnoj i lokalnoj razini">
+					<Razina5 Naziv="11.ii.1: Razvoj kapaciteta organizacija civilnog društva, osobito udruga i socijalnih partnera, te jačanje civilnog i socijalnog dijaloga radi boljeg upravljanja"/>
+				</Razina4>
+				<Razina4 Naziv="11.i: Ulaganje u institucionalne kapacitete te u učinkovitost javnih uprava i javnih usluga na nacionalnoj, regionalnoj i lokalnoj razini s ciljem reformiranja, boljeg uređivanja i dobrog upravljanja">
+					<Razina5 Naziv="11.i.1: Povećanje djelotvornosti i kapaciteta u javnoj upravi kroz poboljšanje pružanja usluga i upravljanja ljudskim potencijalima"/>
+					<Razina5 Naziv="11.i.2: Unapređenje kapaciteta i funkcioniranja pravosuđa kroz poboljšanje upravljanja i kompetencija"/>
+				</Razina4>
+			</Razina3>
+			<Razina3 Naziv="5. Tehnička pomoć">
+				<Razina4 Naziv="1. Osiguranje učinkovite pripreme, upravljanja, provedbe, praćenja, vrednovanja i kontrole Operativnog programa"/>
+				<Razina4 Naziv="2. Podrška potencijalnim korisnicima i regionalnim dionicima u uspješnom prijavljivanju i provedbi ESF projekata jačanjem njihovih kapaciteta i razvijanjem kvalitetne zalihe budućih projekata"/>
+				<Razina4 Naziv="3. Podrška komunikacijskim aktivnostima u svrhu djelotvorne provedbe Komunikacijske strategije i osiguranje kvalitetnog informiranja potencijalnih korisnika i voditelja projekata o mogućnostima i uvjetima financiranja u okviru Operativnog programa"/>
+			</Razina3>
+		</Razina2>
+		<Razina2 Naziv="OP za pomorstvo i ribarstvo 2014.-2020.">
+			<Razina3 Naziv="1. Poticanje okolišno održivog, resursno učinkovitog, inovativnog, konkurentnog i na znanju utemeljenog ribarstva">
+				<Razina4 Naziv="1.1. Članak 33., članak 34. i članak 41. stavak 2. (članak 13. stavak 2. Uredbe o EFPR-u"/>
+				<Razina4 Naziv="1.2. Sredstva dodijeljena za ostatak prioriteta Unije 1. (članak 13. stavak 2. Uredbe o EFPR-u"/>
+			</Razina3>
+			<Razina3 Naziv="2. Poticanje okolišno održivog, resursno učinkovitog, inovativnog, konkurentnog i na znanju utemeljene akvakulture"/>
+			<Razina3 Naziv="3. Poticanje provedbe ZRP-a">
+				<Razina4 Naziv="3.1. Poboljšanje i pružanje znanstvenih spoznaja te prikupljanje podataka i upravljanje njima (članak 13. stavak 4. Uredbe o EFPR-u)"/>
+				<Razina4 Naziv="3.2. Potpora nadzoru, kontroli i provedbi propisa, jačanje institucijskih kapaciteta i povećanje učinkovitosti javne uprave bez povećanja administrativnog opterećenja (članak 76. stavak 2. točke (a) do (d) i (f) do (l)) (članak 13. stavak 3. Uredbe o EFPR-u)"/>
+				<Razina4 Naziv="3.3. Potpora nadzoru, kontroli i provedbi propisa, jačanje institucijskih kapaciteta i povećanje učinkovitosti javne uprave bez povećanja administrativnog opterećenja (članak 76. stavak 2. točka (e) (članak 13. stavak 3. Uredbe o EFPR-u)"/>
+			</Razina3>
+			<Razina3 Naziv="4. Povećanje zaposlenosti i teritorijalne kohezije"/>
+			<Razina3 Naziv="5. Poticanje stavljanja na tržište i prerade">
+				<Razina4 Naziv="5.1. Potpora za skladištenje (članak 67.) (članak 13. stavak 6. Uredbe o EFPR-u"/>
+				<Razina4 Naziv="5.2. Kompenzacija za najudaljenije regije (članak 70.) (članak 13. stavak 5. Uredbe o EFPR-u"/>
+				<Razina4 Naziv="5.3. Sredstva dodijeljena za ostatak prioriteta Unije 5. (članak 13. stavak 2. Uredbe o EFPR-u)"/>
+			</Razina3>
+			<Razina3 Naziv="6. Poticanje razvoja integrirane pomorske politike"/>
+		</Razina2>
+		<Razina2 Naziv="Europska teritorijalna suradnja">
+			<Razina3 Naziv="Međuregionalna suradnja">
+				<Razina4 Naziv="INTERACT III 2014.-2020.">
+					<Razina5 Naziv="1. Upravljanje i kontrola kapaciteta ETS programa"/>
+					<Razina5 Naziv="2. Kapaciteti u području europske teritorijalne suradnje u dostizanju i komuniciranju programskih rezultata"/>
+					<Razina5 Naziv="3. Upravljačka sposobnost za provođenje inovativnih pristupa, npr. kroz Europsku skupinu za teritorijalnu suradnju (EGTC), makro-regionalne strategije i suradnju u ostalim programima"/>
+				</Razina4>
+				<Razina4 Naziv="INTERREG VC 2014.-2020.">
+					<Razina5 Naziv="1. Istraživanje i inovacije">
+						<Razina6 Naziv="Jačanje infrastrukture i kapaciteta za istraživanje i inovacije"/>
+						<Razina6 Naziv="Isporuka inovacija kroz regionalne inovacijske lance u odabranom području “Pametne specijalizacije“"/>
+					</Razina5>
+					<Razina5 Naziv="2. Konkurentnost malih i srednjih poduzeća">
+						<Razina6 Naziv="Poboljšanje regionalnih politika u osnaživanju malih i srednjih poduzeća u svim fazama njihovog životnog ciklusa razvoja, postizanju rasta i uključivanja inovacija"/>
+					</Razina5>
+					<Razina5 Naziv="3. Ekonomija s niskom razinom ugljika">
+						<Razina6 Naziv="Prijelaz na ekonomiju s niskom razinom ugljika u svim sektorima; to bi mogli biti ciljano kroz politku povećanja udjela obnovljivih izvora energije i promocije održivog multimodalnog prijevoza"/>
+					</Razina5>
+					<Razina5 Naziv="4. Okolišna i resursna učinkovitost">
+						<Razina6 Naziv="Zaštita i razvoj prirodnog i kulturnog nasljeđa"/>
+						<Razina6 Naziv="Prijelaz prema resursno učinkovitoj ekonomiji, promovirajući rast i eko-inovacije"/>
+					</Razina5>
+				</Razina4>
+				<Razina4 Naziv="ESPON 2014.-2020."/>>
+				<Razina4 Naziv="URBACT 2014.-2020."/>
+			</Razina3>
+			<Razina3 Naziv="Prekogranična suradnja">
+				<Razina4 Naziv="Program prekogranične suradnje INTERREG V-A Italija – Hrvatska 2014.-2020.">
+					<Razina5 Naziv="1. Plave inovacije"/>
+					<Razina5 Naziv="2. Sigurnost i otpornost"/>
+					<Razina5 Naziv="3. Okoliš i kulturna baština"/>
+					<Razina5 Naziv="4. Pomorski prijevoz"/>
+				</Razina4>
+				<Razina4 Naziv="Program prekogranične suradnje INTERREG V-A Mađarska – Hrvatska 2014.-2020.">
+					<Razina5 Naziv="1. Ekonomski razvoj"/>
+					<Razina5 Naziv="2. Održivo korištenje prirodnih i kulturnih dobara"/>
+					<Razina5 Naziv="3. Suradnja"/>
+					<Razina5 Naziv="4. Ulaganje u obrazovanje"/>
+				</Razina4>
+				<Razina4 Naziv="Program prekogranične suradnje INTERREG V-A Slovenija – Hrvatska 2014.-2020.">
+					<Razina5 Naziv="1. Integrirano upravljanja rizicima od poplava na prekograničnim riječnim slivovima"/>
+					<Razina5 Naziv="2. Očuvanje i održivo korištenje prirodnih i kulturnih resursa"/>
+					<Razina5 Naziv="3. Zdrava, sigurna i pristupačna pogranična područja"/>
+				</Razina4>
+				<Razina4 Naziv="INTERREG IPA program prekogranične suradnje Hrvatska – Bosna i Hercegovina – Crna Gora 2014.-2020."/>
+				<Razina4 Naziv="INTERREG IPA Program prekogranične suradnje Hrvatska – Srbija 2014.-2020."/>
+			</Razina3>
+			<Razina3 Naziv="Transnacionalna suradnja">
+				<Razina4 Naziv="Program transnacionalne suradnje INTERREG V-B Mediteran 2014.-2020."/>
+				<Razina4 Naziv="Program transnacionalne suradnje INTERREG V-B Dunav 2014.-2020."/>
+				<Razina4 Naziv="INTERREG V-B Jadransko-jonski program transnacionalne suradnje 2014.-2020."/>
+				<Razina4 Naziv="Program transnacionalne suradnje INTERREG Središnja Europa 2014.-2020."/>
+			</Razina3>
+		</Razina2>
+	</Razina1>
+</Uskladjenosti>

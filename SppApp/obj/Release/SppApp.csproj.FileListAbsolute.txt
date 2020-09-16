@@ -109,8 +109,6 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Microsoft.Owin.Security.Microso
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csprojAssemblyReference.cache
-C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.InitialMigration.resources
-C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csproj.GenerateResource.cache
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csproj.CoreCompileInputs.cache
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csproj.CopyComplete
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.dll
@@ -137,4 +135,7 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Memory.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Numerics.Vectors.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Threading.Tasks.Extensions.xml
-C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.UpdatFileTales.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Initial.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csproj.GenerateResource.cache
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update1.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update2.resources

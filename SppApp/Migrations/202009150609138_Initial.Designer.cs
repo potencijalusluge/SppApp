@@ -7,13 +7,13 @@ namespace SppApp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdatFileTales : IMigrationMetadata
+    public sealed partial class Initial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatFileTales));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008200345264_UpdatFileTales"; }
+            get { return "202009150609138_Initial"; }
         }
         
         string IMigrationMetadata.Source

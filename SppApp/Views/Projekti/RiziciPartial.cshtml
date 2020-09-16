@@ -1,0 +1,44 @@
+﻿@using SppApp.Helpers
+@model  SppApp.Models.Rizici
+
+<tr class="tableData">
+    @using (Html.BeginCollectionItem("RiziciLista"))
+    {
+        if (Model.Id != 0)
+        {
+            @Html.HiddenFor(model => model.Id);
+            @Html.HiddenFor(model => model.ProjektId);
+        }
+        <td>
+            @Html.LabelFor(model => model.Naziv)<br />
+            @Html.TextAreaFor(model => model.Naziv, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+
+        </td>
+        <td>
+            @Html.LabelFor(model => model.Vrsta)<br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Dokumentacija") Dokumentacija <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Financiranje") Financiranje <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Javna nabava") Javna nabava <br />
+            @Html.RadioButtonFor(model => model.Vrsta, "Ostalo") Ostalo <br />
+            @Html.ValidationMessageFor(model => model.Vrsta, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @Html.LabelFor(model => model.Vjerojatnost)<br />
+            @Html.RadioButtonFor(model => model.Vjerojatnost, "Niska") Niska <br />
+            @Html.RadioButtonFor(model => model.Vjerojatnost, "Srednja") Srednja <br />
+            @Html.RadioButtonFor(model => model.Vjerojatnost, "Visoka") Visoka <br />
+            @Html.ValidationMessageFor(model => model.Vjerojatnost, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(false); }
+            @Html.LabelFor(model => model.Napomena)<br />
+            @Html.TextAreaFor(model => model.Napomena, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.Napomena, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            <input type="button" value="&#8212;" id="riziciRedak" onclick="DeleteRow(this);" class="btn btn-primary" style="float:right; background-color: #EF7215 !important; border-color: #EF7215 !important" />
+        </td>
+    }
+</tr>
+<tr><td colspan="5"></td></tr>

@@ -42,8 +42,10 @@
             @Html.RadioButtonFor(model => model.IzvorSufinanciranja, "Ostalo") Ostalo <br />
             @Html.ValidationMessageFor(model => model.IzvorSufinanciranja, "", new { @class = "text-danger" })
         </td>
-
+        <td>
+            <input type="button" value="&#8212;" id="financiranjaRedak" onclick="DeleteRow(this);" class="btn btn-primary" style="float:right; background-color: #EF7215 !important; border-color: #EF7215 !important" />
+        </td>
 
     }
 </tr>
-<tr><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="6"></td></tr>

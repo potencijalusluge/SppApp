@@ -291,12 +291,12 @@
     </div>
 
     <div class="form-group col-md-12">
-        @Html.LabelFor(model => model.Faza, htmlAttributes: new { @class = "control-label col-md-3 required" })
+        @Html.LabelFor(model => model.Modul, htmlAttributes: new { @class = "control-label col-md-3 required" })
         <div class="col-md-9">
-            @Html.RadioButtonFor(model => model.Faza, "Faza planiranja") Faza planiranja <br />
-            @Html.RadioButtonFor(model => model.Faza, "Faza provedbe") Faza provedbe <br />
-            @Html.RadioButtonFor(model => model.Faza, "Završen") Završen <br />
-            @Html.ValidationMessageFor(model => model.Faza, "", new { @class = "text-danger" })
+            @Html.RadioButtonFor(model => model.Modul, "Faza planiranja") Faza planiranja <br />
+            @Html.RadioButtonFor(model => model.Modul, "Faza provedbe") Faza provedbe <br />
+            @Html.RadioButtonFor(model => model.Modul, "Završen") Završen <br />
+            @Html.ValidationMessageFor(model => model.Modul, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -484,26 +484,26 @@
 
     <div class="form-group col-md-12">
         @{ Html.EnableClientValidation(false); }
-        @Html.LabelFor(model => model.ProcijenjenaVrijednost, htmlAttributes: new { @class = "control-label col-md-4 required" })
+        @Html.LabelFor(model => model.ProcijenjenaVrijednostHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
         <div class="col-md-8">
-            @Html.EditorFor(model => model.ProcijenjenaVrijednost, new { htmlAttributes = new { @class = "form-control narrow", pattern = @"[0-9]+([,][0-9]+)?" } })
-            @Html.ValidationMessageFor(model => model.ProcijenjenaVrijednost, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.ProcijenjenaVrijednostHRK, new { htmlAttributes = new { @class = "form-control narrow", pattern = @"[0-9]+([,][0-9]+)?" } })
+            @Html.ValidationMessageFor(model => model.ProcijenjenaVrijednostHRK, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group col-md-12">
-        @Html.LabelFor(model => model.ProcijenjeniTroskoviPripreme, htmlAttributes: new { @class = "control-label col-md-4 required" })
+        @Html.LabelFor(model => model.ProcijenjeniTroskoviPripremeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
         <div class="col-md-8">
-            @Html.EditorFor(model => model.ProcijenjeniTroskoviPripreme, new { htmlAttributes = new { @class = "form-control narrow" } })
-            @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviPripreme, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.ProcijenjeniTroskoviPripremeHRK, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviPripremeHRK, "", new { @class = "text-danger" })
         </div>
     </div>
 
     <div class="form-group col-md-12">
-        @Html.LabelFor(model => model.ProcijenjeniTroskoviProvedbe, htmlAttributes: new { @class = "control-label col-md-4 required" })
+        @Html.LabelFor(model => model.ProcijenjeniTroskoviProvedbeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
         <div class="col-md-8">
-            @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbe, new { htmlAttributes = new { @class = "form-control narrow" } })
-            @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviProvedbe, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbeHRK, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviProvedbeHRK, "", new { @class = "text-danger" })
         </div>
     </div>
 

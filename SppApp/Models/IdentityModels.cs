@@ -65,10 +65,10 @@ namespace  SppApp.Models
                 .WithOptional(e => e.Kontakt)
                 .HasForeignKey(e => e.KontaktId);
 
-            modelBuilder.Entity<Organizacije>()
-                .HasMany(e => e.Kontakt)
-                .WithOptional(e => e.Organizacija)
-                .HasForeignKey(e => e.OrganizacijaID);
+            //modelBuilder.Entity<Organizacije>()
+            //    .HasMany(e => e.Kontakt)
+            //    .WithOptional(e => e.Organizacija)
+            //    .HasForeignKey(e => e.OrganizacijaID);
 
             modelBuilder.Entity<Organizacije>()
                 .HasMany(e => e.Projekt)
@@ -80,15 +80,15 @@ namespace  SppApp.Models
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<Projekti>()
-                .Property(e => e.ProcijenjenaVrijednost)
+                .Property(e => e.ProcijenjenaVrijednostHRK)
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<Projekti>()
-                .Property(e => e.ProcijenjeniTroskoviPripreme)
+                .Property(e => e.ProcijenjeniTroskoviPripremeHRK)
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<Projekti>()
-                .Property(e => e.ProcijenjeniTroskoviProvedbe)
+                .Property(e => e.ProcijenjeniTroskoviProvedbeHRK)
                 .HasPrecision(18, 2);
 
             modelBuilder.Entity<Projekti>()

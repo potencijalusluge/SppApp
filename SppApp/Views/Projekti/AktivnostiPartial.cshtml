@@ -60,9 +60,12 @@
             }<br />
             @Html.ValidationMessageFor(model => model.DatumZavrsetka, "", new { @class = "text-danger" })
         </td>
+        <td>
+            <input type="button" value="&#8212;" id="aktivnostRedak" onclick="DeleteRow(this);" class="btn btn-primary" style="float:right; background-color: #EF7215 !important; border-color: #EF7215 !important" />
+        </td>
 
 
     }
 </tr>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="7"></td></tr>
 

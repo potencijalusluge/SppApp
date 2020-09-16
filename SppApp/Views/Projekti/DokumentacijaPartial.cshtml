@@ -1,0 +1,67 @@
+﻿@using SppApp.Helpers
+@model  SppApp.Models.Dokumentacija
+
+@using (Html.BeginCollectionItem("DokumentacijaLista"))
+{
+    if (Model.Id != 0)
+    {
+        @Html.HiddenFor(model => model.Id);
+        @Html.HiddenFor(model => model.ProjektId);
+    }
+
+    <div class="col-md-3">
+        @Html.LabelFor(model => model.Status, Model.Naziv, htmlAttributes: new { @style = "text-align:right; float:right;margin-right:30px" })
+        @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
+
+    </div> 
+
+    <div class="form-group col-md-9" style="background-color: #E3FBE3">
+        <div class="form-group col-md-12">
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Status)<br />
+                @Html.DropDownListFor(model => model.Status, new[] { new SelectListItem() { Text = "U fazi prikupljanja", Value = "U fazi prikupljanja" }, new SelectListItem() { Text = "Prikupljeno", Value = "Prikupljeno" } }, "Nije potrebno...", htmlAttributes: new { @class = "form-control narrow" })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Klasa)<br />
+                @Html.EditorFor(model => model.Klasa, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Klasa, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.UrBroj)<br />
+                @Html.EditorFor(model => model.UrBroj, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.UrBroj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Tijelo)<br />
+                @Html.EditorFor(model => model.Tijelo, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Tijelo, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.DatumZavrsetka)<br />
+                @Html.EditorFor(model => model.DatumZavrsetka, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DatumZavrsetka, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-4">
+                @Html.LabelFor(model => model.Vrijednost)<br />
+                @Html.EditorFor(model => model.Vrijednost, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Vrijednost, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Datoteka, "Dokumentacija")<br />
+                <input type="file" id=@Model.Naziv.Replace(" ","") name="Datoteke" onchange="javascript:updateDatotekeList()" multiple />
+            </div>
+            <div class="col-md-6" id=@Model.Naziv></div>
+        </div>
+    </div>
+
+}
+

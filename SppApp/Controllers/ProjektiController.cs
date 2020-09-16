@@ -83,11 +83,8 @@ namespace SppApp.Controllers
         // GET: Projekti/Create
         public ActionResult Create()
         {
-            ViewBag.KontaktId = new SelectList(db.Kontakti, "ID", "Ime");
-            ViewBag.Organizacije = new SelectList(db.Organizacije, "ID", "Naziv");
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "ID", "Naziv");
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "ID", "Naziv");
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "ID", "Naziv");
+            ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime");
+            ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "ID", "Naziv");
             Projekti projekt = new Projekti();
             projekt.Aktivnosti = new List<Aktivnosti>();
             projekt.Aktivnosti.Add(new Aktivnosti());
@@ -102,7 +99,14 @@ namespace SppApp.Controllers
             projekt.OstalaDokumentacija = new List<OstalaDokumentacija>();
             projekt.Pokazatelji = new List<Pokazatelji>();
             projekt.Pokazatelji.Add(new Pokazatelji());
-
+            projekt.JavneNabave = new List<JavneNabave>();
+            projekt.JavneNabave.Add(new JavneNabave());
+            projekt.Rizici = new List<Rizici>();
+            projekt.Rizici.Add(new Rizici());
+            projekt.Dokumentacija = new List<Dokumentacija>();
+            projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti();
+            projekt = HelperMethods.UcitajDokumentaciju(projekt);
+            //string sUskladjenosti = HelperMethods.KreirajUskladjenostiPartial(projekt.Uskladjenosti);
             return View(projekt);
         }
 
@@ -209,7 +213,7 @@ namespace SppApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Projekti projekt, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
         {
-            
+
             if (submitButton.Equals("Odustani"))
             {
                 return RedirectToAction("Index", "Projekti");
@@ -239,21 +243,21 @@ namespace SppApp.Controllers
 
                 //if (HttpContext.Request.Files.AllKeys.Any())
                 //{
-                    //var test = HttpContext.Request.Files.AllKeys.ToArray(); // remove this after test
+                //var test = HttpContext.Request.Files.AllKeys.ToArray(); // remove this after test
 
-                    //// Get the uploaded image from the Files collection
-                    //var httpPostedFile = HttpContext.Request.Files[0];
+                //// Get the uploaded image from the Files collection
+                //var httpPostedFile = HttpContext.Request.Files[0];
 
-                    //if (httpPostedFile != null)
-                    //{
-                    //    // Validate the uploaded image(optional)
+                //if (httpPostedFile != null)
+                //{
+                //    // Validate the uploaded image(optional)
 
-                    //    // Get the complete file path
-                    //    var fileSavePath = (HttpContext.Server.MapPath("~/UploadedFiles") + httpPostedFile.FileName.Substring(httpPostedFile.FileName.LastIndexOf(@"\")));
+                //    // Get the complete file path
+                //    var fileSavePath = (HttpContext.Server.MapPath("~/UploadedFiles") + httpPostedFile.FileName.Substring(httpPostedFile.FileName.LastIndexOf(@"\")));
 
-                    //    // Save the uploaded file to "UploadedFiles" folder
-                    //    httpPostedFile.SaveAs(fileSavePath);
-                    //}
+                //    // Save the uploaded file to "UploadedFiles" folder
+                //    httpPostedFile.SaveAs(fileSavePath);
+                //}
                 //}
 
                 Session["projektID"] = projekt.Id;
@@ -505,6 +509,18 @@ namespace SppApp.Controllers
             return PartialView("PokazateljiPartial", Pokazatelj);
         }
 
+        public ActionResult DodajRizik(string sFirst, string sLast)
+        {
+            Rizici Rizik = new Rizici();
+            return PartialView("RiziciPartial", Rizik);
+        }
+
+        public ActionResult DodajJavnuNabavu(string sFirst, string sLast)
+        {
+            JavneNabave JavnaNabava = new JavneNabave();
+            return PartialView("JavneNabavePartial", JavnaNabava);
+        }
+
         [HttpGet]
         public ActionResult UploadFile()
         {
@@ -540,6 +556,34 @@ namespace SppApp.Controllers
                 return File(putanja, "application/force-download", FileName.Substring(15));
             }
             return RedirectToAction(idModela);
+        }
+
+        public ActionResult GetKontaktiValues(string id)
+        {
+            int kontaktId = Convert.ToInt32(id);
+            Kontakti kontakt = db.Kontakti.FirstOrDefault(x => x.Id == kontaktId);
+            List<string> KontaktiValues = new List<string>();
+            KontaktiValues.Add(kontakt.Ime);
+            KontaktiValues.Add(kontakt.Email);
+            KontaktiValues.Add(kontakt.BrojTelefona);
+            KontaktiValues.Add(kontakt.Faks);
+            return Json(KontaktiValues, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetOrganizacijeValues(string id)
+        {
+            int organizacijaId = Convert.ToInt32(id);
+            Organizacije organizacija = db.Organizacije.FirstOrDefault(x => x.Id == organizacijaId);
+            List<string> Organizacije = new List<string>();
+            Organizacije.Add(organizacija.Naziv);
+            Organizacije.Add(organizacija.OIB);
+            Organizacije.Add(organizacija.Adresa);
+            Organizacije.Add(organizacija.Mjesto);
+            Organizacije.Add(organizacija.Drzava);
+            Organizacije.Add(organizacija.Email);
+            Organizacije.Add(organizacija.BrojTelefona);
+            Organizacije.Add(organizacija.Faks);
+            return Json(Organizacije, JsonRequestBehavior.AllowGet);
         }
     }
 }

@@ -5,10 +5,13 @@ using SppApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.SqlClient;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml;
 
 namespace SppApp.Helpers
 {
@@ -21,11 +24,125 @@ namespace SppApp.Helpers
             service.Url = new Uri("https://outlook.office365.com/EWS/Exchange.asmx");
             EmailMessage message = new EmailMessage(service);
             message.Subject = "SPUR - novi  projekt";
-            message.Body = "<b>Naziv projekta:</b> " + projekt.Naziv + "<br>" + "<b>Naziv nositelja projekta:</b> " + projekt.Organizacija.Naziv + "<br>" + "<b>Status:</b> " + projekt.StatusProjekta + "<br>" + "<b>Faza projekta:</b> " + projekt.Faza + "<br>" + "<b>Upravno područje:</b> " + projekt.UpravnoPodrucje + "<br>" + "<b>Ime:</b> " + projekt.Kontakt.Ime + "<br>" + "<b>Prezime:</b> " + projekt.Kontakt.Prezime + "<br>" + "<b>Naziv organizacije:</b> " + projekt.Kontakt.Organizacija.Naziv;
+            message.Body = "<b>Naziv projekta:</b> " + projekt.Naziv + "<br>" + "<b>Naziv nositelja projekta:</b> " + projekt.Organizacija.Naziv + "<br>" + "<b>Status:</b> " + projekt.StatusProjekta + "<br>" + "<b>Modul:</b> " + projekt.Modul + "<br>" + "<b>Upravno područje:</b> " + projekt.UpravnoPodrucje + "<br>" + "<b>Ime:</b> " + projekt.Kontakt.Ime + "<br>" + "<b>Prezime:</b> " + projekt.Kontakt.Prezime + "<br>" + "<b>Naziv organizacije:</b> " + projekt.Kontakt.Organizacija.Naziv;
             message.ToRecipients.Add("adrijana.jurilj@vpc.hr");
 
             //To do: Uncomment this
             message.SendAndSaveCopy();
+        }
+
+        public static List<Uskladjenosti> UcitajUskladjenosti()
+        {
+            string putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Helpers/") + "Uskladjenosti.xml");
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.IgnoreComments = true;
+            List<Uskladjenosti> lsUskladjenosti = new List<Uskladjenosti>();
+            try
+            {
+                using (XmlReader reader = XmlReader.Create(putanja, settings))
+                {
+                    while (reader.Read())
+                    {
+
+                        if (reader.NodeType == XmlNodeType.Element && reader.LocalName.Contains("Razina"))
+                        {
+                            Uskladjenosti uskladjenost = new Uskladjenosti()
+                            {
+                                Naziv = reader.GetAttribute("Naziv"),
+                                Dubina = reader.Depth,
+                                Odabrano = false
+                            };
+                            lsUskladjenosti.Add(uskladjenost);
+                        };
+
+                    }
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return lsUskladjenosti;
+        }
+
+        public static string KreirajUskladjenostiPartial(List<Uskladjenosti> lsUskladjenosti)
+        {
+            string sPartial = "<ul id='myUL'><li><span class='box'>@Html.CheckBoxFor(model => model.Uskladjenosti[445].Odabrano) &nbsp; @Model.Uskladjenosti[445].Naziv</span> <ul class='nested'>";
+            List<int> lsPocni = new List<int>();
+
+            //Od prvog do predzadnjeg 
+
+            // prvi set: 0 - 444
+            //drugi set: 445 - 754
+            // treći set: 755 - 1031
+            for (int i = 756; i < 1030; i++)
+            {
+                string sClosed = "</ul></li>";
+                if (lsUskladjenosti[i].Dubina < lsUskladjenosti[i - 1].Dubina)
+                {
+                    for (int j = 0; j < lsUskladjenosti[i-1].Dubina - lsUskladjenosti[i].Dubina; j++)
+                    {
+                        sPartial += sClosed;
+                        
+                    }
+                    if (lsUskladjenosti[i].Dubina < lsUskladjenosti[i + 1].Dubina)
+                    {
+                        sPartial += "<li><span class='box'>@Html.CheckBoxFor(model => model.Uskladjenosti[" + i + "].Odabrano) &nbsp; @Model.Uskladjenosti[" + i + "].Naziv</span> <ul class='nested'>";
+                    }
+                    else
+                    {
+                        sPartial += "<li> @Html.CheckBoxFor(model => model.Uskladjenosti[" + i + "].Odabrano) &nbsp; @Model.Uskladjenosti[" + i + "].Naziv </li >";
+                    }
+                }
+                else if (lsUskladjenosti[i].Dubina < lsUskladjenosti[i + 1].Dubina)
+                {
+                    sPartial += "<li><span class='box'>@Html.CheckBoxFor(model => model.Uskladjenosti[" + i + "].Odabrano) &nbsp; @Model.Uskladjenosti[" + i + "].Naziv</span> <ul class='nested'>";
+                }
+                else if (lsUskladjenosti[i].Dubina == lsUskladjenosti[i + 1].Dubina || lsUskladjenosti[i].Dubina == lsUskladjenosti[i - 1].Dubina)
+                {
+                    sPartial += "<li> @Html.CheckBoxFor(model => model.Uskladjenosti[" + i + "].Odabrano) &nbsp; @Model.Uskladjenosti[" + i + "].Naziv </li >";
+                }
+                
+                //if (lsUskladjenosti[i-1].Dubina < lsUskladjenosti[i].Dubina)
+                //{
+                //    sPartial += "<ul class='nested'>";
+                //}
+                //if (lsUskladjenosti[i].Dubina > lsUskladjenosti[i-1].Dubina)
+                //{
+                //    sPartial += "<li>@Model.Uskladjenosti[" + i + "].Naziv</li>";
+                //    //sPartial += "<li><span class='box'> @Model.Uskladjenosti[" + i + "].Naziv</span>";
+                //}
+                //else if (lsUskladjenosti[i].Dubina == lsUskladjenosti[i - 1].Dubina)
+                //{
+                //    sPartial += "<li>" + "@Model.Uskladjenosti[" + i + "].Naziv</li>";
+                //}
+                //else
+                //{
+                //    for (int j = 0; j < lsUskladjenosti[i-1].Dubina - lsUskladjenosti[i].Dubina; j++)
+                //    {
+                //        sPartial += "</ul>";
+                //        sPartial += "</li>";
+                //    }
+                //    sPartial += "<li><span class='box'>" + "@Model.Uskladjenosti[" + i + "].Naziv</span></li>";
+                //}
+            }
+
+            sPartial += "</li>";
+            sPartial += "</ul>";
+
+            return sPartial;
+        }
+        public static Projekti UcitajDokumentaciju(Projekti projekt)
+        {
+            List<string> lsDokumentacija = new List<string> { "Planirana lokacija u prostornom planu", "Vlasnička dokumentacija", "Master plan", "Studija predizvodivosti", "Studija izvodivosti", "Cost/benefit analiza (analiza omjera troškova i korisnosti projekta)", "Rješenje o prihvatljivosti za okoliš", "Idejno rješenje", "Idejni projekt", "Glavni projekt", "Izvedbeni projekt", "Lokacijska dozvola", "Građevinska dozvola", "Poslovni plan", "Investicijska studija", "Mišljenje o uskladivosti s Naturom 2000", "Uporabna dozvola", "Natječajna dokumentacija", "Ostalo" };
+            foreach (string sNazivDokumenta in lsDokumentacija)
+            {
+                Dokumentacija dokument = new Dokumentacija()
+                {
+                    Naziv = sNazivDokumenta
+                };
+                projekt.Dokumentacija.Add(dokument);
+            }
+            return projekt;
         }
 
         public static Projekti DodajCustomLokaciju(Projekti projekt, FormCollection form)
@@ -239,6 +356,6 @@ namespace SppApp.Helpers
             }
             return projekt;
         }
-                
+
     }
 }

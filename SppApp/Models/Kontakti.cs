@@ -18,13 +18,13 @@ namespace SppApp.Models
         }
 
         [Key]
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
-        [Required(ErrorMessage = "Ime je obavezno.")]
+        [Display(Name = "Ime i prezime")]
+        [Required]
         [StringLength(150)]
         public string Ime { get; set; }
 
-        [Required(ErrorMessage = "Prezime je obavezno.")]
         [StringLength(150)]
         public string Prezime { get; set; }
 
@@ -32,17 +32,24 @@ namespace SppApp.Models
         [ForeignKey("OrganizacijaID")]
         public virtual Organizacije Organizacija { get; set; }
 
-        [Required(ErrorMessage = "E-mail je obavezan.")]
+        [Required]
         [DataType(DataType.EmailAddress)]
-        [Display(Name = "Vaš E-mail kontakt")]
+        [Display(Name = "E-mail")]
         [StringLength(250)]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Broj telefona je obavezan.")]
+        [Required]
         [DataType(DataType.PhoneNumber)]
-        [Display(Name = "Broj telefona")]
+        [Display(Name = "Telefonski broj")]
         [StringLength(25)]
         public string BrojTelefona { get; set; }
+
+        //Dodana polja - početak
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Faks")]
+        [StringLength(25)]
+        public string Faks { get; set; }
+        //Dodana polja - kraj
 
         [Display(Name = "Korisnik")]
         public string UserId { get; set; }

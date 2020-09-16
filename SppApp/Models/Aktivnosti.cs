@@ -17,6 +17,13 @@ namespace SppApp.Models
         [Display(Name = "Opis aktivnosti")]
         public string Opis { get; set; }
 
+        //Dodana polja - početak
+        [Display(Name = "Odgovorna osoba")]
+        public int? KontaktId { get; set; }
+        [ForeignKey("KontaktId")]
+        public virtual Kontakti Kontakt { get; set; }
+        //Dodana polja - kraj
+
         [StringLength(25)]
         [Display(Name = "Vrsta aktivnosti")]
         public string Vrsta { get; set; }
@@ -35,6 +42,8 @@ namespace SppApp.Models
         [DataType(DataType.Date)]
         [Display(Name = "Očekivani datum završetka")]
         public DateTime? DatumZavrsetka { get; set; }
+
+        public bool? Zavrseno { get; set; }
 
         public int? ProjektId { get; set; }
         [ForeignKey("ProjektId")]

@@ -1,0 +1,73 @@
+﻿@using SppApp.Helpers
+@model  SppApp.Models.JavneNabave
+
+<tr class="tableData">
+    @using (Html.BeginCollectionItem("JavneNabaveLista"))
+    {
+        if (Model.Id != 0)
+        {
+            @Html.HiddenFor(model => model.Id);
+            @Html.HiddenFor(model => model.ProjektId);
+        }
+        <td>
+            @Html.LabelFor(model => model.NazivPostupka)<br />
+            @Html.TextAreaFor(model => model.NazivPostupka, new { @class = "form-control" })<br />
+            @Html.ValidationMessageFor(model => model.NazivPostupka, "", new { @class = "text-danger" })
+
+        </td>
+        <td>
+            @Html.LabelFor(model => model.VrstaUgovora)<br />
+            @Html.RadioButtonFor(model => model.VrstaUgovora, "Radovi") Radovi <br />
+            @Html.RadioButtonFor(model => model.VrstaUgovora, "Roba") Roba <br />
+            @Html.RadioButtonFor(model => model.VrstaUgovora, "Usluge") Usluge <br />
+            @Html.ValidationMessageFor(model => model.VrstaUgovora, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @Html.LabelFor(model => model.VrstaPostupka)<br />
+            @Html.DropDownListFor(model => model.VrstaPostupka, new[] { new SelectListItem() { Text = "Natjecateljski dijalog", Value = "Natjecateljski dijalog" }, new SelectListItem() { Text = "Natjecateljski postupak uz pregovore", Value = "Natjecateljski postupak uz pregovore" }, new SelectListItem() { Text = "Ograničeni postupak", Value = "Ograničeni postupak" }, new SelectListItem() { Text = "Otvoreni postupak", Value = "Otvoreni postupak" }, new SelectListItem() { Text = "Partnerstvo za inovacije", Value = "Partnerstvo za inovacije" }, new SelectListItem() { Text = "Pregovarački postupak bez prethodne objave poziva na nadmetanje", Value = "Pregovarački postupak bez prethodne objave poziva na nadmetanje" }, new SelectListItem() { Text = "Pregovarački postupak s prethodnom objavom poziva na nadmetanje", Value = "Pregovarački postupak s prethodnom objavom poziva na nadmetanje" } }, "Odaberite...", htmlAttributes: new { @class = "form-control narrow" })
+            @Html.ValidationMessageFor(model => model.VrstaPostupka, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(false); }
+            @Html.LabelFor(model => model.VrijednostUgovora)<br />
+            @Html.EditorFor(model => model.VrijednostUgovora, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.VrijednostUgovora, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.PlaniranaObjava)<br />
+            @Html.EditorFor(model => model.PlaniranaObjava, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.PlaniranaObjava, "", new { @class = "text-danger" })
+
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.PlaniraniRok)<br />
+            @Html.EditorFor(model => model.PlaniraniRok, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.PlaniraniRok, "", new { @class = "text-danger" })
+
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.PlaniraniDatum, "Plan. datum ugovaranja")<br />
+            @Html.EditorFor(model => model.PlaniraniDatum, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.PlaniraniDatum, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.Objava)<br />
+            @Html.EditorFor(model => model.Objava, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.Objava, "", new { @class = "text-danger" })
+
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.Rok)<br />
+            @Html.EditorFor(model => model.Rok, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.Rok, "", new { @class = "text-danger" })
+
+            @{ Html.EnableClientValidation(true); }
+            @Html.LabelFor(model => model.Datum)<br />
+            @Html.EditorFor(model => model.Datum, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.ValidationMessageFor(model => model.Datum, "", new { @class = "text-danger" })
+        </td>
+        <td>
+            <input type="button" value="&#8212;" id="javne nabaveRedak" onclick="DeleteRow(this);" class="btn btn-primary" style="float:right; background-color: #EF7215 !important; border-color: #EF7215 !important" />
+        </td>
+    }
+</tr>
+<tr><td colspan="7"></td></tr>
