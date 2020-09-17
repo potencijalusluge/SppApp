@@ -133,6 +133,8 @@ namespace SppApp.Controllers
 
             if (!ModelState.IsValid)
             {
+                projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti();
+
                 decimal dBroj;
                 if (this.ModelState["ProcijenjenaVrijednostHRK"].Errors.Count > 0)
                 {

@@ -12,7 +12,7 @@ namespace SppApp.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SppApp.Models.ApplicationDbContext context)

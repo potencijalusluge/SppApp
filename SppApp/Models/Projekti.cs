@@ -230,7 +230,7 @@ namespace SppApp.Models
         public virtual Kontakti Kontakt { get; set; }
 
         public int? OdgovornaOsobaId { get; set; }
-        [ForeignKey("KontaktId")]
+        [ForeignKey("OdgovornaOsobaId")]
         public virtual Kontakti OdgovornaOsoba { get; set; }
 
         public bool? Upisano { get; set; }
