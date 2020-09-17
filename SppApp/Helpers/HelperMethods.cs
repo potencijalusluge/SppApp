@@ -4,6 +4,7 @@ using Microsoft.Exchange.WebServices.Data;
 using SppApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.SqlClient;
 using System.Drawing.Drawing2D;
@@ -24,11 +25,11 @@ namespace SppApp.Helpers
             service.Url = new Uri("https://outlook.office365.com/EWS/Exchange.asmx");
             EmailMessage message = new EmailMessage(service);
             message.Subject = "SPUR - novi  projekt";
-            message.Body = "<b>Naziv projekta:</b> " + projekt.Naziv + "<br>" + "<b>Naziv nositelja projekta:</b> " + projekt.Organizacija.Naziv + "<br>" + "<b>Status:</b> " + projekt.StatusProjekta + "<br>" + "<b>Modul:</b> " + projekt.Modul + "<br>" + "<b>Upravno područje:</b> " + projekt.UpravnoPodrucje + "<br>" + "<b>Ime:</b> " + projekt.Kontakt.Ime + "<br>" + "<b>Prezime:</b> " + projekt.Kontakt.Prezime + "<br>" + "<b>Naziv organizacije:</b> " + projekt.Kontakt.Organizacija.Naziv;
+            message.Body = "<b>Naziv projekta:</b> " + projekt.Naziv + "<br>" + "<b>Naziv nositelja projekta:</b> " + projekt.Organizacija.Naziv + "<br>" + "<b>Status:</b> " + projekt.StatusProjekta + "<br>" + "<b>Modul:</b> " + projekt.Modul + "<br>" + "<b>Upravno područje:</b> " + projekt.UpravnoPodrucje + "<br>" + "<b>Ime i prezime:</b> " + projekt.Kontakt.Ime + "<br>" + "<br>" + "<b>Naziv organizacije:</b> " + projekt.Organizacija.Naziv;
             message.ToRecipients.Add("adrijana.jurilj@vpc.hr");
 
             //To do: Uncomment this
-            message.SendAndSaveCopy();
+            //message.SendAndSaveCopy();
         }
 
         public static List<Uskladjenosti> UcitajUskladjenosti()
@@ -102,28 +103,7 @@ namespace SppApp.Helpers
                     sPartial += "<li> @Html.CheckBoxFor(model => model.Uskladjenosti[" + i + "].Odabrano) &nbsp; @Model.Uskladjenosti[" + i + "].Naziv </li >";
                 }
                 
-                //if (lsUskladjenosti[i-1].Dubina < lsUskladjenosti[i].Dubina)
-                //{
-                //    sPartial += "<ul class='nested'>";
-                //}
-                //if (lsUskladjenosti[i].Dubina > lsUskladjenosti[i-1].Dubina)
-                //{
-                //    sPartial += "<li>@Model.Uskladjenosti[" + i + "].Naziv</li>";
-                //    //sPartial += "<li><span class='box'> @Model.Uskladjenosti[" + i + "].Naziv</span>";
-                //}
-                //else if (lsUskladjenosti[i].Dubina == lsUskladjenosti[i - 1].Dubina)
-                //{
-                //    sPartial += "<li>" + "@Model.Uskladjenosti[" + i + "].Naziv</li>";
-                //}
-                //else
-                //{
-                //    for (int j = 0; j < lsUskladjenosti[i-1].Dubina - lsUskladjenosti[i].Dubina; j++)
-                //    {
-                //        sPartial += "</ul>";
-                //        sPartial += "</li>";
-                //    }
-                //    sPartial += "<li><span class='box'>" + "@Model.Uskladjenosti[" + i + "].Naziv</span></li>";
-                //}
+                
             }
 
             sPartial += "</li>";
@@ -145,15 +125,15 @@ namespace SppApp.Helpers
             return projekt;
         }
 
-        public static Projekti DodajCustomLokaciju(Projekti projekt, FormCollection form)
-        {
-            if (!form["lokacija-input"].IsNullOrWhiteSpace())
-            {
-                projekt.Lokacija = form["lokacija-input"];
-            }
+        //public static Projekti DodajCustomLokaciju(Projekti projekt, FormCollection form)
+        //{
+        //    if (!form["lokacija-input"].IsNullOrWhiteSpace())
+        //    {
+        //        projekt.Lokacija = form["lokacija-input"];
+        //    }
 
-            return projekt;
-        }
+        //    return projekt;
+        //}
 
         public static Projekti DodajUsera(Projekti projekt, string user)
         {
@@ -162,7 +142,6 @@ namespace SppApp.Helpers
                 projekt.UserId = user;
                 projekt.Kontakt.UserId = user;
                 projekt.Organizacija.UserId = user;
-                projekt.Kontakt.Organizacija.UserId = user;
             }
 
             return projekt;
@@ -296,64 +275,93 @@ namespace SppApp.Helpers
             return projekt;
         }
 
-        public static Projekti DodajGradjevinskeDozvole(Projekti projekt, HttpPostedFileBase[] dozvolaDatoteke)
+        public static Projekti DodajJavneNabave(Projekti projekt, FormCollection form)
         {
-            if (dozvolaDatoteke.Any(x => x != null))
+            List<string> lsJavneNabaveNaziv = form.AllKeys.Where(x => x.StartsWith("JavneNabaveLista[") && x.EndsWith("].NazivPostupka")).Distinct().ToList();
+            foreach (var javnaNabavaNaziv in lsJavneNabaveNaziv)
             {
-                foreach (var itemDozvole in dozvolaDatoteke)
+                if (!form[javnaNabavaNaziv].IsNullOrWhiteSpace())
                 {
-                    if (itemDozvole != null)
+                    string sKlasa = javnaNabavaNaziv.Replace("NazivPostupka", "");
+                    JavneNabave javnaNabava = new JavneNabave();
+                    if (form.AllKeys.Contains(sKlasa + "Id"))
                     {
-                        GradjevinskeDozvole dozvola = new GradjevinskeDozvole();
-                        string FileName = Path.GetFileNameWithoutExtension(itemDozvole.FileName);
-                        string FileExtension = Path.GetExtension(itemDozvole.FileName);
-                        FileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "-" + FileName.Trim() + FileExtension;
-
-                        dozvola.Naziv = itemDozvole.FileName;
-
-                        dozvola.Putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Files/") + FileName);
-
-                        dozvola.Datoteka = itemDozvole;
-
-                        dozvola.ProjektId = projekt.Id;
-
-                        projekt.GradjevinskeDozvole.Add(dozvola);
-
-                        dozvola.Datoteka.SaveAs(dozvola.Putanja);
-
+                        javnaNabava.Id = int.Parse(form[sKlasa + "Id"]);
+                        javnaNabava.ProjektId = int.Parse(form[sKlasa + "ProjektId"]);
                     }
+                    javnaNabava.NazivPostupka = form[javnaNabavaNaziv];
+                    javnaNabava.VrstaUgovora = form[sKlasa + "VrstaUgovora"];
+                    javnaNabava.VrstaPostupka = form[sKlasa + "VrstaPostupka"];
+                    if (!form[sKlasa + "VrijednostUgovora"].IsNullOrWhiteSpace())
+                    {
+                        javnaNabava.VrijednostUgovora = Decimal.Parse(form[sKlasa + "VrijednostUgovora"]);
+                    }
+                    if (!form[sKlasa + "PlaniranaObjava"].IsNullOrWhiteSpace())
+                    {
+                        javnaNabava.PlaniranaObjava = DateTime.Parse(form[sKlasa + "PlaniranaObjava"]);
+                    }
+                    if (!form[sKlasa + "PlaniraniDatum"].IsNullOrWhiteSpace())
+                    {
+                        javnaNabava.PlaniraniDatum = DateTime.Parse(form[sKlasa + "PlaniraniDatum"]);
+                    }
+                    if (!form[sKlasa + "PlaniraniRok"].IsNullOrWhiteSpace())
+                    {
+                        javnaNabava.PlaniraniRok = DateTime.Parse(form[sKlasa + "PlaniraniRok"]);
+                    }
+                    if (!form[sKlasa + "Objava"].IsNullOrWhiteSpace())
+                    {
+                        javnaNabava.Objava = DateTime.Parse(form[sKlasa + "Objava"]);
+                    }
+                    if (!form[sKlasa + "Datum"].IsNullOrWhiteSpace())
+                    {
+                        javnaNabava.Datum = DateTime.Parse(form[sKlasa + "Datum"]);
+                    }
+                    if (!form[sKlasa + "Rok"].IsNullOrWhiteSpace())
+                    {
+                        javnaNabava.Rok = DateTime.Parse(form[sKlasa + "Rok"]);
+                    }
+                    javnaNabava.ProjektId = projekt.Id;
+
+                    projekt.JavneNabave.Add(javnaNabava);
                 }
             }
+
             return projekt;
         }
 
-        public static Projekti DodajOstaluDokumentaciju(Projekti projekt, HttpPostedFileBase[] ostaleDatoteke)
+        public static Projekti DodajRizike(Projekti projekt, FormCollection form)
         {
-            if (ostaleDatoteke.Any(x => x != null))
+            List<string> lsRiziciNaziv = form.AllKeys.Where(x => x.StartsWith("RiziciLista[") && x.EndsWith("].Naziv")).Distinct().ToList();
+            foreach (var rizikNaziv in lsRiziciNaziv)
             {
-                foreach (var itemOstale in ostaleDatoteke)
+                if (!form[rizikNaziv].IsNullOrWhiteSpace())
                 {
-                    if (itemOstale != null)
+                    string sKlasa = rizikNaziv.Replace("Naziv", "");
+                    Rizici rizik = new Rizici();
+                    if (form.AllKeys.Contains(sKlasa + "Id"))
                     {
-                        OstalaDokumentacija ostala = new OstalaDokumentacija();
-                        string FileName = Path.GetFileNameWithoutExtension(itemOstale.FileName);
-                        string FileExtension = Path.GetExtension(itemOstale.FileName);
-                        FileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "-" + FileName.Trim() + FileExtension;
-
-                        ostala.Naziv = itemOstale.FileName;
-
-                        ostala.Putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Files/") + FileName);
-
-                        ostala.Datoteka = itemOstale;
-
-                        ostala.ProjektId = projekt.Id;
-
-                        projekt.OstalaDokumentacija.Add(ostala);
-
-                        ostala.Datoteka.SaveAs(ostala.Putanja);
+                        rizik.Id = int.Parse(form[sKlasa + "Id"]);
+                        rizik.ProjektId = int.Parse(form[sKlasa + "ProjektId"]);
                     }
+                    rizik.Naziv = form[rizikNaziv];
+                    rizik.Vrsta = form[sKlasa + "Vrsta"];
+                    rizik.Vjerojatnost = form[sKlasa + "Vjerojatnost"];
+                    rizik.Napomena = form[sKlasa + "Napomena"];
+
+                    rizik.ProjektId = projekt.Id;
+
+                    projekt.Rizici.Add(rizik);
                 }
             }
+
+            return projekt;
+        }
+
+        public static Projekti DodajUskladjenosti(Projekti projekt, FormCollection form)
+        {
+            List<Uskladjenosti> lsUskladjenosti = new List<Uskladjenosti>();
+            projekt.Uskladjenosti = lsUskladjenosti;
+            
             return projekt;
         }
 

@@ -219,17 +219,9 @@
     </Compile>
     <Compile Include="Helpers\HelperMethods.cs" />
     <Compile Include="Helpers\HtmlModelBindingHelperExtensions.cs" />
-    <Compile Include="Migrations\202009150609138_Initial.cs" />
-    <Compile Include="Migrations\202009150609138_Initial.Designer.cs">
-      <DependentUpon>202009150609138_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009150615246_Update1.cs" />
-    <Compile Include="Migrations\202009150615246_Update1.Designer.cs">
-      <DependentUpon>202009150615246_Update1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009161059000_Update2.cs" />
-    <Compile Include="Migrations\202009161059000_Update2.Designer.cs">
-      <DependentUpon>202009161059000_Update2.cs</DependentUpon>
+    <Compile Include="Migrations\202009170052434_Initial.cs" />
+    <Compile Include="Migrations\202009170052434_Initial.Designer.cs">
+      <DependentUpon>202009170052434_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -237,14 +229,11 @@
     <Compile Include="Models\Dionici.cs" />
     <Compile Include="Models\Dokumentacija.cs" />
     <Compile Include="Models\Financiranja.cs" />
-    <Compile Include="Models\GradjevinskeDozvole.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\JavneNabave.cs" />
     <Compile Include="Models\Kontakti.cs" />
-    <Compile Include="Models\Lokacije.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Organizacije.cs" />
-    <Compile Include="Models\OstalaDokumentacija.cs" />
     <Compile Include="Models\Pokazatelji.cs" />
     <Compile Include="Models\Projekti.cs" />
     <Compile Include="Models\Rizici.cs" />
@@ -346,14 +335,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009150609138_Initial.resx">
-      <DependentUpon>202009150609138_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009150615246_Update1.resx">
-      <DependentUpon>202009150615246_Update1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009161059000_Update2.resx">
-      <DependentUpon>202009161059000_Update2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009170052434_Initial.resx">
+      <DependentUpon>202009170052434_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

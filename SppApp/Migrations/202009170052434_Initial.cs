@@ -3,7 +3,7 @@ namespace SppApp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Update1 : DbMigration
+    public partial class Initial : DbMigration
     {
         public override void Up()
         {

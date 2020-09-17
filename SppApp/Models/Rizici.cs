@@ -25,11 +25,6 @@ namespace SppApp.Models
         [Display(Name = "Vjerojatnost rizika")]
         public string Vjerojatnost { get; set; }
 
-        [Display(Name = "Odgovorna osoba")]
-        public int? KontaktId { get; set; }
-        [ForeignKey("KontaktId")]
-        public virtual Kontakti Kontakt { get; set; }
-
         [StringLength(500)]
         [Display(Name = "Napomena")]
         public string Napomena { get; set; }

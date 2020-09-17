@@ -92,11 +92,8 @@ namespace SppApp.Controllers
             projekt.Dionici.Add(new Dionici());
             projekt.Financiranja = new List<Financiranja>();
             projekt.Financiranja.Add(new Financiranja());
-            projekt.GradjevinskeDozvole = new List<GradjevinskeDozvole>();
             projekt.Kontakt = new Kontakti();
-            projekt.Kontakt.Organizacija = new Organizacije();
             projekt.Organizacija = new Organizacije();
-            projekt.OstalaDokumentacija = new List<OstalaDokumentacija>();
             projekt.Pokazatelji = new List<Pokazatelji>();
             projekt.Pokazatelji.Add(new Pokazatelji());
             projekt.JavneNabave = new List<JavneNabave>();
@@ -104,6 +101,7 @@ namespace SppApp.Controllers
             projekt.Rizici = new List<Rizici>();
             projekt.Rizici.Add(new Rizici());
             projekt.Dokumentacija = new List<Dokumentacija>();
+            projekt.Uskladjenosti = new List<Uskladjenosti>();
             projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti();
             projekt = HelperMethods.UcitajDokumentaciju(projekt);
             //string sUskladjenosti = HelperMethods.KreirajUskladjenostiPartial(projekt.Uskladjenosti);
@@ -115,9 +113,11 @@ namespace SppApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Projekti projekt, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
+        public ActionResult Create(Projekti projekt, FormCollection form, string submitButton)
         {
-            projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
+            //projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
+
+            var test = form["Uskladjenosti[0].Odabrano"];
 
             projekt = HelperMethods.DodajUsera(projekt, User.Identity.GetUserId());
 
@@ -129,13 +129,34 @@ namespace SppApp.Controllers
 
             projekt = HelperMethods.DodajPokazatelje(projekt, form);
 
+            projekt = HelperMethods.DodajUskladjenosti(projekt, form);
+
+            if (!ModelState.IsValid)
+            {
+                decimal dBroj;
+                if (this.ModelState["ProcijenjenaVrijednostHRK"].Errors.Count > 0)
+                {
+                    decimal.TryParse(form["ProcijenjenaVrijednostHRK"].ToString().Replace(".", ""), out dBroj);
+                    projekt.ProcijenjenaVrijednostHRK = dBroj;
+                }
+                if (this.ModelState["ProcijenjeniTroskoviPripremeHRK"].Errors.Count > 0)
+                {
+                    decimal.TryParse(form["ProcijenjeniTroskoviPripremeHRK"].ToString().Replace(".", ""), out dBroj);
+                    projekt.ProcijenjeniTroskoviPripremeHRK = dBroj;
+                }
+                if (this.ModelState["ProcijenjeniTroskoviProvedbeHRK"].Errors.Count > 0)
+                {
+                    decimal.TryParse(form["ProcijenjeniTroskoviProvedbeHRK"].ToString().Replace(".", ""), out dBroj);
+                    projekt.ProcijenjeniTroskoviProvedbeHRK = dBroj;
+                }
+            }
             try
             {
                 if (ModelState.IsValid)
                 {
-                    projekt = HelperMethods.DodajGradjevinskeDozvole(projekt, dozvolaDatoteke);
+                    //projekt = HelperMethods.DodajGradjevinskeDozvole(projekt, dozvolaDatoteke);
 
-                    projekt = HelperMethods.DodajOstaluDokumentaciju(projekt, ostaleDatoteke);
+                    //projekt = HelperMethods.DodajOstaluDokumentaciju(projekt, ostaleDatoteke);
 
                     Session["projektID"] = projekt.Id;
 
@@ -219,7 +240,7 @@ namespace SppApp.Controllers
                 return RedirectToAction("Index", "Projekti");
             }
 
-            projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
+            //projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
 
             if (ModelState.IsValid)
             {
@@ -236,10 +257,6 @@ namespace SppApp.Controllers
                 projekt = HelperMethods.DodajDionike(projekt, form);
 
                 projekt = HelperMethods.DodajPokazatelje(projekt, form);
-
-                projekt = HelperMethods.DodajGradjevinskeDozvole(projekt, dozvolaDatoteke);
-
-                projekt = HelperMethods.DodajOstaluDokumentaciju(projekt, ostaleDatoteke);
 
                 //if (HttpContext.Request.Files.AllKeys.Any())
                 //{
@@ -292,7 +309,6 @@ namespace SppApp.Controllers
                     db.Entry(projekt).State = EntityState.Modified;
                     db.Entry(projekt.Kontakt).State = EntityState.Modified;
                     db.Entry(projekt.Organizacija).State = EntityState.Modified;
-                    db.Entry(projekt.Kontakt.Organizacija).State = EntityState.Modified;
 
                     foreach (var item in projekt.Aktivnosti)
                     {
@@ -339,43 +355,7 @@ namespace SppApp.Controllers
                         }
                     }
 
-                    foreach (var item in projekt.GradjevinskeDozvole)
-                    {
-                        if (item.Id != 0)
-                        {
-                            db.Entry(item).State = EntityState.Modified;
-                        }
-                        else
-                        {
-                            db.Entry(item).State = EntityState.Added;
-                        }
-                    }
-                    foreach (var item in projekt.OstalaDokumentacija)
-                    {
-                        if (item.Id != 0)
-                        {
-                            db.Entry(item).State = EntityState.Modified;
-                        }
-                        else
-                        {
-                            db.Entry(item).State = EntityState.Added;
-                        }
-                    }
-                    //foreach (var aktivnost in projekt.Aktivnosti.ToList())
-                    //    if (!projekt.Aktivnosti.Any(s => s.Id == aktivnost.Id))
-                    //        db.Aktivnosti.Remove(aktivnost);
-
-                    //foreach (var aktivnost in projekt.Aktivnosti)
-                    //{
-                    //    var dbAktivnost = projekt.Aktivnosti.SingleOrDefault(s => s.Id == aktivnost.Id);
-                    //    if (dbAktivnost != null)
-                    //        // Update subFoos that are in the newFoo.SubFoo collection
-                    //        db.Entry(dbAktivnost).CurrentValues.SetValues(aktivnost);
-                    //    else
-                    //        // Insert subFoos into the database that are not
-                    //        // in the dbFoo.subFoo collection
-                    //        projekt.Aktivnosti.Add(aktivnost);
-                    //}
+                    
 
                     db.SaveChanges();
 
@@ -423,29 +403,6 @@ namespace SppApp.Controllers
             List<int> lsPokazateljiIDs = lsPokazatelji.Select(x => x.Id).ToList();
             projekt.Pokazatelji = lsPokazatelji;
             //To do: Add file deletion
-            List<GradjevinskeDozvole> lsGradjevinskeDozvole = db.GradjevinskeDozvole.Where(x => x.ProjektId == projekt.Id).ToList();
-            List<int> lsGradjevinskeDozvoleIDs = lsGradjevinskeDozvole.Select(x => x.Id).ToList();
-            projekt.GradjevinskeDozvole = lsGradjevinskeDozvole;
-            List<OstalaDokumentacija> lsOstalaDokumentacija = db.OstalaDokumentacija.Where(x => x.ProjektId == projekt.Id).ToList();
-            List<int> lsOstalaDokumentacijaIDs = lsOstalaDokumentacija.Select(x => x.Id).ToList();
-            projekt.OstalaDokumentacija = lsOstalaDokumentacija;
-
-            foreach (var itemDozvole in lsGradjevinskeDozvole)
-            {
-                if (System.IO.File.Exists(itemDozvole.Putanja))
-                {
-                    System.IO.File.Delete(itemDozvole.Putanja);
-                }
-            }
-
-            foreach (var itemDokumentacija in lsOstalaDokumentacija)
-            {
-                if (System.IO.File.Exists(itemDokumentacija.Putanja))
-                {
-                    System.IO.File.Delete(itemDokumentacija.Putanja);
-                }
-            }
-
 
             db.Projekti.Remove(projekt);
             db.SaveChanges();
@@ -466,14 +423,7 @@ namespace SppApp.Controllers
             {
                 db.Pokazatelji.Remove(db.Pokazatelji.FirstOrDefault(x => x.Id == pokazateljId));
             }
-            foreach (var dozvolaId in lsGradjevinskeDozvoleIDs)
-            {
-                db.GradjevinskeDozvole.Remove(db.GradjevinskeDozvole.FirstOrDefault(x => x.Id == dozvolaId));
-            }
-            foreach (var ostalaId in lsOstalaDokumentacijaIDs)
-            {
-                db.OstalaDokumentacija.Remove(db.OstalaDokumentacija.FirstOrDefault(x => x.Id == ostalaId));
-            }
+            
             db.SaveChanges();
             return RedirectToAction("Index");
         }

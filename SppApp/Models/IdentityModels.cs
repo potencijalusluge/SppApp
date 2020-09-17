@@ -33,13 +33,15 @@ namespace  SppApp.Models
 
         public virtual DbSet<Aktivnosti> Aktivnosti { get; set; }
         public virtual DbSet<Dionici> Dionici { get; set; }
+        public virtual DbSet<Dokumentacija> Dokumentacija { get; set; }
         public virtual DbSet<Financiranja> Financiranja { get; set; }
-        public virtual DbSet<GradjevinskeDozvole> GradjevinskeDozvole { get; set; }
+        public virtual DbSet<JavneNabave> JavneNabave { get; set; }
         public virtual DbSet<Kontakti> Kontakti { get; set; }
         public virtual DbSet<Organizacije> Organizacije { get; set; }
-        public virtual DbSet<OstalaDokumentacija> OstalaDokumentacija { get; set; }
         public virtual DbSet<Pokazatelji> Pokazatelji { get; set; }
         public virtual DbSet<Projekti> Projekti { get; set; }
+        public virtual DbSet<Rizici> Rizici { get; set; }
+        public virtual DbSet<Uskladjenosti> Uskladjenosti { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -64,11 +66,6 @@ namespace  SppApp.Models
                 .HasMany(e => e.Projekti)
                 .WithOptional(e => e.Kontakt)
                 .HasForeignKey(e => e.KontaktId);
-
-            //modelBuilder.Entity<Organizacije>()
-            //    .HasMany(e => e.Kontakt)
-            //    .WithOptional(e => e.Organizacija)
-            //    .HasForeignKey(e => e.OrganizacijaID);
 
             modelBuilder.Entity<Organizacije>()
                 .HasMany(e => e.Projekt)
@@ -104,20 +101,30 @@ namespace  SppApp.Models
             modelBuilder.Entity<Projekti>()
                 .HasMany(e => e.Financiranja)
                 .WithOptional(e => e.Projekt)
-                .HasForeignKey(e => e.ProjektId);
-
-            modelBuilder.Entity<Projekti>()
-                .HasMany(e => e.GradjevinskeDozvole)
-                .WithOptional(e => e.Projekt)
-                .HasForeignKey(e => e.ProjektId);
-
-            modelBuilder.Entity<Projekti>()
-                .HasMany(e => e.OstalaDokumentacija)
-                .WithOptional(e => e.Projekt)
-                .HasForeignKey(e => e.ProjektId);
+                .HasForeignKey(e => e.ProjektId);            
 
             modelBuilder.Entity<Projekti>()
                 .HasMany(e => e.Pokazatelji)
+                .WithOptional(e => e.Projekt)
+                .HasForeignKey(e => e.ProjektId);
+
+            modelBuilder.Entity<Projekti>()
+                .HasMany(e => e.JavneNabave)
+                .WithOptional(e => e.Projekt)
+                .HasForeignKey(e => e.ProjektId);
+
+            modelBuilder.Entity<Projekti>()
+                .HasMany(e => e.Rizici)
+                .WithOptional(e => e.Projekt)
+                .HasForeignKey(e => e.ProjektId);
+
+            modelBuilder.Entity<Projekti>()
+                .HasMany(e => e.Uskladjenosti)
+                .WithOptional(e => e.Projekt)
+                .HasForeignKey(e => e.ProjektId);
+
+            modelBuilder.Entity<Projekti>()
+                .HasMany(e => e.Dokumentacija)
                 .WithOptional(e => e.Projekt)
                 .HasForeignKey(e => e.ProjektId);
         }

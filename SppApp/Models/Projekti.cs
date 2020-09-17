@@ -17,8 +17,6 @@ namespace SppApp.Models
             Aktivnosti = new List<Aktivnosti>();
             Dionici = new List<Dionici>();
             Financiranja = new List<Financiranja>();
-            GradjevinskeDozvole = new List<GradjevinskeDozvole>();
-            OstalaDokumentacija = new List<OstalaDokumentacija>();
             Dokumentacija = new List<Dokumentacija>();
             Pokazatelji = new List<Pokazatelji>();
             Uskladjenosti = new List<Uskladjenosti>();
@@ -148,12 +146,6 @@ namespace SppApp.Models
         public string Sektor { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual List<GradjevinskeDozvole> GradjevinskeDozvole { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual List<OstalaDokumentacija> OstalaDokumentacija { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual List<Dokumentacija> Dokumentacija { get; set; }
 
         [StringLength(500)]
@@ -208,15 +200,6 @@ namespace SppApp.Models
         public string WebStranica { get; set; }
 
         //USKLAĐENOST
-
-        [Display(Name = "Nacionalni strateški dokumenti")]
-        public bool? NacionalniDokumenti { get; set; }
-
-        [Display(Name = "Županijski strateški dokumenti")]
-        public bool? ZupanijskiDokumenti { get; set; }
-
-        [Display(Name = "ESI fondovi 2014. - 2020.")]
-        public bool? EsiFondovi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual List<Uskladjenosti> Uskladjenosti { get; set; }

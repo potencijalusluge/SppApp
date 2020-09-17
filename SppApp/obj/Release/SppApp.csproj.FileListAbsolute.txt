@@ -137,5 +137,3 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Runtime.CompilerServices
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Initial.resources
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csproj.GenerateResource.cache
-C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update1.resources
-C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update2.resources

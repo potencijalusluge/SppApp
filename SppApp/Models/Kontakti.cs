@@ -25,13 +25,6 @@ namespace SppApp.Models
         [StringLength(150)]
         public string Ime { get; set; }
 
-        [StringLength(150)]
-        public string Prezime { get; set; }
-
-        public int? OrganizacijaID { get; set; }
-        [ForeignKey("OrganizacijaID")]
-        public virtual Organizacije Organizacija { get; set; }
-
         [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "E-mail")]

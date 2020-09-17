@@ -17,13 +17,7 @@ namespace SppApp.Models
         [Display(Name = "Opis aktivnosti")]
         public string Opis { get; set; }
 
-        //Dodana polja - početak
-        [Display(Name = "Odgovorna osoba")]
-        public int? KontaktId { get; set; }
-        [ForeignKey("KontaktId")]
-        public virtual Kontakti Kontakt { get; set; }
-        //Dodana polja - kraj
-
+        
         [StringLength(25)]
         [Display(Name = "Vrsta aktivnosti")]
         public string Vrsta { get; set; }
