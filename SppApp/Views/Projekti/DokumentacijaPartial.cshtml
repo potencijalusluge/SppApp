@@ -55,11 +55,11 @@
         </div>
         <div class="form-group col-md-12">
 
-            <div class="col-md-6">
+            <div class="col-md-12">
                 @Html.LabelFor(model => model.Datoteka, "Dokumentacija")<br />
-                <input type="file" id=@Model.Naziv.Replace(" ","") name="Datoteke" onchange="javascript:updateDatotekeList()" multiple />
+                <input type="file" id=@Model.Naziv.Replace(" ","") name="Datoteke" onchange="javascript:updateDatotekeList(@Model.Naziv.Replace(" ","").Replace(" ",""))" multiple />
             </div>
-            <div class="col-md-6" id=@Model.Naziv></div>
+            <div id="@(@Model.Naziv.Replace(" ","") + "List")"></div>
         </div>
     </div>
 

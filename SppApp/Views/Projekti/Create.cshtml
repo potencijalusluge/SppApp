@@ -135,12 +135,12 @@
 </style>
 
 <script>
-    updateLicenceList = function () {
-        var input = document.getElementById('licenceFile');
-        var output = document.getElementById('licenceFileList');
+    updateDatotekeList = function (element) {
+        var input = document.getElementById('Planiranalokacijauprostornomplanu');
+        var output = document.getElementById('PlaniranalokacijauprostornomplanuList');
         var children = "";
         for (var i = 0; i < input.files.length; ++i) {
-            children += '<li>' + input.files.item(i).name + '</li>';
+            children += '<li style="list-style-type: disc">' + input.files.item(i).name + '</li>';
         }
         if (input.files.length > 1) {
             output.innerHTML = '<ul>' + children + '</ul>';
@@ -148,23 +148,7 @@
         else {
             output.innerHTML = '';
         }
-    }
-
-    updateOtherList = function () {
-        var input = document.getElementById('otherFile');
-        var output = document.getElementById('otherFileList');
-        var children = "";
-        for (var i = 0; i < input.files.length; ++i) {
-            children += '<li>' + input.files.item(i).name + '</li>';
-        }
-        if (input.files.length > 1) {
-            output.innerHTML = '<ul>' + children + '</ul>';
-        }
-        else {
-            output.innerHTML = '';
-        }
-    }
-
+    }  
 
 
 
