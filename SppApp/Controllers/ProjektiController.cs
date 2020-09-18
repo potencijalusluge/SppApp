@@ -530,8 +530,6 @@ namespace SppApp.Controllers
             Organizacije.Add(organizacija.Naziv);
             Organizacije.Add(organizacija.OIB);
             Organizacije.Add(organizacija.Adresa);
-            Organizacije.Add(organizacija.Mjesto);
-            Organizacije.Add(organizacija.Drzava);
             Organizacije.Add(organizacija.Email);
             Organizacije.Add(organizacija.BrojTelefona);
             Organizacije.Add(organizacija.Faks);

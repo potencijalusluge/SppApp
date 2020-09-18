@@ -55,7 +55,7 @@ namespace SppApp.Models
         [ForeignKey("OrganizacijaId")]
         public virtual Organizacije Organizacija { get; set; }
 
-        [Display(Name = "Status")]
+        [Display(Name = "Status projekta")]
         [Required(ErrorMessage = "Status je obavezan.")]
         [StringLength(25)]
         public string StatusProjekta { get; set; }

@@ -57,9 +57,9 @@
 
             <div class="col-md-12">
                 @Html.LabelFor(model => model.Datoteka, "Dokumentacija")<br />
-                <input type="file" id=@Model.Naziv.Replace(" ","") name="Datoteke" onchange="javascript:updateDatotekeList(@Model.Naziv.Replace(" ","").Replace(" ",""))" multiple />
+                <input type="file" id=@Model.Naziv.Replace(" ","") name="Datoteke" onchange="checkFile(this)" onclick="deleteErrorMessage(this)" />
             </div>
-            <div id="@(@Model.Naziv.Replace(" ","") + "List")"></div>
+            <div class="col-md-12" id="@(@Model.Naziv.Replace(" ","") + "List")"></div>
         </div>
     </div>
 

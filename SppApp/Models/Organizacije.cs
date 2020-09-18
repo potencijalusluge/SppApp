@@ -52,14 +52,6 @@ namespace SppApp.Models
         [StringLength(250)]
         public string Adresa { get; set; }
 
-        [Required(ErrorMessage = "Mjesto nositelja projekta je obavezno.")]
-        [StringLength(150)] 
-        public string Mjesto { get; set; }
-
-        [Display(Name = "Država")]
-        [StringLength(50)]
-        public string Drzava { get; set; }
-
         [Display(Name = "Korisnik")]
         public string UserId { get; set; }
 

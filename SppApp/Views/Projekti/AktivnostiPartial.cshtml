@@ -23,16 +23,18 @@
         </td>
         <td>
             @Html.LabelFor(model => model.JedinicaMjere)<br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "broj") broj <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "kg") kg <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "tona") tona <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "m") broj <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "km") broj <br />
             @Html.RadioButtonFor(model => model.JedinicaMjere, "m2") m2 <br />
             @Html.RadioButtonFor(model => model.JedinicaMjere, "ha") ha <br />
             @Html.RadioButtonFor(model => model.JedinicaMjere, "komplet") komplet <br />
             @Html.RadioButtonFor(model => model.JedinicaMjere, "sat") sat <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "kg") kg <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "tona") tona <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "m") m <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "dan") m <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "broj") m <br />
             @Html.RadioButtonFor(model => model.JedinicaMjere, "godišnje") godišnje <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "mjesečno") mjesečno <br />
+            @Html.RadioButtonFor(model => model.JedinicaMjere, "mjesec") mjesečno <br />
             @Html.ValidationMessageFor(model => model.JedinicaMjere, "", new { @class = "text-danger" })
         </td>
         <td>
