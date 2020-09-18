@@ -25,10 +25,6 @@ namespace SppApp.Models
         [Display(Name = "Iznos (HRK)")]
         public decimal? IznosHRK { get; set; }
 
-        [DataType(DataType.Currency)]
-        [Display(Name = "Iznos (EUR)")]
-        public decimal? IznosEUR { get; set; }
-
         [Display(Name = "Izvor sufinaciranja")]
         [StringLength(150)]
         public string IzvorSufinanciranja { get; set; }

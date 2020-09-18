@@ -10,7 +10,7 @@
             @Html.HiddenFor(model => model.ProjektId);
         }
         <td>
-            @Html.LabelFor(model => model, "Naziv subjekta")<br />
+            @Html.LabelFor(model => model.Naziv, "Naziv subjekta")<br />
             @Html.TextAreaFor(model => model.Naziv, new { @class = "form-control" })<br />
             @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
 

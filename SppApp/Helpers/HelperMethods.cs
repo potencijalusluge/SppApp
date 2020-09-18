@@ -204,11 +204,7 @@ namespace SppApp.Helpers
                     if (!form[sKlasa + "IznosHRK"].IsNullOrWhiteSpace())
                     {
                         financiranje.IznosHRK = Decimal.Parse(form[sKlasa + "IznosHRK"]);
-                    }
-                    if (!form[sKlasa + "IznosEUR"].IsNullOrWhiteSpace())
-                    {
-                        financiranje.IznosEUR = Decimal.Parse(form[sKlasa + "IznosEUR"]);
-                    }
+                    }                    
                     financiranje.IzvorSufinanciranja = form[sKlasa + "IzvorSufinanciranja"];
                     financiranje.ProjektId = projekt.Id;
 

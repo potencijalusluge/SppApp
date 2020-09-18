@@ -58,10 +58,6 @@ namespace  SppApp.Models
                 .Property(e => e.IznosHRK)
                 .HasPrecision(18, 2);
 
-            modelBuilder.Entity<Financiranja>()
-                .Property(e => e.IznosEUR)
-                .HasPrecision(18, 2);
-
             modelBuilder.Entity<Kontakti>()
                 .HasMany(e => e.Projekti)
                 .WithOptional(e => e.Kontakt)

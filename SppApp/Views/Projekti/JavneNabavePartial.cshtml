@@ -16,18 +16,19 @@
 
         </td>
         <td>
+
+            @Html.LabelFor(model => model.VrstaPostupka)<br />
+            @Html.DropDownListFor(model => model.VrstaPostupka, new[] { new SelectListItem() { Text = "Natjecateljski dijalog", Value = "Natjecateljski dijalog" }, new SelectListItem() { Text = "Natjecateljski postupak uz pregovore", Value = "Natjecateljski postupak uz pregovore" }, new SelectListItem() { Text = "Ograničeni postupak", Value = "Ograničeni postupak" }, new SelectListItem() { Text = "Otvoreni postupak", Value = "Otvoreni postupak" }, new SelectListItem() { Text = "Partnerstvo za inovacije", Value = "Partnerstvo za inovacije" }, new SelectListItem() { Text = "Pregovarački postupak bez prethodne objave poziva na nadmetanje", Value = "Pregovarački postupak bez prethodne objave poziva na nadmetanje" }, new SelectListItem() { Text = "Pregovarački postupak s prethodnom objavom poziva na nadmetanje", Value = "Pregovarački postupak s prethodnom objavom poziva na nadmetanje" } }, "Odaberite...", htmlAttributes: new { @class = "form-control narrow" })
+            @Html.ValidationMessageFor(model => model.VrstaPostupka, "", new { @class = "text-danger" }) <br />
+
             @Html.LabelFor(model => model.VrstaUgovora)<br />
             @Html.DropDownListFor(model => model.VrstaUgovora, new[] { new SelectListItem() { Text = "Radovi", Value = "Radovi" }, new SelectListItem() { Text = "Roba", Value = "Roba" }, new SelectListItem() { Text = "Usluge", Value = "Usluge" } }, "Odaberite...", htmlAttributes: new { @class = "form-control narrow" })
 
             @Html.ValidationMessageFor(model => model.VrstaUgovora, "", new { @class = "text-danger" }) <br />
-            @Html.LabelFor(model => model.VrstaPostupka)<br />
-            @Html.DropDownListFor(model => model.VrstaPostupka, new[] { new SelectListItem() { Text = "Natjecateljski dijalog", Value = "Natjecateljski dijalog" }, new SelectListItem() { Text = "Natjecateljski postupak uz pregovore", Value = "Natjecateljski postupak uz pregovore" }, new SelectListItem() { Text = "Ograničeni postupak", Value = "Ograničeni postupak" }, new SelectListItem() { Text = "Otvoreni postupak", Value = "Otvoreni postupak" }, new SelectListItem() { Text = "Partnerstvo za inovacije", Value = "Partnerstvo za inovacije" }, new SelectListItem() { Text = "Pregovarački postupak bez prethodne objave poziva na nadmetanje", Value = "Pregovarački postupak bez prethodne objave poziva na nadmetanje" }, new SelectListItem() { Text = "Pregovarački postupak s prethodnom objavom poziva na nadmetanje", Value = "Pregovarački postupak s prethodnom objavom poziva na nadmetanje" } }, "Odaberite...", htmlAttributes: new { @class = "form-control narrow" })
-            @Html.ValidationMessageFor(model => model.VrstaPostupka, "", new { @class = "text-danger" })
-        </td>
-        <td>
+
             @{ Html.EnableClientValidation(false); }
             @Html.LabelFor(model => model.VrijednostUgovora)<br />
-            @Html.EditorFor(model => model.VrijednostUgovora, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.EditorFor(model => model.VrijednostUgovora, new { htmlAttributes = new { @class = "form-control narrow" } })<br />
             @Html.ValidationMessageFor(model => model.VrijednostUgovora, "", new { @class = "text-danger" })
         </td>
         <td>
@@ -67,4 +68,4 @@
         </td>
     }
 </tr>
-<tr><td colspan="6"></td></tr>
+<tr><td colspan="5"></td></tr>
