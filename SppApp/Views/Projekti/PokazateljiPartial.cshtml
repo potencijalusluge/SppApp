@@ -14,30 +14,18 @@
             @Html.DropDownListFor(model => model.Naziv, new[] { new SelectListItem() { Text = "Prostor za inovacije/istraživanje i razvoj (u kvadratnim metrima)", Value = "Prostor za inovacije/istraživanje i razvoj (u kvadratnim metrima)" }, new SelectListItem() { Text = "Novi/poboljšani objekti javne infrastrukture (u kvadratnim metrima)", Value = "Novi/poboljšani objekti javne infrastrukture (u kvadratnim metrima)" }, new SelectListItem() { Text = "Novi/poboljšani kulturni objekti (u kvadratnim metrima)", Value = "Novi/poboljšani kulturni objekti (u kvadratnim metrima)" }, new SelectListItem() { Text = "Novi/poboljšani zdravstveni/bolnički objekti (u kvadratnim metrima)", Value = "Novi/poboljšani zdravstveni/bolnički objekti (u kvadratnim metrima)" }, new SelectListItem() { Text = "Novi turistički objekti (npr. skijaške žičare, pješačke staze itd.)", Value = "Novi turistički objekti (npr. skijaške žičare, pješačke staze itd.)" }, new SelectListItem() { Text = "Broj novih hotelskih kreveta", Value = "Broj novih hotelskih kreveta" }, new SelectListItem() { Text = "Novi objekt za recikliranje", Value = "Novi objekt za recikliranje" }, new SelectListItem() { Text = "Volumen / površina novih kapaciteta deponija", Value = "Volumen / površina novih kapaciteta deponija" }, new SelectListItem() { Text = "Duljina nove/nadograđene piste zračne luke", Value = "Duljina nove/nadograđene piste zračne luke" }, new SelectListItem() { Text = "%povećanja u kapacitetu prihvata putnika", Value = "%povećanja u kapacitetu prihvata putnika" }, new SelectListItem() { Text = "Novi/nadograđeni putnički terminal", Value = "Novi/nadograđeni putnički terminal" }, new SelectListItem() { Text = "Nova/nadograđena teretna luka", Value = "Nova/nadograđena teretna luka" }, new SelectListItem() { Text = "Izgrađena/sanirana željeznička pruga", Value = "Izgrađena/sanirana željeznička pruga" }, new SelectListItem() { Text = "Nova cesta (u km)", Value = "Nova cesta (u km)" }, new SelectListItem() { Text = "Poboljšana/popravljena/sanirana cesta (u km)", Value = "Poboljšana/popravljena/sanirana cesta (u km)" }, new SelectListItem() { Text = "Kvadratura prostora", Value = "Kvadratura prostora" }, new SelectListItem() { Text = "Razvijeno zemljište (u hektarima)", Value = "Razvijeno zemljište (u hektarima)" }, new SelectListItem() { Text = "Rehabilitirano zemljište (u hektarima)", Value = "Rehabilitirano zemljište (u hektarima)" }, new SelectListItem() { Text = "Broj malih poduzeća koji su primili konzultantsku uslugu", Value = "Broj malih poduzeća koji su primili konzultantsku uslugu" }, new SelectListItem() { Text = "Broj educiranih ljudi", Value = "Broj educiranih ljudi" }, new SelectListItem() { Text = "Otvorena radna mjesta", Value = "Otvorena radna mjesta" }}, "Odaberite...", htmlAttributes: new { @class = "form-control narrow" })
             @Html.ValidationMessageFor(model => model.Naziv, "", new { @class = "text-danger" })
 
-        </td>
-        <td>
-            @Html.LabelFor(model => model.JedinicaMjere)<br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "kg") kg <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "tona") tona <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "m2") m <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "m2") km <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "m2") m2 <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "broj") broj <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "ha") ha <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "sat") sat <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "komplet") komplet <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "dan") dan <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "godišnje") godišnje <br />
-            @Html.RadioButtonFor(model => model.JedinicaMjere, "mjesečno") mjesec <br />
-            @Html.ValidationMessageFor(model => model.JedinicaMjere, "", new { @class = "text-danger" })
-        </td>
+        </td>        
         <td>
             @{ Html.EnableClientValidation(false); }
             @Html.LabelFor(model => model.BrojJedinica, "Broj jedinica")
             <br />
-            @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control narrow" } })
             <br />
-            @Html.ValidationMessageFor(model => model.BrojJedinica, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.BrojJedinica, "", new { @class = "text-danger" }) <br />
+
+            @Html.LabelFor(model => model.JedinicaMjere)<br />
+            @Html.DropDownListFor(model => model.JedinicaMjere, new[] { new SelectListItem() { Text = "kg", Value = "kg" }, new SelectListItem() { Text = "tona", Value = "tona" }, new SelectListItem() { Text = "m", Value = "m" }, new SelectListItem() { Text = "km", Value = "km" }, new SelectListItem() { Text = "m2", Value = "m2" }, new SelectListItem() { Text = "ha", Value = "ha" }, new SelectListItem() { Text = "broj", Value = "broj" }, new SelectListItem() { Text = "komplet", Value = "komplet" }, new SelectListItem() { Text = "sat", Value = "sat" }, new SelectListItem() { Text = "dan", Value = "dan" }, new SelectListItem() { Text = "godišnje", Value = "godišnje" }, new SelectListItem() { Text = "mjesec", Value = "mjesec" } }, "Odaberite...", htmlAttributes: new { @class = "form-control narrow" })
+            @Html.ValidationMessageFor(model => model.JedinicaMjere, "", new { @class = "text-danger" })
         </td>
         <td>
             @{ Html.EnableClientValidation(true); }
