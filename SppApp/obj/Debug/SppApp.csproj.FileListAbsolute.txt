@@ -137,3 +137,5 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Threading.Tasks.Extensio
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.csprojAssemblyReference.cache
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.initial.resources
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.csproj.GenerateResource.cache
+C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.dll
+C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.Mvc.dll
