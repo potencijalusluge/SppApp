@@ -137,6 +137,11 @@
         // Create array with the files extensions that we wish to upload
         var validExtensions = ['jpeg', 'jpg', 'zip', 'pdf', 'docx', 'doc', 'xls', 'xlsx', 'odt', 'ods', 'fodt', 'fods'];
         //Check file extension in the array.if -1 that means the file extension is not in the list.
+        if ($('#loginLink').length) {
+            $(item).closest('div').next().addClass("text-danger").text("Greška! Samo prijavljeni korisnici mogu dodavati datoteke.").show();
+            $(item).replaceWith($(item).val('').clone(true));
+        } else
+        {
         if ($.inArray(extension, validExtensions) == -1 && item.files.length > 0) {
             $(item).closest('div').next().addClass("text-danger").text("Greška! Nedopušten format datoteke.").show();
             // Clear fileuload control selected file
@@ -158,6 +163,7 @@
                 $(item).closest('div').next().text('');
                 //Enable Submit Button
                 //$('#submit').prop('disabled', false);
+            }
             }
         }
     };
@@ -697,7 +703,6 @@
             <hr />
         </div>
         <br />
-
 
         <div class=" col-md-12">
             <div style="background-color: #EF7215 ">
