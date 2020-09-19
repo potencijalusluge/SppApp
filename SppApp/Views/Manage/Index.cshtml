@@ -35,11 +35,11 @@
             }
             ]
         </dd>
-        <dt>Vanjske prijave:</dt>
+        @*<dt>Vanjske prijave:</dt>
         <dd>
             @Model.Logins.Count [
             @Html.ActionLink("Uredi", "ManageLogins") ]
-        </dd>
+        </dd>*@
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.
 
@@ -68,12 +68,12 @@
                 }
             </dd>
         *@
-        <dt>Two-Factor autentikacija:</dt>
+        <!--<dt>Two-Factor autentikacija:</dt>
         <dd>
             <p>
                 Nema konfiguriranih davatelja autentičnosti s dva faktora. Pogledajte <a href="https://go.microsoft.com/fwlink/?LinkId=403804">ovaj članak</a>
                 za detalje o postavljanju ove ASP.NET aplikacije za podršku dvofaktorske provjere autentičnosti.
-            </p>
+            </p>-->
             @*@if (Model.TwoFactor)
                 {
                     using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -94,6 +94,6 @@
                         </text>
                     }
                 }*@
-        </dd>
+        <!--</dd>-->
     </dl>
 </div>

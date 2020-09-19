@@ -135,3 +135,5 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Numerics.Vectors.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.csprojAssemblyReference.cache
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.initial.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.csproj.GenerateResource.cache

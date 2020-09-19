@@ -1,36 +1,71 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Diagnostics;
+using System.Threading.Tasks;
 using System.Linq;
 using System.Security.Claims;
-using System.Threading.Tasks;
 using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Exchange.WebServices.Data;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using SppApp.Models;
+using System.Net;
+using System.Configuration;
 
 namespace SppApp
 {
     public class EmailService : IIdentityMessageService
     {
-        public Task SendAsync(IdentityMessage message)
+        public async System.Threading.Tasks.Task SendAsync(IdentityMessage message)
         {
-            // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            await configSendMailasync(message);
         }
+
+        // Use NuGet to install SendGrid (Basic C# client lib) 
+        private async System.Threading.Tasks.Task configSendMailasync(IdentityMessage message)
+        {
+            ExchangeService service = new ExchangeService();
+            service.Credentials = new WebCredentials(System.Configuration.ConfigurationManager.AppSettings["mailAccount"].ToString(), System.Configuration.ConfigurationManager.AppSettings["mailPassword"].ToString());
+            service.Url = new Uri("https://outlook.office365.com/EWS/Exchange.asmx");
+            EmailMessage myMessage = new EmailMessage(service);
+            myMessage.Subject = message.Subject;
+            myMessage.Body = message.Body;
+            myMessage.ToRecipients.Add(message.Destination);
+            myMessage.SendAndSaveCopy();
+            //var credentials = new NetworkCredential(
+            //           ConfigurationManager.AppSettings["mailAccount"],
+            //           ConfigurationManager.AppSettings["mailPassword"]
+            //           );
+
+            // Create a Web transport for sending email.
+            //var transportWeb = new Web(credentials);
+
+            //// Send the email.
+            //if (transportWeb != null)
+            //{
+            //    await transportWeb.DeliverAsync(myMessage);
+            //}
+            //else
+            //{
+            //    Trace.TraceError("Failed to create Web transport.");
+            //    await System.Threading.Tasks.Task.FromResult(0);
+            //}
+        }
+        
     }
 
-    public class SmsService : IIdentityMessageService
-    {
-        public Task SendAsync(IdentityMessage message)
-        {
-            // Plug in your SMS service here to send a text message.
-            return Task.FromResult(0);
-        }
-    }
+    //public class SmsService : IIdentityMessageService
+    //{
+    //    public Task SendAsync(IdentityMessage message)
+    //    {
+    //        // Plug in your SMS service here to send a text message.
+    //        return Task.FromResult(0);
+    //    }
+    //}
 
     // Configure the application user manager used in this application. UserManager is defined in ASP.NET Identity and is used by the application.
     public class ApplicationUserManager : UserManager<ApplicationUser>
@@ -40,7 +75,7 @@ namespace SppApp
         {
         }
 
-        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
+        public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
             // Configure validation logic for usernames
@@ -77,11 +112,11 @@ namespace SppApp
                 BodyFormat = "Your security code is {0}"
             });
             manager.EmailService = new EmailService();
-            manager.SmsService = new SmsService();
+            //manager.SmsService = new SmsService();
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider = 
+                manager.UserTokenProvider =
                     new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
             return manager;

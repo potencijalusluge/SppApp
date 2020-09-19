@@ -219,6 +219,10 @@
     </Compile>
     <Compile Include="Helpers\HelperMethods.cs" />
     <Compile Include="Helpers\HtmlModelBindingHelperExtensions.cs" />
+    <Compile Include="Migrations\202009190459358_initial.cs" />
+    <Compile Include="Migrations\202009190459358_initial.Designer.cs">
+      <DependentUpon>202009190459358_initial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aktivnosti.cs" />
@@ -312,6 +316,7 @@
     <Content Include="Views\Projekti\DokumentacijaPartial.cshtml" />
     <Content Include="Views\Projekti\JavneNabavePartial.cshtml" />
     <Content Include="Views\Projekti\RiziciPartial.cshtml" />
+    <Content Include="Views\Account\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,6 +334,11 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009190459358_initial.resx">
+      <DependentUpon>202009190459358_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

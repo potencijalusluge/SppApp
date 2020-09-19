@@ -21,7 +21,7 @@ namespace SppApp.Helpers
         public static void SendEmailNotification(Projekti projekt)
         {
             ExchangeService service = new ExchangeService();
-            service.Credentials = new WebCredentials("obavijest@vpc.pohrana.com.hr", "1029384756abc");
+            service.Credentials = new WebCredentials(System.Configuration.ConfigurationManager.AppSettings["mailAccount"].ToString(), System.Configuration.ConfigurationManager.AppSettings["mailPassword"].ToString());
             service.Url = new Uri("https://outlook.office365.com/EWS/Exchange.asmx");
             EmailMessage message = new EmailMessage(service);
             message.Subject = "SPUR - novi  projekt";

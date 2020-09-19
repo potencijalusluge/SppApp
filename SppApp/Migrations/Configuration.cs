@@ -34,7 +34,7 @@ namespace SppApp.Migrations
             var user = userManager.FindByName(name);
             if (user == null)
             {
-                user = new ApplicationUser { UserName = name, Email = name };
+                user = new ApplicationUser { UserName = name, Email = name, EmailConfirmed = true };
                 userManager.Create(user, password);
                 userManager.SetLockoutEnabled(user.Id, false);
             }

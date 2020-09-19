@@ -27,7 +27,7 @@ namespace  SppApp.Models
 
     public class SetPasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Lozinka je obavezna")]
         [StringLength(100, ErrorMessage = "{0} mora biti dugačka najmanje {2} znakova.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Nova lozinka")]
@@ -41,12 +41,12 @@ namespace  SppApp.Models
 
     public class ChangePasswordViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "Lozinka je obavezna")]
         [DataType(DataType.Password)]
         [Display(Name = "Trenutna lozinka")]
         public string OldPassword { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Nova lozinka je obavezna")]
         [StringLength(100, ErrorMessage = "{0} mora biti dugačka najmanje {2} znakova.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Nova lozinka")]
