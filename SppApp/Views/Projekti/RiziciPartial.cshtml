@@ -31,7 +31,6 @@
             @Html.ValidationMessageFor(model => model.Vjerojatnost, "", new { @class = "text-danger" })
         </td>
         <td>
-            @{ Html.EnableClientValidation(false); }
             @Html.LabelFor(model => model.Napomena)<br />
             @Html.TextAreaFor(model => model.Napomena, new { @class = "form-control" })<br />
             @Html.ValidationMessageFor(model => model.Napomena, "", new { @class = "text-danger" })

@@ -115,11 +115,11 @@ namespace SppApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Projekti projekt, FormCollection form, string submitButton)
         {
-            //projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
-
             var test = form["Uskladjenosti[0].Odabrano"];
 
             projekt = HelperMethods.DodajUsera(projekt, User.Identity.GetUserId());
+
+            projekt = HelperMethods.UsporediKontakte(projekt);
 
             projekt = HelperMethods.DodajAktivnosti(projekt, form);
 
@@ -130,6 +130,10 @@ namespace SppApp.Controllers
             projekt = HelperMethods.DodajPokazatelje(projekt, form);
 
             projekt = HelperMethods.DodajUskladjenosti(projekt, form);
+
+            projekt = HelperMethods.DodajJavneNabave(projekt, form);
+
+            projekt = HelperMethods.DodajRizike(projekt, form);
 
             if (!ModelState.IsValid)
             {
@@ -165,7 +169,7 @@ namespace SppApp.Controllers
                     if (submitButton.Equals("Pošalji"))
                     {
                         projekt.DatumPredaje = DateTime.Now;
-                        projekt.Upisano = true;
+                        projekt.Poslano = true;
                         db.Projekti.Add(projekt);
                         db.SaveChanges();
 
@@ -284,7 +288,7 @@ namespace SppApp.Controllers
                 if (submitButton.Equals("Pošalji"))
                 {
                     projekt.DatumPredaje = DateTime.Now;
-                    projekt.Upisano = true;
+                    projekt.Poslano = true;
                     db.Entry(projekt).State = EntityState.Modified;
 
                     db.SaveChanges();

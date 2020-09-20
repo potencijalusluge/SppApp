@@ -125,16 +125,6 @@ namespace SppApp.Helpers
             return projekt;
         }
 
-        //public static Projekti DodajCustomLokaciju(Projekti projekt, FormCollection form)
-        //{
-        //    if (!form["lokacija-input"].IsNullOrWhiteSpace())
-        //    {
-        //        projekt.Lokacija = form["lokacija-input"];
-        //    }
-
-        //    return projekt;
-        //}
-
         public static Projekti DodajUsera(Projekti projekt, string user)
         {
             if (user != null)
@@ -164,13 +154,16 @@ namespace SppApp.Helpers
                     aktivnost.Opis = form[opis];
                     aktivnost.Vrsta = form[sKlasa + "Vrsta"];
                     aktivnost.JedinicaMjere = form[sKlasa + "JedinicaMjere"];
+                    decimal dBroj;                    
                     if (!form[sKlasa + "BrojJedinica"].IsNullOrWhiteSpace())
                     {
-                        aktivnost.BrojJedinica = Decimal.Parse(form[sKlasa + "BrojJedinica"]);
+                        decimal.TryParse(form[sKlasa + "BrojJedinica"].ToString().Replace(".", ""), out dBroj);
+                        aktivnost.BrojJedinica = dBroj;
                     }
                     if (!form[sKlasa + "JedinicnaCijena"].IsNullOrWhiteSpace())
                     {
-                        aktivnost.JedinicnaCijena = Decimal.Parse(form[sKlasa + "JedinicnaCijena"]);
+                        decimal.TryParse(form[sKlasa + "JedinicnaCijena"].ToString().Replace(".", ""), out dBroj);
+                        aktivnost.JedinicnaCijena = dBroj;
                     }
                     if (!form[sKlasa + "DatumZavrsetka"].IsNullOrWhiteSpace())
                     {
@@ -201,9 +194,12 @@ namespace SppApp.Helpers
                     }
                     financiranje.NazivIzvora = form[nazivIzvora];
                     financiranje.IzvorFinanciranja = form[sKlasa + "IzvorFinanciranja"];
+
+                    decimal dBroj;                    
                     if (!form[sKlasa + "IznosHRK"].IsNullOrWhiteSpace())
                     {
-                        financiranje.IznosHRK = Decimal.Parse(form[sKlasa + "IznosHRK"]);
+                        decimal.TryParse(form[sKlasa + "IznosHRK"].ToString().Replace(".", ""), out dBroj);
+                        financiranje.IznosHRK = dBroj;
                     }                    
                     financiranje.IzvorSufinanciranja = form[sKlasa + "IzvorSufinanciranja"];
                     financiranje.ProjektId = projekt.Id;
@@ -257,9 +253,12 @@ namespace SppApp.Helpers
                     }
                     pokazatelj.Naziv = form[pokazateljNaziv];
                     pokazatelj.JedinicaMjere = form[sKlasa + "JedinicaMjere"];
-                    if (!form[sKlasa + "BrojJedinica"].IsNullOrWhiteSpace())
+
+                    decimal dBroj;
+                    if (!form[sKlasa + "IznosHRK"].IsNullOrWhiteSpace())
                     {
-                        pokazatelj.BrojJedinica = Decimal.Parse(form[sKlasa + "BrojJedinica"]);
+                        decimal.TryParse(form[sKlasa + "BrojJedinica"].ToString().Replace(".", ""), out dBroj);
+                        pokazatelj.BrojJedinica = dBroj;
                     }
                     pokazatelj.NacinOstvarenja = form[sKlasa + "NacinOstvarenja"];
                     pokazatelj.ProjektId = projekt.Id;
@@ -288,9 +287,11 @@ namespace SppApp.Helpers
                     javnaNabava.NazivPostupka = form[javnaNabavaNaziv];
                     javnaNabava.VrstaUgovora = form[sKlasa + "VrstaUgovora"];
                     javnaNabava.VrstaPostupka = form[sKlasa + "VrstaPostupka"];
+                    decimal dBroj;
                     if (!form[sKlasa + "VrijednostUgovora"].IsNullOrWhiteSpace())
                     {
-                        javnaNabava.VrijednostUgovora = Decimal.Parse(form[sKlasa + "VrijednostUgovora"]);
+                        decimal.TryParse(form[sKlasa + "VrijednostUgovora"].ToString().Replace(".", ""), out dBroj);
+                        javnaNabava.VrijednostUgovora = dBroj;
                     }
                     if (!form[sKlasa + "PlaniranaObjava"].IsNullOrWhiteSpace())
                     {
@@ -361,5 +362,19 @@ namespace SppApp.Helpers
             return projekt;
         }
 
+        /// <summary>
+        /// Compares contacts to avoid surplus in database
+        /// </summary>
+        /// <param name="projekt"></param>
+        /// <returns>Projekt object with distinct contact</returns>
+        public static Projekti UsporediKontakte(Projekti projekt)
+        {
+            if (projekt.Kontakt.Ime == projekt.OdgovornaOsoba.Ime && projekt.Kontakt.Email == projekt.OdgovornaOsoba.Email && projekt.Kontakt.BrojTelefona == projekt.OdgovornaOsoba.BrojTelefona && projekt.Kontakt.Faks == projekt.OdgovornaOsoba.Faks)
+            {
+                projekt.Kontakt = projekt.OdgovornaOsoba;
+            }
+
+            return projekt;
+        }
     }
 }

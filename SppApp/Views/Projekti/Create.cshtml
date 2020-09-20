@@ -76,7 +76,7 @@
         margin: 0;
         padding: 0;
     }
-    
+
     .box {
         cursor: pointer;
         -webkit-user-select: none; /*Safari 3.1+ */
@@ -140,30 +140,29 @@
         if ($('#loginLink').length) {
             $(item).closest('div').next().addClass("text-danger").text("Greška! Samo prijavljeni korisnici mogu dodavati datoteke.").show();
             $(item).replaceWith($(item).val('').clone(true));
-        } else
-        {
-        if ($.inArray(extension, validExtensions) == -1 && item.files.length > 0) {
-            $(item).closest('div').next().addClass("text-danger").text("Greška! Nedopušten format datoteke.").show();
-            // Clear fileuload control selected file
-            $(item).replaceWith($(item).val('').clone(true));
-            //Disable Submit Button
-            //$('#submit').prop('disabled', true);
-        }
-        else {
-            // Check and restrict the file size to 32 KB.
-            if ($(item).get(0).files[0].size > (20971520)) {
-                $(item).closest('div').next().addClass("text-danger").text("Greška!! Najveća dopuštena veličina datoteke je 30 MB.").show();
+        } else {
+            if ($.inArray(extension, validExtensions) == -1 && item.files.length > 0) {
+                $(item).closest('div').next().addClass("text-danger").text("Greška! Nedopušten format datoteke.").show();
                 // Clear fileuload control selected file
                 $(item).replaceWith($(item).val('').clone(true));
                 //Disable Submit Button
                 //$('#submit').prop('disabled', true);
             }
             else {
-                //Clear and Hide message span
-                $(item).closest('div').next().text('');
-                //Enable Submit Button
-                //$('#submit').prop('disabled', false);
-            }
+                // Check and restrict the file size to 32 KB.
+                if ($(item).get(0).files[0].size > (20971520)) {
+                    $(item).closest('div').next().addClass("text-danger").text("Greška!! Najveća dopuštena veličina datoteke je 30 MB.").show();
+                    // Clear fileuload control selected file
+                    $(item).replaceWith($(item).val('').clone(true));
+                    //Disable Submit Button
+                    //$('#submit').prop('disabled', true);
+                }
+                else {
+                    //Clear and Hide message span
+                    $(item).closest('div').next().text('');
+                    //Enable Submit Button
+                    //$('#submit').prop('disabled', false);
+                }
             }
         }
     };
@@ -331,27 +330,30 @@
 
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.ProcijenjenaVrijednostHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
-                <div class="col-md-8">
-                    @Html.EditorFor(model => model.ProcijenjenaVrijednostHRK, new { htmlAttributes = new { @class = "form-control narrow currency", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.ProcijenjenaVrijednostHRK, new { htmlAttributes = new { @class = "form-control narrow currency", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onchange = "currencyFormatHR('#ProcijenjenaVrijednostHRK')" } })
                     @Html.ValidationMessageFor(model => model.ProcijenjenaVrijednostHRK, "", new { @class = "text-danger" })
-                    <span id="ProcijenjenaVrijednostHRKDisplay"></span>
                 </div>
+                <div id="ProcijenjenaVrijednostHRKDisplay" class="col-md-4" style="font-style:italic"></div>
             </div>
 
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.ProcijenjeniTroskoviPripremeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
-                <div class="col-md-8">
-                    @Html.EditorFor(model => model.ProcijenjeniTroskoviPripremeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom." } })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.ProcijenjeniTroskoviPripremeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onchange = "currencyFormatHR('#ProcijenjeniTroskoviPripremeHRK')" } })
                     @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviPripremeHRK, "", new { @class = "text-danger" })
                 </div>
+                <div id="ProcijenjeniTroskoviPripremeHRKDisplay" class="col-md-4" style="font-style:italic"></div>
+
             </div>
 
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.ProcijenjeniTroskoviProvedbeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
-                <div class="col-md-8">
-                    @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom." } })
+                <div class="col-md-4">
+                    @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onchange = "currencyFormatHR('#ProcijenjeniTroskoviProvedbeHRK')" } })
                     @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviProvedbeHRK, "", new { @class = "text-danger" })
                 </div>
+                <div id="ProcijenjeniTroskoviProvedbeHRKDisplay" class="col-md-4" style="font-style:italic"></div>
 
 
             </div>
@@ -400,18 +402,18 @@
             </div>
 
             <div class="form-group col-md-12">
-                @Html.LabelFor(model => model.Organizacija.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-3 required" })
-                <div class="col-md-9">
-                    @Html.EditorFor(model => model.Organizacija.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
-                    @Html.ValidationMessageFor(model => model.Organizacija.BrojTelefona, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.Organizacija.Email, htmlAttributes: new { @class = "control-label col-md-3 required" })
                 <div class="col-md-9">
                     @Html.EditorFor(model => model.Organizacija.Email, new { htmlAttributes = new { @class = "form-control narrow" } })
                     @Html.ValidationMessageFor(model => model.Organizacija.Email, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                @Html.LabelFor(model => model.Organizacija.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-3 required" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Organizacija.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    @Html.ValidationMessageFor(model => model.Organizacija.BrojTelefona, "", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -453,18 +455,18 @@
             </div>
 
             <div class="form-group col-md-12">
-                @Html.LabelFor(model => model.OdgovornaOsoba.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-2 required" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.OdgovornaOsoba.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
-                    @Html.ValidationMessageFor(model => model.OdgovornaOsoba.BrojTelefona, "Broj telefona odgovorne osobe je obavezan.", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.OdgovornaOsoba.Email, htmlAttributes: new { @class = "control-label col-md-2 required" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.OdgovornaOsoba.Email, new { htmlAttributes = new { @class = "form-control narrow" } })
                     @Html.ValidationMessageFor(model => model.OdgovornaOsoba.Email, "E-mail odgovorne osobe je obavezan.", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group col-md-12">
+                @Html.LabelFor(model => model.OdgovornaOsoba.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-2 required" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.OdgovornaOsoba.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    @Html.ValidationMessageFor(model => model.OdgovornaOsoba.BrojTelefona, "Broj telefona odgovorne osobe je obavezan.", new { @class = "text-danger" })
                 </div>
             </div>
 
@@ -512,14 +514,6 @@
             </div>
 
             <div class="form-group col-md-12">
-                @Html.LabelFor(model => model.Kontakt.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-3 required" })
-                <div class="col-md-9">
-                    @Html.EditorFor(model => model.Kontakt.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
-                    @Html.ValidationMessageFor(model => model.Kontakt.BrojTelefona, "Broj telefona kontakt osobe je obavezan.", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.Kontakt.Email, htmlAttributes: new { @class = "control-label col-md-3 required" })
                 <div class="col-md-9">
                     @Html.EditorFor(model => model.Kontakt.Email, new { htmlAttributes = new { @class = "form-control narrow" } })
@@ -527,6 +521,13 @@
                 </div>
             </div>
 
+            <div class="form-group col-md-12">
+                @Html.LabelFor(model => model.Kontakt.BrojTelefona, htmlAttributes: new { @class = "control-label col-md-3 required" })
+                <div class="col-md-9">
+                    @Html.EditorFor(model => model.Kontakt.BrojTelefona, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    @Html.ValidationMessageFor(model => model.Kontakt.BrojTelefona, "Broj telefona kontakt osobe je obavezan.", new { @class = "text-danger" })
+                </div>
+            </div>
 
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.Kontakt.Faks, htmlAttributes: new { @class = "control-label col-md-3" })
@@ -624,7 +625,7 @@
 
                 <hr class="thick" style="color: #EF7215 " />
             </div>
-        </div>             
+        </div>
 
 
         @*@{ Html.EnableClientValidation(true); }*@
@@ -682,7 +683,7 @@
         </div>
 
         <div class="form-group col-md-12">
-           
+
 
             <div class="col-md-12">
 
@@ -817,7 +818,7 @@
         <div class="form-group col-md-12">
             @*<div class="col-md-offset-2 col-md-6">*@
             <input type="submit" name="submitButton" value="Pošalji" class="btn btn-success btn-lg" />
-            @if (User.Identity.IsAuthenticated && Model.Upisano != true)
+            @if (User.Identity.IsAuthenticated && Model.Poslano != true)
             {
                 <input type="submit" name="submitButton" value="Spremi" class="btn btn-success btn-lg" style="background-color: #EF7215 !important; border-color: #EF7215 !important" />
             }
@@ -896,7 +897,7 @@
             }
         });
     });
-       
+
 
     </script>
     <script>
@@ -1050,10 +1051,17 @@
         }
     </script>
     <script>
-        function currencyFormatHR() {
-
-            document.getElementById('ProcijenjenaVrijednostHRKDisplay').innerHTML = document.getElementById('ProcijenjenaVrijednostHRK').value.toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + ' kn'
-            // use . as a separator
-        }
+        function currencyFormatHR(item) {
+            //var diplayedNumber = $(item).val().toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + ' kn';
+            //var diplayedNumber = $(item).val().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + ' kn';
+            var errorSpan = item + '-error' + ':visible';
+            var value = $(item).val();
+            if ($(errorSpan).length == 0) {
+                $(item + 'Display').text(($(item).val().replace(',', '.') * 1).toFixed(2).replace('.', ',').replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.') + ' kn');
+            }
+            else {
+                $(item + 'Display').text('');
+            }
+        };
     </script>
 }

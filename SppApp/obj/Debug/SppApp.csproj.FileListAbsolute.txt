@@ -139,3 +139,5 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.initial
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.csproj.GenerateResource.cache
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.dll
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.Mvc.dll
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.Update.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.Update2.resources

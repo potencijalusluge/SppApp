@@ -24,7 +24,6 @@
         </td>
 
         <td>
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.IzvorSufinanciranja)<br />
             @Html.RadioButtonFor(model => model.IzvorSufinanciranja, "Vlastita sredstva") Vlastita sredstva <br />
             @Html.RadioButtonFor(model => model.IzvorSufinanciranja, "Kreditna sredstva poslovnih banaka") Kreditna sredstva poslovnih banaka <br />
@@ -33,9 +32,8 @@
             @Html.ValidationMessageFor(model => model.IzvorSufinanciranja, "", new { @class = "text-danger" })
         </td>
         <td>
-            @{ Html.EnableClientValidation(false); }
             @Html.LabelFor(model => model.IznosHRK, "Iznos (HRK)")<br />
-            @Html.EditorFor(model => model.IznosHRK, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @Html.EditorFor(model => model.IznosHRK, new { htmlAttributes = new { @class = "form-control", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })<br />
             @Html.ValidationMessageFor(model => model.IznosHRK, "", new { @class = "text-danger" })
         </td>
 

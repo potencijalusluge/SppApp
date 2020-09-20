@@ -26,39 +26,32 @@
 
             @Html.ValidationMessageFor(model => model.VrstaUgovora, "", new { @class = "text-danger" }) <br />
 
-            @{ Html.EnableClientValidation(false); }
             @Html.LabelFor(model => model.VrijednostUgovora)<br />
-            @Html.EditorFor(model => model.VrijednostUgovora, new { htmlAttributes = new { @class = "form-control narrow" } })<br />
+            @Html.EditorFor(model => model.VrijednostUgovora, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })<br />
             @Html.ValidationMessageFor(model => model.VrijednostUgovora, "", new { @class = "text-danger" })
         </td>
         <td>
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.PlaniranaObjava)<br />
             @Html.EditorFor(model => model.PlaniranaObjava, new { htmlAttributes = new { @class = "form-control" } })<br />
             @Html.ValidationMessageFor(model => model.PlaniranaObjava, "", new { @class = "text-danger" })
 
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.PlaniraniRok)<br />
             @Html.EditorFor(model => model.PlaniraniRok, new { htmlAttributes = new { @class = "form-control" } })<br />
             @Html.ValidationMessageFor(model => model.PlaniraniRok, "", new { @class = "text-danger" })
 
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.PlaniraniDatum, "Plan. datum ugovaranja")<br />
             @Html.EditorFor(model => model.PlaniraniDatum, new { htmlAttributes = new { @class = "form-control" } })<br />
             @Html.ValidationMessageFor(model => model.PlaniraniDatum, "", new { @class = "text-danger" })
         </td>
         <td>
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.Objava)<br />
             @Html.EditorFor(model => model.Objava, new { htmlAttributes = new { @class = "form-control" } })<br />
             @Html.ValidationMessageFor(model => model.Objava, "", new { @class = "text-danger" })
 
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.Rok)<br />
             @Html.EditorFor(model => model.Rok, new { htmlAttributes = new { @class = "form-control" } })<br />
             @Html.ValidationMessageFor(model => model.Rok, "", new { @class = "text-danger" })
 
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.Datum)<br />
             @Html.EditorFor(model => model.Datum, new { htmlAttributes = new { @class = "form-control" } })<br />
             @Html.ValidationMessageFor(model => model.Datum, "", new { @class = "text-danger" })

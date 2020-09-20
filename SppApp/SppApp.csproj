@@ -229,6 +229,14 @@
     <Compile Include="Migrations\202009190459358_initial.Designer.cs">
       <DependentUpon>202009190459358_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009200922015_Update.cs" />
+    <Compile Include="Migrations\202009200922015_Update.Designer.cs">
+      <DependentUpon>202009200922015_Update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009201109146_Update2.cs" />
+    <Compile Include="Migrations\202009201109146_Update2.Designer.cs">
+      <DependentUpon>202009201109146_Update2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Aktivnosti.cs" />
@@ -344,6 +352,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009190459358_initial.resx">
       <DependentUpon>202009190459358_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009200922015_Update.resx">
+      <DependentUpon>202009200922015_Update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009201109146_Update2.resx">
+      <DependentUpon>202009201109146_Update2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

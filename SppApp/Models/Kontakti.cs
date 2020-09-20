@@ -26,7 +26,7 @@ namespace SppApp.Models
         public string Ime { get; set; }
 
         [Required]
-        [DataType(DataType.EmailAddress)]
+        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail adresa nije u dobrom formatu.")]
         [Display(Name = "E-mail")]
         [StringLength(250)]
         public string Email { get; set; }

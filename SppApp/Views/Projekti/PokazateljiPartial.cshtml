@@ -16,9 +16,8 @@
 
         </td>        
         <td>
-            @{ Html.EnableClientValidation(false); }
             @Html.LabelFor(model => model.BrojJedinica, "Broj jedinica")<br />
-            @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control narrow" } })
+            @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })
             @Html.ValidationMessageFor(model => model.BrojJedinica, "", new { @class = "text-danger" }) <br />
 
             @Html.LabelFor(model => model.JedinicaMjere)<br />
@@ -26,7 +25,6 @@
             @Html.ValidationMessageFor(model => model.JedinicaMjere, "", new { @class = "text-danger" })
         </td>
         <td>
-            @{ Html.EnableClientValidation(true); }
             @Html.LabelFor(model => model.NacinOstvarenja, "Način ostvarenja")<br />
             @Html.TextAreaFor(model => model.NacinOstvarenja, new { @class = "form-control" })<br />
             @Html.ValidationMessageFor(model => model.NacinOstvarenja, "", new { @class = "text-danger" })

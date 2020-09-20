@@ -5,7 +5,7 @@
 <h2>Detalji projekta</h2>
 
 <div>
-    @if (ViewBag.Zaprimljena != null && Model.Upisano == true)
+    @if (ViewBag.Zaprimljena != null && Model.Poslano == true)
     {
         <h4 style="color: #EF7215 ">@ViewBag.Zaprimljena</h4>
     }
@@ -15,13 +15,14 @@
         <dd></dd>
         <dt></dt>
         <dd style="font-weight:bold">OSNOVNI PODATCI</dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Naziv)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Naziv)
         </dd>
+
         @if (Model.Akronim != null && Model.Akronim != "")
         {
             <dt>
@@ -32,6 +33,7 @@
                 @Html.DisplayFor(model => model.Akronim)
             </dd>
         }
+
         @if (Model.DioVecegProjekta != null && Model.DioVecegProjekta != "")
         {
             <dt>
@@ -41,33 +43,35 @@
                 @Html.DisplayFor(model => model.DioVecegProjekta)
             </dd>
         }
+
         <dt>
             @Html.DisplayNameFor(model => model.Lokacija)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Lokacija)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Modul)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Modul)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.StatusProjekta)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.StatusProjekta)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.UpravnoPodrucje)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.UpravnoPodrucje)
         </dd>
+
         @if (Model.VrstaProjekta != null && Model.VrstaProjekta != "")
         {
             <dt>
@@ -78,6 +82,7 @@
                 @Html.DisplayFor(model => model.VrstaProjekta)
             </dd>
         }
+
         @if (Model.TipProjekta != null && Model.TipProjekta != "")
         {
             <dt>
@@ -88,6 +93,7 @@
                 @Html.DisplayFor(model => model.TipProjekta)
             </dd>
         }
+
         @if (Model.PrekogranicniProjekt != null)
         {
             <dt>
@@ -127,6 +133,7 @@
                 }
             </dd>
         }
+
         @if (Model.Pocetak != null)
         {
             <dt>
@@ -137,6 +144,7 @@
                 @Html.DisplayFor(model => model.Pocetak)
             </dd>
         }
+
         @if (Model.Kraj != null)
         {
             <dt>
@@ -147,6 +155,7 @@
                 @Html.DisplayFor(model => model.Kraj)
             </dd>
         }
+
         <dt></dt>
         <dd>&nbsp;</dd>
         <dt></dt>
@@ -155,7 +164,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.ProcijenjenaVrijednostHRK)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.ProcijenjenaVrijednostHRK)
         </dd>
@@ -163,7 +171,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.ProcijenjeniTroskoviPripremeHRK)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.ProcijenjeniTroskoviPripremeHRK)
         </dd>
@@ -171,51 +178,50 @@
         <dt>
             @Html.DisplayNameFor(model => model.ProcijenjeniTroskoviProvedbeHRK)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.ProcijenjeniTroskoviProvedbeHRK)
         </dd>
+
         <dt></dt>
         <dd>&nbsp;</dd>
         <dt></dt>
         <dd style="font-weight:bold">NOSITELJ PROJEKTA</dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Organizacija.Naziv)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Organizacija.Naziv)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Organizacija.OIB)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Organizacija.OIB)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Organizacija.Adresa)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Organizacija.Adresa)
         </dd>
 
-        
         <dt>
             @Html.DisplayNameFor(model => model.Organizacija.Email)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Organizacija.Email)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Organizacija.BrojTelefona)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Organizacija.BrojTelefona)
         </dd>
+
         @if (Model.Organizacija.Faks != null && Model.Organizacija.Faks != "")
         {
             <dt>
@@ -234,16 +240,13 @@
         <dt>
             @Html.DisplayNameFor(model => model.OdgovornaOsoba.Ime)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.OdgovornaOsoba.Ime)
         </dd>
 
-
         <dt>
             @Html.DisplayNameFor(model => model.OdgovornaOsoba.Email)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.OdgovornaOsoba.Email)
         </dd>
@@ -251,10 +254,10 @@
         <dt>
             @Html.DisplayNameFor(model => model.OdgovornaOsoba.BrojTelefona)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.OdgovornaOsoba.BrojTelefona)
         </dd>
+
         @if (Model.OdgovornaOsoba.Faks != null && Model.OdgovornaOsoba.Faks != "")
         {
             <dt>
@@ -264,6 +267,7 @@
                 @Html.DisplayFor(model => model.OdgovornaOsoba.Faks)
             </dd>
         }
+
         <dt></dt>
         <dd>&nbsp;</dd>
         <dt></dt>
@@ -272,7 +276,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Kontakt.Ime)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Kontakt.Ime)
         </dd>
@@ -280,7 +283,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Kontakt.Email)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Kontakt.Email)
         </dd>
@@ -288,10 +290,10 @@
         <dt>
             @Html.DisplayNameFor(model => model.Kontakt.BrojTelefona)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Kontakt.BrojTelefona)
         </dd>
+
         @if (Model.Kontakt.Faks != null && Model.Kontakt.Faks != "")
         {
             <dt>
@@ -339,14 +341,12 @@
         <dt>
             @Html.DisplayNameFor(model => model.Opis)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Opis)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.OpciSpecificniCiljevi)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.OpciSpecificniCiljevi)
         </dd>
@@ -354,7 +354,6 @@
         <dt>
             @Html.DisplayNameFor(model => model.Rezultati)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Rezultati)
         </dd>
@@ -366,29 +365,39 @@
             <dd>&nbsp;</dd>
             <dt></dt>
             <dd style="font-weight:bold">STATUS DOKUMENTACIJE PROJEKTA</dd>
-        }
 
-        @*@if (Model.GradjevinskeDozvole.Count > 0)
-        {
-            <dt></dt>
-            <dd>&nbsp;</dd>
-            <dt></dt>
-            <dd style="font-weight:bold">GRAĐEVINSKA DOZVOLA</dd>
-            for (int i = 0; i < Model.GradjevinskeDozvole.Count; i++)
+            for (int i = 0; i < Model.Dokumentacija.Count; i++)
             {
                 <dt>
-                    @Html.DisplayName("Naziv dokumenta")
+                    @Html.DisplayFor(model => Model.Dokumentacija[i].Naziv)
                 </dt>
 
                 <dd>
-                    @Html.ActionLink(Model.GradjevinskeDozvole[i].Naziv, "Download", "Projekti", new { putanja = Model.GradjevinskeDozvole[i].Putanja, idModela = "Details/" + Model.Id }, null)
+
+                    <table class="table">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Status)</th>
+                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Klasa)</th>
+                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].UrBroj)</th>
+                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Tijelo)</th>
+                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].DatumZavrsetka)</th>
+                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Vrijednost)</th>
+                            <th>@Html.DisplayName("Naziv dokumenta")</th>
+                        </tr>
+                        <tr>
+                            <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Status)</td>
+                            <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Klasa)</td>
+                            <td>@Html.DisplayFor(model => Model.Dokumentacija[i].UrBroj)</td>
+                            <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Tijelo)</td>
+                            <td>@Html.DisplayFor(model => Model.Dokumentacija[i].DatumZavrsetka)</td>
+                            <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Vrijednost)</td>
+                            <td>@Html.ActionLink(Model.Dokumentacija[i].Naziv, "Download", "Projekti", new { putanja = Model.Dokumentacija[i].Putanja, idModela = "Details/" + Model.Id }, null)</td>
+
+                        </tr>
+                    </table>
                 </dd>
-
-
-
             }
-        }*@
-                
+        }
 
         @if (Model.Aktivnosti.Count > 0)
         {
@@ -403,8 +412,8 @@
                     <tr>
                         <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].Opis)</th>
                         <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].Vrsta)</th>
-                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].JedinicaMjere)</th>
                         <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].BrojJedinica)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].JedinicaMjere)</th>
                         <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].JedinicnaCijena)</th>
                         <th>@Html.DisplayNameFor(model => Model.Aktivnosti[0].DatumZavrsetka)</th>
                     </tr>
@@ -413,8 +422,8 @@
                         <tr>
                             <td>@Html.DisplayFor(model => Model.Aktivnosti[i].Opis)</td>
                             <td>@Html.DisplayFor(model => Model.Aktivnosti[i].Vrsta)</td>
-                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].JedinicaMjere)</td>
                             <td>@Html.DisplayFor(model => Model.Aktivnosti[i].BrojJedinica)</td>
+                            <td>@Html.DisplayFor(model => Model.Aktivnosti[i].JedinicaMjere)</td>
                             <td>@Html.DisplayFor(model => Model.Aktivnosti[i].JedinicnaCijena)</td>
                             <td>@Html.DisplayFor(model => Model.Aktivnosti[i].DatumZavrsetka)</td>
                         </tr>
@@ -436,25 +445,16 @@
                     <tr>
                         <th>@Html.DisplayNameFor(model => Model.Financiranja[0].NazivIzvora)</th>
                         <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IzvorFinanciranja)</th>
-                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IznosHRK)</th>
-                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IznosEUR)</th>
                         <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IzvorSufinanciranja)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Financiranja[0].IznosHRK)</th>
                     </tr>
                     @for (int i = 0; i < Model.Financiranja.Count; i++)
                     {
                         <tr>
                             <td>@Html.DisplayFor(model => Model.Financiranja[i].NazivIzvora)</td>
                             <td>@Html.DisplayFor(model => Model.Financiranja[i].IzvorFinanciranja)</td>
-                            <td>@Html.DisplayFor(model => Model.Financiranja[i].IznosHRK)</td>
-                            <td>
-                                @Model.Financiranja[i].IznosEUR
-                                @if (@Model.Financiranja[i].IznosEUR != null)
-                                {
-                                    <span>€</span>
-                                }
-
-                            </td>
                             <td>@Html.DisplayFor(model => Model.Financiranja[i].IzvorSufinanciranja)</td>
+                            <td>@Html.DisplayFor(model => Model.Financiranja[i].IznosHRK)</td>
                         </tr>
                     }
                 </table>
@@ -468,7 +468,15 @@
             <dt></dt>
             <dd style="font-weight:bold">USKLAĐENOSTI</dd>
             <dt></dt>
-            //Todo
+            for (int i = 0; i < Model.Uskladjenosti.Count; i++)
+            {
+                <dt>
+                    @Html.DisplayNameFor(model => model.Uskladjenosti[i].Naziv)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Uskladjenosti[i].Naziv)
+                </dd>
+            }
         }
 
 
@@ -511,16 +519,16 @@
                 <table class="table">
                     <tr>
                         <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].Naziv)</th>
-                        <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].JedinicaMjere)</th>
                         <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].BrojJedinica)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].JedinicaMjere)</th>
                         <th>@Html.DisplayNameFor(model => Model.Pokazatelji[0].NacinOstvarenja)</th>
                     </tr>
                     @for (int i = 0; i < Model.Pokazatelji.Count; i++)
                     {
                         <tr>
                             <td>@Html.DisplayFor(model => Model.Pokazatelji[i].Naziv)</td>
-                            <td>@Html.DisplayFor(model => Model.Pokazatelji[i].JedinicaMjere)</td>
                             <td>@Html.DisplayFor(model => Model.Pokazatelji[i].BrojJedinica)</td>
+                            <td>@Html.DisplayFor(model => Model.Pokazatelji[i].JedinicaMjere)</td>
                             <td>@Html.DisplayFor(model => Model.Pokazatelji[i].NacinOstvarenja)</td>
                         </tr>
                     }
@@ -536,6 +544,38 @@
             <dd style="font-weight:bold">JAVNA NABAVA</dd>
             <dt></dt>
 
+            <dd>
+
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].NazivPostupka)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].VrstaPostupka)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].VrstaUgovora)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].VrijednostUgovora)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].PlaniranaObjava)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].PlaniraniRok)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].PlaniraniDatum)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].Objava)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].Rok)</th>
+                        <th>@Html.DisplayNameFor(model => Model.JavneNabave[0].Datum)</th>
+                    </tr>
+                    @for (int i = 0; i < Model.JavneNabave.Count; i++)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].NazivPostupka)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].VrstaPostupka)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].VrstaUgovora)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].VrijednostUgovora)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].PlaniranaObjava)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].PlaniraniRok)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].PlaniraniDatum)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].Objava)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].Rok)</td>
+                            <td>@Html.DisplayFor(model => Model.JavneNabave[i].Datum)</td>
+                        </tr>
+                    }
+                </table>
+            </dd>
         }
 
         @if (Model.Rizici.Count > 0)
@@ -546,16 +586,25 @@
             <dd style="font-weight:bold">RIZICI</dd>
             <dt></dt>
 
-        }
-
-        @if (Model.Ispravno != null)
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.Ispravno)
-            </dt>
-
             <dd>
-                @Html.DisplayFor(model => model.Ispravno)
+
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => Model.Rizici[0].Naziv)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Rizici[0].Vrsta)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Rizici[0].Vjerojatnost)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Rizici[0].Napomena)</th>
+                    </tr>
+                    @for (int i = 0; i < Model.Rizici.Count; i++)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(model => Model.Rizici[i].Naziv)</td>
+                            <td>@Html.DisplayFor(model => Model.Rizici[i].Vrsta)</td>
+                            <td>@Html.DisplayFor(model => Model.Rizici[i].Vjerojatnost)</td>
+                            <td>@Html.DisplayFor(model => Model.Rizici[i].Napomena)</td>
+                        </tr>
+                    }
+                </table>
             </dd>
         }
 
@@ -570,14 +619,27 @@
                 @Html.DisplayFor(model => model.DatumPredaje)
             </dd>
         }
+
+        @if (Model.DatumPredaje == null)
+        {
+            <dt></dt>
+            <dd>&nbsp;</dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.DatumIzmjene)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DatumIzmjene)
+            </dd>
+        }
+
     </dl>
 </div>
 <p>
-    @*@if (User.IsInRole("Admin") || Model.Ispravno == false)
-        {
-            @Html.ActionLink("Uredi", "Edit", new { id = Model.Id })
-            <span>|</span>
-        }*@
+    @if (User.IsInRole("Admin") || Model.Poslano == false || Model.Doraditi == true)
+    {
+        @Html.ActionLink("Uredi", "Edit", new { id = Model.Id })
+        <span>|</span>
+    }
 
     @if (ViewBag.Zaprimljena == null)
     {

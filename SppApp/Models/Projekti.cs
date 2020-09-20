@@ -78,19 +78,19 @@ namespace SppApp.Models
         [Display(Name = "Planirani završetak provedbe")]
         public DateTime? Kraj { get; set; }
 
-        [Range(double.Epsilon, double.MaxValue, ErrorMessage = "Procijenjena vrijednost mora biti veća od nule.")]
+        //[Range(double.Epsilon, double.MaxValue, ErrorMessage = "Procijenjena vrijednost mora biti veća od nule.")]
         [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Procijenjena vrijednost projekta je obavezna.")]
         [Display(Name = "Procijenjena vrijednost projekta (HRK)")]
         public decimal ProcijenjenaVrijednostHRK { get; set; }
 
-        [Range(double.Epsilon, double.MaxValue, ErrorMessage = "Procijenjeni troškovi moraju biti veći od nule.")]
+        //[Range(double.Epsilon, double.MaxValue, ErrorMessage = "Procijenjeni troškovi moraju biti veći od nule.")]
         [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Procijenjeni troškovi pripreme su obavezni.")]
         [Display(Name = "Procijenjeni troškovi pripreme (HRK)")]
         public decimal ProcijenjeniTroskoviPripremeHRK { get; set; }
 
-        [Range(double.Epsilon, double.MaxValue, ErrorMessage = "Procijenjeni troškovi moraju biti veći od nule.")]
+        //[Range(double.Epsilon, double.MaxValue, ErrorMessage = "Procijenjeni troškovi moraju biti veći od nule.")]
         [DataType(DataType.Currency)]
         [Required(ErrorMessage = "Procijenjeni troškovi provedbe su obavezni.")]
         [Display(Name = "Procijenjeni troškovi provedbe (HRK)")]
@@ -163,7 +163,11 @@ namespace SppApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]        
         public virtual List<Rizici> Rizici { get; set; }
 
-        public bool? Upisano { get; set; }
+        public bool? Poslano { get; set; }
+
+        public bool? UpisanoSPUR { get; set; }
+
+        public bool? Doraditi { get; set; }
 
         [Display(Name = "Datum i vrijeme zadnje izmjene")]
         public DateTime? DatumIzmjene { get; set; }
