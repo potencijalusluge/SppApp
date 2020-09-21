@@ -18,7 +18,7 @@ namespace SppApp.Models
         public string Naziv { get; set; }
 
         [Display(Name = "Vrsta dionika")]
-        [StringLength(25)]
+        [StringLength(50)]
         public string Vrsta { get; set; }
 
         [Display(Name = "Uloga na projektu")]

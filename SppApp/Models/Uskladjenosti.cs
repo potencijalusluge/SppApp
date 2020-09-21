@@ -15,7 +15,7 @@ namespace SppApp.Models
 
         public int Dubina { get; set; }
 
-        [StringLength(250)]
+        [StringLength(500)]
         public string Naziv { get; set; }
 
         public bool Odabrano { get; set; }

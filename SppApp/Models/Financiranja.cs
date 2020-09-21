@@ -18,7 +18,7 @@ namespace SppApp.Models
         public string NazivIzvora { get; set; }
 
         [Display(Name = "Izvor financiranja")]
-        [StringLength(150)]
+        [StringLength(50)]
         public string IzvorFinanciranja { get; set; }
 
         [DataType(DataType.Currency)]
@@ -26,7 +26,7 @@ namespace SppApp.Models
         public decimal? IznosHRK { get; set; }
 
         [Display(Name = "Izvor sufinaciranja")]
-        [StringLength(150)]
+        [StringLength(50)]
         public string IzvorSufinanciranja { get; set; }
 
         public int? ProjektId { get; set; }

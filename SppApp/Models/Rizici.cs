@@ -17,11 +17,11 @@ namespace SppApp.Models
         [Display(Name = "Naziv rizika")]
         public string Naziv { get; set; }
 
-        [StringLength(25)]
+        [StringLength(50)]
         [Display(Name = "Vrsta rizika")]
         public string Vrsta { get; set; }
 
-        [StringLength(25)]
+        [StringLength(50)]
         [Display(Name = "Vjerojatnost rizika")]
         public string Vjerojatnost { get; set; }
 

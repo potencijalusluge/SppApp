@@ -18,7 +18,7 @@ namespace SppApp.Models
         public string Opis { get; set; }
 
         
-        [StringLength(25)]
+        [StringLength(50)]
         [Display(Name = "Vrsta aktivnosti")]
         public string Vrsta { get; set; }
 

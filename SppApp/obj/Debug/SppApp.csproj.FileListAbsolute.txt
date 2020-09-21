@@ -141,3 +141,4 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.dll
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.Mvc.dll
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.Update.resources
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.Update2.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Debug\SppApp.Migrations.Update3.resources

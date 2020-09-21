@@ -21,7 +21,7 @@ namespace SppApp.Models
         [Display(Name = "Vrsta ugovora")]
         public string VrstaUgovora { get; set; }
 
-        [StringLength(50)]
+        [StringLength(250)]
         [Display(Name = "Vrsta postupka")]
         public string VrstaPostupka { get; set; }
 
