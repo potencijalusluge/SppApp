@@ -257,10 +257,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/29/2017 14:13:30</publishTime>
     </File>
     <File Include="bin/SppApp.dll">
-      <publishTime>09/21/2020 08:06:15</publishTime>
+      <publishTime>09/21/2020 22:34:08</publishTime>
     </File>
     <File Include="bin/SppApp.pdb">
-      <publishTime>09/21/2020 08:06:15</publishTime>
+      <publishTime>09/21/2020 22:34:08</publishTime>
     </File>
     <File Include="bin/System.Buffers.dll">
       <publishTime>08/20/2020 06:58:04</publishTime>
@@ -476,13 +476,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/21/2020 01:25:04</publishTime>
     </File>
     <File Include="Views/Projekti/Create.cshtml">
-      <publishTime>09/21/2020 08:05:38</publishTime>
+      <publishTime>09/21/2020 21:59:04</publishTime>
     </File>
     <File Include="Views/Projekti/Delete.cshtml">
       <publishTime>09/21/2020 01:25:04</publishTime>
     </File>
     <File Include="Views/Projekti/Details.cshtml">
-      <publishTime>09/21/2020 07:54:45</publishTime>
+      <publishTime>09/21/2020 08:12:17</publishTime>
     </File>
     <File Include="Views/Projekti/DioniciPartial.cshtml">
       <publishTime>09/21/2020 01:25:04</publishTime>
@@ -527,7 +527,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/20/2020 06:55:02</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/21/2020 08:06:37</publishTime>
+      <publishTime>09/21/2020 22:34:17</publishTime>
     </File>
   </ItemGroup>
 </Project>

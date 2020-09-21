@@ -83,9 +83,11 @@ namespace SppApp.Controllers
         // GET: Projekti/Create
         public ActionResult Create()
         {
-            ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime");
-            ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "ID", "Naziv");
             Projekti projekt = new Projekti();
+            //ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime");
+            //ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "ID", "Naziv");
+            ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+            ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
             projekt.Aktivnosti = new List<Aktivnosti>();
             projekt.Aktivnosti.Add(new Aktivnosti());
             projekt.Dionici = new List<Dionici>();
@@ -115,20 +117,35 @@ namespace SppApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Projekti projekt, FormCollection form, HttpPostedFileBase[] Datoteke, string submitButton)
         {
-            if (projekt.Organizacija == null && form["Organizacija.Id"]!="")
-            {
-                Organizacije dbOrganizacija = db.Organizacije.Find(Int32.Parse(form["Organizacija.Id"]));
-                projekt.OrganizacijaId = dbOrganizacija.Id;
-                //projekt.Organizacija.Id = dbOrganizacija.Id;
-                //projekt.Organizacija.Naziv = dbOrganizacija.Naziv;
+            //if (projekt.Organizacija.Id != null)
+            //{
+            //    Organizacije dbOrganizacija = db.Organizacije.Find(projekt.Organizacija.Id);
+            //    projekt.Organizacija = dbOrganizacija;
+            //    projekt.OrganizacijaId = projekt.Organizacija.Id;
                 //projekt.Organizacija.OIB = dbOrganizacija.OIB;
                 //projekt.Organizacija.BrojTelefona = dbOrganizacija.BrojTelefona;
                 //projekt.Organizacija.Faks = dbOrganizacija.Faks;
                 //projekt.Organizacija.Email = dbOrganizacija.Email;
                 //projekt.Organizacija.Adresa = dbOrganizacija.Adresa;
-                //projekt.Organizacija.UserId = dbOrganizacija.UserId;
-
-            }
+            //}
+            //if (projekt.Kontakt.Id != null)
+            //{
+            //    Kontakti dbKontakt = db.Kontakti.Find(projekt.Kontakt.Id);
+            //    projekt.Kontakt = dbKontakt;
+            //    projekt.KontaktId = projekt.Kontakt.Id;
+                //projekt.Kontakt.BrojTelefona = dbKontakt.BrojTelefona;
+                //projekt.Kontakt.Faks = dbKontakt.Faks;
+                //projekt.Kontakt.Email = dbKontakt.Email;
+            //}
+            //if (projekt.OdgovornaOsoba.Id != null)
+            //{
+            //    Kontakti dbOdgovornaOsoba = db.Kontakti.Find(projekt.OdgovornaOsoba.Id);
+            //    projekt.OdgovornaOsoba = dbOdgovornaOsoba;
+            //    projekt.OdgovornaOsobaId = projekt.OdgovornaOsoba.Id;
+                //projekt.OdgovornaOsoba.BrojTelefona = dbOdgovornaOsoba.BrojTelefona;
+                //projekt.OdgovornaOsoba.Faks = dbOdgovornaOsoba.Faks;
+                //projekt.OdgovornaOsoba.Email = dbOdgovornaOsoba.Email;
+            //}
 
             projekt = HelperMethods.DodajUsera(projekt, User.Identity.GetUserId());
 
@@ -215,9 +232,12 @@ namespace SppApp.Controllers
                 throw;
             }
 
-
-            ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
+            //ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime");
+            //ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "ID", "Naziv");
+            //ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId); //old
+            //ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId); //old
+            ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+            ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
             return View(projekt);
         }
 

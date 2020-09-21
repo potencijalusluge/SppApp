@@ -474,10 +474,18 @@
             for (int i = 0; i < Model.Uskladjenosti.Count; i++)
             {
                 <dt>
-                    @if (Model.Uskladjenosti[i].Dubina == 1)
+                    @if (i == 0)
                     {
                         @Html.DisplayNameFor(model => model.Uskladjenosti[i].Naziv)
                     }
+                    else
+                    {
+                        if (Model.Uskladjenosti[i].Dubina <= Model.Uskladjenosti[i - 1].Dubina)
+                        {
+                            @Html.DisplayNameFor(model => model.Uskladjenosti[i].Naziv)
+                        }
+                    }
+
                 </dt>
                 <dd>
                     @Html.DisplayFor(model => model.Uskladjenosti[i].Naziv)

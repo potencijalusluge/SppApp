@@ -366,12 +366,13 @@
                     <hr class="thick okvirPodnaslova" />
                 </div>
             </div>
+            
             @if (User.Identity.IsAuthenticated)
             {
                 <div class="form-group col-md-12">
                     @Html.LabelFor(model => model.Organizacija.Id, "Nositelj projekta", htmlAttributes: new { @class = "control-label col-md-3" })
                     <div class="col-md-9">
-                        @Html.DropDownList("Organizacija", (IEnumerable<SelectListItem>)ViewBag.OrganizacijeLista, "Odaberite...", new { @class = "form-control narrow", onchange = "javascript:OrganizacijeDropdown()" })
+                        @Html.DropDownListFor(model => model.Organizacija.Id, (IEnumerable<SelectListItem>)ViewBag.OrganizacijeLista, "Odaberite...", new { @class = "form-control narrow", onchange = "javascript:OrganizacijeDropdown()" })
                         @Html.ValidationMessageFor(model => model.Organizacija.Id, "", new { @class = "text-danger" })
                         @Html.Hidden("Organizacija.Id")
                     </div>
@@ -992,7 +993,7 @@
         $.ajax({
             type: "Get",
             url: '@Url.Action("GetOrganizacijeValues", "Projekti")',
-            data: { id: $("#Organizacija").val() },
+            data: { id: $("#Organizacija_Id").val() },
             dataType: "json",
             success: function (data) {
                 $("#Organizacija_Naziv").val(data[0]);
@@ -1003,8 +1004,7 @@
                 $("#Organizacija_Faks").val(data[5]);
             }
         });
-        if ($("#Organizacija").val() > 0) {
-            $("#Organizacija_Id").val($("#Organizacija").val());
+        if ($("#Organizacija_Id").val() > 0) {
             $("#Organizacija_Naziv").prop('style', 'display:none');
             $("#Organizacija_Label").prop('style', 'display:none');
             $("#Organizacija_OIB").prop('disabled', true);
