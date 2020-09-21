@@ -1,0 +1,105 @@
+﻿hr.thick {
+    border: solid 1px;
+}
+
+.required:after {
+    content: "*";
+    font-weight: bold;
+    color: red;
+}
+
+input {
+    max-width: 100%;
+}
+
+textarea {
+    max-width: 100%;
+    height: 100px;
+}
+
+    textarea.form-control {
+        height: 150px;
+        max-width: 100%;
+    }
+
+.narrow {
+    max-width: 280px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-success, .btn-success:hover, .btn-success:active, .btn-success:visited {
+    background-color: #78B744 !important;
+}
+
+.navbar-brand {
+    color: #898989 !important;
+    background-color: #FFF !important;
+}
+
+    .navbar-brand:hover {
+        color: #FFF !important;
+        background-color: #898989 !important;
+    }
+
+.tableData {
+    background-color: #E3FBE3;
+}
+
+.okvirPodnaslova {
+    color: #FDAD5C;
+    background-color: #FDAD5C;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+/*CSS style for Checkboxes expandable*/
+ul, #myUL {
+    list-style-type: none;
+}
+
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    cursor: pointer;
+    -webkit-user-select: none; /*Safari 3.1+ */
+    -moz-user-select: none; /*Firefox 2+ */
+    -ms-user-select: none; /*IE 10+ */
+    user-select: none;
+}
+
+    .box::before {
+        content: "\2bc8";
+        color: black;
+        display: inline-block;
+        margin-right: 6px;
+    }
+
+.check-box::before {
+    content: "\2bc6";
+    color: dodgerblue;
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.validation-summary-errors ul li:nth-child(n+1) {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}

@@ -86,7 +86,7 @@ namespace SppApp.Controllers
             Projekti projekt = new Projekti();
             //ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime");
             //ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "ID", "Naziv");
-            ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+            ViewBag.KontaktiLista = new SelectList(db.Kontakti.Select(x => x.UserId == User.Identity.GetUserId()), "Id", "Ime", projekt.KontaktId);
             ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
             projekt.Aktivnosti = new List<Aktivnosti>();
             projekt.Aktivnosti.Add(new Aktivnosti());
@@ -207,7 +207,7 @@ namespace SppApp.Controllers
             //ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "ID", "Naziv");
             //ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId); //old
             //ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId); //old
-            ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+            ViewBag.KontaktiLista = new SelectList(db.Kontakti.Where(x => x.UserId == User.Identity.GetUserId()), "Id", "Ime", projekt.KontaktId);
             ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
             return View(projekt);
         }
