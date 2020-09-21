@@ -931,16 +931,16 @@
         if ($("#OdgovornaOsoba_Id").val() > 0) {
             $("#OdgovornaOsoba_Ime").prop('style', 'display:none');
             $("#OdgovornaOsoba_Label").prop('style', 'display:none');
-            $("#OdgovornaOsoba_Email").prop('disabled', true);
-            $("#OdgovornaOsoba_BrojTelefona").prop('disabled', true);
-            $("#OdgovornaOsoba_Faks").prop('disabled', true);
+            $("#OdgovornaOsoba_Email").prop('readonly', 'readonly');
+            $("#OdgovornaOsoba_BrojTelefona").prop('readonly', 'readonly');
+            $("#OdgovornaOsoba_Faks").prop('readonly', 'readonly');
         }
         else {
             $("#OdgovornaOsoba_Ime").prop('style', 'display:block').val("");
             $("#OdgovornaOsoba_Label").prop('style', 'display:block');
-            $("#OdgovornaOsoba_Email").prop('disabled', false).val("");
-            $("#OdgovornaOsoba_BrojTelefona").prop('disabled', false).val("");
-            $("#OdgovornaOsoba_Faks").prop('disabled', false).val("");
+            $("#OdgovornaOsoba_Email").prop('readonly', '').val("");
+            $("#OdgovornaOsoba_BrojTelefona").prop('readonly', '').val("");
+            $("#OdgovornaOsoba_Faks").prop('readonly', '').val("");
         }
         if ($("#OdgovornaOsoba_Id").val() > 0 || $("#Kontakt_Id").val() > 0 ) {
             $("#submitKontakt").prop('style', 'display:none');
@@ -968,16 +968,16 @@
         if ($("#Kontakt_Id").val() > 0) {
             $("#Kontakt_Ime").prop('style', 'display:none');
             $("#Kontakt_Label").prop('style', 'display:none');
-            $("#Kontakt_Email").prop('disabled', true);
-            $("#Kontakt_BrojTelefona").prop('disabled', true);
-            $("#Kontakt_Faks").prop('disabled', true);
+            $("#Kontakt_Email").prop('readonly', 'readonly');
+            $("#Kontakt_BrojTelefona").prop('readonly', 'readonly');
+            $("#Kontakt_Faks").prop('readonly', 'readonly');
         }
         else {
             $("#Kontakt_Ime").prop('style', 'display:block').val("");
             $("#Kontakt_Label").prop('style', 'display:block');
-            $("#Kontakt_Email").prop('disabled', false).val("");
-            $("#Kontakt_BrojTelefona").prop('disabled', false).val("");
-            $("#Kontakt_Faks").prop('disabled', false).val("");
+            $("#Kontakt_Email").prop('readonly', '').val("");
+            $("#Kontakt_BrojTelefona").prop('readonly', '').val("");
+            $("#Kontakt_Faks").prop('readonly', '').val("");
         }
         if ($("#OdgovornaOsoba_Id").val() > 0 || $("#Kontakt_Id").val() > 0) {
             $("#submitKontakt").prop('style', 'display:none');
@@ -1007,21 +1007,21 @@
         if ($("#Organizacija_Id").val() > 0) {
             $("#Organizacija_Naziv").prop('style', 'display:none');
             $("#Organizacija_Label").prop('style', 'display:none');
-            $("#Organizacija_OIB").prop('disabled', true);
-            $("#Organizacija_Adresa").prop('disabled', true);
-            $("#Organizacija_Email").prop('disabled', true);
-            $("#Organizacija_BrojTelefona").prop('disabled', true);
-            $("#Organizacija_Faks").prop('disabled', true);
-        }
+            $("#Organizacija_OIB").prop('readonly', 'readonly');
+            $("#Organizacija_Adresa").prop('readonly', 'readonly');
+            $("#Organizacija_Email").prop('readonly', 'readonly');
+            $("#Organizacija_BrojTelefona").prop('readonly', 'readonly');
+            $("#Organizacija_Faks").prop('readonly', 'readonly');
+        } 
         else {
             $("#Organizacija_Id").val('');
             $("#Organizacija_Naziv").prop('style', 'display:block').val("");
             $("#Organizacija_Label").prop('style', 'display:block');
-            $("#Organizacija_OIB").prop('disabled', false).val("");
-            $("#Organizacija_Adresa").prop('disabled', false).val("");
-            $("#Organizacija_Email").prop('disabled', false).val("");
-            $("#Organizacija_BrojTelefona").prop('disabled', false).val("");
-            $("#Organizacija_Faks").prop('disabled', false).val("");
+            $("#Organizacija_OIB").prop('readonly', '').val("");
+            $("#Organizacija_Adresa").prop('readonly', '').val("");
+            $("#Organizacija_Email").prop('readonly', '').val("");
+            $("#Organizacija_BrojTelefona").prop('readonly', '').val("");
+            $("#Organizacija_Faks").prop('readonly', '').val("");
         }
         }
     </script>

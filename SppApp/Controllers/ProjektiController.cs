@@ -116,36 +116,7 @@ namespace SppApp.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Projekti projekt, FormCollection form, HttpPostedFileBase[] Datoteke, string submitButton)
-        {
-            //if (projekt.Organizacija.Id != null)
-            //{
-            //    Organizacije dbOrganizacija = db.Organizacije.Find(projekt.Organizacija.Id);
-            //    projekt.Organizacija = dbOrganizacija;
-            //    projekt.OrganizacijaId = projekt.Organizacija.Id;
-                //projekt.Organizacija.OIB = dbOrganizacija.OIB;
-                //projekt.Organizacija.BrojTelefona = dbOrganizacija.BrojTelefona;
-                //projekt.Organizacija.Faks = dbOrganizacija.Faks;
-                //projekt.Organizacija.Email = dbOrganizacija.Email;
-                //projekt.Organizacija.Adresa = dbOrganizacija.Adresa;
-            //}
-            //if (projekt.Kontakt.Id != null)
-            //{
-            //    Kontakti dbKontakt = db.Kontakti.Find(projekt.Kontakt.Id);
-            //    projekt.Kontakt = dbKontakt;
-            //    projekt.KontaktId = projekt.Kontakt.Id;
-                //projekt.Kontakt.BrojTelefona = dbKontakt.BrojTelefona;
-                //projekt.Kontakt.Faks = dbKontakt.Faks;
-                //projekt.Kontakt.Email = dbKontakt.Email;
-            //}
-            //if (projekt.OdgovornaOsoba.Id != null)
-            //{
-            //    Kontakti dbOdgovornaOsoba = db.Kontakti.Find(projekt.OdgovornaOsoba.Id);
-            //    projekt.OdgovornaOsoba = dbOdgovornaOsoba;
-            //    projekt.OdgovornaOsobaId = projekt.OdgovornaOsoba.Id;
-                //projekt.OdgovornaOsoba.BrojTelefona = dbOdgovornaOsoba.BrojTelefona;
-                //projekt.OdgovornaOsoba.Faks = dbOdgovornaOsoba.Faks;
-                //projekt.OdgovornaOsoba.Email = dbOdgovornaOsoba.Email;
-            //}
+        {           
 
             projekt = HelperMethods.DodajUsera(projekt, User.Identity.GetUserId());
 

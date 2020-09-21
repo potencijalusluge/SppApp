@@ -49,7 +49,7 @@
             </div>
             <div class="col-md-4">
                 @Html.LabelFor(model => model.Vrijednost)<br />
-                @Html.EditorFor(model => model.Vrijednost, new { @class = "form-control" })
+                @Html.EditorFor(model => model.Vrijednost, new { htmlAttributes = new { @class = "form-control narrow currency", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1" } })
                 @Html.ValidationMessageFor(model => model.Vrijednost, "", new { @class = "text-danger" })
             </div>
         </div>
