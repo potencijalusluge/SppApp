@@ -80,10 +80,10 @@ namespace SppApp.Helpers
                 string sClosed = "</ul></li>";
                 if (lsUskladjenosti[i].Dubina < lsUskladjenosti[i - 1].Dubina)
                 {
-                    for (int j = 0; j < lsUskladjenosti[i-1].Dubina - lsUskladjenosti[i].Dubina; j++)
+                    for (int j = 0; j < lsUskladjenosti[i - 1].Dubina - lsUskladjenosti[i].Dubina; j++)
                     {
                         sPartial += sClosed;
-                        
+
                     }
                     if (lsUskladjenosti[i].Dubina < lsUskladjenosti[i + 1].Dubina)
                     {
@@ -102,14 +102,16 @@ namespace SppApp.Helpers
                 {
                     sPartial += "<li> @Html.CheckBoxFor(model => model.Uskladjenosti[" + i + "].Odabrano) &nbsp; @Model.Uskladjenosti[" + i + "].Naziv </li >";
                 }
-                
-                
+
+
             }
 
             sPartial += "</li>";
             sPartial += "</ul>";
 
-            return sPartial;
+            return sPartial; //Ne vrati indekse: 15, 17, 24, 26, 48, 50, 75, 109, 232, 396; 462, 476, 495, 706, 722 759, 765, 767, 
+            //785, 788, 790, 799, 809, 811, 813, 819, 827, 845, 853, 856, 858, 872, 884, 891, 897, 921, 923, 926, 941, 953, 964, 
+            //967, 1001, 1003
         }
         public static Projekti UcitajDokumentaciju(Projekti projekt)
         {
@@ -129,9 +131,18 @@ namespace SppApp.Helpers
         {
             if (user != null)
             {
-                projekt.UserId = user;
-                projekt.Kontakt.UserId = user;
-                projekt.Organizacija.UserId = user;
+                if (projekt.UserId == null)
+                {
+                    projekt.UserId = user;
+                }
+                if (projekt.Kontakt.UserId == null)
+                {
+                    projekt.Kontakt.UserId = user;
+                }
+                if (projekt.Organizacija.UserId == null)
+                {
+                    projekt.Organizacija.UserId = user;
+                }
             }
 
             return projekt;
@@ -154,7 +165,7 @@ namespace SppApp.Helpers
                     aktivnost.Opis = form[opis];
                     aktivnost.Vrsta = form[sKlasa + "Vrsta"];
                     aktivnost.JedinicaMjere = form[sKlasa + "JedinicaMjere"];
-                    decimal dBroj;                    
+                    decimal dBroj;
                     if (!form[sKlasa + "BrojJedinica"].IsNullOrWhiteSpace())
                     {
                         decimal.TryParse(form[sKlasa + "BrojJedinica"].ToString().Replace(".", ""), out dBroj);
@@ -195,12 +206,12 @@ namespace SppApp.Helpers
                     financiranje.NazivIzvora = form[nazivIzvora];
                     financiranje.IzvorFinanciranja = form[sKlasa + "IzvorFinanciranja"];
 
-                    decimal dBroj;                    
+                    decimal dBroj;
                     if (!form[sKlasa + "IznosHRK"].IsNullOrWhiteSpace())
                     {
                         decimal.TryParse(form[sKlasa + "IznosHRK"].ToString().Replace(".", ""), out dBroj);
                         financiranje.IznosHRK = dBroj;
-                    }                    
+                    }
                     financiranje.IzvorSufinanciranja = form[sKlasa + "IzvorSufinanciranja"];
                     financiranje.ProjektId = projekt.Id;
 
@@ -354,14 +365,103 @@ namespace SppApp.Helpers
             return projekt;
         }
 
-        public static Projekti DodajUskladjenosti(Projekti projekt, FormCollection form)
+        public static Projekti DodajDatoteke(Projekti projekt, HttpPostedFileBase[] dokumentacija, FormCollection form)
         {
-            List<Uskladjenosti> lsUskladjenosti = new List<Uskladjenosti>();
-            projekt.Uskladjenosti = lsUskladjenosti;
-            
+            List<string> lsDokumentacija = new List<string> { "Planirana lokacija u prostornom planu", "Vlasnička dokumentacija", "Master plan", "Studija predizvodivosti", "Studija izvodivosti", "Cost/benefit analiza (analiza omjera troškova i korisnosti projekta)", "Rješenje o prihvatljivosti za okoliš", "Idejno rješenje", "Idejni projekt", "Glavni projekt", "Izvedbeni projekt", "Lokacijska dozvola", "Građevinska dozvola", "Poslovni plan", "Investicijska studija", "Mišljenje o uskladivosti s Naturom 2000", "Uporabna dozvola", "Natječajna dokumentacija", "Ostalo" };
+            List<string> lsDokumentacijaStatus = form.AllKeys.Where(x => x.StartsWith("DokumentacijaLista[") && x.EndsWith("].Status")).Distinct().ToList();
+
+            for (int i = 0; i < lsDokumentacija.Count; i++)
+            {
+                Dokumentacija dokument = new Dokumentacija();
+                dokument.Naziv = lsDokumentacija[i];
+                if (lsDokumentacijaStatus.Count >= i)
+                {
+                    string status = lsDokumentacijaStatus[i];
+                    if (form[status] != "Nije potrebno" && !form[status].IsNullOrWhiteSpace())
+                    {
+                        string sKlasa = status.Replace("Status", "");
+                        if (form.AllKeys.Contains(sKlasa + "Id"))
+                        {
+                            dokument.Id = int.Parse(form[sKlasa + "Id"]);
+                            dokument.ProjektId = int.Parse(form[sKlasa + "ProjektId"]);
+                        }
+                        dokument.Status = form[status];
+                        dokument.Klasa = form[sKlasa + "Klasa"];
+                        dokument.UrBroj = form[sKlasa + "UrBroj"];
+                        dokument.Tijelo = form[sKlasa + "Tijelo"];
+
+                        decimal dBroj;
+                        if (!form[sKlasa + "DatumZavrsetka"].IsNullOrWhiteSpace())
+                        {
+                            dokument.DatumZavrsetka = DateTime.Parse(form[sKlasa + "DatumZavrsetka"]);
+                        }
+                        if (!form[sKlasa + "Vrijednost"].IsNullOrWhiteSpace())
+                        {
+                            decimal.TryParse(form[sKlasa + "Vrijednost"].ToString().Replace(".", ""), out dBroj);
+                            dokument.Vrijednost = dBroj;
+                        }
+
+                        dokument.ProjektId = projekt.Id;
+                    }
+                }
+
+                if (dokumentacija != null)
+                {
+
+                    if (dokumentacija[i] != null)
+                    {
+                        string FileName = Path.GetFileNameWithoutExtension(dokumentacija[i].FileName);
+                        string FileExtension = Path.GetExtension(dokumentacija[i].FileName);
+                        FileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "-" + FileName.Trim() + FileExtension;
+
+                        dokument.ImeDatoteke = dokumentacija[i].FileName;
+
+                        dokument.Putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Files/") + FileName);
+
+                        dokument.Datoteka = dokumentacija[i];
+
+                        dokument.ProjektId = projekt.Id;
+
+                        dokument.Datoteka.SaveAs(dokument.Putanja);
+                    }
+                }
+
+                if (dokument.ProjektId != null)
+                {
+
+                    projekt.Dokumentacija.Add(dokument);
+                }
+
+            }
             return projekt;
         }
 
+
+        public static Projekti DodajUskladjenosti(Projekti projekt, FormCollection form)
+        {
+            List<Uskladjenosti> lsUskladjenosti = UcitajUskladjenosti();
+            List<string> lsUskladjenostiOdabrano = form.AllKeys.Where(x => x.StartsWith("Uskladjenosti[") && x.EndsWith("].Odabrano")).Distinct().ToList();
+
+            // prvi set: 0 - 444
+            //drugi set: 445 - 754
+            // treći set: 755 - 1031
+
+
+
+            for (int i = 0; i < lsUskladjenostiOdabrano.Count; i++)
+            {
+                if (form[lsUskladjenostiOdabrano[i]].Contains("true"))
+                {
+                    Uskladjenosti uskladjenost = new Uskladjenosti();
+                    uskladjenost.Naziv = lsUskladjenosti[i].Naziv;
+                    uskladjenost.Dubina = lsUskladjenosti[i].Dubina;
+                    uskladjenost.Odabrano = true;
+                    uskladjenost.ProjektId = projekt.Id;
+                    projekt.Uskladjenosti.Add(uskladjenost);
+                }
+            }
+            return projekt;
+        }
         /// <summary>
         /// Compares contacts to avoid surplus in database
         /// </summary>

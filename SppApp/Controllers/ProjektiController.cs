@@ -113,9 +113,22 @@ namespace SppApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Projekti projekt, FormCollection form, string submitButton)
+        public ActionResult Create(Projekti projekt, FormCollection form, HttpPostedFileBase[] Datoteke, string submitButton)
         {
-            var test = form["Uskladjenosti[0].Odabrano"];
+            if (projekt.Organizacija == null && form["Organizacija.Id"]!="")
+            {
+                Organizacije dbOrganizacija = db.Organizacije.Find(Int32.Parse(form["Organizacija.Id"]));
+                projekt.OrganizacijaId = dbOrganizacija.Id;
+                //projekt.Organizacija.Id = dbOrganizacija.Id;
+                //projekt.Organizacija.Naziv = dbOrganizacija.Naziv;
+                //projekt.Organizacija.OIB = dbOrganizacija.OIB;
+                //projekt.Organizacija.BrojTelefona = dbOrganizacija.BrojTelefona;
+                //projekt.Organizacija.Faks = dbOrganizacija.Faks;
+                //projekt.Organizacija.Email = dbOrganizacija.Email;
+                //projekt.Organizacija.Adresa = dbOrganizacija.Adresa;
+                //projekt.Organizacija.UserId = dbOrganizacija.UserId;
+
+            }
 
             projekt = HelperMethods.DodajUsera(projekt, User.Identity.GetUserId());
 
@@ -129,6 +142,7 @@ namespace SppApp.Controllers
 
             projekt = HelperMethods.DodajPokazatelje(projekt, form);
 
+            projekt.Uskladjenosti = new List<Uskladjenosti>();
             projekt = HelperMethods.DodajUskladjenosti(projekt, form);
 
             projekt = HelperMethods.DodajJavneNabave(projekt, form);
@@ -160,9 +174,9 @@ namespace SppApp.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    //projekt = HelperMethods.DodajGradjevinskeDozvole(projekt, dozvolaDatoteke);
+                    projekt.Dokumentacija = new List<Dokumentacija>();
+                    projekt = HelperMethods.DodajDatoteke(projekt, Datoteke, form);
 
-                    //projekt = HelperMethods.DodajOstaluDokumentaciju(projekt, ostaleDatoteke);
 
                     Session["projektID"] = projekt.Id;
 
@@ -361,7 +375,7 @@ namespace SppApp.Controllers
                         }
                     }
 
-                    
+
 
                     db.SaveChanges();
 
@@ -429,7 +443,7 @@ namespace SppApp.Controllers
             {
                 db.Pokazatelji.Remove(db.Pokazatelji.FirstOrDefault(x => x.Id == pokazateljId));
             }
-            
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }

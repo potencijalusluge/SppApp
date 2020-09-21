@@ -20,7 +20,6 @@ namespace  SppApp.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

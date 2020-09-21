@@ -4,5 +4,13 @@
     ViewBag.Title = "Greška";
 }
 
-<h2 class="text-danger">Pojavila se greška prilikom obrade zahtjeva.</h2>
-
+@{
+    if (String.IsNullOrEmpty(ViewBag.errorMessage))
+    {
+        <h3 class="text-danger">Pojavila se greška prilikom obrade zahtjeva.</h3>
+    }
+    else
+    {
+        <h3 class="text-danger">@ViewBag.errorMessage</h3>
+    }
+}

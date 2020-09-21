@@ -365,38 +365,41 @@
             <dd>&nbsp;</dd>
             <dt></dt>
             <dd style="font-weight:bold">STATUS DOKUMENTACIJE PROJEKTA</dd>
+            <dt></dt>
+            <dd>
 
-            for (int i = 0; i < Model.Dokumentacija.Count; i++)
-            {
-                <dt>
-                    @Html.DisplayFor(model => Model.Dokumentacija[i].Naziv)
-                </dt>
+                <table class="table">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Naziv)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Status)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Klasa)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].UrBroj)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Tijelo)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].DatumZavrsetka)</th>
+                        <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Vrijednost)</th>
+                        <th>@Html.DisplayName("Datoteka")</th>
+                    </tr>
+                    @for (int i = 0; i < Model.Dokumentacija.Count; i++)
+                    {
 
-                <dd>
-
-                    <table class="table">
                         <tr>
-                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Status)</th>
-                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Klasa)</th>
-                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].UrBroj)</th>
-                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Tijelo)</th>
-                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].DatumZavrsetka)</th>
-                            <th>@Html.DisplayNameFor(model => Model.Dokumentacija[0].Vrijednost)</th>
-                            <th>@Html.DisplayName("Naziv dokumenta")</th>
-                        </tr>
-                        <tr>
+                            <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Naziv)</td>
                             <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Status)</td>
                             <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Klasa)</td>
                             <td>@Html.DisplayFor(model => Model.Dokumentacija[i].UrBroj)</td>
                             <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Tijelo)</td>
                             <td>@Html.DisplayFor(model => Model.Dokumentacija[i].DatumZavrsetka)</td>
                             <td>@Html.DisplayFor(model => Model.Dokumentacija[i].Vrijednost)</td>
-                            <td>@Html.ActionLink(Model.Dokumentacija[i].Naziv, "Download", "Projekti", new { putanja = Model.Dokumentacija[i].Putanja, idModela = "Details/" + Model.Id }, null)</td>
-
+                            <td>
+                                @if (Model.Dokumentacija[i].ImeDatoteke != "" && Model.Dokumentacija[i].ImeDatoteke != null)
+                                {
+                                    @Html.ActionLink(Model.Dokumentacija[i].ImeDatoteke, "Download", "Projekti", new { putanja = Model.Dokumentacija[i].Putanja, idModela = "Details/" + Model.Id }, null)
+                                }
+                            </td>
                         </tr>
-                    </table>
-                </dd>
-            }
+                    }
+                </table>
+            </dd>
         }
 
         @if (Model.Aktivnosti.Count > 0)
@@ -471,7 +474,18 @@
             for (int i = 0; i < Model.Uskladjenosti.Count; i++)
             {
                 <dt>
-                    @Html.DisplayNameFor(model => model.Uskladjenosti[i].Naziv)
+                    @if (i == 0)
+                    {
+                        @Html.DisplayNameFor(model => model.Uskladjenosti[i].Naziv)
+                    }
+                    else
+                    {
+                        if (Model.Uskladjenosti[i].Dubina <= Model.Uskladjenosti[i - 1].Dubina)
+                        {
+                            @Html.DisplayNameFor(model => model.Uskladjenosti[i].Naziv)
+                        }
+                    }
+
                 </dt>
                 <dd>
                     @Html.DisplayFor(model => model.Uskladjenosti[i].Naziv)

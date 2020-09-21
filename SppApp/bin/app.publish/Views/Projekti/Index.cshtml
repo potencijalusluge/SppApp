@@ -27,85 +27,65 @@
             @Html.DisplayNameFor(model => model.Naziv)
         </th>
         <th>
-            @Html.DisplayName("Naziv nositelja projekta")
+            @Html.DisplayNameFor(model => model.Modul)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.StatusProjekta)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Faza)
+            @Html.DisplayName("Nositelj projekta")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Kontakt.Ime)
+            @Html.DisplayName("Kontakt osoba")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Kontakt.Prezime)
+            @Html.DisplayNameFor(model => model.DatumPredaje)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kontakt.Organizacija.Naziv)
-        </th>
-        @if (User.IsInRole("Admin"))
-        {
-            <th>
-                @Html.DisplayNameFor(model => model.Ispravno)
-            </th>
-        }
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        if (item.UserId == ViewBag.CurrentUserID || User.IsInRole("Admin") && item.Upisano==true)
+        if (item.UserId == ViewBag.CurrentUserID || User.IsInRole("Admin") && item.Poslano == true)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Naziv)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Organizacija.Naziv)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StatusProjekta)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Faza)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Kontakt.Ime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Kontakt.Prezime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Kontakt.Organizacija.Naziv)
-                </td>
-                @if (User.IsInRole("Admin"))
-                {                    
-                    <td>
-                        @if (item.Ispravno != null)
-                        {
-                            @Html.DisplayFor(modelItem => item.Ispravno)
-                        }
-                    </td>
-                }
-                <td>
-                <td>
-                    @Html.ActionLink("Detalji", "Details", new { id = item.Id })
-                    |
-                    @Html.ActionLink("PDF", "PrintPartialViewToPdf", new { id = item.Id })
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Naziv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Modul)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.StatusProjekta)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Organizacija.Naziv)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Kontakt.Ime)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DatumPredaje)
+    </td>
 
-                    @if (User.IsInRole("Admin") || item.Upisano != true || item.Ispravno == false)
-                    {
-                        <span>|</span>
-                        @Html.ActionLink("Uredi", "Edit", new { id = item.Id })
-                    }
-                    @if (User.IsInRole("Admin") || item.Upisano != true)
-                    {
-                        <span>|</span>
-                        @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
-                    }
-                </td>
-            </tr>
+    <td>
+    <td>
+        @Html.ActionLink("Detalji", "Details", new { id = item.Id })
+        |
+        @Html.ActionLink("PDF", "PrintPartialViewToPdf", new { id = item.Id })
+
+        @if (User.IsInRole("Admin") || item.Poslano != true)
+        {
+            <span>|</span>
+            @Html.ActionLink("Uredi", "Edit", new { id = item.Id })
+        }
+        @if (User.IsInRole("Admin") || item.Poslano != true)
+        {
+            <span>|</span>
+            @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
+        }
+    </td>
+</tr>
         }
     }
 

@@ -135,3 +135,9 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Memory.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Numerics.Vectors.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.dll
+C:\Users\Korisnik\source\repos\SppApp\SppApp\bin\Elmah.Mvc.dll
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.initial.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update2.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csproj.GenerateResource.cache
