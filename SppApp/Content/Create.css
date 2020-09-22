@@ -103,3 +103,8 @@ ul, #myUL {
     border: 1px solid #ff0000;
     background-color: #ffeeee;
 }
+
+img.logo {
+    height: 30%;
+    width: 30%;
+}
