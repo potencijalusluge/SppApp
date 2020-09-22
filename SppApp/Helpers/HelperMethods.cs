@@ -374,7 +374,7 @@ namespace SppApp.Helpers
             {
                 Dokumentacija dokument = new Dokumentacija();
                 dokument.Naziv = lsDokumentacija[i];
-                if (lsDokumentacijaStatus.Count >= i)
+                if (lsDokumentacijaStatus.Count == i && i>0 || lsDokumentacijaStatus.Count > i)
                 {
                     string status = lsDokumentacijaStatus[i];
                     if (form[status] != "Nije potrebno" && !form[status].IsNullOrWhiteSpace())
