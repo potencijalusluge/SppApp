@@ -197,6 +197,10 @@ namespace SppApp.Helpers
                 {
                     projekt.Kontakt.UserId = user;
                 }
+                if (projekt.OdgovornaOsoba.UserId == null)
+                {
+                    projekt.OdgovornaOsoba.UserId = user;
+                }
                 if (projekt.Organizacija.UserId == null)
                 {
                     projekt.Organizacija.UserId = user;

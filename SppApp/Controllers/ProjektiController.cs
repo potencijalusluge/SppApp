@@ -259,7 +259,7 @@ namespace SppApp.Controllers
                 ViewBag.KontaktiLista = new SelectList(db.Kontakti.Where(x => x.UserId == currentUserId), "Id", "Ime", projekt.KontaktId);
                 ViewBag.OrganizacijeLista = new SelectList(db.Organizacije.Where(x => x.UserId == currentUserId), "Id", "Naziv", projekt.OrganizacijaId);
             }
-                        
+
             projekt = HelperMethods.DopuniUskladjenosti(projekt);
             projekt = HelperMethods.DopuniDokumentaciju(projekt);
 
@@ -272,7 +272,7 @@ namespace SppApp.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Projekti projekt, FormCollection form, HttpPostedFileBase[] dozvolaDatoteke, HttpPostedFileBase[] ostaleDatoteke, string submitButton)
+        public ActionResult Edit(Projekti projekt, FormCollection form, HttpPostedFileBase[] Datoteke, string submitButton)
         {
 
             if (submitButton.Equals("Odustani"))
@@ -281,15 +281,27 @@ namespace SppApp.Controllers
             }
 
             //projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
-
             if (ModelState.IsValid)
             {
-
                 if (!form["UserId"].IsNullOrWhiteSpace())
                 {
                     projekt = HelperMethods.DodajUsera(projekt, form["UserId"]);
                 }
+                if (projekt.Kontakt.Id != null)
+                {
+                    projekt.KontaktId = projekt.Kontakt.Id;
+                }
+                if (projekt.OdgovornaOsoba.Id != null)
+                {
+                    projekt.OdgovornaOsobaId = projekt.OdgovornaOsoba.Id;
+                }
 
+                projekt = HelperMethods.UsporediKontakte(projekt);
+
+                if (projekt.Organizacija.Id != null)
+                {
+                    projekt.OrganizacijaId = projekt.Organizacija.Id;
+                }
                 projekt = HelperMethods.DodajAktivnosti(projekt, form);
 
                 projekt = HelperMethods.DodajFinanciranja(projekt, form);
@@ -297,6 +309,13 @@ namespace SppApp.Controllers
                 projekt = HelperMethods.DodajDionike(projekt, form);
 
                 projekt = HelperMethods.DodajPokazatelje(projekt, form);
+
+                projekt.Uskladjenosti = new List<Uskladjenosti>();
+                projekt = HelperMethods.DodajUskladjenosti(projekt, form);
+
+                projekt = HelperMethods.DodajJavneNabave(projekt, form);
+
+                projekt = HelperMethods.DodajRizike(projekt, form);
 
                 //if (HttpContext.Request.Files.AllKeys.Any())
                 //{
@@ -319,12 +338,108 @@ namespace SppApp.Controllers
 
                 Session["projektID"] = projekt.Id;
 
+                projekt.DatumIzmjene = DateTime.Now;
+                                
+                foreach (var item in projekt.Aktivnosti)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+                foreach (var item in projekt.Dionici)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+                foreach (var item in projekt.Financiranja)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+                foreach (var item in projekt.Pokazatelji)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+                foreach (var item in projekt.Rizici)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+                foreach (var item in projekt.JavneNabave)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+                foreach (var item in projekt.Uskladjenosti)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+
+                foreach (var item in projekt.Dokumentacija)
+                {
+                    if (item.Id != 0)
+                    {
+                        db.Entry(item).State = EntityState.Modified;
+                    }
+                    else
+                    {
+                        db.Entry(item).State = EntityState.Added;
+                    }
+                }
+
+                db.Entry(projekt).State = EntityState.Modified;
+
+                db.Entry(projekt.Kontakt).State = EntityState.Modified;
+                db.Entry(projekt.OdgovornaOsoba).State = EntityState.Modified;
+                db.Entry(projekt.Organizacija).State = EntityState.Modified;
+
                 if (submitButton.Equals("Pošalji"))
                 {
                     projekt.DatumPredaje = DateTime.Now;
                     projekt.Poslano = true;
-                    db.Entry(projekt).State = EntityState.Modified;
-
                     db.SaveChanges();
 
                     HelperMethods.SendEmailNotification(projekt);
@@ -345,58 +460,7 @@ namespace SppApp.Controllers
                     //db.Entry(dbProjekt.Organizacija.Kontakt).CurrentValues.SetValues(projekt.Organizacija.Kontakt);
 
                     //db.SaveChanges();
-
-                    db.Entry(projekt).State = EntityState.Modified;
-                    db.Entry(projekt.Kontakt).State = EntityState.Modified;
-                    db.Entry(projekt.Organizacija).State = EntityState.Modified;
-
-                    foreach (var item in projekt.Aktivnosti)
-                    {
-                        if (item.Id != 0)
-                        {
-                            db.Entry(item).State = EntityState.Modified;
-                        }
-                        else
-                        {
-                            db.Entry(item).State = EntityState.Added;
-                        }
-                    }
-                    foreach (var item in projekt.Dionici)
-                    {
-                        if (item.Id != 0)
-                        {
-                            db.Entry(item).State = EntityState.Modified;
-                        }
-                        else
-                        {
-                            db.Entry(item).State = EntityState.Added;
-                        }
-                    }
-                    foreach (var item in projekt.Financiranja)
-                    {
-                        if (item.Id != 0)
-                        {
-                            db.Entry(item).State = EntityState.Modified;
-                        }
-                        else
-                        {
-                            db.Entry(item).State = EntityState.Added;
-                        }
-                    }
-                    foreach (var item in projekt.Pokazatelji)
-                    {
-                        if (item.Id != 0)
-                        {
-                            db.Entry(item).State = EntityState.Modified;
-                        }
-                        else
-                        {
-                            db.Entry(item).State = EntityState.Added;
-                        }
-                    }
-
-
-
+                    
                     db.SaveChanges();
 
                     return RedirectToAction("Index");
