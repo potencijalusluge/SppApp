@@ -172,7 +172,7 @@ namespace SppApp.Helpers
             List<string> lsPostojecaDokumentacija = projekt.Dokumentacija.Select(x => x.Naziv).ToList();
             foreach (string sNazivDokumenta in lsDokumentacija)
             {
-                if (lsPostojecaDokumentacija.Contains(sNazivDokumenta))
+                if (!lsPostojecaDokumentacija.Contains(sNazivDokumenta))
                 {
                     Dokumentacija dokument = new Dokumentacija()
                     {
@@ -180,6 +180,7 @@ namespace SppApp.Helpers
                     };
                     projekt.Dokumentacija.Add(dokument);
                 }
+                
             }
             return projekt;
         }

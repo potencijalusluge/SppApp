@@ -60,8 +60,11 @@
         }
     };
 
-     @*window.onload = function () {
-        if (@Model.GradjevinskeDozvole.Count > 0) {
+    window.onload = function () {
+        var input = document.getElementById('submitKontakt');
+        input.style.display = 'none';
+    
+        @*if (@Model.GradjevinskeDozvole.Count > 0) {
             var input = document.getElementById('licenceFile');
             input.style.float = 'left';
             input.style.width = '118px';
@@ -69,9 +72,9 @@
         if (@Model.OstalaDokumentacija.Count > 0) {
             var input = document.getElementById('otherFile');
             input.style.float = 'left';
-            input.style.width = '118px';
-        }
-    }*@
+            input.style.width = '118px';*@
+        //}
+    }
 </script>
 
 @using (Html.BeginForm("Edit", "Projekti", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -208,7 +211,15 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.Pocetak, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
-                    @Html.EditorFor(model => model.Pocetak, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    @if (Model.Pocetak != null)
+                    {
+                        DateTime NewPocetak = (DateTime)Model.Pocetak;
+                        @Html.EditorFor(model => model.Pocetak, new { htmlAttributes = new { @class = "form-control narrow", @Value = NewPocetak.ToString("yyyy-MM-dd") } })
+                    }
+                    else
+                    {
+                        @Html.EditorFor(model => model.Pocetak, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    }
                     @Html.ValidationMessageFor(model => model.Pocetak, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -216,7 +227,16 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.Kraj, htmlAttributes: new { @class = "control-label col-md-3" })
                 <div class="col-md-9">
-                    @Html.EditorFor(model => model.Kraj, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    @if (Model.Kraj != null)
+                    {
+                        DateTime NewKraj = (DateTime)Model.Kraj;
+                        @Html.EditorFor(model => model.Kraj, new { htmlAttributes = new { @class = "form-control narrow", @Value = NewKraj.ToString("yyyy-MM-dd") } })
+                    }
+                    else
+                    {
+                        @Html.EditorFor(model => model.Kraj, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    }
+                    @Html.ValidationMessageFor(model => model.Pocetak, "", new { @class = "text-danger" })
                     @Html.ValidationMessageFor(model => model.Kraj, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -386,7 +406,6 @@
                     <input type="button" id="submitKontakt" name="submitKontakt" value="Kopiraj u kontakt osobu" class="btn btn-success btn-sm" onclick="dodajKontakt();" />
                 </div>
             </div>
-
 
 
             <div class=" col-md-12">
@@ -721,12 +740,17 @@
 
         <div class="form-group col-md-12">
             @*<div class="col-md-offset-2 col-md-6">*@
-            <input type="submit" name="submitButton" value="Pošalji" class="btn btn-success btn-lg" />
-            @if (User.Identity.IsAuthenticated && Model.Poslano != true)
-            {
+                <input type="submit" name="submitButton" value="Pošalji" class="btn btn-success btn-lg" />
+
                 <input type="submit" name="submitButton" value="Spremi" class="btn btn-success btn-lg" style="background-color: #EF7215 !important; border-color: #EF7215 !important" />
-            }
-            @*</div>*@
+            <input type="submit" name="submitButton" value="Odustani" class="btn btn-success btn-lg" style="background-color: #FFF !important; color:#EF7215 !important; border-color:#EF7215 !important" />
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Natrag na popis", "Index")
+</div>
+@*</div>*@
         </div>
     </div>
 
