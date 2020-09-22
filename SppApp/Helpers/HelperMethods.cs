@@ -65,6 +65,45 @@ namespace SppApp.Helpers
             return lsUskladjenosti;
         }
 
+        public static Projekti DopuniUskladjenosti(Projekti projekt)
+        {
+            string putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Helpers/") + "Uskladjenosti.xml");
+            XmlReaderSettings settings = new XmlReaderSettings();
+            settings.IgnoreComments = true;
+            List<string> lsPostojeceUskladjenosti = projekt.Uskladjenosti.Select(x => x.Naziv).ToList();
+            List <Uskladjenosti> lsUskladjenosti = new List<Uskladjenosti>();
+            try
+            {
+                using (XmlReader reader = XmlReader.Create(putanja, settings))
+                {
+                    while (reader.Read())
+                    {
+
+                        if (reader.NodeType == XmlNodeType.Element && reader.LocalName.Contains("Razina"))
+                        {
+                            Uskladjenosti uskladjenost = new Uskladjenosti()
+                            {
+                                Naziv = reader.GetAttribute("Naziv"),
+                                Dubina = reader.Depth,
+                                Odabrano = false
+                            };
+                            if (lsPostojeceUskladjenosti.Contains(uskladjenost.Naziv))
+                            {
+                                uskladjenost.Odabrano = true;
+                            }
+                            lsUskladjenosti.Add(uskladjenost);
+                        };
+
+                    }
+                }
+                projekt.Uskladjenosti = lsUskladjenosti;
+            }
+            catch (Exception)
+            {
+            }
+            return projekt;
+        }
+
         public static string KreirajUskladjenostiPartial(List<Uskladjenosti> lsUskladjenosti)
         {
             string sPartial = "<ul id='myUL'><li><span class='box'>@Html.CheckBoxFor(model => model.Uskladjenosti[445].Odabrano) &nbsp; @Model.Uskladjenosti[445].Naziv</span> <ul class='nested'>";
@@ -123,6 +162,24 @@ namespace SppApp.Helpers
                     Naziv = sNazivDokumenta
                 };
                 projekt.Dokumentacija.Add(dokument);
+            }
+            return projekt;
+        }
+
+        public static Projekti DopuniDokumentaciju(Projekti projekt)
+        {
+            List<string> lsDokumentacija = new List<string> { "Planirana lokacija u prostornom planu", "Vlasnička dokumentacija", "Master plan", "Studija predizvodivosti", "Studija izvodivosti", "Cost/benefit analiza (analiza omjera troškova i korisnosti projekta)", "Rješenje o prihvatljivosti za okoliš", "Idejno rješenje", "Idejni projekt", "Glavni projekt", "Izvedbeni projekt", "Lokacijska dozvola", "Građevinska dozvola", "Poslovni plan", "Investicijska studija", "Mišljenje o uskladivosti s Naturom 2000", "Uporabna dozvola", "Natječajna dokumentacija", "Ostalo" };
+            List<string> lsPostojecaDokumentacija = projekt.Dokumentacija.Select(x => x.Naziv).ToList();
+            foreach (string sNazivDokumenta in lsDokumentacija)
+            {
+                if (lsPostojecaDokumentacija.Contains(sNazivDokumenta))
+                {
+                    Dokumentacija dokument = new Dokumentacija()
+                    {
+                        Naziv = sNazivDokumenta
+                    };
+                    projekt.Dokumentacija.Add(dokument);
+                }
             }
             return projekt;
         }

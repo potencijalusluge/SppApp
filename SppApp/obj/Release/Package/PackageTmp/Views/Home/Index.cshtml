@@ -1,6 +1,19 @@
 ﻿@{
     ViewBag.Title = "Sustav za prikupljanje podataka";
 }
-<h3 style="text-align:center">Sustav za prikupljanje podataka za strateško planiranje i upravljanje razvojem</h3>
 
-<img src="~/Images/logo-vpc.jpg" alt="VPC logo" width="30%" height="30%" class="center-block">
+<div class=" col-md-12">
+
+    <h3 style="text-align:center">Sustav za prikupljanje podataka za strateško planiranje i upravljanje razvojem</h3>
+
+    @if (DateTime.Now < new DateTime(2020, 10, 1))
+    {
+        <h4 style="color: #EF7215; text-align:center; font-weight: bold">
+            Napomena: Aplikacija je u probnom radu, pa vas molimo za razumijevanje ukoliko se pojave tehnički problemi. U slučaju greške prilikom obrade zahtjeva, 
+            molimo vas da kontaktirate tehničku podršku kako biste oporavili vaše podatke o projektu.
+        </h4>
+    }
+
+    <img src="~/Images/logo-vpc.jpg" alt="VPC logo" class="center-block logo">
+
+</div>

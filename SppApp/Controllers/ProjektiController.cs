@@ -88,15 +88,16 @@ namespace SppApp.Controllers
             Projekti projekt = new Projekti();
             //ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime");
             //ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "ID", "Naziv");
-            if (!User.IsInRole("Admin"))
+            if (User.IsInRole("Admin"))
             {
                 ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+                ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
             }
             else
             {
                 ViewBag.KontaktiLista = new SelectList(db.Kontakti.Where(x => x.UserId == currentUserId), "Id", "Ime", projekt.KontaktId);
+                ViewBag.OrganizacijeLista = new SelectList(db.Organizacije.Where(x => x.UserId == currentUserId), "Id", "Naziv", projekt.OrganizacijaId);
             }
-            ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
             projekt.Aktivnosti = new List<Aktivnosti>();
             projekt.Aktivnosti.Add(new Aktivnosti());
             projekt.Dionici = new List<Dionici>();
@@ -178,6 +179,8 @@ namespace SppApp.Controllers
 
                     Session["projektID"] = projekt.Id;
 
+                    projekt.DatumIzmjene = DateTime.Now;
+
                     if (submitButton.Equals("Pošalji"))
                     {
                         projekt.DatumPredaje = DateTime.Now;
@@ -237,21 +240,30 @@ namespace SppApp.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Projekti projekti = db.Projekti.Find(id);
+            Projekti projekt = db.Projekti.Find(id);
 
-            if (projekti == null)
+            if (projekt == null)
             {
                 return HttpNotFound();
             }
 
-            if (projekti.Lokacija != "Grad" && projekti.Lokacija != "Općina")
-            {
-                ViewBag.Lokacija = projekti.Lokacija;
-            }
+            string currentUserId = User.Identity.GetUserId();
 
-            ViewBag.KontaktId = new SelectList(db.Kontakti, "Id", "Ime", projekti.KontaktId);
-            ViewBag.OrganizacijaId = new SelectList(db.Organizacije, "Id", "Naziv", projekti.OrganizacijaId);
-            return View(projekti);
+            if (User.IsInRole("Admin"))
+            {
+                ViewBag.KontaktiLista = new SelectList(db.Kontakti, "Id", "Ime", projekt.KontaktId);
+                ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
+            }
+            else
+            {
+                ViewBag.KontaktiLista = new SelectList(db.Kontakti.Where(x => x.UserId == currentUserId), "Id", "Ime", projekt.KontaktId);
+                ViewBag.OrganizacijeLista = new SelectList(db.Organizacije.Where(x => x.UserId == currentUserId), "Id", "Naziv", projekt.OrganizacijaId);
+            }
+                        
+            projekt = HelperMethods.DopuniUskladjenosti(projekt);
+            projekt = HelperMethods.DopuniDokumentaciju(projekt);
+
+            return View(projekt);
         }
 
         [Authorize]

@@ -59,21 +59,30 @@
             }
         }
     };
+
+     @*window.onload = function () {
+        if (@Model.GradjevinskeDozvole.Count > 0) {
+            var input = document.getElementById('licenceFile');
+            input.style.float = 'left';
+            input.style.width = '118px';
+        }
+        if (@Model.OstalaDokumentacija.Count > 0) {
+            var input = document.getElementById('otherFile');
+            input.style.float = 'left';
+            input.style.width = '118px';
+        }
+    }*@
 </script>
 
-@using (Html.BeginForm("Create", "Projekti", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("Edit", "Projekti", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
 
         <div class=" col-md-12">
-            @if (!User.Identity.IsAuthenticated)
-            {
-                <h4 style="color: #EF7215; text-align:center; font-weight: bold">
-                    Napomena: Registracijom i prijavom omogućit će se dodatne funkcionalnosti aplikacije.
-                </h4>
-            }
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.UserId)
         </div>
         <div class=" col-md-12">
             <h4>@Html.ValidationSummary(false, "Morate ispravno popuniti sva obvezna polja!", new { @class = "text-danger" })</h4>
