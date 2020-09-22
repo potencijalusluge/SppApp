@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink(" Unos projekta", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink(" Unos projekta", "Create", "Projekti", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -58,7 +58,7 @@
                     <li class="navbar-contact">@Html.ActionLink("Kontakt", "Contact", "Home")</li>
                     @if (Request.IsAuthenticated)
                     {
-                        <li class="navbar-projekti">@Html.ActionLink("Projekti", "Index", "Home")</li>
+                        <li class="navbar-projekti">@Html.ActionLink("Projekti", "Index", "Projekti")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
