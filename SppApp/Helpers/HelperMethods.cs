@@ -546,6 +546,37 @@ namespace SppApp.Helpers
 
             return projekt;
         }
+
+        public static Projekti AzurirajUskladjenosti(Projekti projekt, FormCollection form, out List<int> lsObrisaneUskladjenosti)
+        {
+            lsObrisaneUskladjenosti = new List<int>();
+            List<string> lsUskladjenostiOdabrano = form.AllKeys.Where(x => x.StartsWith("Uskladjenosti[") && x.EndsWith("].Id")).Distinct().ToList();
+
+            // prvi set: 0 - 444
+            //drugi set: 445 - 754
+            // treći set: 755 - 1031
+
+            for (int i = 0; i < lsUskladjenostiOdabrano.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(form[lsUskladjenostiOdabrano[i]]) && !string.IsNullOrEmpty(lsUskladjenostiOdabrano[i]))
+                {
+                    int iId;
+                    int iXmlId;
+                    int.TryParse(lsUskladjenostiOdabrano[i].Substring(lsUskladjenostiOdabrano[i].IndexOf('[') + 1, lsUskladjenostiOdabrano[i].IndexOf(']') - lsUskladjenostiOdabrano[i].IndexOf('[') - 1), out iXmlId);
+                    int.TryParse(form[lsUskladjenostiOdabrano[i]], out iId);
+                    if (projekt.Uskladjenosti.ElementAtOrDefault(iXmlId) != null)
+                    {
+                        projekt.Uskladjenosti[iXmlId].Id = iId;
+                    }
+                    else
+                    {
+                        lsObrisaneUskladjenosti.Add(iId);
+                    }
+                }
+            }
+
+            return projekt;
+        }
         /// <summary>
         /// Compares contacts to avoid surplus in database
         /// </summary>

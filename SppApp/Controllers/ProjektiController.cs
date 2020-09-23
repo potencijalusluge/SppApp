@@ -148,27 +148,27 @@ namespace SppApp.Controllers
 
             projekt = HelperMethods.DodajRizike(projekt, form);
 
-            if (!ModelState.IsValid)
-            {
-                projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti(); //ToDo
+            //if (!ModelState.IsValid)
+            //{
+            //    projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti(); //ToDo
 
-                //decimal dBroj;
-                //if (this.ModelState["ProcijenjenaVrijednostHRK"].Errors.Count > 0)
-                //{
-                //    decimal.TryParse(form["ProcijenjenaVrijednostHRK"].ToString().Replace(".", ""), out dBroj);
-                //    projekt.ProcijenjenaVrijednostHRK = dBroj;
-                //}
-                //if (this.ModelState["ProcijenjeniTroskoviPripremeHRK"].Errors.Count > 0)
-                //{
-                //    decimal.TryParse(form["ProcijenjeniTroskoviPripremeHRK"].ToString().Replace(".", ""), out dBroj);
-                //    projekt.ProcijenjeniTroskoviPripremeHRK = dBroj;
-                //}
-                //if (this.ModelState["ProcijenjeniTroskoviProvedbeHRK"].Errors.Count > 0)
-                //{
-                //    decimal.TryParse(form["ProcijenjeniTroskoviProvedbeHRK"].ToString().Replace(".", ""), out dBroj);
-                //    projekt.ProcijenjeniTroskoviProvedbeHRK = dBroj;
-                //}
-            }
+            //decimal dBroj;
+            //if (this.ModelState["ProcijenjenaVrijednostHRK"].Errors.Count > 0)
+            //{
+            //    decimal.TryParse(form["ProcijenjenaVrijednostHRK"].ToString().Replace(".", ""), out dBroj);
+            //    projekt.ProcijenjenaVrijednostHRK = dBroj;
+            //}
+            //if (this.ModelState["ProcijenjeniTroskoviPripremeHRK"].Errors.Count > 0)
+            //{
+            //    decimal.TryParse(form["ProcijenjeniTroskoviPripremeHRK"].ToString().Replace(".", ""), out dBroj);
+            //    projekt.ProcijenjeniTroskoviPripremeHRK = dBroj;
+            //}
+            //if (this.ModelState["ProcijenjeniTroskoviProvedbeHRK"].Errors.Count > 0)
+            //{
+            //    decimal.TryParse(form["ProcijenjeniTroskoviProvedbeHRK"].ToString().Replace(".", ""), out dBroj);
+            //    projekt.ProcijenjeniTroskoviProvedbeHRK = dBroj;
+            //}
+            //}
             try
             {
                 if (ModelState.IsValid)
@@ -231,6 +231,7 @@ namespace SppApp.Controllers
                 ViewBag.KontaktiLista = new SelectList(db.Kontakti.Where(x => x.UserId == currentUserId), "Id", "Ime", projekt.KontaktId);
             }
             ViewBag.OrganizacijeLista = new SelectList(db.Organizacije, "Id", "Naziv", projekt.OrganizacijaId);
+            projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti();//To do!!!
             return View(projekt);
         }
 
@@ -285,10 +286,6 @@ namespace SppApp.Controllers
             //projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
             if (ModelState.IsValid)
             {
-                projekt.Dokumentacija = new List<Dokumentacija>();
-                projekt = HelperMethods.DodajDatoteke(projekt, Datoteke, form);
-
-                Session["projektID"] = projekt.Id;
 
                 if (!form["UserId"].IsNullOrWhiteSpace())
                 {
@@ -302,6 +299,8 @@ namespace SppApp.Controllers
                 {
                     projekt.OdgovornaOsobaId = projekt.OdgovornaOsoba.Id;
                 }
+                projekt.Dokumentacija = new List<Dokumentacija>();
+                projekt = HelperMethods.DodajDatoteke(projekt, Datoteke, form);
 
                 projekt = HelperMethods.UsporediKontakte(projekt);
 
@@ -320,7 +319,9 @@ namespace SppApp.Controllers
                 projekt.Uskladjenosti = new List<Uskladjenosti>();
 
                 projekt = HelperMethods.DodajUskladjenosti(projekt, form);
-                                
+                List<int> lsObrisaneUskladjenosti = new List<int>();
+                projekt = HelperMethods.AzurirajUskladjenosti(projekt, form, out lsObrisaneUskladjenosti);
+
                 projekt = HelperMethods.DodajJavneNabave(projekt, form);
 
                 projekt = HelperMethods.DodajRizike(projekt, form);
@@ -348,6 +349,37 @@ namespace SppApp.Controllers
 
                 projekt.DatumIzmjene = DateTime.Now;
 
+                if (submitButton.Equals("Pošalji")) //added
+                {
+                    projekt.DatumPredaje = DateTime.Now;
+                    projekt.Poslano = true;
+                }
+
+
+                if (projekt.Kontakt.Id != 0 && projekt.Kontakt.Id != null)
+                {
+                    db.Entry(projekt.Kontakt).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.Entry(projekt.Kontakt).State = EntityState.Added;
+                }
+                if (projekt.OdgovornaOsoba.Id != 0 && projekt.OdgovornaOsoba.Id != null)
+                {
+                    db.Entry(projekt.OdgovornaOsoba).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.Entry(projekt.OdgovornaOsoba).State = EntityState.Added;
+                }
+                if (projekt.Organizacija.Id != 0 && projekt.Organizacija.Id != null)
+                {
+                    db.Entry(projekt.Organizacija).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.Entry(projekt.Organizacija).State = EntityState.Added;
+                }
 
                 foreach (var item in projekt.Aktivnosti)
                 {
@@ -415,13 +447,8 @@ namespace SppApp.Controllers
                         db.Entry(item).State = EntityState.Added;
                     }
                 }
-                List<int> dbUskladjenosti = db.Uskladjenosti.Where(x => x.ProjektId == projekt.Id).Select(x=> x.XmlId).ToList();
                 foreach (var item in projekt.Uskladjenosti)
                 {
-                    if (dbUskladjenosti.Contains(item.XmlId))
-                    {
-                        db.Entry(item).State = EntityState.Deleted;
-                    }
                     if (item.Id != 0)
                     {
                         db.Entry(item).State = EntityState.Modified;
@@ -430,6 +457,12 @@ namespace SppApp.Controllers
                     {
                         db.Entry(item).State = EntityState.Added;
                     }
+                }
+
+                foreach (var id in lsObrisaneUskladjenosti)
+                {
+                    var uskladjenost = db.Uskladjenosti.Find(id);
+                    db.Entry(uskladjenost).State = EntityState.Deleted;
                 }
 
                 foreach (var item in projekt.Dokumentacija)
@@ -444,39 +477,16 @@ namespace SppApp.Controllers
                     }
                 }
 
-                if (projekt.Kontakt.Id != 0 && projekt.Kontakt.Id != null)
-                {
-                    db.Entry(projekt.Kontakt).State = EntityState.Modified;
-                }
-                else
-                {
-                    db.Entry(projekt.Kontakt).State = EntityState.Added;
-                }
-                if (projekt.OdgovornaOsoba.Id != 0 && projekt.OdgovornaOsoba.Id != null)
-                {
-                    db.Entry(projekt.OdgovornaOsoba).State = EntityState.Modified;
-                }
-                else
-                {
-                    db.Entry(projekt.OdgovornaOsoba).State = EntityState.Added;
-                }
-                if (projekt.Organizacija.Id != 0 && projekt.Organizacija.Id != null)
-                {
-                    db.Entry(projekt.Organizacija).State = EntityState.Modified;
-                }
-                else
-                {
-                    db.Entry(projekt.Organizacija).State = EntityState.Added;
-                }
-
                 db.Entry(projekt).State = EntityState.Modified;
 
+                //added
+                db.SaveChanges();
 
                 if (submitButton.Equals("Pošalji"))
                 {
-                    projekt.DatumPredaje = DateTime.Now;
-                    projekt.Poslano = true;
-                    db.SaveChanges();
+                    //projekt.DatumPredaje = DateTime.Now;
+                    //projekt.Poslano = true;
+                    //db.SaveChanges();
 
                     HelperMethods.SendEmailNotification(projekt);
 
@@ -496,8 +506,8 @@ namespace SppApp.Controllers
                     //db.Entry(dbProjekt.Organizacija.Kontakt).CurrentValues.SetValues(projekt.Organizacija.Kontakt);
 
                     //db.SaveChanges();
-                    
-                    db.SaveChanges();
+
+                    //db.SaveChanges();
 
                     return RedirectToAction("Index");
                 }
@@ -701,7 +711,7 @@ namespace SppApp.Controllers
             return Json(Organizacije, JsonRequestBehavior.AllowGet);
         }
 
-       
+
         //public ActionResult StandardPDF(Projekti projekt)
         //{
 
