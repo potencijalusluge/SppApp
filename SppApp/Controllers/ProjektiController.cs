@@ -348,7 +348,6 @@ namespace SppApp.Controllers
 
                 projekt.DatumIzmjene = DateTime.Now;
 
-                db.Entry(projekt).State = EntityState.Modified;
 
                 foreach (var item in projekt.Aktivnosti)
                 {
@@ -416,8 +415,13 @@ namespace SppApp.Controllers
                         db.Entry(item).State = EntityState.Added;
                     }
                 }
+                List<int> dbUskladjenosti = db.Uskladjenosti.Where(x => x.ProjektId == projekt.Id).Select(x=> x.XmlId).ToList();
                 foreach (var item in projekt.Uskladjenosti)
                 {
+                    if (dbUskladjenosti.Contains(item.XmlId))
+                    {
+                        db.Entry(item).State = EntityState.Deleted;
+                    }
                     if (item.Id != 0)
                     {
                         db.Entry(item).State = EntityState.Modified;
@@ -464,6 +468,8 @@ namespace SppApp.Controllers
                 {
                     db.Entry(projekt.Organizacija).State = EntityState.Added;
                 }
+
+                db.Entry(projekt).State = EntityState.Modified;
 
 
                 if (submitButton.Equals("Pošalji"))
