@@ -1008,16 +1008,21 @@
                 $("#submitKontakt").prop('style', 'display:none');
             }
         
-            @*if (@Model.GradjevinskeDozvole.Count > 0) {
-                var input = document.getElementById('licenceFile');
+            if (@Model.Dokumentacija.Count > 0) {
+                var input = document.getElementById('Planiranalokacijauprostornomplanu');
                 input.style.float = 'left';
                 input.style.width = '118px';
-            }
-            if (@Model.OstalaDokumentacija.Count > 0) {
-                var input = document.getElementById('otherFile');
+                var input2 = document.getElementById('Vlasničkadokumentacija');
+                input2.style.float = 'left';
+                input2.style.width = '118px';
+                var input3 = document.getElementById('Masterplan');
                 input.style.float = 'left';
-                input.style.width = '118px';*@
-        //}
+                input.style.width = '118px';
+                var input4 = document.getElementById('Studijapredizvodivosti');
+                input2.style.float = 'left';
+                input2.style.width = '118px';
+            }
+            
     }
 </script>
 
