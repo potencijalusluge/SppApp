@@ -283,7 +283,7 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.Organizacija.OIB, "OIB nositelja", htmlAttributes: new { @class = "control-label col-md-3 required" })
                 <div class="col-md-9">
-                    @Html.EditorFor(model => model.Organizacija.OIB, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    @Html.EditorFor(model => model.Organizacija.OIB, new { htmlAttributes = new { @class = "form-control narrow", maxlength = "15" } })
                     @Html.ValidationMessageFor(model => model.Organizacija.OIB, "OIB nositelja projekta je obavezan.", new { @class = "text-danger" })
                 </div>
             </div>

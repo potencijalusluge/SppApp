@@ -60,21 +60,7 @@
         }
     };
 
-    window.onload = function () {
-        var input = document.getElementById('submitKontakt');
-        input.style.display = 'none';
     
-        @*if (@Model.GradjevinskeDozvole.Count > 0) {
-            var input = document.getElementById('licenceFile');
-            input.style.float = 'left';
-            input.style.width = '118px';
-        }
-        if (@Model.OstalaDokumentacija.Count > 0) {
-            var input = document.getElementById('otherFile');
-            input.style.float = 'left';
-            input.style.width = '118px';*@
-        //}
-    }
 </script>
 
 @using (Html.BeginForm("Edit", "Projekti", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -312,7 +298,7 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.Organizacija.OIB, "OIB nositelja", htmlAttributes: new { @class = "control-label col-md-3 required" })
                 <div class="col-md-9">
-                    @Html.EditorFor(model => model.Organizacija.OIB, new { htmlAttributes = new { @class = "form-control narrow" } })
+                    @Html.EditorFor(model => model.Organizacija.OIB, new { htmlAttributes = new { @class = "form-control narrow", maxlength = "15" } })
                     @Html.ValidationMessageFor(model => model.Organizacija.OIB, "OIB nositelja projekta je obavezan.", new { @class = "text-danger" })
                 </div>
             </div>
@@ -993,4 +979,45 @@
             }
         };
     </script>
+    <script>
+        window.onload = function () {
+            if ($("#OdgovornaOsoba_Id").val() > 0) {
+                $("#OdgovornaOsoba_Ime").prop('style', 'display:none');
+                $("#OdgovornaOsoba_Label").prop('style', 'display:none');
+                $("#OdgovornaOsoba_Email").prop('readonly', 'readonly');
+                $("#OdgovornaOsoba_BrojTelefona").prop('readonly', 'readonly');
+                $("#OdgovornaOsoba_Faks").prop('readonly', 'readonly');
+            }
+            if ($("#Kontakt_Id").val() > 0) {
+                $("#Kontakt_Ime").prop('style', 'display:none');
+                $("#Kontakt_Label").prop('style', 'display:none');
+                $("#Kontakt_Email").prop('readonly', 'readonly');
+                $("#Kontakt_BrojTelefona").prop('readonly', 'readonly');
+                $("#Kontakt_Faks").prop('readonly', 'readonly');
+            }
+            if ($("#Organizacija_Id").val() > 0) {
+                $("#Organizacija_Naziv").prop('style', 'display:none');
+                $("#Organizacija_Label").prop('style', 'display:none');
+                $("#Organizacija_OIB").prop('readonly', 'readonly');
+                $("#Organizacija_Adresa").prop('readonly', 'readonly');
+                $("#Organizacija_Email").prop('readonly', 'readonly');
+                $("#Organizacija_BrojTelefona").prop('readonly', 'readonly');
+                $("#Organizacija_Faks").prop('readonly', 'readonly');
+            }
+            if ($("#OdgovornaOsoba_Id").val() > 0 || $("#Kontakt_Id").val() > 0) {
+                $("#submitKontakt").prop('style', 'display:none');
+            }
+        
+            @*if (@Model.GradjevinskeDozvole.Count > 0) {
+                var input = document.getElementById('licenceFile');
+                input.style.float = 'left';
+                input.style.width = '118px';
+            }
+            if (@Model.OstalaDokumentacija.Count > 0) {
+                var input = document.getElementById('otherFile');
+                input.style.float = 'left';
+                input.style.width = '118px';*@
+        //}
+    }
+</script>
 }

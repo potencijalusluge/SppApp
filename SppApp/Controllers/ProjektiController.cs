@@ -152,22 +152,22 @@ namespace SppApp.Controllers
             {
                 projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti();
 
-                decimal dBroj;
-                if (this.ModelState["ProcijenjenaVrijednostHRK"].Errors.Count > 0)
-                {
-                    decimal.TryParse(form["ProcijenjenaVrijednostHRK"].ToString().Replace(".", ""), out dBroj);
-                    projekt.ProcijenjenaVrijednostHRK = dBroj;
-                }
-                if (this.ModelState["ProcijenjeniTroskoviPripremeHRK"].Errors.Count > 0)
-                {
-                    decimal.TryParse(form["ProcijenjeniTroskoviPripremeHRK"].ToString().Replace(".", ""), out dBroj);
-                    projekt.ProcijenjeniTroskoviPripremeHRK = dBroj;
-                }
-                if (this.ModelState["ProcijenjeniTroskoviProvedbeHRK"].Errors.Count > 0)
-                {
-                    decimal.TryParse(form["ProcijenjeniTroskoviProvedbeHRK"].ToString().Replace(".", ""), out dBroj);
-                    projekt.ProcijenjeniTroskoviProvedbeHRK = dBroj;
-                }
+                //decimal dBroj;
+                //if (this.ModelState["ProcijenjenaVrijednostHRK"].Errors.Count > 0)
+                //{
+                //    decimal.TryParse(form["ProcijenjenaVrijednostHRK"].ToString().Replace(".", ""), out dBroj);
+                //    projekt.ProcijenjenaVrijednostHRK = dBroj;
+                //}
+                //if (this.ModelState["ProcijenjeniTroskoviPripremeHRK"].Errors.Count > 0)
+                //{
+                //    decimal.TryParse(form["ProcijenjeniTroskoviPripremeHRK"].ToString().Replace(".", ""), out dBroj);
+                //    projekt.ProcijenjeniTroskoviPripremeHRK = dBroj;
+                //}
+                //if (this.ModelState["ProcijenjeniTroskoviProvedbeHRK"].Errors.Count > 0)
+                //{
+                //    decimal.TryParse(form["ProcijenjeniTroskoviProvedbeHRK"].ToString().Replace(".", ""), out dBroj);
+                //    projekt.ProcijenjeniTroskoviProvedbeHRK = dBroj;
+                //}
             }
             try
             {
@@ -430,11 +430,32 @@ namespace SppApp.Controllers
                     }
                 }
 
-                db.Entry(projekt).State = EntityState.Modified;
+                if (projekt.Kontakt.Id != 0 && projekt.Kontakt.Id != null)
+                {
+                    db.Entry(projekt.Kontakt).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.Entry(projekt.Kontakt).State = EntityState.Added;
+                }
+                if (projekt.OdgovornaOsoba.Id != 0 && projekt.OdgovornaOsoba.Id != null)
+                {
+                    db.Entry(projekt.OdgovornaOsoba).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.Entry(projekt.OdgovornaOsoba).State = EntityState.Added;
+                }
+                if (projekt.Organizacija.Id != 0 && projekt.Organizacija.Id != null)
+                {
+                    db.Entry(projekt.Organizacija).State = EntityState.Modified;
+                }
+                else
+                {
+                    db.Entry(projekt.Organizacija).State = EntityState.Added;
+                }
 
-                db.Entry(projekt.Kontakt).State = EntityState.Modified;
-                db.Entry(projekt.OdgovornaOsoba).State = EntityState.Modified;
-                db.Entry(projekt.Organizacija).State = EntityState.Modified;
+                db.Entry(projekt).State = EntityState.Modified;
 
                 if (submitButton.Equals("Pošalji"))
                 {
@@ -506,6 +527,15 @@ namespace SppApp.Controllers
             List<Pokazatelji> lsPokazatelji = db.Pokazatelji.Where(x => x.ProjektId == projekt.Id).ToList();
             List<int> lsPokazateljiIDs = lsPokazatelji.Select(x => x.Id).ToList();
             projekt.Pokazatelji = lsPokazatelji;
+            List<Rizici> lsRizici = db.Rizici.Where(x => x.ProjektId == projekt.Id).ToList();
+            List<int> lsRiziciIDs = lsRizici.Select(x => x.Id).ToList();
+            projekt.Rizici = lsRizici;
+            List<JavneNabave> lsJavneNabave = db.JavneNabave.Where(x => x.ProjektId == projekt.Id).ToList();
+            List<int> lsJavneNabaveIDs = lsJavneNabave.Select(x => x.Id).ToList();
+            projekt.JavneNabave = lsJavneNabave;
+            List<Uskladjenosti> lsUskladjenosti = db.Uskladjenosti.Where(x => x.ProjektId == projekt.Id).ToList();
+            List<int> lsUskladjenostiIDs = lsUskladjenosti.Select(x => x.Id).ToList();
+            projekt.Uskladjenosti = lsUskladjenosti;
             //To do: Add file deletion
 
             db.Projekti.Remove(projekt);
@@ -527,7 +557,18 @@ namespace SppApp.Controllers
             {
                 db.Pokazatelji.Remove(db.Pokazatelji.FirstOrDefault(x => x.Id == pokazateljId));
             }
-
+            foreach (var rizikId in lsRiziciIDs)
+            {
+                db.Rizici.Remove(db.Rizici.FirstOrDefault(x => x.Id == rizikId));
+            }
+            foreach (var javnaNabavaId in lsJavneNabaveIDs)
+            {
+                db.JavneNabave.Remove(db.JavneNabave.FirstOrDefault(x => x.Id == javnaNabavaId));
+            }
+            foreach (var uskladjenostId in lsUskladjenostiIDs)
+            {
+                db.Uskladjenosti.Remove(db.Uskladjenosti.FirstOrDefault(x => x.Id == uskladjenostId));
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }
