@@ -17,7 +17,7 @@
         </td>        
         <td>
             @Html.LabelFor(model => model.BrojJedinica, "Broj jedinica")<br />
-            @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })
+            @Html.EditorFor(model => model.BrojJedinica, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost može sadržavati samo brojeve i decimalni zarez.", onkeyup = "currencyFormatHR()" } })
             @Html.ValidationMessageFor(model => model.BrojJedinica, "", new { @class = "text-danger" }) <br />
 
             @Html.LabelFor(model => model.JedinicaMjere)<br />

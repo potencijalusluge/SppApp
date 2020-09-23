@@ -27,33 +27,81 @@
             @Html.ValidationMessageFor(model => model.VrstaUgovora, "", new { @class = "text-danger" }) <br />
 
             @Html.LabelFor(model => model.VrijednostUgovora)<br />
-            @Html.EditorFor(model => model.VrijednostUgovora, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })<br />
+            @Html.EditorFor(model => model.VrijednostUgovora, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost može sadržavati samo brojeve i decimalni zarez.", onkeyup = "currencyFormatHR()" } })<br />
             @Html.ValidationMessageFor(model => model.VrijednostUgovora, "", new { @class = "text-danger" })
         </td>
         <td>
             @Html.LabelFor(model => model.PlaniranaObjava)<br />
-            @Html.EditorFor(model => model.PlaniranaObjava, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @if (Model.PlaniranaObjava != null)
+            {
+                DateTime NewDatum = (DateTime)Model.PlaniranaObjava;
+                @Html.EditorFor(model => model.PlaniranaObjava, new { htmlAttributes = new { @class = "form-control", @Value = NewDatum.ToString("yyyy-MM-dd") } })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.PlaniranaObjava, new { htmlAttributes = new { @class = "form-control" } })<br />
+            }<br />
             @Html.ValidationMessageFor(model => model.PlaniranaObjava, "", new { @class = "text-danger" })
 
             @Html.LabelFor(model => model.PlaniraniRok)<br />
-            @Html.EditorFor(model => model.PlaniraniRok, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @if (Model.PlaniraniRok != null)
+            {
+                DateTime NewDatum2 = (DateTime)Model.PlaniraniRok;
+                @Html.EditorFor(model => model.PlaniraniRok, new { htmlAttributes = new { @class = "form-control", @Value = NewDatum2.ToString("yyyy-MM-dd") } })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.PlaniraniRok, new { htmlAttributes = new { @class = "form-control" } })<br />
+            }<br />
             @Html.ValidationMessageFor(model => model.PlaniraniRok, "", new { @class = "text-danger" })
 
             @Html.LabelFor(model => model.PlaniraniDatum, "Plan. datum ugovaranja")<br />
-            @Html.EditorFor(model => model.PlaniraniDatum, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @if (Model.PlaniraniDatum != null)
+            {
+                DateTime NewDatum3 = (DateTime)Model.PlaniraniDatum;
+                @Html.EditorFor(model => model.PlaniraniDatum, new { htmlAttributes = new { @class = "form-control", @Value = NewDatum3.ToString("yyyy-MM-dd") } })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.PlaniraniDatum, new { htmlAttributes = new { @class = "form-control" } })<br />
+            }<br />
             @Html.ValidationMessageFor(model => model.PlaniraniDatum, "", new { @class = "text-danger" })
         </td>
         <td>
             @Html.LabelFor(model => model.Objava)<br />
-            @Html.EditorFor(model => model.Objava, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @if (Model.Objava != null)
+            {
+                DateTime NewDatum4 = (DateTime)Model.Objava;
+                @Html.EditorFor(model => model.Objava, new { htmlAttributes = new { @class = "form-control", @Value = NewDatum4.ToString("yyyy-MM-dd") } })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.Objava, new { htmlAttributes = new { @class = "form-control" } })<br />
+            }<br />
             @Html.ValidationMessageFor(model => model.Objava, "", new { @class = "text-danger" })
 
             @Html.LabelFor(model => model.Rok)<br />
-            @Html.EditorFor(model => model.Rok, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @if (Model.Rok != null)
+            {
+                DateTime NewDatum5 = (DateTime)Model.Rok;
+                @Html.EditorFor(model => model.Rok, new { htmlAttributes = new { @class = "form-control", @Value = NewDatum5.ToString("yyyy-MM-dd") } })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.Rok, new { htmlAttributes = new { @class = "form-control" } })<br />
+            }<br />
             @Html.ValidationMessageFor(model => model.Rok, "", new { @class = "text-danger" })
 
             @Html.LabelFor(model => model.Datum)<br />
-            @Html.EditorFor(model => model.Datum, new { htmlAttributes = new { @class = "form-control" } })<br />
+            @if (Model.Datum != null)
+            {
+                DateTime NewDatum6 = (DateTime)Model.Datum;
+                @Html.EditorFor(model => model.Datum, new { htmlAttributes = new { @class = "form-control", @Value = NewDatum6.ToString("yyyy-MM-dd") } })
+            }
+            else
+            {
+                @Html.EditorFor(model => model.Datum, new { htmlAttributes = new { @class = "form-control" } })<br />
+            }<br />
             @Html.ValidationMessageFor(model => model.Datum, "", new { @class = "text-danger" })
         </td>
         <td>

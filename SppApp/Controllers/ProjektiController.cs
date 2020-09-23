@@ -133,20 +133,21 @@ namespace SppApp.Controllers
 
             projekt = HelperMethods.UsporediKontakte(projekt);
 
-            projekt = HelperMethods.DodajAktivnosti(projekt, form);
+            List<int> lsTemp = new List<int>();
+            projekt = HelperMethods.DodajAktivnosti(projekt, form, out lsTemp);
 
-            projekt = HelperMethods.DodajFinanciranja(projekt, form);
+            projekt = HelperMethods.DodajFinanciranja(projekt, form, out lsTemp);
 
-            projekt = HelperMethods.DodajDionike(projekt, form);
+            projekt = HelperMethods.DodajDionike(projekt, form, out lsTemp);
 
-            projekt = HelperMethods.DodajPokazatelje(projekt, form);
+            projekt = HelperMethods.DodajPokazatelje(projekt, form, out lsTemp);
 
             projekt.Uskladjenosti = new List<Uskladjenosti>();
             projekt = HelperMethods.DodajUskladjenosti(projekt, form);
 
-            projekt = HelperMethods.DodajJavneNabave(projekt, form);
+            projekt = HelperMethods.DodajJavneNabave(projekt, form, out lsTemp);
 
-            projekt = HelperMethods.DodajRizike(projekt, form);
+            projekt = HelperMethods.DodajRizike(projekt, form, out lsTemp);
 
             //if (!ModelState.IsValid)
             //{
@@ -308,13 +309,18 @@ namespace SppApp.Controllers
                 {
                     projekt.OrganizacijaId = projekt.Organizacija.Id;
                 }
-                projekt = HelperMethods.DodajAktivnosti(projekt, form);
 
-                projekt = HelperMethods.DodajFinanciranja(projekt, form);
+                List<int> lsObrisaneAktivnosti = new List<int>();
+                projekt = HelperMethods.DodajAktivnosti(projekt, form, out lsObrisaneAktivnosti);
 
-                projekt = HelperMethods.DodajDionike(projekt, form);
+                List<int> lsObrisanaFinanciranja = new List<int>();
+                projekt = HelperMethods.DodajFinanciranja(projekt, form, out lsObrisanaFinanciranja);
 
-                projekt = HelperMethods.DodajPokazatelje(projekt, form);
+                List<int> lsObrisaniDionici = new List<int>();
+                projekt = HelperMethods.DodajDionike(projekt, form, out lsObrisaniDionici);
+
+                List<int> lsObrisaniPokazatelji = new List<int>();
+                projekt = HelperMethods.DodajPokazatelje(projekt, form, out lsObrisaniPokazatelji);
 
                 projekt.Uskladjenosti = new List<Uskladjenosti>();
 
@@ -322,9 +328,11 @@ namespace SppApp.Controllers
                 List<int> lsObrisaneUskladjenosti = new List<int>();
                 projekt = HelperMethods.AzurirajUskladjenosti(projekt, form, out lsObrisaneUskladjenosti);
 
-                projekt = HelperMethods.DodajJavneNabave(projekt, form);
+                List<int> lsObrisaneNabave = new List<int>();
+                projekt = HelperMethods.DodajJavneNabave(projekt, form, out lsObrisaneNabave);
 
-                projekt = HelperMethods.DodajRizike(projekt, form);
+                List<int> lsObrisaniRizici = new List<int>();
+                projekt = HelperMethods.DodajRizike(projekt, form, out lsObrisaniRizici);
 
                 //if (HttpContext.Request.Files.AllKeys.Any())
                 //{
@@ -392,6 +400,13 @@ namespace SppApp.Controllers
                         db.Entry(item).State = EntityState.Added;
                     }
                 }
+
+                foreach (var id in lsObrisaneAktivnosti)
+                {
+                    var aktivnost = db.Aktivnosti.Find(id);
+                    db.Entry(aktivnost).State = EntityState.Deleted;
+                }
+
                 foreach (var item in projekt.Dionici)
                 {
                     if (item.Id != 0)
@@ -402,6 +417,12 @@ namespace SppApp.Controllers
                     {
                         db.Entry(item).State = EntityState.Added;
                     }
+                }
+
+                foreach (var id in lsObrisaniDionici)
+                {
+                    var dionik = db.Dionici.Find(id);
+                    db.Entry(dionik).State = EntityState.Deleted;
                 }
                 foreach (var item in projekt.Financiranja)
                 {
@@ -414,6 +435,11 @@ namespace SppApp.Controllers
                         db.Entry(item).State = EntityState.Added;
                     }
                 }
+                foreach (var id in lsObrisanaFinanciranja)
+                {
+                    var financiranje = db.Financiranja.Find(id);
+                    db.Entry(financiranje).State = EntityState.Deleted;
+                }
                 foreach (var item in projekt.Pokazatelji)
                 {
                     if (item.Id != 0)
@@ -424,6 +450,11 @@ namespace SppApp.Controllers
                     {
                         db.Entry(item).State = EntityState.Added;
                     }
+                }
+                foreach (var id in lsObrisaniPokazatelji)
+                {
+                    var pokazatelj = db.Pokazatelji.Find(id);
+                    db.Entry(pokazatelj).State = EntityState.Deleted;
                 }
                 foreach (var item in projekt.Rizici)
                 {
@@ -436,6 +467,11 @@ namespace SppApp.Controllers
                         db.Entry(item).State = EntityState.Added;
                     }
                 }
+                foreach (var id in lsObrisaniRizici)
+                {
+                    var rizik = db.Rizici.Find(id);
+                    db.Entry(rizik).State = EntityState.Deleted;
+                }
                 foreach (var item in projekt.JavneNabave)
                 {
                     if (item.Id != 0)
@@ -446,6 +482,11 @@ namespace SppApp.Controllers
                     {
                         db.Entry(item).State = EntityState.Added;
                     }
+                }
+                foreach (var id in lsObrisaneNabave)
+                {
+                    var nabava = db.JavneNabave.Find(id);
+                    db.Entry(nabava).State = EntityState.Deleted;
                 }
                 foreach (var item in projekt.Uskladjenosti)
                 {

@@ -226,9 +226,12 @@ namespace SppApp.Helpers
             return projekt;
         }
 
-        public static Projekti DodajAktivnosti(Projekti projekt, FormCollection form)
+        public static Projekti DodajAktivnosti(Projekti projekt, FormCollection form, out List<int> lsObrisaneAktivnosti)
         {
+            lsObrisaneAktivnosti = new List<int>();
             List<string> lsAktivnostiOpis = form.AllKeys.Where(x => x.StartsWith("AktivnostiLista[") && x.EndsWith("].Opis")).Distinct().ToList();
+            List<string> lsAktivnostiPredodabrano = form.AllKeys.Where(x => x.StartsWith("Aktivnosti[") && x.EndsWith("].Id")).Distinct().ToList();
+
             foreach (var opis in lsAktivnostiOpis)
             {
                 if (!form[opis].IsNullOrWhiteSpace())
@@ -259,17 +262,40 @@ namespace SppApp.Helpers
                         aktivnost.DatumZavrsetka = DateTime.Parse(form[sKlasa + "DatumZavrsetka"]);
                     }
                     aktivnost.ProjektId = projekt.Id;
-
+                    
                     projekt.Aktivnosti.Add(aktivnost);
                 }
             }
+            projekt.Aktivnosti = projekt.Aktivnosti.Where(x => x.ProjektId != null).ToList();
 
+            int iCount = projekt.Aktivnosti.Count;
+
+            for (int i = 0; i < iCount; i++)
+            {
+                if (projekt.Aktivnosti[i].ProjektId == null)
+                {
+                    projekt.Aktivnosti.Remove(projekt.Aktivnosti[i]);
+                }
+            }
+
+            foreach (var item in lsAktivnostiPredodabrano)
+            {
+                int iId;
+                int.TryParse(form[item], out iId);
+                if (!projekt.Aktivnosti.Any(x => x.Id == iId))
+                {
+                    lsObrisaneAktivnosti.Add(iId);
+                }
+            }
+            
             return projekt;
         }
 
-        public static Projekti DodajFinanciranja(Projekti projekt, FormCollection form)
+        public static Projekti DodajFinanciranja(Projekti projekt, FormCollection form, out List<int> lsObrisanaFinanciranja)
         {
+            lsObrisanaFinanciranja = new List<int>();
             List<string> lsFinanciranjaNazivIzvora = form.AllKeys.Where(x => x.StartsWith("FinanciranjaLista[") && x.EndsWith("].NazivIzvora")).Distinct().ToList();
+            List<string> lsFinanciranjaPredodabrano = form.AllKeys.Where(x => x.StartsWith("Financiranja[") && x.EndsWith("].Id")).Distinct().ToList();
             foreach (var nazivIzvora in lsFinanciranjaNazivIzvora)
             {
                 if (!form[nazivIzvora].IsNullOrWhiteSpace())
@@ -296,13 +322,35 @@ namespace SppApp.Helpers
                     projekt.Financiranja.Add(financiranje);
                 }
             }
+            projekt.Financiranja = projekt.Financiranja.Where(x => x.ProjektId != null).ToList();
 
+            int iCount = projekt.Financiranja.Count;
+
+            for (int i = 0; i < iCount; i++)
+            {
+                if (projekt.Financiranja[i].ProjektId == null)
+                {
+                    projekt.Financiranja.Remove(projekt.Financiranja[i]);
+                }
+            }
+
+            foreach (var item in lsFinanciranjaPredodabrano)
+            {
+                int iId;
+                int.TryParse(form[item], out iId);
+                if (!projekt.Financiranja.Any(x => x.Id == iId))
+                {
+                    lsObrisanaFinanciranja.Add(iId);
+                }
+            }
             return projekt;
         }
 
-        public static Projekti DodajDionike(Projekti projekt, FormCollection form)
+        public static Projekti DodajDionike(Projekti projekt, FormCollection form, out List<int> lsObrisaniDionici)
         {
+            lsObrisaniDionici = new List<int>();
             List<string> lsDioniciNaziv = form.AllKeys.Where(x => x.StartsWith("DioniciLista[") && x.EndsWith("].Naziv")).Distinct().ToList();
+            List<string> lsDioniciPredodabrano = form.AllKeys.Where(x => x.StartsWith("Dionici[") && x.EndsWith("].Id")).Distinct().ToList();
             foreach (var naziv in lsDioniciNaziv)
             {
                 if (!form[naziv].IsNullOrWhiteSpace())
@@ -322,13 +370,35 @@ namespace SppApp.Helpers
                     projekt.Dionici.Add(dionik);
                 }
             }
+            projekt.Dionici = projekt.Dionici.Where(x => x.ProjektId != null).ToList();
 
+            int iCount = projekt.Dionici.Count;
+
+            for (int i = 0; i < iCount; i++)
+            {
+                if (projekt.Dionici[i].ProjektId == null)
+                {
+                    projekt.Dionici.Remove(projekt.Dionici[i]);
+                }
+            }
+
+            foreach (var item in lsDioniciPredodabrano)
+            {
+                int iId;
+                int.TryParse(form[item], out iId);
+                if (!projekt.Dionici.Any(x => x.Id == iId))
+                {
+                    lsObrisaniDionici.Add(iId);
+                }
+            }
             return projekt;
         }
 
-        public static Projekti DodajPokazatelje(Projekti projekt, FormCollection form)
+        public static Projekti DodajPokazatelje(Projekti projekt, FormCollection form, out List<int> lsObrisaniPokazatelji)
         {
+            lsObrisaniPokazatelji = new List<int>();
             List<string> lsPokazateljiNaziv = form.AllKeys.Where(x => x.StartsWith("PokazateljiLista[") && x.EndsWith("].Naziv")).Distinct().ToList();
+            List<string> lsPokazateljiPredodabrano = form.AllKeys.Where(x => x.StartsWith("Pokazatelji[") && x.EndsWith("].Id")).Distinct().ToList();
             foreach (var pokazateljNaziv in lsPokazateljiNaziv)
             {
                 if (!form[pokazateljNaziv].IsNullOrWhiteSpace())
@@ -355,13 +425,36 @@ namespace SppApp.Helpers
                     projekt.Pokazatelji.Add(pokazatelj);
                 }
             }
+            projekt.Pokazatelji = projekt.Pokazatelji.Where(x => x.ProjektId != null).ToList();
+
+            int iCount = projekt.Pokazatelji.Count;
+
+            for (int i = 0; i < iCount; i++)
+            {
+                if (projekt.Pokazatelji[i].ProjektId == null)
+                {
+                    projekt.Pokazatelji.Remove(projekt.Pokazatelji[i]);
+                }
+            }
+
+            foreach (var item in lsPokazateljiPredodabrano)
+            {
+                int iId;
+                int.TryParse(form[item], out iId);
+                if (!projekt.Pokazatelji.Any(x => x.Id == iId))
+                {
+                    lsObrisaniPokazatelji.Add(iId);
+                }
+            }
 
             return projekt;
         }
 
-        public static Projekti DodajJavneNabave(Projekti projekt, FormCollection form)
+        public static Projekti DodajJavneNabave(Projekti projekt, FormCollection form, out List<int> lsObrisaneNabave)
         {
+            lsObrisaneNabave = new List<int>();
             List<string> lsJavneNabaveNaziv = form.AllKeys.Where(x => x.StartsWith("JavneNabaveLista[") && x.EndsWith("].NazivPostupka")).Distinct().ToList();
+            List<string> lsNabavePredodabrano = form.AllKeys.Where(x => x.StartsWith("JavneNabave[") && x.EndsWith("].Id")).Distinct().ToList();
             foreach (var javnaNabavaNaziv in lsJavneNabaveNaziv)
             {
                 if (!form[javnaNabavaNaziv].IsNullOrWhiteSpace())
@@ -411,13 +504,35 @@ namespace SppApp.Helpers
                     projekt.JavneNabave.Add(javnaNabava);
                 }
             }
+            projekt.JavneNabave = projekt.JavneNabave.Where(x => x.ProjektId != null).ToList();
 
+            int iCount = projekt.JavneNabave.Count;
+
+            for (int i = 0; i < iCount; i++)
+            {
+                if (projekt.JavneNabave[i].ProjektId == null)
+                {
+                    projekt.JavneNabave.Remove(projekt.JavneNabave[i]);
+                }
+            }
+
+            foreach (var item in lsNabavePredodabrano)
+            {
+                int iId;
+                int.TryParse(form[item], out iId);
+                if (!projekt.JavneNabave.Any(x => x.Id == iId))
+                {
+                    lsObrisaneNabave.Add(iId);
+                }
+            }
             return projekt;
         }
 
-        public static Projekti DodajRizike(Projekti projekt, FormCollection form)
+        public static Projekti DodajRizike(Projekti projekt, FormCollection form, out List<int> lsObrisaniRizici)
         {
+            lsObrisaniRizici = new List<int>();
             List<string> lsRiziciNaziv = form.AllKeys.Where(x => x.StartsWith("RiziciLista[") && x.EndsWith("].Naziv")).Distinct().ToList();
+            List<string> lsRiziciPredodabrano = form.AllKeys.Where(x => x.StartsWith("Rizici[") && x.EndsWith("].Id")).Distinct().ToList();
             foreach (var rizikNaziv in lsRiziciNaziv)
             {
                 if (!form[rizikNaziv].IsNullOrWhiteSpace())
@@ -439,7 +554,27 @@ namespace SppApp.Helpers
                     projekt.Rizici.Add(rizik);
                 }
             }
+            projekt.Rizici = projekt.Rizici.Where(x => x.ProjektId != null).ToList();
 
+            int iCount = projekt.Rizici.Count;
+
+            for (int i = 0; i < iCount; i++)
+            {
+                if (projekt.Rizici[i].ProjektId == null)
+                {
+                    projekt.Rizici.Remove(projekt.Rizici[i]);
+                }
+            }
+
+            foreach (var item in lsRiziciPredodabrano)
+            {
+                int iId;
+                int.TryParse(form[item], out iId);
+                if (!projekt.Rizici.Any(x => x.Id == iId))
+                {
+                    lsObrisaniRizici.Add(iId);
+                }
+            }
             return projekt;
         }
 
