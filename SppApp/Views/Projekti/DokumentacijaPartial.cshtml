@@ -25,12 +25,12 @@
             </div>
             <div class="col-md-4">
                 @Html.LabelFor(model => model.Klasa)<br />
-                @Html.EditorFor(model => model.Klasa, new { @class = "form-control" })
+                @Html.EditorFor(model => model.Klasa, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Klasa, "", new { @class = "text-danger" })
             </div>
             <div class="col-md-4">
                 @Html.LabelFor(model => model.UrBroj)<br />
-                @Html.EditorFor(model => model.UrBroj, new { @class = "form-control" })
+                @Html.EditorFor(model => model.UrBroj, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.UrBroj, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -38,13 +38,21 @@
 
             <div class="col-md-4">
                 @Html.LabelFor(model => model.Tijelo)<br />
-                @Html.EditorFor(model => model.Tijelo, new { @class = "form-control" })
+                @Html.EditorFor(model => model.Tijelo, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Tijelo, "", new { @class = "text-danger" })
 
             </div>
             <div class="col-md-4">
                 @Html.LabelFor(model => model.DatumZavrsetka)<br />
-                @Html.EditorFor(model => model.DatumZavrsetka, new { @class = "form-control" })
+                @if (Model.DatumZavrsetka != null)
+                {
+                    DateTime NewZavrsetak = (DateTime)Model.DatumZavrsetka;
+                    @Html.EditorFor(model => model.DatumZavrsetka, new { htmlAttributes = new { @class = "form-control", @Value = NewZavrsetak.ToString("yyyy-MM-dd") } })
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.DatumZavrsetka, new { htmlAttributes = new { @class = "form-control" } })
+                }
                 @Html.ValidationMessageFor(model => model.DatumZavrsetka, "", new { @class = "text-danger" })
             </div>
             <div class="col-md-4">

@@ -188,6 +188,8 @@ namespace SppApp.Controllers
                         db.Projekti.Add(projekt);
                         db.SaveChanges();
 
+                        var partialView = PrintPartialViewToPdf(projekt.Id);
+
                         HelperMethods.SendEmailNotification(projekt);
 
                         return RedirectToAction("Details", "Projekti", new { id = projekt.Id });
@@ -283,6 +285,11 @@ namespace SppApp.Controllers
             //projekt = HelperMethods.DodajCustomLokaciju(projekt, form);
             if (ModelState.IsValid)
             {
+                projekt.Dokumentacija = new List<Dokumentacija>();
+                projekt = HelperMethods.DodajDatoteke(projekt, Datoteke, form);
+
+                Session["projektID"] = projekt.Id;
+
                 if (!form["UserId"].IsNullOrWhiteSpace())
                 {
                     projekt = HelperMethods.DodajUsera(projekt, form["UserId"]);
@@ -678,5 +685,21 @@ namespace SppApp.Controllers
             Organizacije.Add(organizacija.Faks);
             return Json(Organizacije, JsonRequestBehavior.AllowGet);
         }
+
+       
+        //public ActionResult StandardPDF(Projekti projekt)
+        //{
+
+        //    var makeCvSession = Session["makeCV"];
+
+        //    var root = Server.MapPath("~/PDF/");
+        //    var pdfname = String.Format("{0}.pdf", Guid.NewGuid().ToString());
+        //    var path = Path.Combine(root, pdfname);
+        //    path = Path.GetFullPath(path);
+
+        //    var something = new Rotativa.ViewAsPdf("Details", new { id = projekt.Id }) { FileName = "cv.pdf", SaveOnServerPath = path };
+        //    return something;
+
+        //}
     }
 }
