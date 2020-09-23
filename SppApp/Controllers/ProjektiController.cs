@@ -150,7 +150,7 @@ namespace SppApp.Controllers
 
             if (!ModelState.IsValid)
             {
-                projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti();
+                projekt.Uskladjenosti = HelperMethods.UcitajUskladjenosti(); //ToDo
 
                 //decimal dBroj;
                 //if (this.ModelState["ProcijenjenaVrijednostHRK"].Errors.Count > 0)
@@ -318,8 +318,9 @@ namespace SppApp.Controllers
                 projekt = HelperMethods.DodajPokazatelje(projekt, form);
 
                 projekt.Uskladjenosti = new List<Uskladjenosti>();
-                projekt = HelperMethods.DodajUskladjenosti(projekt, form);
 
+                projekt = HelperMethods.DodajUskladjenosti(projekt, form);
+                                
                 projekt = HelperMethods.DodajJavneNabave(projekt, form);
 
                 projekt = HelperMethods.DodajRizike(projekt, form);
@@ -346,7 +347,9 @@ namespace SppApp.Controllers
                 Session["projektID"] = projekt.Id;
 
                 projekt.DatumIzmjene = DateTime.Now;
-                                
+
+                db.Entry(projekt).State = EntityState.Modified;
+
                 foreach (var item in projekt.Aktivnosti)
                 {
                     if (item.Id != 0)
@@ -462,7 +465,6 @@ namespace SppApp.Controllers
                     db.Entry(projekt.Organizacija).State = EntityState.Added;
                 }
 
-                db.Entry(projekt).State = EntityState.Modified;
 
                 if (submitButton.Equals("Pošalji"))
                 {
@@ -543,7 +545,10 @@ namespace SppApp.Controllers
             List<Uskladjenosti> lsUskladjenosti = db.Uskladjenosti.Where(x => x.ProjektId == projekt.Id).ToList();
             List<int> lsUskladjenostiIDs = lsUskladjenosti.Select(x => x.Id).ToList();
             projekt.Uskladjenosti = lsUskladjenosti;
-            //To do: Add file deletion
+            List<Dokumentacija> lsDokumentacija = db.Dokumentacija.Where(x => x.ProjektId == projekt.Id).ToList();
+            List<int> lsDokumentacijaIDs = lsDokumentacija.Select(x => x.Id).ToList();
+            projekt.Dokumentacija = lsDokumentacija;
+            //To do: Add file deletion from folder
 
             db.Projekti.Remove(projekt);
             db.SaveChanges();
@@ -575,6 +580,10 @@ namespace SppApp.Controllers
             foreach (var uskladjenostId in lsUskladjenostiIDs)
             {
                 db.Uskladjenosti.Remove(db.Uskladjenosti.FirstOrDefault(x => x.Id == uskladjenostId));
+            }
+            foreach (var dokumentId in lsDokumentacijaIDs)
+            {
+                db.Dokumentacija.Remove(db.Dokumentacija.FirstOrDefault(x => x.Id == dokumentId));
             }
             db.SaveChanges();
             return RedirectToAction("Index");

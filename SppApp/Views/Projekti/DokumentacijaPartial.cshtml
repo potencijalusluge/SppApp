@@ -68,6 +68,12 @@
                 <input type="file" id=@Model.Naziv.Replace(" ","") name="Datoteke" onchange="checkFile(this)" onclick="deleteErrorMessage(this)" />
             </div>
             <div class="col-md-12" id="@(@Model.Naziv.Replace(" ","") + "List")"></div>
+
+            @if (Model.ImeDatoteke != null)
+            {
+                <div class="col-md-12" id="@(@Model.Naziv.Replace(" ","") + "List")">@Model.ImeDatoteke</div>
+
+            }
         </div>
     </div>
 

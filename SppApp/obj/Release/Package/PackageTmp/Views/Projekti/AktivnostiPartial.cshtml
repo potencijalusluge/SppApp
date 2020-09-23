@@ -31,8 +31,9 @@
             @Html.ValidationMessageFor(model => model.JedinicaMjere, "", new { @class = "text-danger" })<br />
 
             @Html.LabelFor(model => model.JedinicnaCijena, "Jedinična cijena")<br />
-            @Html.EditorFor(model => model.JedinicnaCijena, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })<br />
+            @Html.EditorFor(model => model.JedinicnaCijena, new { htmlAttributes = new { @class = "form-control narrow currency", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onkeyup = "currencyFormatHR()" } })<br />
             @Html.ValidationMessageFor(model => model.JedinicnaCijena, "", new { @class = "text-danger" })
+
         </td>
         <td>
             @Html.LabelFor(model => model.DatumZavrsetka, "Očekivani datum završetka")<br />

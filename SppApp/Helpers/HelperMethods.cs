@@ -29,11 +29,11 @@ namespace SppApp.Helpers
             message.Body = "<b>Naziv projekta:</b> " + projekt.Naziv + "<br>" + "<b>Naziv nositelja projekta:</b> " + projekt.Organizacija.Naziv + "<br>" + "<b>Status:</b> " + projekt.StatusProjekta + "<br>" + "<b>Modul:</b> " + projekt.Modul + "<br>" + "<b>Upravno područje:</b> " + projekt.UpravnoPodrucje + "<br>" + "<b>Ime i prezime:</b> " + projekt.Kontakt.Ime + "<br>" + "<br>" + "<b>Naziv organizacije:</b> " + projekt.Organizacija.Naziv;
             message.ToRecipients.Add("adrijana.jurilj@vpc.hr");
 
-            
+
             //message.Attachments.AddFileAttachment();
 
             //To do: Uncomment this
-            //message.SendAndSaveCopy();
+            message.SendAndSaveCopy();
         }
 
         public static List<Uskladjenosti> UcitajUskladjenosti()
@@ -44,6 +44,7 @@ namespace SppApp.Helpers
             List<Uskladjenosti> lsUskladjenosti = new List<Uskladjenosti>();
             try
             {
+                int i = 0;
                 using (XmlReader reader = XmlReader.Create(putanja, settings))
                 {
                     while (reader.Read())
@@ -54,10 +55,12 @@ namespace SppApp.Helpers
                             Uskladjenosti uskladjenost = new Uskladjenosti()
                             {
                                 Naziv = reader.GetAttribute("Naziv"),
+                                XmlId = i,
                                 Dubina = reader.Depth,
                                 Odabrano = false
                             };
                             lsUskladjenosti.Add(uskladjenost);
+                            i++;
                         };
 
                     }
@@ -72,35 +75,44 @@ namespace SppApp.Helpers
         public static Projekti DopuniUskladjenosti(Projekti projekt)
         {
             string putanja = Path.Combine(HttpContext.Current.Server.MapPath("~/Helpers/") + "Uskladjenosti.xml");
-            XmlReaderSettings settings = new XmlReaderSettings();
-            settings.IgnoreComments = true;
-            List<string> lsPostojeceUskladjenosti = projekt.Uskladjenosti.Select(x => x.Naziv).ToList();
-            List <Uskladjenosti> lsUskladjenosti = new List<Uskladjenosti>();
+            List<int> lsPostojeceUskladjenosti = projekt.Uskladjenosti.Select(x => x.XmlId).ToList();
+            List<Uskladjenosti> lsUskladjenosti = UcitajUskladjenosti();
             try
             {
-                using (XmlReader reader = XmlReader.Create(putanja, settings))
+                foreach (var uskladjenost in lsUskladjenosti)
                 {
-                    while (reader.Read())
+                    if (!lsPostojeceUskladjenosti.Contains(uskladjenost.XmlId))
                     {
-
-                        if (reader.NodeType == XmlNodeType.Element && reader.LocalName.Contains("Razina"))
-                        {
-                            Uskladjenosti uskladjenost = new Uskladjenosti()
-                            {
-                                Naziv = reader.GetAttribute("Naziv"),
-                                Dubina = reader.Depth,
-                                Odabrano = false
-                            };
-                            if (lsPostojeceUskladjenosti.Contains(uskladjenost.Naziv))
-                            {
-                                uskladjenost.Odabrano = true;
-                            }
-                            lsUskladjenosti.Add(uskladjenost);
-                        };
-
+                        projekt.Uskladjenosti.Add(uskladjenost);
                     }
-                }
-                projekt.Uskladjenosti = lsUskladjenosti;
+                }                
+                    
+                    //using (XmlReader reader = XmlReader.Create(putanja, settings))
+                //{
+                //    int i = 0;
+                //    while (reader.Read())
+                //    {
+
+                //        if (reader.NodeType == XmlNodeType.Element && reader.LocalName.Contains("Razina"))
+                //        {
+                //            Uskladjenosti uskladjenost = new Uskladjenosti()
+                //            {
+                //                Naziv = reader.GetAttribute("Naziv"),
+                //                XmlId = i,
+                //                Dubina = reader.Depth,
+                //                Odabrano = false
+                //            };
+                //            if (lsPostojeceUskladjenosti.Contains(uskladjenost.XmlId))
+                //            {
+                //                uskladjenost.Odabrano = true;
+                //            }
+                //            lsUskladjenosti.Add(uskladjenost);
+                //            i++;
+                //        };
+
+                //    }
+                //}
+                //projekt.Uskladjenosti = lsUskladjenosti;
             }
             catch (Exception)
             {
@@ -184,7 +196,7 @@ namespace SppApp.Helpers
                     };
                     projekt.Dokumentacija.Add(dokument);
                 }
-                
+
             }
             return projekt;
         }
@@ -440,7 +452,7 @@ namespace SppApp.Helpers
             {
                 Dokumentacija dokument = new Dokumentacija();
                 dokument.Naziv = lsDokumentacija[i];
-                if (lsDokumentacijaStatus.Count == i && i>0 || lsDokumentacijaStatus.Count > i)
+                if (lsDokumentacijaStatus.Count == i && i > 0 || lsDokumentacijaStatus.Count > i)
                 {
                     string status = lsDokumentacijaStatus[i];
                     if (form[status] != "Nije potrebno" && !form[status].IsNullOrWhiteSpace())
@@ -507,25 +519,31 @@ namespace SppApp.Helpers
         {
             List<Uskladjenosti> lsUskladjenosti = UcitajUskladjenosti();
             List<string> lsUskladjenostiOdabrano = form.AllKeys.Where(x => x.StartsWith("Uskladjenosti[") && x.EndsWith("].Odabrano")).Distinct().ToList();
+            List<Uskladjenosti> lsUskladjenostiProjekt = new List<Uskladjenosti>();
+            List<int> lsUskladjenostiIdProjekt = new List<int>();
 
             // prvi set: 0 - 444
             //drugi set: 445 - 754
             // treći set: 755 - 1031
 
-
-
             for (int i = 0; i < lsUskladjenostiOdabrano.Count; i++)
             {
                 if (form[lsUskladjenostiOdabrano[i]].Contains("true"))
                 {
-                    Uskladjenosti uskladjenost = new Uskladjenosti();
-                    uskladjenost.Naziv = lsUskladjenosti[i].Naziv;
-                    uskladjenost.Dubina = lsUskladjenosti[i].Dubina;
-                    uskladjenost.Odabrano = true;
-                    uskladjenost.ProjektId = projekt.Id;
-                    projekt.Uskladjenosti.Add(uskladjenost);
+                    Uskladjenosti uskladjenost = new Uskladjenosti()
+                    {
+                        Naziv = lsUskladjenosti[i].Naziv,
+                        XmlId = i,
+                        Dubina = lsUskladjenosti[i].Dubina,
+                        Odabrano = true,
+                        ProjektId = projekt.Id,
+                    };
+                    lsUskladjenostiProjekt.Add(uskladjenost);
+                    lsUskladjenostiIdProjekt.Add(i);
                 }
             }
+            projekt.Uskladjenosti = lsUskladjenostiProjekt;
+
             return projekt;
         }
         /// <summary>

@@ -71,15 +71,21 @@
     <td>
     <td>
         @Html.ActionLink("Detalji", "Details", new { id = item.Id })
-        |
+
+        @if (item.UserId == ViewBag.CurrentUserID)
+        {
             <span>|</span>
             @Html.ActionLink("Uredi", "Edit", new { id = item.Id })
-        @if (User.IsInRole("Admin"))
+            
+        }
+
+        @if (User.IsInRole("Admin") || item.Poslano != true)
         {
             <span>|</span>
             @Html.ActionLink("Obriši", "Delete", new { id = item.Id })
-        }
 
+        }
+        <span>|</span>
         @Html.ActionLink("PDF", "PrintPartialViewToPdf", new { id = item.Id })
 
     </td>

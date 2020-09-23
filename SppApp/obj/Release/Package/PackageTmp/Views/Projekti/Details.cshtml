@@ -649,14 +649,11 @@
     </dl>
 </div>
 <p>
-    @if (User.IsInRole("Admin") || Model.Poslano == false || Model.Doraditi == true)
-    {
         @Html.ActionLink("Uredi", "Edit", new { id = Model.Id })
         <span>|</span>
-    }
 
-    @if (ViewBag.Zaprimljena == null)
-    {
+    @*@if (ViewBag.Zaprimljena == null)
+    {*@
         @Html.ActionLink("Povratak na popis", "Index")
-    }
+    @* } *@
 </p>

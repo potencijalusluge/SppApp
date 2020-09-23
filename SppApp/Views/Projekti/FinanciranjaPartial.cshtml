@@ -33,7 +33,7 @@
         </td>
         <td>
             @Html.LabelFor(model => model.IznosHRK, "Iznos (HRK)")<br />
-            @Html.EditorFor(model => model.IznosHRK, new { htmlAttributes = new { @class = "form-control", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onkeyup = "currencyFormatHR()" } })<br />
+            @Html.EditorFor(model => model.IznosHRK, new { htmlAttributes = new { @class = "form-control narrow currency", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onkeyup = "currencyFormatHR()" } })<br />
             @Html.ValidationMessageFor(model => model.IznosHRK, "", new { @class = "text-danger" })
         </td>
 

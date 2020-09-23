@@ -142,3 +142,4 @@ C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Updat
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update2.resources
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.csproj.GenerateResource.cache
 C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update3.resources
+C:\Users\Korisnik\source\repos\SppApp\SppApp\obj\Release\SppApp.Migrations.Update4.resources

@@ -19,13 +19,12 @@
         AddClickEvents();
     });
 
-
-    function deleteErrorMessage(item) {
-        $(item).closest('div').next().text('');
-    };
+        function deleteErrorMessage(item) {
+            $(item).closest('div').next().text('');
+        };
 
     function checkFile(item) {
-        $(item).closest('div').next().text('');
+       $(item).closest('div').next().text('');
         var extension = $(item).val().split('.').pop().toLowerCase();
         // Create array with the files extensions that we wish to upload
         var validExtensions = ['jpeg', 'jpg', 'zip', 'pdf', 'docx', 'doc', 'xls', 'xlsx', 'odt', 'ods', 'fodt', 'fods'];
@@ -58,6 +57,8 @@
                 }
             }
         }
+        $(item).closest('div').next().next().text('');
+
     };
 
     
@@ -248,7 +249,7 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.ProcijenjeniTroskoviPripremeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
                 <div class="col-md-4">
-                    @Html.EditorFor(model => model.ProcijenjeniTroskoviPripremeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onchange = "currencyFormatHR('#ProcijenjeniTroskoviPripremeHRK')" } })
+                    @Html.EditorFor(model => model.ProcijenjeniTroskoviPripremeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onchange = "currencyFormatHR('#ProcijenjeniTroskoviPripremeHRK')" } })
                     @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviPripremeHRK, "", new { @class = "text-danger" })
                 </div>
                 <div id="ProcijenjeniTroskoviPripremeHRKDisplay" class="col-md-4" style="font-style:italic"></div>
@@ -258,7 +259,7 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.ProcijenjeniTroskoviProvedbeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
                 <div class="col-md-4">
-                    @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onchange = "currencyFormatHR('#ProcijenjeniTroskoviProvedbeHRK')" } })
+                    @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onchange = "currencyFormatHR('#ProcijenjeniTroskoviProvedbeHRK')" } })
                     @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviProvedbeHRK, "", new { @class = "text-danger" })
                 </div>
                 <div id="ProcijenjeniTroskoviProvedbeHRKDisplay" class="col-md-4" style="font-style:italic"></div>
@@ -1008,22 +1009,9 @@
                 $("#submitKontakt").prop('style', 'display:none');
             }
         
-            if (@Model.Dokumentacija.Count > 0) {
-                var input = document.getElementById('Planiranalokacijauprostornomplanu');
-                input.style.float = 'left';
-                input.style.width = '118px';
-                var input2 = document.getElementById('Vlasničkadokumentacija');
-                input2.style.float = 'left';
-                input2.style.width = '118px';
-                var input3 = document.getElementById('Masterplan');
-                input.style.float = 'left';
-                input.style.width = '118px';
-                var input4 = document.getElementById('Studijapredizvodivosti');
-                input2.style.float = 'left';
-                input2.style.width = '118px';
-            }
             
     }
 </script>
+    
 
 }

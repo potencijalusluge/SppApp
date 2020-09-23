@@ -13,6 +13,8 @@ namespace SppApp.Models
         [Key]
         public int Id { get; set; }
 
+        public int XmlId { get; set; }
+
         public int Dubina { get; set; }
 
         [StringLength(500)]

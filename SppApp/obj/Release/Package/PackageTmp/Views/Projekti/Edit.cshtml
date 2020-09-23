@@ -19,13 +19,12 @@
         AddClickEvents();
     });
 
-
-    function deleteErrorMessage(item) {
-        $(item).closest('div').next().text('');
-    };
+        function deleteErrorMessage(item) {
+            $(item).closest('div').next().text('');
+        };
 
     function checkFile(item) {
-        $(item).closest('div').next().text('');
+       $(item).closest('div').next().text('');
         var extension = $(item).val().split('.').pop().toLowerCase();
         // Create array with the files extensions that we wish to upload
         var validExtensions = ['jpeg', 'jpg', 'zip', 'pdf', 'docx', 'doc', 'xls', 'xlsx', 'odt', 'ods', 'fodt', 'fods'];
@@ -58,23 +57,11 @@
                 }
             }
         }
+        $(item).closest('div').next().next().text('');
+
     };
 
-    window.onload = function () {
-        var input = document.getElementById('submitKontakt');
-        input.style.display = 'none';
     
-        @*if (@Model.GradjevinskeDozvole.Count > 0) {
-            var input = document.getElementById('licenceFile');
-            input.style.float = 'left';
-            input.style.width = '118px';
-        }
-        if (@Model.OstalaDokumentacija.Count > 0) {
-            var input = document.getElementById('otherFile');
-            input.style.float = 'left';
-            input.style.width = '118px';*@
-        //}
-    }
 </script>
 
 @using (Html.BeginForm("Edit", "Projekti", FormMethod.Post, new { enctype = "multipart/form-data" }))
@@ -262,7 +249,7 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.ProcijenjeniTroskoviPripremeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
                 <div class="col-md-4">
-                    @Html.EditorFor(model => model.ProcijenjeniTroskoviPripremeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onchange = "currencyFormatHR('#ProcijenjeniTroskoviPripremeHRK')" } })
+                    @Html.EditorFor(model => model.ProcijenjeniTroskoviPripremeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onchange = "currencyFormatHR('#ProcijenjeniTroskoviPripremeHRK')" } })
                     @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviPripremeHRK, "", new { @class = "text-danger" })
                 </div>
                 <div id="ProcijenjeniTroskoviPripremeHRKDisplay" class="col-md-4" style="font-style:italic"></div>
@@ -272,7 +259,7 @@
             <div class="form-group col-md-12">
                 @Html.LabelFor(model => model.ProcijenjeniTroskoviProvedbeHRK, htmlAttributes: new { @class = "control-label col-md-4 required" })
                 <div class="col-md-4">
-                    @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", data_val_range = "Vrijednost mora biti veća od nule.", data_val_range_min = "1", onchange = "currencyFormatHR('#ProcijenjeniTroskoviProvedbeHRK')" } })
+                    @Html.EditorFor(model => model.ProcijenjeniTroskoviProvedbeHRK, new { htmlAttributes = new { @class = "form-control narrow", data_val_number = "Vrijednost mora biti broj sa decimalnim zarezom.", onchange = "currencyFormatHR('#ProcijenjeniTroskoviProvedbeHRK')" } })
                     @Html.ValidationMessageFor(model => model.ProcijenjeniTroskoviProvedbeHRK, "", new { @class = "text-danger" })
                 </div>
                 <div id="ProcijenjeniTroskoviProvedbeHRKDisplay" class="col-md-4" style="font-style:italic"></div>
@@ -993,4 +980,38 @@
             }
         };
     </script>
+    <script>
+        window.onload = function () {
+            if ($("#OdgovornaOsoba_Id").val() > 0) {
+                $("#OdgovornaOsoba_Ime").prop('style', 'display:none');
+                $("#OdgovornaOsoba_Label").prop('style', 'display:none');
+                $("#OdgovornaOsoba_Email").prop('readonly', 'readonly');
+                $("#OdgovornaOsoba_BrojTelefona").prop('readonly', 'readonly');
+                $("#OdgovornaOsoba_Faks").prop('readonly', 'readonly');
+            }
+            if ($("#Kontakt_Id").val() > 0) {
+                $("#Kontakt_Ime").prop('style', 'display:none');
+                $("#Kontakt_Label").prop('style', 'display:none');
+                $("#Kontakt_Email").prop('readonly', 'readonly');
+                $("#Kontakt_BrojTelefona").prop('readonly', 'readonly');
+                $("#Kontakt_Faks").prop('readonly', 'readonly');
+            }
+            if ($("#Organizacija_Id").val() > 0) {
+                $("#Organizacija_Naziv").prop('style', 'display:none');
+                $("#Organizacija_Label").prop('style', 'display:none');
+                $("#Organizacija_OIB").prop('readonly', 'readonly');
+                $("#Organizacija_Adresa").prop('readonly', 'readonly');
+                $("#Organizacija_Email").prop('readonly', 'readonly');
+                $("#Organizacija_BrojTelefona").prop('readonly', 'readonly');
+                $("#Organizacija_Faks").prop('readonly', 'readonly');
+            }
+            if ($("#OdgovornaOsoba_Id").val() > 0 || $("#Kontakt_Id").val() > 0) {
+                $("#submitKontakt").prop('style', 'display:none');
+            }
+        
+            
+    }
+</script>
+    
+
 }
